@@ -263,8 +263,9 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   margin: 0 auto;
   padding: 32px;
   display: grid;
-  grid-template-columns: 320px 1fr 260px;
+  grid-template-columns: 280px 1fr 280px;
   gap: 24px;
+  align-items: start;
 }
 
 /* Cards */
@@ -274,6 +275,9 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   border-radius: 12px;
   padding: 24px;
   margin-bottom: 16px;
+}
+.left-col .card, .right-col .card {
+  margin-bottom: 0;
 }
 .card-title {
   font-size: 0.7rem;
@@ -378,12 +382,18 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
+  align-items: stretch;
 }
 .exp-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.exp-card > div:last-child {
+  margin-top: auto;
 }
 .exp-card .exp-company { font-size: 0.85rem; }
 .exp-card .exp-role { font-size: 0.75rem; margin-bottom: 6px; }
@@ -768,11 +778,11 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 <div class="main" id="projects">
 
   <!-- LEFT COLUMN -->
-  <div class="left-col">
+  <div class="left-col" style="display:flex;flex-direction:column;gap:16px;">
     <!-- Work Logos -->
     <div class="card">
       <div class="card-title">Work & Education</div>
-      <div class="logo-grid logo-grid-5">
+      <div class="logo-grid">
         <div class="logo-item">
           <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_Logo.svg" alt="Dell" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#007db8\'>D</div>Dell'">
           Dell
@@ -788,10 +798,6 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <div class="logo-item">
           <img src="logo_uc.png" alt="UC" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
           UC Chile
-        </div>
-        <div class="logo-item">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#181717\'>GH</div>GitHub'">
-          GitHub
         </div>
       </div>
     </div>
@@ -811,10 +817,6 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <div class="logo-item">
           <img src="logo_fireworks.png" alt="Fireworks" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
           Fireworks
-        </div>
-        <div class="logo-item">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="PowerBI" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#f2c811;color:#000\'>P</div>PowerBI'">
-          PowerBI
         </div>
         <div class="logo-item">
           <img src="logo_llama.png" alt="llama.cpp" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
@@ -843,12 +845,8 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
           Excel
         </div>
         <div class="logo-item">
-          <img src="logo_powerpoint.png" alt="PPT" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
-          PPT
-        </div>
-        <div class="logo-item">
-          <img src="logo_word.png" alt="Word" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
-          Word
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="PowerBI" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#f2c811;color:#000\'>P</div>PowerBI'">
+          PowerBI
         </div>
         <div class="logo-item">
           <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#3776ab\'>Py</div>Python'">
@@ -894,7 +892,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   </div>
 
   <!-- RIGHT COLUMN -->
-  <div class="right-col">
+  <div class="right-col" style="display:flex;flex-direction:column;gap:16px;">
     <div class="agent-panel">
       <div class="agent-panel-title">
         <span><span class="agent-live"></span> 6-Agent AI Ecosystem</span>
@@ -948,10 +946,10 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div class="card">
       <div class="card-title">Tech Stack</div>
       <div class="logo-grid">
-        <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" onerror="this.style.display='none';this.parentNode.innerHTML='<div class='logo-placeholder' style='background:#3776ab'>Py</div>Python'">Python</div>
-        <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Sqlite-square-icon.svg" alt="SQLite" onerror="this.style.display='none';this.parentNode.innerHTML='<div class='logo-placeholder' style='background:#003b57'>SQL</div>SQLite'">SQLite</div>
-        <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" alt="Docker" onerror="this.style.display='none';this.parentNode.innerHTML='<div class='logo-placeholder' style='background:#2496ed'>Do</div>Docker'">Docker</div>
-        <div class="logo-item"><div class="logo-placeholder" style="background:#181717">GH</div>GitHub</div>
+        <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#3776ab\'>Py</div>Python'">Python</div>
+        <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Sqlite-square-icon.svg" alt="SQLite" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#003b57\'>SQL</div>SQLite'">SQLite</div>
+        <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" alt="Docker" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#2496ed\'>Do</div>Docker'">Docker</div>
+        <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#181717\'>GH</div>GitHub'">GitHub</div>
       </div>
     </div>
 
@@ -968,9 +966,9 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <img src="logo_dell.png" alt="Dell" style="width:24px;height:24px;object-fit:contain;">
         <div class="exp-company">Dell Technologies</div>
       </div>
-      <div class="exp-role">Sr. Advisor — AI/ML (2023–Present)</div>
-      <div class="exp-desc">$16B Lead Price Plan (90%+ accuracy). Margin Leakage AI — 7 cross-referenced ML models. Saved 120+ hours/quarter.</div>
-      <div><span class="exp-tag">AI/ML</span><span class="exp-tag">Pricing</span></div>
+      <div class="exp-role">Lead — Analytics, AI & Program Strategy (2023–2026)</div>
+      <div class="exp-desc">Led digital transformation from 2-person 80-hour process to 1-person streamlined operation. $16B+ enterprise server revenue with 90%+ forecast accuracy. Built AI-enabled forecasting models and executive reporting ecosystems.</div>
+      <div><span class="exp-tag">AI/ML</span><span class="exp-tag">Strategy</span></div>
     </div>
     <div class="exp-card">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
@@ -978,7 +976,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <div class="exp-company">ACHS (Hospital)</div>
       </div>
       <div class="exp-role">Commercial Head (2020–2021)</div>
-      <div class="exp-desc">+20% sales, -60% invoice time. Data analytics dashboard (-90% reporting time).</div>
+      <div class="exp-desc">Redesigned data-driven commercial workflows and customer engagement increasing sales 20%. Built commercial performance dashboards and operational analytics reducing reporting effort by 90%.</div>
       <div><span class="exp-tag">Strategy</span><span class="exp-tag">Analytics</span></div>
     </div>
     <div class="exp-card">
@@ -996,7 +994,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <div class="exp-company">Moller y Perez-Cotapos</div>
       </div>
       <div class="exp-role">Head of Real Estate Business Development (2017–2018)</div>
-      <div class="exp-desc">Acquired 9 properties for $57M. Closed 8 fund deals for $40M at 11% ROI. Evaluated 1.2K properties worth $4.2B.</div>
+      <div class="exp-desc">Developed and presented strategy to board of directors, acquired 9 properties for $57M. Closed 8 fund deals for $40M at 11% ROI. Evaluated 1.2K properties worth $4.2B.</div>
       <div><span class="exp-tag">Strategy</span><span class="exp-tag">Negotiation</span></div>
     </div>
     <div class="exp-card">
@@ -1005,7 +1003,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <div class="exp-company">Moller y Perez-Cotapos</div>
       </div>
       <div class="exp-role">Real Estate Product Manager (2014–2017)</div>
-      <div class="exp-desc">+25% monthly sales via cross-functional execution. Resolved permitting bottlenecks. Managed construction contracts for cost/quality.</div>
+      <div class="exp-desc">Directed cross-functional execution across sales, marketing, construction, and development. +25% monthly sales. Resolved permitting bottlenecks. Negotiated construction contracts for cost/quality.</div>
       <div><span class="exp-tag">Product</span><span class="exp-tag">Operations</span></div>
     </div>
     <div class="exp-card">
@@ -1014,7 +1012,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <div class="exp-company">Moller y Perez-Cotapos</div>
       </div>
       <div class="exp-role">Development Engineer — Real Estate Division (2012–2014)</div>
-      <div class="exp-desc">Market research and financial modeling on hundreds of properties yearly.</div>
+      <div class="exp-desc">Conducted market research and financial modeling on hundreds of properties yearly.</div>
       <div><span class="exp-tag">Analysis</span></div>
     </div>
     <div class="exp-card">
@@ -1022,8 +1020,8 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Michigan_Wolverines_logo.svg" alt="Michigan" style="width:24px;height:24px;object-fit:contain;">
         <div class="exp-company">University of Michigan</div>
       </div>
-      <div class="exp-role">MBA, Ross School of Business (2023)</div>
-      <div class="exp-desc">Dean's Fellowship (Full-Tuition Merit Scholarship). Focus on strategy and operations.</div>
+      <div class="exp-role">MBA, Stephen M. Ross School of Business (2023)</div>
+      <div class="exp-desc">Awarded Dean's Fellowship (Merit Full-Tuition Scholarship). Focus on strategy and operations.</div>
       <div><span class="exp-tag">MBA</span></div>
     </div>
     <div class="exp-card">
@@ -1032,7 +1030,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <div class="exp-company">Universidad Catolica de Chile</div>
       </div>
       <div class="exp-role">BBA, Honors Scholarship (2012)</div>
-      <div class="exp-desc">Graduated top 11%. Teaching assistant. Mentorship.</div>
+      <div class="exp-desc">Awarded Honors Scholarship. Graduated top 11%. Teaching assistant and mentorship.</div>
       <div><span class="exp-tag">BBA</span></div>
     </div>
   </div>
