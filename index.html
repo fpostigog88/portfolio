@@ -473,11 +473,12 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
 /* Video Demo */
 .video-demo {
-  background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 20px;
+  padding: 16px;
   margin-bottom: 16px;
-  color: white;
+  color: var(--text);
 }
 .video-demo-header {
   display: flex;
@@ -491,32 +492,33 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   display: flex;
   align-items: center;
   gap: 8px;
+  color: var(--text);
 }
 .video-demo-badge {
   padding: 3px 10px;
   border-radius: 20px;
   font-size: 0.65rem;
   font-weight: 700;
-  background: rgba(74, 222, 128, 0.12);
-  color: #4ade80;
-  border: 1px solid rgba(74, 222, 128, 0.2);
+  background: rgba(5, 150, 105, 0.08);
+  color: var(--success);
+  border: 1px solid rgba(5, 150, 105, 0.15);
 }
 .video-demo-player {
-  background: rgba(0, 0, 0, 0.3);
-  border: 2px dashed rgba(255, 255, 255, 0.2);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 10px;
-  padding: 32px;
+  padding: 16px;
   text-align: center;
   margin-bottom: 14px;
 }
 .video-demo-icon {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: var(--accent-light);
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: var(--accent);
 }
 .video-demo-text {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-secondary);
   margin-bottom: 14px;
 }
 .video-demo-btn {
@@ -733,10 +735,6 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           fpostigo@umich.edu
         </a>
-        <a href="https://wa.me/17344507404" class="hero-contact-link" target="_blank" title="Send WhatsApp">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          WhatsApp
-        </a>
       </div>
     </div>
     <div class="hero-right">
@@ -746,8 +744,8 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
           <div class="hero-stat-label">Revenue Supported</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-value">7</div>
-          <div class="hero-stat-label">ML Models</div>
+          <div class="hero-stat-value">90%+</div>
+          <div class="hero-stat-label">Forecast Accuracy</div>
         </div>
         <div class="hero-stat">
           <div class="hero-stat-value">6</div>
@@ -776,16 +774,16 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
           Dell
         </div>
         <div class="logo-item">
+          <img src="logo_moller.png" alt="Moller" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
+          Moller
+        </div>
+        <div class="logo-item">
           <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Michigan_Wolverines_logo.svg" alt="Michigan" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#ffcb05;color:#00274c\'>M</div>Michigan'">
           Michigan
         </div>
         <div class="logo-item">
-          <div class="logo-placeholder" style="background:#4f46e5">H</div>
-          Hermes
-        </div>
-        <div class="logo-item">
-          <img src="logo_openclaw.webp" alt="Claw" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
-          Claw
+          <img src="logo_uc.png" alt="UC" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
+          UC Chile
         </div>
       </div>
     </div>
@@ -810,11 +808,6 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
           <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="PowerBI" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#f2c811;color:#000\'>P</div>PowerBI'">
           PowerBI
         </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-title">Local AI</div>
-      <div class="logo-grid">
         <div class="logo-item">
           <img src="logo_llama.png" alt="llama.cpp" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
           llama.cpp
@@ -822,6 +815,14 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <div class="logo-item">
           <img src="logo_qwen.png" alt="Qwen" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
           Qwen
+        </div>
+        <div class="logo-item">
+          <img src="logo_advisor.webp" alt="Hermes" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
+          Hermes
+        </div>
+        <div class="logo-item">
+          <img src="logo_openclaw.webp" alt="OpenClaw" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
+          OpenClaw
         </div>
       </div>
     </div>
@@ -848,17 +849,6 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       </div>
     </div>
 
-    <!-- Experience -->
-    <div class="card">
-      <div class="card-title">Experience</div>
-      <div class="exp-item">
-        <div class="exp-company">Dell Technologies</div>
-        <div class="exp-role">Sr. Advisor — AI/ML (2023–Present)</div>
-        <div class="exp-desc">$16B Lead Price Plan (500K+ SKUs/LOC). Margin leakage to 0.3%.</div>
-        <span class="exp-tag">AI/ML</span><span class="exp-tag">Pricing</span>
-      </div>
-    </div>
-
   </div>
 
   <!-- CENTER COLUMN -->
@@ -871,11 +861,8 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <div class="video-demo-badge">Production</div>
       </div>
       <div class="video-demo-player">
-        <div class="video-demo-icon">▶</div>
         <div class="video-demo-text">Autonomous Workflow Engine — PC-to-Android task execution</div>
-        <a href="https://youtu.be/yAfvXZR69eY?si=4VnpACzK_T6NtFm-" target="_blank" class="video-demo-btn">
-          <span>▶</span> Watch Demo
-        </a>
+        <iframe width="100%" height="280" src="https://www.youtube-nocookie.com/embed/yAfvXZR69eY" title="Autonomous Workflow Engine Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:8px;max-width:480px;margin:0 auto;display:block;"></iframe>
       </div>
     </div>
 
@@ -947,7 +934,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <li class="agent-item">
           <div>
             <div class="agent-name"><span class="agent-icon" style="background:#ea580c">C</span>Claire</div>
-            <div class="agent-desc">Walmart shopping automation</div>
+            <div class="agent-desc">Automation and Workflows</div>
           </div>
           <span class="agent-status status-active">Active</span>
         </li>
@@ -960,8 +947,8 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         </li>
         <li class="agent-item">
           <div>
-            <div class="agent-name"><img src="logo_advisor.webp" alt="Personal Advisor" style="width:20px;height:20px;object-fit:cover;border-radius:50%;display:inline-block;vertical-align:middle;margin-right:8px;">Personal Advisor</div>
-            <div class="agent-desc">Life & travel planning</div>
+            <div class="agent-name"><span class="agent-icon" style="background:#db2777">D</span>Donna</div>
+            <div class="agent-desc">Personal Advisor — Life & travel planning</div>
           </div>
           <span class="agent-status status-active">Active</span>
         </li>
@@ -1009,9 +996,18 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <img src="logo_moller.png" alt="Moller" style="width:24px;height:24px;object-fit:contain;">
         <div class="exp-company">Moller y Perez-Cotapos</div>
       </div>
-      <div class="exp-role">Associate Manager — Real Estate (2012–2020)</div>
-      <div class="exp-desc">Acquired $100M+ in assets. Led team of 7 analysts. +60% business unit profits. 22 new projects with investment funds.</div>
+      <div class="exp-role">Associate Manager — Real Estate Business Development (2018–2020)</div>
+      <div class="exp-desc">Led team of 7 analysts. Acquired 10 properties worth $64.6M. 22 investment projects, +60% business unit profit. Automated forecasting models (+50% accuracy, -25% execution time).</div>
       <div><span class="exp-tag">Real Estate</span><span class="exp-tag">Leadership</span></div>
+      <div class="exp-role" style="margin-top:10px;">Head of Real Estate Business Development (2017–2018)</div>
+      <div class="exp-desc">Acquired 9 properties for $57M. Closed 8 fund deals for $40M at 11% ROI. Evaluated 1.2K properties worth $4.2B.</div>
+      <div><span class="exp-tag">Strategy</span><span class="exp-tag">Negotiation</span></div>
+      <div class="exp-role" style="margin-top:10px;">Real Estate Product Manager (2014–2017)</div>
+      <div class="exp-desc">+25% monthly sales via cross-functional execution. Resolved permitting bottlenecks. Managed construction contracts for cost/quality.</div>
+      <div><span class="exp-tag">Product</span><span class="exp-tag">Operations</span></div>
+      <div class="exp-role" style="margin-top:10px;">Development Engineer — Real Estate Division (2012–2014)</div>
+      <div class="exp-desc">Market research and financial modeling on hundreds of properties yearly.</div>
+      <div><span class="exp-tag">Analysis</span></div>
     </div>
     <div class="exp-card">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
@@ -1046,10 +1042,6 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <a href="mailto:fpostigo@umich.edu" class="hero-contact-link" title="Send Email">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       Email
-    </a>
-    <a href="https://wa.me/17344507404" class="hero-contact-link" target="_blank" title="Send WhatsApp">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      WhatsApp
     </a>
   </div>
 </div>
