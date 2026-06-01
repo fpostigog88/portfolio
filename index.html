@@ -262,10 +262,9 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   max-width: 1200px;
   margin: 0 auto;
   padding: 32px 0;
-  display: grid;
-  grid-template-columns: 280px 1fr 280px;
+  display: flex;
   gap: 16px;
-  align-items: start;
+  align-items: stretch;
 }
 
 /* Cards */
@@ -404,8 +403,8 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 16px;
+  padding: 16px 20px;
+  margin-bottom: 0;
   transition: all 0.2s;
 }
 .project-card:hover {
@@ -421,6 +420,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .project-title {
   font-size: 1rem;
   font-weight: 700;
+  color: var(--accent-dark);
 }
 .project-badge {
   padding: 3px 10px;
@@ -436,7 +436,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .project-desc {
   font-size: 0.85rem;
   color: var(--text-secondary);
-  margin-bottom: 12px;
+  margin-bottom: 0;
   line-height: 1.5;
 }
 .project-metrics {
@@ -491,8 +491,8 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 16px;
-  margin-bottom: 16px;
+  padding: 12px 16px;
+  margin-bottom: 0;
   color: var(--text);
 }
 .video-demo-header {
@@ -522,9 +522,9 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: 10px;
-  padding: 16px;
+  padding: 12px;
   text-align: center;
-  margin-bottom: 14px;
+  margin-bottom: 0;
 }
 .video-demo-icon {
   font-size: 1.5rem;
@@ -632,7 +632,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 0;
 }
 .agent-panel-title {
   font-size: 0.7rem;
@@ -656,9 +656,9 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .agent-list { list-style: none; }
 .agent-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  padding: 10px 0;
+  padding: 8px 0;
   border-bottom: 1px solid var(--border);
   font-size: 0.8rem;
 }
@@ -685,6 +685,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   font-size: 0.7rem;
   color: var(--text-muted);
   margin-left: 30px;
+  margin-top: 2px;
 }
 .agent-status {
   font-size: 0.65rem;
@@ -735,7 +736,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="hero-badge"><span class="dot"></span> Available for hire</div>
       <h1>Felipe Postigo</h1>
       <div class="hero-subtitle">MBA + Applied AI</div>
-      <div class="hero-value">University of Michigan MBA. 10+ years across real estate, commercial strategy, and applied AI/ML. Built a 6-agent autonomous ecosystem that eliminates cognitive load and delivers measurable ROI.</div>
+      <div class="hero-value">University of Michigan MBA with 10+ years across commercial strategy, real estate, and AI-enabled systems. Builds practical automation, forecasting, and decision-support tools that improve execution and deliver measurable business impact.</div>
       <div class="hero-ctas">
         <a href="https://calendly.com/fpostigo/30min" class="hero-cta hero-cta-primary" target="_blank">📧 Schedule Interview</a>
         <a href="resume.pdf" download="Felipe Postigo - Michigan Ross MBA.pdf" class="hero-cta hero-cta-secondary" target="_blank">📄 Download Resume</a>
@@ -778,10 +779,10 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 <div class="main" id="projects">
 
   <!-- LEFT COLUMN -->
-  <div class="left-col" style="display:flex;flex-direction:column;gap:16px;">
+  <div class="left-col" style="display:flex;flex-direction:column;gap:16px;justify-content:space-between;flex:0 0 280px;">
     <!-- Work Logos -->
     <div class="card">
-      <div class="card-title">Work & Education</div>
+      <div class="card-title">Work and Education</div>
       <div class="logo-grid" style="grid-template-columns:repeat(2,1fr);gap:10px;">
         <div class="logo-item">
           <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_Logo.svg" alt="Dell" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#007db8\'>D</div>Dell'">
@@ -850,7 +851,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   </div>
 
   <!-- CENTER COLUMN -->
-  <div class="center-col">
+  <div class="center-col" style="display:flex;flex-direction:column;gap:16px;justify-content:space-between;flex:1 1 0;">
 
     <!-- Projects -->
     <div class="project-card">
@@ -877,14 +878,14 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       </div>
       <div class="video-demo-player">
         <div class="video-demo-text">Autonomous Workflow Engine — PC-to-Android task execution</div>
-        <iframe width="100%" height="280" src="https://www.youtube-nocookie.com/embed/yAfvXZR69eY" title="Autonomous Workflow Engine Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:8px;max-width:480px;margin:0 auto;display:block;"></iframe>
+        <div style="max-height:120px;overflow:hidden;border-radius:8px;"><iframe width="100%" height="120" src="https://www.youtube-nocookie.com/embed/yAfvXZR69eY" title="Autonomous Workflow Engine Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:8px;max-width:480px;margin:0 auto;display:block;"></iframe></div>
       </div>
     </div>
 
   </div>
 
   <!-- RIGHT COLUMN -->
-  <div class="right-col" style="display:flex;flex-direction:column;gap:16px;">
+  <div class="right-col" style="display:flex;flex-direction:column;gap:16px;justify-content:space-between;flex:0 0 280px;">
     <div class="agent-panel">
       <div class="agent-panel-title">
         <span><span class="agent-live"></span> 6-Agent AI Ecosystem</span>
