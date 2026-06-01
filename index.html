@@ -280,11 +280,11 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   margin-bottom: 0;
 }
 .card-title {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--text-muted);
+  color: var(--accent-dark);
   margin-bottom: 14px;
   display: flex;
   align-items: center;
@@ -507,7 +507,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--text);
+  color: var(--accent-dark);
 }
 .video-demo-badge {
   padding: 3px 10px;
@@ -844,10 +844,6 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
           <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="PowerBI" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#f2c811;color:#000\'>P</div>PowerBI'">
           PowerBI
         </div>
-        <div class="logo-item">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#3776ab\'>Py</div>Python'">
-          Python
-        </div>
       </div>
     </div>
 
@@ -855,18 +851,6 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
   <!-- CENTER COLUMN -->
   <div class="center-col">
-
-    <!-- Video Demo -->
-    <div class="video-demo">
-      <div class="video-demo-header">
-        <div class="video-demo-title">🎬 Live System Demo</div>
-        <div class="video-demo-badge">Production</div>
-      </div>
-      <div class="video-demo-player">
-        <div class="video-demo-text">Autonomous Workflow Engine — PC-to-Android task execution</div>
-        <iframe width="100%" height="280" src="https://www.youtube-nocookie.com/embed/yAfvXZR69eY" title="Autonomous Workflow Engine Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:8px;max-width:480px;margin:0 auto;display:block;"></iframe>
-      </div>
-    </div>
 
     <!-- Projects -->
     <div class="project-card">
@@ -883,6 +867,18 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <span class="project-badge badge-green">Production</span>
       </div>
       <div class="project-desc">Personal finance intelligence with Plaid integration, automated categorization, anomaly detection, multi-bank aggregation. Encrypted local storage.</div>
+    </div>
+
+    <!-- Video Demo -->
+    <div class="video-demo">
+      <div class="video-demo-header">
+        <div class="video-demo-title">🎬 Live System Demo</div>
+        <div class="video-demo-badge">Production</div>
+      </div>
+      <div class="video-demo-player">
+        <div class="video-demo-text">Autonomous Workflow Engine — PC-to-Android task execution</div>
+        <iframe width="100%" height="280" src="https://www.youtube-nocookie.com/embed/yAfvXZR69eY" title="Autonomous Workflow Engine Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:8px;max-width:480px;margin:0 auto;display:block;"></iframe>
+      </div>
     </div>
 
   </div>
@@ -955,7 +951,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
 <!-- Experience Section (Full Width) -->
 <div class="experience-section" id="experience">
-  <div class="card-title" style="margin-bottom:16px;">Experience</div>
+  <div class="card-title" style="margin-bottom:16px;font-size:1rem;color:var(--accent-dark);">Experience</div>
   <div class="exp-grid">
     <div class="exp-card">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
