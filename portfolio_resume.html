@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Felipe Postigo — AI Systems Architect</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+
+:root {
+  --bg: #0f0f16;
+  --bg-card: #16161f;
+  --bg-elevated: #1e1e2a;
+  --border: #2a2a3a;
+  --text: #e8e6e1;
+  --text-secondary: #8b8b9a;
+  --text-muted: #5a5a6a;
+  --accent: #b8956a;
+  --accent-light: #d4b896;
+  --accent-dark: #8a6d4a;
+  --accent-glow: rgba(184, 149, 106, 0.15);
+  --success: #4ade80;
+  --info: #60a5fa;
+  --warning: #fbbf24;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.5;min-height:100vh}
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #0f0f16 0%, #1a1a24 50%, #16161f 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 48px 32px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(184, 149, 106, 0.12);
+  border: 1px solid rgba(184, 149, 106, 0.25);
+  color: var(--accent-light);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+.hero-badge .dot {
+  width: 6px; height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+.hero h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+.hero h1 .highlight {
+  color: var(--accent-light);
+}
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.hero-value {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  max-width: 520px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.hero-cta:hover {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+}
+.hero-right {
+  text-align: right;
+}
+.hero-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.hero-stat {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+.hero-stat-value {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent-light);
+  margin-bottom: 4px;
+}
+.hero-stat-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Main Layout */
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 260px 1fr 300px;
+  gap: 24px;
+}
+
+/* Cards */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+.card-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logos */
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 4px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: all 0.2s;
+}
+.logo-item:hover {
+  border-color: var(--accent-dark);
+  transform: translateY(-2px);
+}
+.logo-item img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+.logo-placeholder {
+  width: 28px; height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: white;
+}
+
+/* Experience */
+.exp-item {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.exp-item:last-child { border-bottom: none; }
+.exp-company {
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 2px;
+  color: var(--text);
+}
+.exp-role {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+.exp-desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.exp-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  margin-top: 6px;
+  margin-right: 4px;
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+/* Center: Projects */
+.project-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  transition: all 0.2s;
+}
+.project-card:hover {
+  border-color: var(--accent-dark);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+.project-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.project-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.project-badge {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.badge-green { background: rgba(74,222,128,0.12); color: var(--success); border: 1px solid rgba(74,222,128,0.2); }
+.badge-blue { background: rgba(96,165,250,0.12); color: var(--info); border: 1px solid rgba(96,165,250,0.2); }
+.badge-orange { background: rgba(251,191,36,0.12); color: var(--warning); border: 1px solid rgba(251,191,36,0.2); }
+.project-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+.project-metrics {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.project-metric {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.project-metric-value {
+  font-weight: 700;
+  color: var(--text);
+}
+.project-links {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.link-primary {
+  background: var(--accent);
+  color: var(--bg);
+}
+.link-primary:hover {
+  background: var(--accent-light);
+}
+.link-secondary {
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+.link-secondary:hover {
+  border-color: var(--accent-dark);
+  color: var(--text);
+}
+
+/* Video Demo */
+.video-demo {
+  background: linear-gradient(135deg, #1a1a24 0%, #16161f 100%);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+.video-demo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.video-demo-title {
+  font-size: 1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.video-demo-badge {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  background: rgba(74,222,128,0.12);
+  color: var(--success);
+  border: 1px solid rgba(74,222,128,0.2);
+}
+.video-demo-player {
+  background: var(--bg);
+  border: 2px dashed var(--border);
+  border-radius: 10px;
+  padding: 32px;
+  text-align: center;
+  margin-bottom: 14px;
+}
+.video-demo-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--accent);
+}
+.video-demo-text {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+.video-demo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--accent);
+  color: var(--bg);
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s;
+  font-size: 0.85rem;
+}
+.video-demo-btn:hover {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+}
+
+/* Terminal */
+.terminal {
+  background: #0a0a10;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  overflow-x: auto;
+  margin-bottom: 16px;
+}
+.terminal-header {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+.terminal-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+}
+.terminal-dot.red { background: #ef4444; }
+.terminal-dot.yellow { background: #f59e0b; }
+.terminal-dot.green { background: #22c55e; }
+.terminal-line { color: var(--text-secondary); margin-bottom: 3px; }
+.terminal-prompt { color: var(--accent); }
+.terminal-success { color: var(--success); }
+.terminal-accent { color: var(--info); }
+
+/* Right: Agent Panel */
+.agent-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.agent-panel-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.agent-live {
+  width: 6px; height: 6px;
+  background: var(--success);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  display: inline-block;
+  margin-right: 6px;
+}
+.agent-list { list-style: none; }
+.agent-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.8rem;
+}
+.agent-item:last-child { border-bottom: none; }
+.agent-name {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+.agent-icon {
+  width: 22px; height: 22px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+.agent-desc {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-left: 30px;
+}
+.agent-status {
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.status-active { background: rgba(74,222,128,0.12); color: var(--success); }
+.status-idle { background: rgba(90,90,106,0.2); color: var(--text-muted); }
+
+/* Stack grid */
+.stack-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+.stack-item {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+}
+.stack-item img {
+  width: 18px; height: 18px;
+  object-fit: contain;
+}
+
+/* Footer */
+.footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 32px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .main { grid-template-columns: 1fr 1fr; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-right { text-align: left; }
+  .hero-stats { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 768px) {
+  .main { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 2rem; }
+  .hero-stats { grid-template-columns: 1fr 1fr; }
+  .logo-grid { grid-template-columns: repeat(4, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge"><span class="dot"></span> Available for hire</div>
+      <h1>Felipe Postigo <span class="highlight">Gonzalez</span></h1>
+      <div class="hero-subtitle">Sr. Advisor Merchandising — AI/ML Systems</div>
+      <div class="hero-value">University of Michigan MBA. 10+ years across real estate, commercial strategy, and applied AI/ML. Built a 6-agent autonomous ecosystem that eliminates cognitive load and delivers measurable ROI.</div>
+      <a href="mailto:fpostigo@umich.edu" class="hero-cta">📧 Schedule Interview</a>
+    </div>
+    <div class="hero-right">
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-value">$16B</div>
+          <div class="hero-stat-label">Revenue Supported</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">7</div>
+          <div class="hero-stat-label">ML Models</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">6</div>
+          <div class="hero-stat-label">Agents</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">120h</div>
+          <div class="hero-stat-label">Saved/Quarter</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Main -->
+<div class="main">
+
+  <!-- LEFT COLUMN -->
+  <div class="left-col">
+    <!-- Work Logos -->
+    <div class="card">
+      <div class="card-title">Work & Education</div>
+      <div class="logo-grid">
+        <div class="logo-item"><div class="logo-placeholder" style="background:#007db8">D</div>Dell</div>
+        <div class="logo-item"><div class="logo-placeholder" style="background:#ffcb05;color:#00274c">M</div>Michigan</div>
+        <div class="logo-item"><div class="logo-placeholder" style="background:#4f46e5">H</div>Hermes</div>
+        <div class="logo-item"><div class="logo-placeholder" style="background:#ea580c">C</div>Claw</div>
+      </div>
+    </div>
+
+    <!-- Tech Logos -->
+    <div class="card">
+      <div class="card-title">AI & Cloud</div>
+      <div class="logo-grid">
+        <div class="logo-item"><div class="logo-placeholder" style="background:#10a37f">O</div>OpenAI</div>
+        <div class="logo-item"><div class="logo-placeholder" style="background:#cc785c">C</div>Claude</div>
+        <div class="logo-item"><div class="logo-placeholder" style="background:#ff4f00">F</div>Fireworks</div>
+        <div class="logo-item"><div class="logo-placeholder" style="background:#f2c811;color:#000">P</div>PowerBI</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Productivity</div>
+      <div class="logo-grid">
+        <div class="logo-item"><div class="logo-placeholder" style="background:#217346">E</div>Excel</div>
+        <div class="logo-item"><div class="logo-placeholder" style="background:#d24726">P</div>PPT</div>
+        <div class="logo-item"><div class="logo-placeholder" style="background:#2b579a">W</div>Word</div>
+        <div class="logo-item"><div class="logo-placeholder" style="background:#3776ab">Py</div>Python</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Infrastructure</div>
+      <div class="logo-grid">
+        <div class="logo-item"><div class="logo-placeholder" style="background:#fcc624;color:#000">L</div>Linux</div>
+        <div class="logo-item"><div class="logo-placeholder" style="background:#0078d4">W</div>Windows</div>
+        <div class="logo-item"><div class="logo-placeholder" style="background:#003b57">SQL</div>SQLite</div>
+        <div class="logo-item"><div class="logo-placeholder" style="background:#2496ed">Do</div>Docker</div>
+      </div>
+    </div>
+
+    <!-- Experience -->
+    <div class="card">
+      <div class="card-title">Experience</div>
+      <div class="exp-item">
+        <div class="exp-company">Dell Technologies</div>
+        <div class="exp-role">Sr. Advisor Merchandising — Server Pricing (2023-Present)</div>
+        <div class="exp-desc">Lead Price Plan for $16B server revenue (90%+ accuracy). Margin Leakage AI with 7 cross-referenced ML models. Saved 120+ hours/quarter.</div>
+        <span class="exp-tag">AI/ML</span><span class="exp-tag">Pricing</span>
+      </div>
+      <div class="exp-item">
+        <div class="exp-company">ACHS (Hospital)</div>
+        <div class="exp-role">Commercial Head (2020-2021)</div>
+        <div class="exp-desc">Packaged sales offering (+20% sales, -60% invoice time). Data analytics dashboard (-90% reporting time).</div>
+        <span class="exp-tag">Strategy</span><span class="exp-tag">Analytics</span>
+      </div>
+      <div class="exp-item">
+        <div class="exp-company">Moller y Perez-Cotapos</div>
+        <div class="exp-role">Associate Manager — Real Estate (2012-2020)</div>
+        <div class="exp-desc">Acquired $100M+ in assets. Led team of 7 analysts. +60% business unit profits. Designed automated forecasting tools.</div>
+        <span class="exp-tag">Real Estate</span><span class="exp-tag">Finance</span>
+      </div>
+      <div class="exp-item">
+        <div class="exp-company">University of Michigan</div>
+        <div class="exp-role">MBA, Ross School of Business (2023)</div>
+        <div class="exp-desc">Dean's Fellowship (Merit Full-Tuition Scholarship). Focus on strategy and operations.</div>
+        <span class="exp-tag">MBA</span>
+      </div>
+      <div class="exp-item">
+        <div class="exp-company">Universidad Catolica de Chile</div>
+        <div class="exp-role">BBA, Honors Scholarship (2012)</div>
+        <div class="exp-desc">Graduated top 11%. Teaching assistant. Mentorship.</div>
+        <span class="exp-tag">BBA</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CENTER COLUMN -->
+  <div class="center-col">
+    <!-- Video Demo -->
+    <div class="video-demo">
+      <div class="video-demo-header">
+        <div class="video-demo-title">🎬 Live System Demo</div>
+        <div class="video-demo-badge">Production</div>
+      </div>
+      <div class="video-demo-player">
+        <div class="video-demo-icon">▶</div>
+        <div class="video-demo-text">Walmart Automation — Real-time screen recording</div>
+        <a href="https://1drv.ms/v/c/e88943f53831760d/IQCNxJxFQnIGSKxP7VM0y6a8AWs1Ui3QQbuXK4Q5PrfmLoI" target="_blank" class="video-demo-btn">
+          <span>▶</span> Watch Demo
+        </a>
+      </div>
+      <div style="font-size:0.75rem;color:var(--text-muted);text-align:center;">
+        Autonomous grocery reordering via Android ADB
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-title">🛒 Walmart Shopper Agent</div>
+        <span class="project-badge badge-green">Production</span>
+      </div>
+      <div class="project-desc">Autonomous grocery management. Analyzes purchase frequency, detects stock needs, reorders via Android ADB. Zero manual intervention.</div>
+      <div class="project-metrics">
+        <div class="project-metric"><span class="project-metric-value">Zero</span> manual shopping</div>
+        <div class="project-metric"><span class="project-metric-value">ADB</span> automation</div>
+        <div class="project-metric"><span class="project-metric-value">Auto</span> reordering</div>
+      </div>
+      <div class="project-links">
+        <a href="https://1drv.ms/v/c/e88943f53831760d/IQCNxJxFQnIGSKxP7VM0y6a8AWs1Ui3QQbuXK4Q5PrfmLoI" target="_blank" class="project-link link-primary">▶ Watch Demo</a>
+        <span class="project-link link-secondary">Python</span>
+        <span class="project-link link-secondary">Android</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-title">💰 FinanceApp</div>
+        <span class="project-badge badge-green">Production</span>
+      </div>
+      <div class="project-desc">Personal finance intelligence with Plaid integration, automated categorization, anomaly detection, multi-bank aggregation. Encrypted local storage.</div>
+      <div class="project-metrics">
+        <div class="project-metric"><span class="project-metric-value">Multi-bank</span> sync</div>
+        <div class="project-metric"><span class="project-metric-value">Anomaly</span> detection</div>
+        <div class="project-metric"><span class="project-metric-value">Fernet</span> encrypted</div>
+      </div>
+      <div class="project-links">
+        <span class="project-link link-secondary">Python</span>
+        <span class="project-link link-secondary">SQLite</span>
+        <span class="project-link link-secondary">Plaid API</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-title">🔍 Deep Research</div>
+        <span class="project-badge badge-blue">System</span>
+      </div>
+      <div class="project-desc">Multi-agent research with parallel investigation, adversarial critique, architectural review, and synthesis. Kanban orchestration at max depth.</div>
+      <div class="project-metrics">
+        <div class="project-metric"><span class="project-metric-value">4-agent</span> council</div>
+        <div class="project-metric"><span class="project-metric-value">Parallel</span> research</div>
+        <div class="project-metric"><span class="project-metric-value">Kanban</span> orchestration</div>
+      </div>
+      <div class="project-links">
+        <span class="project-link link-secondary">Multi-agent</span>
+        <span class="project-link link-secondary">Async</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-title">📰 News Agent</div>
+        <span class="project-badge badge-green">Production</span>
+      </div>
+      <div class="project-desc">Autonomous news monitoring. Tracks X/Twitter, Reddit, RSS feeds. Delivers formatted briefings via Discord. 24/7 monitoring.</div>
+      <div class="project-metrics">
+        <div class="project-metric"><span class="project-metric-value">X/Twitter</span> + Reddit</div>
+        <div class="project-metric"><span class="project-metric-value">Discord</span> delivery</div>
+        <div class="project-metric"><span class="project-metric-value">24/7</span> monitoring</div>
+      </div>
+      <div class="project-links">
+        <span class="project-link link-secondary">Chrome CDP</span>
+        <span class="project-link link-secondary">Discord API</span>
+      </div>
+    </div>
+
+    <!-- Terminal -->
+    <div class="terminal">
+      <div class="terminal-header">
+        <div class="terminal-dot red"></div>
+        <div class="terminal-dot yellow"></div>
+        <div class="terminal-dot green"></div>
+        <span style="margin-left:auto;font-size:0.65rem;color:var(--text-muted)">hermes-cli — production</span>
+      </div>
+      <div class="terminal-line"><span class="terminal-prompt">$</span> hermes status</div>
+      <div class="terminal-line">Fire Hermes ......... <span class="terminal-success">ACTIVE</span> <span class="terminal-accent">(coordination)</span></div>
+      <div class="terminal-line">Lorelai ............. <span class="terminal-success">ACTIVE</span> <span class="terminal-accent">(finance)</span></div>
+      <div class="terminal-line">Hermione ............ <span class="terminal-success">ACTIVE</span> <span class="terminal-accent">(research)</span></div>
+      <div class="terminal-line">Claire .............. <span class="terminal-success">ACTIVE</span> <span class="terminal-accent">(shopping)</span></div>
+      <div class="terminal-line">News ................ <span class="terminal-success">ACTIVE</span> <span class="terminal-accent">(monitoring)</span></div>
+      <div class="terminal-line">Donna ............... <span class="terminal-success">ACTIVE</span> <span class="terminal-accent">(travel)</span></div>
+      <div class="terminal-line" style="margin-top:6px">All systems operational. 0 errors in last 24h.</div>
+      <div class="terminal-line"><span class="terminal-prompt">$</span> <span style="color:var(--text-muted)">_</span></div>
+    </div>
+  </div>
+
+  <!-- RIGHT COLUMN -->
+  <div class="right-col">
+    <div class="agent-panel">
+      <div class="agent-panel-title">
+        <span><span class="agent-live"></span> Agent Control Panel</span>
+      </div>
+      <ul class="agent-list">
+        <li class="agent-item">
+          <div>
+            <div class="agent-name"><span class="agent-icon" style="background:#4f46e5">F</span>Fire Hermes</div>
+            <div class="agent-desc">System oversight & coordination</div>
+          </div>
+          <span class="agent-status status-active">Active</span>
+        </li>
+        <li class="agent-item">
+          <div>
+            <div class="agent-name"><span class="agent-icon" style="background:#059669">L</span>Lorelai</div>
+            <div class="agent-desc">Finance tracking & analysis</div>
+          </div>
+          <span class="agent-status status-active">Active</span>
+        </li>
+        <li class="agent-item">
+          <div>
+            <div class="agent-name"><span class="agent-icon" style="background:#7c3aed">H</span>Hermione</div>
+            <div class="agent-desc">Deep research & learning</div>
+          </div>
+          <span class="agent-status status-active">Active</span>
+        </li>
+        <li class="agent-item">
+          <div>
+            <div class="agent-name"><span class="agent-icon" style="background:#ea580c">C</span>Claire</div>
+            <div class="agent-desc">Walmart shopping automation</div>
+          </div>
+          <span class="agent-status status-active">Active</span>
+        </li>
+        <li class="agent-item">
+          <div>
+            <div class="agent-name"><span class="agent-icon" style="background:#0891b2">N</span>News</div>
+            <div class="agent-desc">X/Twitter monitoring & briefings</div>
+          </div>
+          <span class="agent-status status-active">Active</span>
+        </li>
+        <li class="agent-item">
+          <div>
+            <div class="agent-name"><span class="agent-icon" style="background:#db2777">D</span>Donna</div>
+            <div class="agent-desc">Travel planning & flights</div>
+          </div>
+          <span class="agent-status status-active">Active</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Tech Stack</div>
+      <div class="stack-grid">
+        <div class="stack-item"><span class="logo-placeholder" style="background:#3776ab;width:18px;height:18px;font-size:0.55rem">Py</span>Python</div>
+        <div class="stack-item"><span class="logo-placeholder" style="background:#f7df1e;color:#000;width:18px;height:18px;font-size:0.55rem">JS</span>JavaScript</div>
+        <div class="stack-item"><span class="logo-placeholder" style="background:#003b57;width:18px;height:18px;font-size:0.5rem">SQL</span>SQLite</div>
+        <div class="stack-item"><span class="logo-placeholder" style="background:#2496ed;width:18px;height:18px;font-size:0.5rem">Do</span>Docker</div>
+        <div class="stack-item"><span class="logo-placeholder" style="background:#181717;width:18px;height:18px;font-size:0.5rem">GH</span>GitHub</div>
+        <div class="stack-item"><span class="logo-placeholder" style="background:#5865f2;width:18px;height:18px;font-size:0.5rem">Di</span>Discord</div>
+        <div class="stack-item"><span class="logo-placeholder" style="background:#0052cc;width:18px;height:18px;font-size:0.5rem">Ji</span>Jira</div>
+        <div class="stack-item"><span class="logo-placeholder" style="background:#f7931e;width:18px;height:18px;font-size:0.5rem">Bt</span>Bitcoin</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Local AI</div>
+      <div class="stack-grid">
+        <div class="stack-item"><span class="logo-placeholder" style="background:#6b7280;width:18px;height:18px;font-size:0.5rem">Ll</span>llama.cpp</div>
+        <div class="stack-item"><span class="logo-placeholder" style="background:#7c3aed;width:18px;height:18px;font-size:0.5rem">Qw</span>Qwen 2.5</div>
+        <div class="stack-item"><span class="logo-placeholder" style="background:#059669;width:18px;height:18px;font-size:0.5rem">Ax</span>Axolotl</div>
+        <div class="stack-item"><span class="logo-placeholder" style="background:#4f46e5;width:18px;height:18px;font-size:0.5rem">Un</span>Unsloth</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>Built with Hermes Agent — 6-agent autonomous ecosystem running locally on Windows</p>
+  <p style="margin-top:6px;font-size:0.7rem">Zero cloud AI dependencies. 100% local inference. 24/7 automated operations.</p>
+</div>
+
+</body>
+</html>

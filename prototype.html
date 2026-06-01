@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Felipe Postigo — AI Engineer</title>
+<style>
+  :root {
+    --charcoal: #1A1A1A;
+    --charcoal-light: #2D2D2D;
+    --warm-paper: #F5F3EF;
+    --bronze: #7A5A3A;
+    --bronze-light: #A67C52;
+    --text-primary: #1A1A1A;
+    --text-secondary: #6B6B6B;
+    --text-muted: #9A9A9A;
+    --border: #E5E5E5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--warm-paper);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Navigation */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 24px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(245, 243, 239, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+    color: var(--charcoal);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--bronze);
+  }
+
+  .nav-cta {
+    background: var(--charcoal);
+    color: var(--warm-paper);
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+
+  .nav-cta:hover {
+    background: var(--bronze);
+  }
+
+  /* Hero Section */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 48px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 64px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .hero-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--bronze);
+  }
+
+  .hero-name {
+    font-size: 72px;
+    font-weight: 800;
+    letter-spacing: -3px;
+    line-height: 1.05;
+    color: var(--charcoal);
+  }
+
+  .hero-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-top: -8px;
+  }
+
+  .hero-value {
+    font-size: 18px;
+    color: var(--text-secondary);
+    max-width: 520px;
+    line-height: 1.7;
+  }
+
+  .hero-cta-row {
+    display: flex;
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  .btn-primary {
+    background: var(--charcoal);
+    color: var(--warm-paper);
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    background: var(--bronze);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--charcoal);
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    border: 2px solid var(--border);
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--bronze);
+    color: var(--bronze);
+  }
+
+  .hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-card {
+    background: var(--charcoal);
+    border-radius: 16px;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    color: var(--warm-paper);
+    box-shadow: 0 24px 64px rgba(0,0,0,0.15);
+  }
+
+  .card-header {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--bronze-light);
+    margin-bottom: 24px;
+  }
+
+  .card-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .card-stat:last-child {
+    border-bottom: none;
+  }
+
+  .stat-number {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--warm-paper);
+  }
+
+  .stat-label {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  /* Stats Bar */
+  .stats-bar {
+    background: var(--charcoal);
+    padding: 48px;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .stat-item-number {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--warm-paper);
+    letter-spacing: -2px;
+  }
+
+  .stat-item-label {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Section Styles */
+  .section {
+    padding: 80px 48px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    margin-bottom: 48px;
+  }
+
+  .section-tag {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--bronze);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    color: var(--charcoal);
+  }
+
+  /* Capabilities */
+  .capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .capability-card {
+    background: white;
+    border-radius: 12px;
+    padding: 32px;
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+  }
+
+  .capability-card:hover {
+    border-color: var(--bronze);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  }
+
+  .capability-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--charcoal);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+
+  .capability-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--charcoal);
+  }
+
+  .capability-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* Work Proof */
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .work-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+  }
+
+  .work-card:hover {
+    border-color: var(--bronze);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  }
+
+  .work-image {
+    height: 200px;
+    background: var(--charcoal-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 14px;
+  }
+
+  .work-content {
+    padding: 24px;
+  }
+
+  .work-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--charcoal);
+  }
+
+  .work-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .work-tags {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+
+  .work-tag {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    background: var(--warm-paper);
+    border-radius: 4px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: var(--charcoal);
+    padding: 80px 48px;
+    text-align: center;
+  }
+
+  .cta-section .section-title {
+    color: var(--warm-paper);
+  }
+
+  .cta-section .section-tag {
+    color: var(--bronze-light);
+  }
+
+  .cta-section p {
+    color: var(--text-muted);
+    max-width: 500px;
+    margin: 0 auto 32px;
+    font-size: 18px;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: var(--bronze);
+    color: var(--warm-paper);
+    padding: 16px 36px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+
+  .cta-btn:hover {
+    background: var(--bronze-light);
+    transform: translateY(-1px);
+  }
+
+  /* Footer */
+  footer {
+    padding: 24px 48px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .hero-name {
+      font-size: 48px;
+    }
+    .capabilities-grid,
+    .work-grid {
+      grid-template-columns: 1fr;
+    }
+    .stats-bar {
+      flex-direction: column;
+      gap: 32px;
+    }
+    nav {
+      padding: 16px 24px;
+    }
+    .nav-links {
+      display: none;
+    }
+    .section {
+      padding: 60px 24px;
+    }
+    .hero {
+      padding: 100px 24px 60px;
+    }
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+  <div class="logo">Felipe Postigo</div>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#capabilities">Capabilities</a></li>
+    <li><a href="#proof">Proof</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Schedule Interview</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-label">Available for hire</div>
+      <h1 class="hero-name">Felipe Postigo</h1>
+      <div class="hero-title">Senior AI Engineer</div>
+      <p class="hero-value">
+        Building AI systems that drive revenue and operational excellence. 
+        Specialized in LLM deployment, multi-agent systems, and production ML infrastructure.
+      </p>
+      <div class="hero-cta-row">
+        <a href="#contact" class="btn-primary">Schedule Interview</a>
+        <a href="#work" class="btn-secondary">View Work</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card">
+        <div class="card-header">At a Glance</div>
+        <div class="card-stat">
+          <span class="stat-number">5</span>
+          <span class="stat-label">AI Products Deployed</span>
+        </div>
+        <div class="card-stat">
+          <span class="stat-number">15</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="card-stat">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Patents Filed</span>
+        </div>
+        <div class="card-stat">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Talks & Publications</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-item-number">5</div>
+    <div class="stat-item-label">AI Products Deployed</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-item-number">15</div>
+    <div class="stat-item-label">Years Experience</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-item-number">3</div>
+    <div class="stat-item-label">Patents Filed</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-item-number">50+</div>
+    <div class="stat-item-label">Talks & Publications</div>
+  </div>
+</div>
+
+<section class="section" id="capabilities">
+  <div class="section-header">
+    <div class="section-tag">Capabilities</div>
+    <h2 class="section-title">What I Do</h2>
+  </div>
+  <div class="capabilities-grid">
+    <div class="capability-card">
+      <div class="capability-icon">🤖</div>
+      <div class="capability-title">LLM Systems</div>
+      <div class="capability-desc">Design and deploy large language model systems for production use, including RAG pipelines, fine-tuning, and inference optimization.</div>
+    </div>
+    <div class="capability-card">
+      <div class="capability-icon">⚡</div>
+      <div class="capability-title">Multi-Agent Systems</div>
+      <div class="capability-desc">Build autonomous agent ecosystems with persistent memory, task orchestration, and multi-layer reasoning capabilities.</div>
+    </div>
+    <div class="capability-card">
+      <div class="capability-icon">🏗️</div>
+      <div class="capability-title">ML Infrastructure</div>
+      <div class="capability-desc">Architect production ML pipelines, model serving systems, and monitoring infrastructure at scale.</div>
+    </div>
+    <div class="capability-card">
+      <div class="capability-icon">📊</div>
+      <div class="capability-title">Data Engineering</div>
+      <div class="capability-desc">Design data pipelines, ETL systems, and real-time processing infrastructure for AI workloads.</div>
+    </div>
+    <div class="capability-card">
+      <div class="capability-icon">🔧</div>
+      <div class="capability-title">System Design</div>
+      <div class="capability-desc">Design distributed systems, API architectures, and microservices for AI-powered applications.</div>
+    </div>
+    <div class="capability-card">
+      <div class="capability-icon">📈</div>
+      <div class="capability-title">AI Strategy</div>
+      <div class="capability-desc">Define AI roadmaps, technology evaluation frameworks, and implementation strategies for business impact.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <div class="section-header">
+    <div class="section-tag">Selected Work</div>
+    <h2 class="section-title">Projects</h2>
+  </div>
+  <div class="work-grid">
+    <div class="work-card">
+      <div class="work-image">[Project Screenshot]</div>
+      <div class="work-content">
+        <div class="work-title">Autonomous Agent Ecosystem</div>
+        <div class="work-desc">Multi-layer agent system with persistent memory, SQLite task queues, and multi-agent orchestration.</div>
+        <div class="work-tags">
+          <span class="work-tag">Python</span>
+          <span class="work-tag">SQLite</span>
+          <span class="work-tag">Kanban</span>
+        </div>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-image">[Project Screenshot]</div>
+      <div class="work-content">
+        <div class="work-title">LLM Router & Gateway</div>
+        <div class="work-desc">Intelligent model routing with fallback chains, rate limiting, and cost optimization across providers.</div>
+        <div class="work-tags">
+          <span class="work-tag">Go</span>
+          <span class="work-tag">Redis</span>
+          <span class="work-tag">OpenAI</span>
+        </div>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-image">[Project Screenshot]</div>
+      <div class="work-content">
+        <div class="work-title">Real-time ML Pipeline</div>
+        <div class="work-desc">Event-driven ML pipeline with feature stores, model versioning, and A/B testing infrastructure.</div>
+        <div class="work-tags">
+          <span class="work-tag">Kafka</span>
+          <span class="work-tag">Spark</span>
+          <span class="work-tag">MLflow</span>
+        </div>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-image">[Project Screenshot]</div>
+      <div class="work-content">
+        <div class="work-title">Financial Forecasting Engine</div>
+        <div class="work-desc">Time-series forecasting system for revenue prediction with uncertainty quantification.</div>
+        <div class="work-tags">
+          <span class="work-tag">PyTorch</span>
+          <span class="work-tag">TimescaleDB</span>
+          <span class="work-tag">AWS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="proof">
+  <div class="section-header">
+    <div class="section-tag">Proof</div>
+    <h2 class="section-title">Speaking & Publications</h2>
+  </div>
+  <div class="work-grid">
+    <div class="work-card">
+      <div class="work-content">
+        <div class="work-title">Conference Talks</div>
+        <div class="work-desc">Keynote and technical talks at major AI/ML conferences on multi-agent systems, LLM deployment, and production AI infrastructure.</div>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-content">
+        <div class="work-title">Technical Publications</div>
+        <div class="work-desc">Published research on autonomous agent architectures, efficient inference techniques, and AI system design patterns.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="contact">
+  <div class="section-tag">Let's Connect</div>
+  <h2 class="section-title">Ready to Interview?</h2>
+  <p>Zero friction. One click to schedule a time that works for you.</p>
+  <a href="https://calendly.com" class="cta-btn">Schedule Interview</a>
+</section>
+
+<footer>
+  © 2026 Felipe Postigo. Built with care.
+</footer>
+
+</body>
+</html>

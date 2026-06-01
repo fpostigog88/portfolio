@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Felipe Postigo — MBA + Applied AI</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QNWVGSNNHS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QNWVGSNNHS');
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+
+/* Cookie consent banner */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--text);
+  color: #fff;
+  padding: 14px 24px;
+  font-size: 0.8rem;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.cookie-banner p {
+  margin: 0;
+  color: rgba(255,255,255,0.8);
+}
+.cookie-banner a {
+  color: var(--accent-light);
+  text-decoration: underline;
+}
+.cookie-btn {
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+.cookie-btn-accept {
+  background: var(--accent);
+  color: white;
+}
+.cookie-btn-accept:hover {
+  background: var(--accent-light);
+}
+.cookie-btn-dismiss {
+  background: transparent;
+  color: rgba(255,255,255,0.6);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.cookie-btn-dismiss:hover {
+  color: white;
+  border-color: rgba(255,255,255,0.4);
+}
+.cookie-hidden { display: none !important; }
+
+:root {
+  --bg: #faf9f7;
+  --bg-card: #ffffff;
+  --bg-elevated: #f5f3ef;
+  --border: #e8e5e0;
+  --text: #1a1a2e;
+  --text-secondary: #5a5a6a;
+  --text-muted: #8b8b9a;
+  --accent: #b8956a;
+  --accent-light: #d4b896;
+  --accent-dark: #8a6d4a;
+  --accent-glow: rgba(184, 149, 106, 0.12);
+  --success: #059669;
+  --info: #2563eb;
+  --warning: #d97706;
+  --danger: #dc2626;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.5;min-height:100vh}
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #ffffff 0%, #f5f3ef 50%, #faf9f7 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 48px 32px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -10%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent-glow);
+  border: 1px solid rgba(184, 149, 106, 0.3);
+  color: var(--accent-dark);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+.hero-badge .dot {
+  width: 6px; height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+.hero h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+.hero h1 .highlight {
+  color: var(--accent-dark);
+}
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.hero-value {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  max-width: 520px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.hero-ctas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.hero-cta-primary {
+  background: var(--accent);
+  color: white;
+}
+.hero-cta-primary:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+}
+.hero-cta-secondary {
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+.hero-cta-secondary:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+/* Contact links */
+.hero-contact-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+.hero-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+.hero-contact-link:hover {
+  border-color: var(--accent);
+  color: var(--accent-dark);
+  transform: translateY(-1px);
+}
+.hero-contact-link svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.hero-right {
+  text-align: right;
+}
+.hero-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.hero-stat {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+.hero-stat-value {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+  margin-bottom: 4px;
+}
+.hero-stat-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Main Layout */
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 260px 1fr 300px;
+  gap: 24px;
+}
+
+/* Cards */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+.card-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logos */
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 4px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: all 0.2s;
+  text-align: center;
+}
+.logo-item:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+.logo-item img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+.logo-placeholder {
+  width: 28px; height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: white;
+}
+
+/* Experience */
+.exp-item {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.exp-item:last-child { border-bottom: none; }
+.exp-company {
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 2px;
+  color: var(--text);
+}
+.exp-role {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+.exp-desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.exp-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  margin-top: 6px;
+  margin-right: 4px;
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+/* Experience Section (Full Width) */
+.experience-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px 32px;
+}
+.exp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.exp-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+.exp-card .exp-company { font-size: 0.85rem; }
+.exp-card .exp-role { font-size: 0.75rem; margin-bottom: 6px; }
+.exp-card .exp-desc { font-size: 0.7rem; margin-bottom: 8px; }
+
+/* Center: Projects */
+.project-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  transition: all 0.2s;
+}
+.project-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+.project-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.project-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.project-badge {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.badge-green { background: rgba(5, 150, 105, 0.08); color: var(--success); border: 1px solid rgba(5, 150, 105, 0.15); }
+.badge-blue { background: rgba(37, 99, 235, 0.08); color: var(--info); border: 1px solid rgba(37, 99, 235, 0.15); }
+.badge-orange { background: rgba(217, 119, 6, 0.08); color: var(--warning); border: 1px solid rgba(217, 119, 6, 0.15); }
+.project-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+.project-metrics {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.project-metric {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.project-metric-value {
+  font-weight: 700;
+  color: var(--text);
+}
+.project-links {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.link-primary {
+  background: var(--accent);
+  color: white;
+}
+.link-primary:hover {
+  background: var(--accent-dark);
+}
+.link-secondary {
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+.link-secondary:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+/* Video Demo */
+.video-demo {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  color: white;
+}
+.video-demo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.video-demo-title {
+  font-size: 1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.video-demo-badge {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  background: rgba(74, 222, 128, 0.12);
+  color: #4ade80;
+  border: 1px solid rgba(74, 222, 128, 0.2);
+}
+.video-demo-player {
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 32px;
+  text-align: center;
+  margin-bottom: 14px;
+}
+.video-demo-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--accent-light);
+}
+.video-demo-text {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 14px;
+}
+.video-demo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--accent);
+  color: var(--bg);
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s;
+  font-size: 0.85rem;
+}
+.video-demo-btn:hover {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+}
+
+/* Ecosystem Card */
+.ecosystem-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+.ecosystem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+.ecosystem-item {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px;
+  text-align: center;
+}
+.ecosystem-icon {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 auto 8px;
+}
+.ecosystem-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.ecosystem-desc {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+/* Terminal */
+.terminal {
+  background: #0a0a10;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  overflow-x: auto;
+  margin-bottom: 16px;
+}
+.terminal-header {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+.terminal-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+}
+.terminal-dot.red { background: #ef4444; }
+.terminal-dot.yellow { background: #f59e0b; }
+.terminal-dot.green { background: #22c55e; }
+.terminal-line { color: var(--text-secondary); margin-bottom: 3px; }
+.terminal-prompt { color: var(--accent); }
+.terminal-success { color: var(--success); }
+.terminal-accent { color: var(--info); }
+
+/* Right: Agent Panel */
+.agent-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.agent-panel-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-dark);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.agent-live {
+  width: 6px; height: 6px;
+  background: var(--success);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  display: inline-block;
+  margin-right: 6px;
+}
+.agent-list { list-style: none; }
+.agent-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.8rem;
+}
+.agent-item:last-child { border-bottom: none; }
+.agent-name {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+.agent-icon {
+  width: 22px; height: 22px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+.agent-desc {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-left: 30px;
+}
+.agent-status {
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.status-active { background: rgba(5, 150, 105, 0.08); color: var(--success); }
+
+/* Footer */
+.footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 32px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .main { grid-template-columns: 1fr 1fr; }
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-right { text-align: left; }
+    .hero-stats { grid-template-columns: repeat(4, 1fr); }
+    .exp-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .main { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2rem; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+    .logo-grid { grid-template-columns: repeat(4, 1fr); }
+    .ecosystem-grid { grid-template-columns: 1fr 1fr; }
+    .hero-ctas { flex-direction: column; }
+    .exp-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge"><span class="dot"></span> Available for hire</div>
+      <h1>Felipe Postigo</h1>
+      <div class="hero-subtitle">MBA + Applied AI</div>
+      <div class="hero-value">University of Michigan MBA. 10+ years across real estate, commercial strategy, and applied AI/ML. Built a 6-agent autonomous ecosystem that eliminates cognitive load and delivers measurable ROI.</div>
+      <div class="hero-ctas">
+        <a href="https://calendly.com/fpostigo/30min" class="hero-cta hero-cta-primary" target="_blank">📧 Schedule Interview</a>
+        <a href="resume.pdf" class="hero-cta hero-cta-secondary" target="_blank">📄 Download Resume</a>
+        <a href="#projects" class="hero-cta hero-cta-secondary">💼 View Projects</a>
+      </div>
+      <div class="hero-contact-links">
+        <a href="resume.pdf" class="hero-contact-link" target="_blank" title="View Resume PDF">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          Resume
+        </a>
+        <a href="https://linkedin.com/in/felipepostigo" class="hero-contact-link" target="_blank" title="LinkedIn Profile">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="mailto:fpostigo@umich.edu" class="hero-contact-link" title="Send Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Email
+        </a>
+        <a href="sms:+17344507404" class="hero-contact-link" title="Send SMS / iMessage">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          SMS
+        </a>
+        <a href="https://wa.me/17344507404" class="hero-contact-link" target="_blank" title="Send WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-value">$16B</div>
+          <div class="hero-stat-label">Revenue Supported</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">7</div>
+          <div class="hero-stat-label">ML Models</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">6</div>
+          <div class="hero-stat-label">AI Agents</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">120h</div>
+          <div class="hero-stat-label">Saved/Quarter</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Main -->
+<div class="main" id="projects">
+
+  <!-- LEFT COLUMN -->
+  <div class="left-col">
+    <!-- Work Logos -->
+    <div class="card">
+      <div class="card-title">Work & Education</div>
+      <div class="logo-grid">
+        <div class="logo-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_Logo.svg" alt="Dell" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#007db8\'>D</div>Dell'">
+          Dell
+        </div>
+        <div class="logo-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Michigan_Wolverines_logo.svg" alt="Michigan" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#ffcb05;color:#00274c\'>M</div>Michigan'">
+          Michigan
+        </div>
+        <div class="logo-item">
+          <div class="logo-placeholder" style="background:#4f46e5">H</div>
+          Hermes
+        </div>
+        <div class="logo-item">
+          <img src="logo_openclaw.webp" alt="Claw" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
+          Claw
+        </div>
+      </div>
+    </div>
+
+    <!-- Tech Logos -->
+    <div class="card">
+      <div class="card-title">AI & Cloud</div>
+      <div class="logo-grid">
+        <div class="logo-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" alt="OpenAI" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#10a37f\'>O</div>OpenAI'">
+          OpenAI
+        </div>
+        <div class="logo-item">
+          <img src="logo_claude.png" alt="Claude" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
+          Claude
+        </div>
+        <div class="logo-item">
+          <img src="logo_fireworks.png" alt="Fireworks" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
+          Fireworks
+        </div>
+        <div class="logo-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="PowerBI" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#f2c811;color:#000\'>P</div>PowerBI'">
+          PowerBI
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Productivity</div>
+      <div class="logo-grid">
+        <div class="logo-item">
+          <img src="logo_excel.png" alt="Excel" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
+          Excel
+        </div>
+        <div class="logo-item">
+          <img src="logo_powerpoint.png" alt="PPT" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
+          PPT
+        </div>
+        <div class="logo-item">
+          <img src="logo_word.png" alt="Word" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
+          Word
+        </div>
+        <div class="logo-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#3776ab\'>Py</div>Python'">
+          Python
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Infrastructure</div>
+      <div class="logo-grid">
+        <div class="logo-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" alt="Linux" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#fcc624;color:#000\'>L</div>Linux'">
+          Linux
+        </div>
+        <div class="logo-item">
+          <img src="logo_windows.png" alt="Windows" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
+          Windows
+        </div>
+        <div class="logo-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Sqlite-square-icon.svg" alt="SQLite" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#003b57\'>SQL</div>SQLite'">
+          SQLite
+        </div>
+        <div class="logo-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" alt="Docker" onerror="this.style.display='none';this.parentNode.innerHTML='<div class='logo-placeholder' style='background:#2496ed'>Do</div>Docker'">
+          Docker
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+
+  <!-- CENTER COLUMN -->
+  <div class="center-col">
+
+    <!-- Video Demo -->
+    <div class="video-demo">
+      <div class="video-demo-header">
+        <div class="video-demo-title">🎬 Live System Demo</div>
+        <div class="video-demo-badge">Production</div>
+      </div>
+      <div class="video-demo-player">
+        <div class="video-demo-icon">▶</div>
+        <div class="video-demo-text">Autonomous Workflow Engine — PC-to-Android task execution</div>
+        <a href="https://youtu.be/yAfvXZR69eY?si=4VnpACzK_T6NtFm-" target="_blank" class="video-demo-btn">
+          <span>▶</span> Watch Demo
+        </a>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-title">⚙️ Autonomous Workflow Engine</div>
+        <span class="project-badge badge-green">Production</span>
+      </div>
+      <div class="project-desc">From PC orchestration to Android task execution. Automates repeatable mobile workflows using ADB control, scheduling logic, and execution monitoring.</div>
+      <div class="project-metrics">
+        <div class="project-metric"><span class="project-metric-value">Automation</span> • Android • Workflow • Execution</div>
+      </div>
+      <div class="project-links">
+        <span class="project-link link-secondary">Python</span>
+        <span class="project-link link-secondary">ADB</span>
+        <span class="project-link link-secondary">Android</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-title">💰 FinanceApp</div>
+        <span class="project-badge badge-green">Production</span>
+      </div>
+      <div class="project-desc">Personal finance intelligence with Plaid integration, automated categorization, anomaly detection, multi-bank aggregation. Encrypted local storage.</div>
+      <div class="project-metrics">
+        <div class="project-metric"><span class="project-metric-value">Multi-bank</span> sync</div>
+        <div class="project-metric"><span class="project-metric-value">Anomaly</span> detection</div>
+        <div class="project-metric"><span class="project-metric-value">Fernet</span> encrypted</div>
+      </div>
+      <div class="project-links">
+        <span class="project-link link-secondary">Python</span>
+        <span class="project-link link-secondary">SQLite</span>
+        <span class="project-link link-secondary">Plaid API</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT COLUMN -->
+  <div class="right-col">
+    <div class="agent-panel">
+      <div class="agent-panel-title">
+        <span><span class="agent-live"></span> 6-Agent AI Ecosystem</span>
+      </div>
+      <ul class="agent-list">
+        <li class="agent-item">
+          <div>
+            <div class="agent-name"><span class="agent-icon" style="background:#4f46e5">F</span>Fire Hermes</div>
+            <div class="agent-desc">System oversight & coordination</div>
+          </div>
+          <span class="agent-status status-active">Active</span>
+        </li>
+        <li class="agent-item">
+          <div>
+            <div class="agent-name"><span class="agent-icon" style="background:#059669">L</span>Lorelai</div>
+            <div class="agent-desc">Finance tracking & analysis</div>
+          </div>
+          <span class="agent-status status-active">Active</span>
+        </li>
+        <li class="agent-item">
+          <div>
+            <div class="agent-name"><span class="agent-icon" style="background:#7c3aed">H</span>Hermione</div>
+            <div class="agent-desc">Deep research & learning</div>
+          </div>
+          <span class="agent-status status-active">Active</span>
+        </li>
+        <li class="agent-item">
+          <div>
+            <div class="agent-name"><span class="agent-icon" style="background:#ea580c">C</span>Claire</div>
+            <div class="agent-desc">Walmart shopping automation</div>
+          </div>
+          <span class="agent-status status-active">Active</span>
+        </li>
+        <li class="agent-item">
+          <div>
+            <div class="agent-name"><span class="agent-icon" style="background:#0891b2">N</span>News</div>
+            <div class="agent-desc">X/Twitter monitoring & briefings</div>
+          </div>
+          <span class="agent-status status-active">Active</span>
+        </li>
+        <li class="agent-item">
+          <div>
+            <div class="agent-name"><img src="logo_advisor.webp" alt="Personal Advisor" style="width:20px;height:20px;object-fit:cover;border-radius:50%;display:inline-block;vertical-align:middle;margin-right:8px;">Personal Advisor</div>
+            <div class="agent-desc">Life & travel planning</div>
+          </div>
+          <span class="agent-status status-active">Active</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Tech Stack</div>
+      <div class="logo-grid">
+        <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" onerror="this.style.display='none';this.parentNode.innerHTML='<div class='logo-placeholder' style='background:#3776ab'>Py</div>Python'">Python</div>
+        <div class="logo-item"><div class="logo-placeholder" style="background:#f7df1e;color:#000">JS</div>JS</div>
+        <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Sqlite-square-icon.svg" alt="SQLite" onerror="this.style.display='none';this.parentNode.innerHTML='<div class='logo-placeholder' style='background:#003b57'>SQL</div>SQLite'">SQLite</div>
+        <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" alt="Docker" onerror="this.style.display='none';this.parentNode.innerHTML='<div class='logo-placeholder' style='background:#2496ed'>Do</div>Docker'">Docker</div>
+        <div class="logo-item"><div class="logo-placeholder" style="background:#181717">GH</div>GitHub</div>
+        <div class="logo-item"><img src="logo_discord.png" alt="Discord" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">Discord</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Local AI</div>
+      <div class="logo-grid">
+        <div class="logo-item"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#6b7280"/></svg>llama.cpp</div>
+        <div class="logo-item"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#7c3aed" stroke-width="2" fill="none"/></svg>Qwen</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Experience Section (Full Width) -->
+<div class="experience-section" id="experience">
+  <div class="card-title" style="margin-bottom:16px;">Experience</div>
+  <div class="exp-grid">
+    <div class="exp-card">
+      <div class="exp-company">Dell Technologies</div>
+      <div class="exp-role">Sr. Advisor — AI/ML (2023–Present)</div>
+      <div class="exp-desc">$16B Lead Price Plan (90%+ accuracy). Margin Leakage AI — 7 cross-referenced ML models. Saved 120+ hours/quarter.</div>
+      <div><span class="exp-tag">AI/ML</span><span class="exp-tag">Pricing</span></div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-company">ACHS (Hospital)</div>
+      <div class="exp-role">Commercial Head (2020–2021)</div>
+      <div class="exp-desc">+20% sales, -60% invoice time. Data analytics dashboard (-90% reporting time).</div>
+      <div><span class="exp-tag">Strategy</span><span class="exp-tag">Analytics</span></div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-company">Moller y Perez-Cotapos</div>
+      <div class="exp-role">Associate Manager — Real Estate (2012–2020)</div>
+      <div class="exp-desc">Acquired $100M+ in assets. Led team of 7 analysts. +60% business unit profits. 22 new projects with investment funds.</div>
+      <div><span class="exp-tag">Real Estate</span><span class="exp-tag">Leadership</span></div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-company">University of Michigan</div>
+      <div class="exp-role">MBA, Ross School of Business (2023)</div>
+      <div class="exp-desc">Dean's Fellowship (Full-Tuition Merit Scholarship). Focus on strategy and operations.</div>
+      <div><span class="exp-tag">MBA</span></div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-company">Universidad Catolica de Chile</div>
+      <div class="exp-role">BBA, Honors Scholarship (2012)</div>
+      <div class="exp-desc">Graduated top 11%. Teaching assistant. Mentorship.</div>
+      <div><span class="exp-tag">BBA</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>Built with Hermes Agent — 6-agent autonomous ecosystem running locally on Windows</p>
+  <p style="margin-top:6px;font-size:0.7rem">Zero cloud AI dependencies. 100% local inference. 24/7 automated operations.</p>
+  <div class="hero-contact-links" style="justify-content:center;margin-top:16px;">
+    <a href="resume.pdf" class="hero-contact-link" target="_blank" title="View Resume PDF">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      Resume
+    </a>
+    <a href="https://linkedin.com/in/felipepostigo" class="hero-contact-link" target="_blank" title="LinkedIn Profile">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+    <a href="mailto:fpostigo@umich.edu" class="hero-contact-link" title="Send Email">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Email
+    </a>
+    <a href="sms:+17344507404" class="hero-contact-link" title="Send SMS / iMessage">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      SMS
+    </a>
+    <a href="https://wa.me/17344507404" class="hero-contact-link" target="_blank" title="Send WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" class="cookie-banner cookie-hidden">
+  <p>This site uses Google Analytics to understand how visitors find the portfolio. <a href="https://policies.google.com/technologies/cookies" target="_blank">Learn more</a></p>
+  <div style="display:flex;gap:8px;">
+    <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Accept</button>
+    <button class="cookie-btn cookie-btn-dismiss" onclick="dismissCookies()">Decline</button>
+  </div>
+</div>
+
+<script>
+  // Cookie consent logic
+  function acceptCookies() {
+    localStorage.setItem('cookie_consent', 'accepted');
+    document.getElementById('cookie-banner').classList.add('cookie-hidden');
+  }
+  function dismissCookies() {
+    localStorage.setItem('cookie_consent', 'declined');
+    document.getElementById('cookie-banner').classList.add('cookie-hidden');
+  }
+  // Show banner if not yet decided
+  if (!localStorage.getItem('cookie_consent')) {
+    document.getElementById('cookie-banner').classList.remove('cookie-hidden');
+  }
+</script>
+
+</body>
+</html>

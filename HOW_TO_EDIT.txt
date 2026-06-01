@@ -1,0 +1,64 @@
+HOW TO EDIT YOUR PORTFOLIO WEBSITE (No Coding Required)
+=======================================================
+
+You have RocketCake installed - a free visual website editor.
+It works like Microsoft Word. You click text, you edit it.
+
+STEP 1: OPEN THE FILE
+--------------------
+1. Open RocketCake (search for it in your Start Menu)
+2. Click File > Open
+3. Navigate to: C:\Users\cadel\deep_council_final\portfolio_v2_light.html
+4. Click Open
+
+STEP 2: EDIT TEXT (Just Like Word)
+-----------------------------------
+- Click on any text you want to change
+- Type your new text
+- That's it. No coding needed.
+
+STEP 3: SAVE
+------------
+- Click File > Save
+- Or press Ctrl+S
+
+STEP 4: PREVIEW
+---------------
+- Click the "Preview" button in RocketCake
+- Or double-click the HTML file to open it in your browser
+
+WHAT YOU CAN EASILY CHANGE:
+---------------------------
+✓ Your name
+✓ Your title
+✓ All the text descriptions
+✓ The numbers/metrics
+✓ Button labels
+✓ The email address in the "Schedule Interview" button
+
+WHAT TO BE CAREFUL WITH:
+------------------------
+⚠ Don't delete anything that looks like code (things with < > symbols)
+⚠ Don't change colors unless you know what you're doing
+⚠ Don't resize images - they might break
+
+IF ROCKETCAKE DOESN'T WORK:
+---------------------------
+Option 1: Use Notepad (comes with Windows)
+  - Right-click the HTML file > Open with > Notepad
+  - Find the text you want to change (use Ctrl+F)
+  - Type your new text
+  - Save
+  - This is harder but works
+
+Option 2: Ask me to make the changes
+  - Just tell me what text you want changed
+  - I'll update it and send you the new file
+
+FILES IN THIS FOLDER:
+---------------------
+portfolio_v2_light.html      - Your main website file
+portfolio_v2_light.png       - Screenshot of the website
+HOW_TO_EDIT.txt            - This file
+CHEATSHEET.txt             - List of all editable text
+

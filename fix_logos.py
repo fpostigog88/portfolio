@@ -1,0 +1,171 @@
+import re
+
+with open('portfolio_v2_light.html', 'r', encoding='utf-8') as f:
+    html = f.read()
+
+# Inline SVG logos
+GITHUB_SVG = '<svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>'
+
+DISCORD_SVG = '<svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>'
+
+JIRA_SVG = '<svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M11.571 11.513H0a5.218 5.218 0 0 0 5.232 5.215h2.13v2.057A5.215 5.215 0 0 0 12.575 24V12.518a1.005 1.005 0 0 0-1.005-1.005zm5.723-5.756H5.736a5.215 5.215 0 0 0 5.215 5.214h2.129v2.058a5.218 5.218 0 0 0 5.215 5.214V6.758a1.001 1.001 0 0 0-1.001-1.001zM23.013 0H11.455a5.215 5.215 0 0 0 5.215 5.215h2.129v2.057A5.215 5.215 0 0 0 24 12.483V1.005A1.005 1.005 0 0 0 23.013 0z"/></svg>'
+
+BITCOIN_SVG = '<svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M23.638 14.904c-1.602 6.43-8.113 10.34-14.542 8.736C2.67 22.05-1.244 15.525.362 9.105 1.962 2.67 8.475-1.243 14.9.358c6.43 1.605 10.342 8.115 8.738 14.546zm-6.35-4.613c.24-1.59-.974-2.45-2.64-3.03l.54-2.153-1.315-.33-.52 2.1c-.347-.087-.7-.167-1.053-.25l.53-2.12-1.32-.33-.54 2.15c-.287-.065-.57-.13-.845-.2l-1.815-.45-.35 1.4s.975.224.955.238c.535.136.63.486.615.766l-.616 2.473c.037.01.085.025.138.05l-.14-.035-.865 3.47c-.066.166-.234.415-.612.32.014.02-.956-.238-.956-.238L8.15 16.795l1.71.428c.318.08.63.164.937.243l-.545 2.18 1.32.33.54-2.15c.36.098.707.188 1.05.273l-.54 2.13 1.32.33.545-2.18c2.24.423 3.926.252 4.636-1.77.572-1.63-.027-2.567-1.21-3.177.86-.2 1.508-.77 1.68-1.93h.003zm-3.01 4.22c-.406 1.64-3.16.75-4.05.53l.72-2.9c.9.22 3.78.66 3.33 2.37zm.41-4.24c-.37 1.49-2.65.73-3.39.55l.66-2.64c.74.18 3.13.53 2.73 2.09z"/></svg>'
+
+JS_SVG = '<svg width="28" height="28" viewBox="0 0 24 24"><rect width="24" height="24" rx="2" fill="#F7DF1E"/><text x="12" y="17" font-size="10" font-weight="700" text-anchor="middle" fill="black" font-family="Arial,sans-serif">JS</text></svg>'
+
+PYTHON_SVG = '<svg width="28" height="28" viewBox="0 0 24 24"><path d="M11.914.006c-.6.03-1.193.132-1.753.305-1.652.517-3.03 1.65-3.03 3.71v2.652c0 1.54 1.28 2.757 2.835 2.757h4.07c.24 0 .436.195.436.436v5.288c0 1.556-1.22 2.835-2.76 2.835H6.13c-1.56 0-2.76-1.27-2.76-2.835V6.02c0-1.73.92-3.15 2.27-3.9C7.13 1.29 8.69.59 10.42.59h2.23c.22 0 .435.018.65.053V.006h-1.386zM8.047 2.92a.665.665 0 0 1 .665-.665.665.665 0 0 1 .665.665.665.665 0 0 1-.665.665.665.665 0 0 1-.665-.665z" fill="#3776ab"/><path d="M15.75 23.994c.6-.03 1.193-.132 1.753-.305 1.652-.517 3.03-1.65 3.03-3.71v-2.652c0-1.54-1.28-2.757-2.835-2.757h-4.07a.436.436 0 0 1-.436-.436V8.946c0-1.556 1.22-2.835 2.76-2.835h4.532c1.56 0 2.76 1.27 2.76 2.835v12.174c0 1.73-.92 3.15-2.27 3.9-1.49.83-3.05 1.53-4.78 1.53h-2.23a6.04 6.04 0 0 1-.65-.053v.637h1.386zm3.867-2.914a.665.665 0 0 1-.665.665.665.665 0 0 1-.665-.665.665.665 0 0 1 .665-.665.665.665 0 0 1 .665.665z" fill="#ffd845"/><path d="M8.88 8.38h6.24c.24 0 .436.195.436.436v3.5c0 1.556-1.22 2.835-2.76 2.835H8.88c-1.56 0-2.76-1.27-2.76-2.835v-3.5c0-.24.195-.436.436-.436z" fill="#3776ab"/><path d="M15.12 15.62H8.88a.436.436 0 0 1-.436-.436v-3.5c0-1.556 1.22-2.835 2.76-2.835h3.916c1.56 0 2.76 1.27 2.76 2.835v3.5a.436.436 0 0 1-.436.436z" fill="#ffd845"/></svg>'
+
+SQLITE_SVG = '<svg width="28" height="28" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="#003b57"/></svg>'
+
+DOCKER_SVG = '<svg width="28" height="28" viewBox="0 0 24 24"><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V3.574a.185.185 0 00-.184-.185H8.1a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V3.574a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.888c0 .102.084.185.186.186zm-2.93 5.43h2.12a.186.186 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.186.186 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.185.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.185h-2.12a.185.185 0 00-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.097-.912.365-2.357.615-.562.095-1.14.14-1.72.14-.084-.155-.168-.305-.254-.447-.652-1.075-1.586-1.828-2.72-2.18-.687-.22-1.38-.227-2.06-.02-.106-.597-.172-1.17-.172-1.71 0-4.48 4.58-8.9 11.16-8.9 6.58 0 11.16 4.42 11.16 8.9 0 3.74-2.37 6.6-4.8 8.3zm-7.64-1.3c-3.13.55-5.7 1.2-7.45 1.9-1.26 3.17-3.12 4.98-5.34 4.98-.92 0-1.75-.28-2.46-.83 2.1-.2 4.18-.93 6.2-2.24 2.02-1.3 3.5-2.8 4.4-4.42.45-.83.77-1.68.96-2.52 1.67-.2 3.47-.55 5.37-1.05 1.2 3.2 3.13 5.04 5.4 5.04.94 0 1.79-.3 2.51-.88-2.18.23-4.3.94-6.36 2.18-2.06 1.24-3.6 2.8-4.63 4.5z" fill="#2496ed"/></svg>'
+
+LINUX_SVG = '<svg width="28" height="28" viewBox="0 0 24 24"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.202-2.916 4.033-1.02 2.322-1.022 4.929-1.022 5.197 0 1.925 1.285 3.533 3.557 4.468.866.335 1.794.586 2.747.741.15.027.3.05.453.05.074 0 .185-.016.268-.024.333-.05.67-.076 1.01-.076 1.68 0 3.067.646 3.595.94.188.104.377.22.57.357-.22-.544-.368-1.143-.368-1.8 0-2.74 1.985-5.022 4.596-5.49.088-.017.177-.034.268-.047-.16-.166-.34-.32-.535-.455-.466-.332-.99-.56-1.57-.67-.56-.107-1.14-.107-1.72-.107-.98 0-1.97.107-2.96.107-.98 0-1.97-.107-2.95-.107-1.01 0-2.02.107-3.03.107-.49 0-.99-.053-1.47-.16-.48-.107-.93-.267-1.35-.48-.82-.43-1.53-.99-2.1-1.67-.58-.69-1.02-1.48-1.32-2.35-.3-.87-.45-1.78-.45-2.72 0-.94.15-1.85.45-2.72.3-.87.74-1.66 1.32-2.35.57-.68 1.28-1.24 2.1-1.67.42-.22.87-.37 1.35-.48.48-.11.98-.16 1.47-.16.99 0 1.98.107 2.97.107.98 0 1.97-.107 2.95-.107.99 0 1.98.107 2.97.107.58 0 1.16.053 1.72.16.58.107 1.1.34 1.57.67.2.14.37.29.54.46z" fill="#fcc624"/></svg>'
+
+WINDOWS_SVG = '<svg width="28" height="28" viewBox="0 0 24 24"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801" fill="#0078d4"/></svg>'
+
+EXCEL_SVG = '<svg width="28" height="28" viewBox="0 0 24 24"><path d="M23 1.5q.41 0 .7.3.3.29.3.7v19q0 .41-.3.7-.29.3-.7.3H7q-.41 0-.7-.3-.3-.29-.3-.7V18H1q-.41 0-.7-.3-.3-.29-.3-.7V7q0-.41.3-.7.29-.3.7-.3h5V2.5q0-.41.3-.7.29-.3.7-.3zM6 13.28l1.48 1.36L11 11.18l.25.24 1.5 1.38 1.48-1.36L12.75 10l3.48-3.2L14.75 5.46 11 8.82 7.48 5.46 6 6.82l3.52 3.2z" fill="#217346"/></svg>'
+
+PPT_SVG = '<svg width="28" height="28" viewBox="0 0 24 24"><path d="M23 1.5q.41 0 .7.3.3.29.3.7v19q0 .41-.3.7-.29.3-.7.3H7q-.41 0-.7-.3-.3-.29-.3-.7V18H1q-.41 0-.7-.3-.3-.29-.3-.7V7q0-.41.3-.7.29-.3.7-.3h5V2.5q0-.41.3-.7.29-.3.7-.3zM6 13.28l1.48 1.36L11 11.18l.25.24 1.5 1.38 1.48-1.36L12.75 10l3.48-3.2L14.75 5.46 11 8.82 7.48 5.46 6 6.82l3.52 3.2z" fill="#d24726"/></svg>'
+
+WORD_SVG = '<svg width="28" height="28" viewBox="0 0 24 24"><path d="M23 1.5q.41 0 .7.3.3.29.3.7v19q0 .41-.3.7-.29.3-.7.3H7q-.41 0-.7-.3-.3-.29-.3-.7V18H1q-.41 0-.7-.3-.3-.29-.3-.7V7q0-.41.3-.7.29-.3.7-.3h5V2.5q0-.41.3-.7.29-.3.7-.3zM6 13.28l1.48 1.36L11 11.18l.25.24 1.5 1.38 1.48-1.36L12.75 10l3.48-3.2L14.75 5.46 11 8.82 7.48 5.46 6 6.82l3.52 3.2z" fill="#2b579a"/></svg>'
+
+# Tech Stack section
+html = html.replace(
+    '<div class="logo-item"><div class="logo-placeholder" style="background:#3776ab">Py</div>Python</div>',
+    f'<div class="logo-item">{PYTHON_SVG}Python</div>'
+)
+html = html.replace(
+    '<div class="logo-item"><div class="logo-placeholder" style="background:#f7df1e;color:#000">JS</div>JS</div>',
+    f'<div class="logo-item">{JS_SVG}JS</div>'
+)
+html = html.replace(
+    '<div class="logo-item"><div class="logo-placeholder" style="background:#003b57">SQL</div>SQLite</div>',
+    f'<div class="logo-item">{SQLITE_SVG}SQLite</div>'
+)
+html = html.replace(
+    '<div class="logo-item"><div class="logo-placeholder" style="background:#2496ed">Do</div>Docker</div>',
+    f'<div class="logo-item">{DOCKER_SVG}Docker</div>'
+)
+html = html.replace(
+    '<div class="logo-item"><div class="logo-placeholder" style="background:#181717">GH</div>GitHub</div>',
+    f'<div class="logo-item">{GITHUB_SVG}GitHub</div>'
+)
+html = html.replace(
+    '<div class="logo-item"><div class="logo-placeholder" style="background:#5865f2">Di</div>Discord</div>',
+    f'<div class="logo-item">{DISCORD_SVG}Discord</div>'
+)
+html = html.replace(
+    '<div class="logo-item"><div class="logo-placeholder" style="background:#0052cc">Ji</div>Jira</div>',
+    f'<div class="logo-item">{JIRA_SVG}Jira</div>'
+)
+html = html.replace(
+    '<div class="logo-item"><div class="logo-placeholder" style="background:#f7931e">Bt</div>Bitcoin</div>',
+    f'<div class="logo-item">{BITCOIN_SVG}Bitcoin</div>'
+)
+
+# Local AI section placeholders
+LLAMA_SVG = '<svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#6b7280"/></svg>'
+QWEN_SVG = '<svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#7c3aed" stroke-width="2" fill="none"/></svg>'
+AXOLOTL_SVG = '<svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="#059669"/></svg>'
+UNSLOTH_SVG = '<svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="#4f46e5"/></svg>'
+
+html = html.replace(
+    '<div class="logo-item"><div class="logo-placeholder" style="background:#6b7280">Ll</div>llama.cpp</div>',
+    f'<div class="logo-item">{LLAMA_SVG}llama.cpp</div>'
+)
+html = html.replace(
+    '<div class="logo-item"><div class="logo-placeholder" style="background:#7c3aed">Qw</div>Qwen</div>',
+    f'<div class="logo-item">{QWEN_SVG}Qwen</div>'
+)
+html = html.replace(
+    '<div class="logo-item"><div class="logo-placeholder" style="background:#059669">Ax</div>Axolotl</div>',
+    f'<div class="logo-item">{AXOLOTL_SVG}Axolotl</div>'
+)
+html = html.replace(
+    '<div class="logo-item"><div class="logo-placeholder" style="background:#4f46e5">Un</div>Unsloth</div>',
+    f'<div class="logo-item">{UNSLOTH_SVG}Unsloth</div>'
+)
+
+# Infrastructure section - replace img tags with fallbacks
+html = html.replace(
+    '<img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" alt="Linux" onerror="this.style.display=\'none\';this.parentNode.innerHTML=\'<div class=\'logo-placeholder\' style=\'background:#fcc624;color:#000\'>L</div>Linux\'">\n          Linux\n        </div>',
+    f'<div class="logo-item">{LINUX_SVG}Linux</div>'
+)
+html = html.replace(
+    '<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Windows_11_logo.svg" alt="Windows" onerror="this.style.display=\'none\';this.parentNode.innerHTML=\'<div class=\'logo-placeholder\' style=\'background:#0078d4\'>W</div>Windows\'">\n          Windows\n        </div>',
+    f'<div class="logo-item">{WINDOWS_SVG}Windows</div>'
+)
+html = html.replace(
+    '<img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Sqlite-square-icon.svg" alt="SQLite" onerror="this.style.display=\'none\';this.parentNode.innerHTML=\'<div class=\'logo-placeholder\' style=\'background:#003b57\'>SQL</div>SQLite\'">\n          SQLite\n        </div>',
+    f'<div class="logo-item">{SQLITE_SVG}SQLite</div>'
+)
+html = html.replace(
+    '<img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" alt="Docker" onerror="this.style.display=\'none\';this.parentNode.innerHTML=\'<div class=\'logo-placeholder\' style=\'background:#2496ed\'>Do</div>Docker\'">\n          Docker\n        </div>',
+    f'<div class="logo-item">{DOCKER_SVG}Docker</div>'
+)
+
+# Productivity section - replace img tags with fallbacks
+html = html.replace(
+    '<img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg" alt="Excel" onerror="this.style.display=\'none\';this.parentNode.innerHTML=\'<div class=\'logo-placeholder\' style=\'background:#217346\'>E</div>Excel\'">\n          Excel\n        </div>',
+    f'<div class="logo-item">{EXCEL_SVG}Excel</div>'
+)
+html = html.replace(
+    '<img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Microsoft_Office_PowerPoint_%282019%E2%80%93present%29.svg" alt="PPT" onerror="this.style.display=\'none\';this.parentNode.innerHTML=\'<div class=\'logo-placeholder\' style=\'background:#d24726\'>P</div>PPT\'">\n          PPT\n        </div>',
+    f'<div class="logo-item">{PPT_SVG}PPT</div>'
+)
+html = html.replace(
+    '<img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Microsoft_Office_Word_%282019%E2%80%93present%29.svg" alt="Word" onerror="this.style.display=\'none\';this.parentNode.innerHTML=\'<div class=\'logo-placeholder\' style=\'background:#2b579a\'>W</div>Word\'">\n          Word\n        </div>',
+    f'<div class="logo-item">{WORD_SVG}Word</div>'
+)
+html = html.replace(
+    '<img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" onerror="this.style.display=\'none\';this.parentNode.innerHTML=\'<div class=\'logo-placeholder\' style=\'background:#3776ab\'>Py</div>Python\'">\n          Python\n        </div>',
+    f'<div class="logo-item">{PYTHON_SVG}Python</div>'
+)
+
+# Also try simpler replacements for multi-line img tags
+html = re.sub(
+    r'<img src="https://upload\.wikimedia\.org/wikipedia/commons/3/35/Tux\.svg"[^>]*>\s*Linux\s*</div>',
+    f'<div class="logo-item">{LINUX_SVG}Linux</div>',
+    html
+)
+html = re.sub(
+    r'<img src="https://upload\.wikimedia\.org/wikipedia/commons/e/e6/Windows_11_logo\.svg"[^>]*>\s*Windows\s*</div>',
+    f'<div class="logo-item">{WINDOWS_SVG}Windows</div>',
+    html
+)
+html = re.sub(
+    r'<img src="https://upload\.wikimedia\.org/wikipedia/commons/9/97/Sqlite-square-icon\.svg"[^>]*>\s*SQLite\s*</div>',
+    f'<div class="logo-item">{SQLITE_SVG}SQLite</div>',
+    html
+)
+html = re.sub(
+    r'<img src="https://upload\.wikimedia\.org/wikipedia/commons/4/4e/Docker_\(%container_engine%\)_logo\.svg"[^>]*>\s*Docker\s*</div>',
+    f'<div class="logo-item">{DOCKER_SVG}Docker</div>',
+    html
+)
+html = re.sub(
+    r'<img src="https://upload\.wikimedia\.org/wikipedia/commons/3/34/Microsoft_Office_Excel_\(%282019%E2%80%93present%\)29\.svg"[^>]*>\s*Excel\s*</div>',
+    f'<div class="logo-item">{EXCEL_SVG}Excel</div>',
+    html
+)
+html = re.sub(
+    r'<img src="https://upload\.wikimedia\.org/wikipedia/commons/0/0d/Microsoft_Office_PowerPoint_\(%282019%E2%80%93present%\)29\.svg"[^>]*>\s*PPT\s*</div>',
+    f'<div class="logo-item">{PPT_SVG}PPT</div>',
+    html
+)
+html = re.sub(
+    r'<img src="https://upload\.wikimedia\.org/wikipedia/commons/f/fd/Microsoft_Office_Word_\(%282019%E2%80%93present%\)29\.svg"[^>]*>\s*Word\s*</div>',
+    f'<div class="logo-item">{WORD_SVG}Word</div>',
+    html
+)
+html = re.sub(
+    r'<img src="https://upload\.wikimedia\.org/wikipedia/commons/c/c3/Python-logo-notext\.svg"[^>]*>\s*Python\s*</div>',
+    f'<div class="logo-item">{PYTHON_SVG}Python</div>',
+    html
+)
+
+with open('portfolio_v2_light.html', 'w', encoding='utf-8') as f:
+    f.write(html)
+
+print('Done replacing logo placeholders with inline SVGs')
