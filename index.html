@@ -65,7 +65,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 420px;
   gap: 48px;
-  align-items: center;
+  align-items: stretch;
   text-align: left;
   position: relative;
   z-index: 1;
@@ -74,11 +74,25 @@ body {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  min-width: 0;
+  height: 100%;
+}
+.hero-left-content {
+  flex: 1;
 }
 .hero-right {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+}
+.hero-graph {
+  width: 100%;
+  max-width: 320px;
+  display: block;
 }
 .hero-header {
   display: flex;
@@ -185,9 +199,28 @@ body {
 }
 .role-fit-strip {
   display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 16px;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: nowrap;
+  margin-top: auto;
+  margin-bottom: 0;
+  width: 100%;
+}
+.role-fit-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 8px;
+  border-radius: 999px;
+  background: rgba(184, 149, 106, 0.10);
+  border: 1px solid rgba(184, 149, 106, 0.22);
+  color: var(--accent-dark);
+  font-size: 0.67rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .hero-ctas {
   display: flex;
@@ -578,18 +611,18 @@ body {
 }
 .exp-company {
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--text);
 }
 .exp-role {
-  font-size: 0.75rem;
+  font-size: 0.92rem;
   color: var(--text-secondary);
   margin-bottom: 6px;
 }
 .exp-desc {
-  font-size: 0.7rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
-  line-height: 1.5;
+  line-height: 1.55;
   margin-bottom: 8px;
 }
 .exp-tags {
@@ -669,6 +702,7 @@ body {
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-left">
+      <div class="hero-left-content">
       <div class="hero-header">
         <div class="hero-header-text">
           <h1>Felipe Postigo</h1>
@@ -702,11 +736,6 @@ body {
       </div>
       <div class="hero-value hero-value-strong">Let's build what comes next.</div>
       <div class="hero-value">Open to AI strategy, business operations, product, pricing, and applied automation opportunities.</div>
-      <div class="role-fit-strip">
-        <span class="role-fit-pill">AI Strategy</span>
-        <span class="role-fit-pill">Commercial Planning</span>
-        <span class="role-fit-pill">Forecasting</span>
-        <span class="role-fit-pill">Decision Support</span>
       </div>
       <div class="hero-ctas">
         <a href="https://calendly.com/fpostigo/30min" class="hero-cta hero-cta-primary" target="_blank">Schedule Interview</a>
@@ -722,7 +751,7 @@ body {
       </div>
     </div>
     <div class="hero-right">
-      <svg viewBox="0 0 400 400" width="400" height="400" style="max-width:100%;">
+      <svg class="hero-graph" viewBox="0 0 400 400" width="250" height="250" style="max-width:100%;">
         <!-- Background circles -->
         <circle cx="200" cy="200" r="180" fill="none" stroke="rgba(184,149,106,0.15)" stroke-width="1" stroke-dasharray="4 4"/>
         <circle cx="200" cy="200" r="140" fill="none" stroke="rgba(184,149,106,0.2)" stroke-width="1"/>
@@ -808,15 +837,13 @@ body {
           <circle cx="40" cy="0" r="12" fill="rgba(184,149,106,0.2)" stroke="rgba(184,149,106,0.5)" stroke-width="1"/>
           <text x="40" y="4" text-anchor="middle" fill="#b8956a" font-size="10" font-family="Space Grotesk,sans-serif">&#x1F9E0;</text>
         </g>
-        <!-- Junction dots -->
-        <circle cx="200" cy="200" r="4" fill="#b8956a"/>
-        <circle cx="200" cy="40" r="3" fill="#b8956a"/>
-        <circle cx="338" cy="110" r="3" fill="#b8956a"/>
-        <circle cx="338" cy="290" r="3" fill="#b8956a"/>
-        <circle cx="200" cy="360" r="3" fill="#b8956a"/>
-        <circle cx="62" cy="290" r="3" fill="#b8956a"/>
-        <circle cx="62" cy="110" r="3" fill="#b8956a"/>
       </svg>
+      <div class="role-fit-strip">
+        <span class="role-fit-pill">AI Strategy</span>
+        <span class="role-fit-pill">Commercial Planning</span>
+        <span class="role-fit-pill">Forecasting</span>
+        <span class="role-fit-pill">Decision Support</span>
+      </div>
     </div>
   </div>
 </section>
