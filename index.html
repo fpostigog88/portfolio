@@ -322,8 +322,8 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   align-items: center;
   gap: 6px;
   padding: 14px 4px;
-  background: transparent;
-  border: none;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 8px;
   font-size: 0.65rem;
   font-weight: 600;
@@ -341,26 +341,9 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   width: 32px;
   height: 32px;
   object-fit: contain;
-  padding: 2px;
-}
-.logo-wrap {
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border-radius: 6px;
-  border: none;
-  overflow: hidden;
-}
-.logo-wrap img {
-  width: 24px !important;
-  height: 24px !important;
-  object-fit: contain !important;
 }
 .logo-placeholder {
-  width: 32px; height: 32px;
+  width: 28px; height: 28px;
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -827,68 +810,68 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <!-- LEFT COLUMN -->
   <div class="left-col" style="display:flex;flex-direction:column;gap:16px;justify-content:space-between;flex:0 0 280px;">
     <!-- Work Logos -->
-    <div class="card" style="background:transparent;border:none;">
+    <div class="card">
       <div class="card-title">Work and Education</div>
       <div class="logo-grid" style="grid-template-columns:repeat(2,1fr);gap:10px;">
         <div class="logo-item">
-          <div class="logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_Logo.svg" alt="Dell" style="width:24px!important;height:24px!important;object-fit:contain!important;"></div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_Logo.svg" alt="Dell" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#007db8\'>D</div>Dell'">
           Dell
         </div>
         <div class="logo-item">
-          <div class="logo-wrap"><img src="logo_moller.png" alt="Moller" style="width:24px!important;height:24px!important;object-fit:contain!important;"></div>
+          <img src="logo_moller.png" alt="Moller" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
           Moller
         </div>
         <div class="logo-item">
-          <div class="logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Michigan_Wolverines_logo.svg" alt="Michigan" style="width:18px!important;height:18px!important;object-fit:contain!important;"></div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Michigan_Wolverines_logo.svg" alt="Michigan" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#ffcb05;color:#00274c\'>M</div>Michigan'">
           Michigan
         </div>
         <div class="logo-item">
-          <div class="logo-wrap"><img src="logo_uc.png" alt="UC" style="width:24px!important;height:24px!important;object-fit:contain!important;"></div>
+          <img src="logo_uc.png" alt="UC" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
           UC Chile
         </div>
       </div>
     </div>
 
     <!-- Tech Logos -->
-    <div class="card" style="background:transparent;border:none;">
+    <div class="card">
       <div class="card-title">AI & Cloud</div>
       <div class="logo-grid" style="grid-template-columns:repeat(3,1fr);gap:8px;">
         <div class="logo-item">
-          <div class="logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" alt="OpenAI" style="width:24px!important;height:24px!important;object-fit:contain!important;"></div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" alt="OpenAI" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#10a37f\'>O</div>OpenAI'">
           OpenAI
         </div>
         <div class="logo-item">
-          <div class="logo-wrap"><img src="logo_claude.png" alt="Claude" style="width:24px!important;height:24px!important;object-fit:contain!important;"></div>
+          <img src="logo_claude.png" alt="Claude" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
           Claude
         </div>
         <div class="logo-item">
-          <div class="logo-wrap"><img src="logo_fireworks.png" alt="Fireworks" style="width:24px!important;height:24px!important;object-fit:contain!important;"></div>
+          <img src="logo_fireworks.png" alt="Fireworks" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
           Fireworks
         </div>
         <div class="logo-item">
-          <div class="logo-wrap"><img src="logo_llama.png" alt="llama.cpp" style="width:24px!important;height:24px!important;object-fit:contain!important;"></div>
+          <img src="logo_llama.png" alt="llama.cpp" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
           llama.cpp
         </div>
         <div class="logo-item">
-          <div class="logo-wrap"><img src="logo_qwen.png" alt="Qwen" style="width:24px!important;height:24px!important;object-fit:contain!important;"></div>
+          <img src="logo_qwen.png" alt="Qwen" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
           Qwen
         </div>
         <div class="logo-item">
-          <div class="logo-wrap"><img src="logo_advisor.webp" alt="Hermes" style="width:24px!important;height:24px!important;object-fit:contain!important;"></div>
+          <img src="logo_advisor.webp" alt="Hermes" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
           Hermes
         </div>
       </div>
     </div>
 
-    <div class="card" style="background:transparent;border:none;">
+    <div class="card">
       <div class="card-title">Productivity</div>
       <div class="logo-grid" style="grid-template-columns:repeat(2,1fr);gap:10px;">
         <div class="logo-item">
-          <div class="logo-wrap"><img src="logo_excel.png" alt="Excel" style="width:24px!important;height:24px!important;object-fit:contain!important;"></div>
+          <img src="logo_excel.png" alt="Excel" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
           Excel
         </div>
         <div class="logo-item">
-          <div class="logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="PowerBI" style="width:24px!important;height:24px!important;object-fit:contain!important;"></div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="PowerBI" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#f2c811;color:#000\'>P</div>PowerBI'">
           PowerBI
         </div>
       </div>
@@ -992,13 +975,13 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       </ul>
     </div>
 
-    <div class="card" style="background:transparent;border:none;">
+    <div class="card">
       <div class="card-title">Tech Stack</div>
       <div class="logo-grid" style="grid-template-columns:repeat(2,1fr);gap:10px;">
-        <div class="logo-item"><div class="logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" style="width:24px!important;height:24px!important;object-fit:contain!important;"></div>Python</div>
-        <div class="logo-item"><div class="logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Sqlite-square-icon.svg" alt="SQLite" style="width:24px!important;height:24px!important;object-fit:contain!important;"></div>SQLite</div>
-        <div class="logo-item"><div class="logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" alt="Docker" style="width:24px!important;height:24px!important;object-fit:contain!important;"></div>Docker</div>
-        <div class="logo-item"><div class="logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" style="width:24px!important;height:24px!important;object-fit:contain!important;"></div>GitHub</div>
+        <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#3776ab\'>Py</div>Python'">Python</div>
+        <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Sqlite-square-icon.svg" alt="SQLite" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#003b57\'>SQL</div>SQLite'">SQLite</div>
+        <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" alt="Docker" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#2496ed\'>Do</div>Docker'">Docker</div>
+        <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'logo-placeholder\' style=\'background:#181717\'>GH</div>GitHub'">GitHub</div>
       </div>
     </div>
 
