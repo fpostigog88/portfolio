@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,8 +64,10 @@ body {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 420px;
-  gap: 48px;
-  align-items: center;
+  grid-template-rows: auto auto;
+  column-gap: 48px;
+  row-gap: 22px;
+  align-items: stretch;
   text-align: left;
   position: relative;
   z-index: 1;
@@ -74,20 +76,37 @@ body {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  min-width: 0;
+  height: 100%;
+}
+.hero-left-content {
+  flex: 1;
 }
 .hero-right {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+}
+.hero-graph {
+  width: 100%;
+  max-width: 370px;
+  display: block;
 }
 .hero-header {
+  grid-column: 1 / -1;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
   width: 100%;
+  position: relative;
+  text-align: center;
 }
 .hero-header-text {
-  flex: 1;
+  flex: 0 1 auto;
 }
 .hero h1 {
   font-family: 'Space Grotesk', sans-serif;
@@ -95,7 +114,7 @@ body {
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.1;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   color: var(--text);
 }
 .hero h1 .highlight { color: var(--accent-dark); }
@@ -120,6 +139,9 @@ body {
   margin-bottom: 4px;
 }
 .lang-toggle {
+  position: absolute;
+  right: 0;
+  top: 0;
   display: flex;
   gap: 4px;
   align-items: center;
@@ -185,9 +207,28 @@ body {
 }
 .role-fit-strip {
   display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 16px;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: nowrap;
+  margin-top: auto;
+  margin-bottom: 0;
+  width: 100%;
+}
+.role-fit-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 8px;
+  border-radius: 999px;
+  background: rgba(184, 149, 106, 0.10);
+  border: 1px solid rgba(184, 149, 106, 0.22);
+  color: var(--accent-dark);
+  font-size: 0.67rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .hero-ctas {
   display: flex;
@@ -380,7 +421,8 @@ body {
   border-radius: 12px;
   padding: 16px 20px;
   transition: all 0.2s;
-  flex: 1;
+  flex: 0 0 136px;
+  min-height: 136px;
   display: flex;
   flex-direction: column;
 }
@@ -578,18 +620,18 @@ body {
 }
 .exp-company {
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--text);
 }
 .exp-role {
-  font-size: 0.75rem;
+  font-size: 0.92rem;
   color: var(--text-secondary);
   margin-bottom: 6px;
 }
 .exp-desc {
-  font-size: 0.7rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
-  line-height: 1.5;
+  line-height: 1.55;
   margin-bottom: 8px;
 }
 .exp-tags {
@@ -634,7 +676,9 @@ body {
   .hero-stats { grid-template-columns: repeat(4, 1fr); }
   .exp-grid { grid-template-columns: repeat(2, 1fr); }
   .hero-inner { grid-template-columns: 1fr; gap: 32px; }
-  .hero-right { order: -1; }
+  .hero-header { grid-column: 1; }
+  .lang-toggle { position: static; margin-left: 12px; }
+  .hero-right { order: -1; padding-top: 0; }
   .hero-right svg { width: 320px; height: 320px; }
 }
 @media (max-width: 768px) {
@@ -655,6 +699,12 @@ body {
   .lang-toggle { align-self: flex-start; }
 }
 </style>
+<!-- deploy: v11-live -->
+<script>
+  if (navigator.language && navigator.language.startsWith('en')) {
+    window.location.href = '/';
+  }
+</script>
 </head>
 <body>
 
@@ -663,77 +713,73 @@ body {
      ============================================ -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-left">
-      <div class="hero-header">
-        <div class="hero-header-text">
-          <h1>Felipe Postigo</h1>
-          <div class="hero-subtitle">Estrategia Comercial | IA Aplicada</div>
-        </div>
-        <div class="lang-toggle">
-          <a href="/">EN</a>
-          <a href="/es/" class="active">ES</a>
-        </div>
+    <div class="hero-header">
+      <div class="hero-header-text">
+        <h1>Felipe Postigo</h1>
+        <div class="hero-subtitle">Estrategia Comercial | IA Aplicada</div>
       </div>
+      <div class="lang-toggle">
+        <a href="/">EN</a>
+        <a href="/es/" class="active">ES</a>
+      </div>
+    </div>
+    <div class="hero-left">
+      <div class="hero-left-content">
       <div class="hero-value">
-        Soy MBA de Michigan Ross y operador de estrategia comercial enfocado en IA aplicada, pricing, automatización y sistemas de negocio. Mi trabajo se sitúa en la intersección entre juicio de negocio y ejecución técnica: traduciendo problemas ambiguos en modelos, flujos de trabajo, dashboards y sistemas habilitados por IA que mejoran la velocidad de decisión. Me interesan especialmente roles donde convergen IA, estrategia, operaciones y pensamiento de producto.
+        MBA de Michigan Ross y operador de estrategia comercial enfocado en IA aplicada, pricing, automatización y sistemas de negocio.<br><br>Construyo modelos, flujos de trabajo y sistemas con IA que mejoran la ejecución y la velocidad de decisión.
       </div>
       <div class="hero-stats">
         <div class="hero-stat">
           <div class="hero-stat-value">90%+</div>
-          <div class="hero-stat-label">Precisión de pronósticos alcanzada en modelos Excel e IA + ML con planificación asistida</div>
+          <div class="hero-stat-label">Precisión de forecast en modelos Excel y pilotos de planificación con IA + ML</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-value">120+ horas</div>
-          <div class="hero-stat-label">Esfuerzo de reportes manual eliminado mediante automatización</div>
+          <div class="hero-stat-value">120+ hours</div>
+          <div class="hero-stat-label">Horas de reporte manual eliminadas mediante automatización</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-value">10+ años</div>
+          <div class="hero-stat-value">10+ years</div>
           <div class="hero-stat-label">Experiencia en estrategia comercial, pricing, operaciones y desarrollo de negocios</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-value">Sistema de 6 agentes</div>
-          <div class="hero-stat-label">Ecosistema autónomo de IA construido para investigación, planificación y ejecución</div>
+          <div class="hero-stat-value">6-agent system</div>
+          <div class="hero-stat-label">Ecosistema autónomo de IA para investigación, planificación y ejecución</div>
         </div>
       </div>
-      <div class="hero-value hero-value-strong">Construyamos lo que viene después.</div>
-      <div class="hero-value">Abierto a oportunidades en estrategia de IA, operaciones de negocio, producto, pricing y automatización aplicada.</div>
-      <div class="role-fit-strip">
-        <span class="role-fit-pill">Estrategia IA</span>
-        <span class="role-fit-pill">Planificación Comercial</span>
-        <span class="role-fit-pill">Pronósticos</span>
-        <span class="role-fit-pill">Soporte Decisiones</span>
+      <div class="hero-value hero-value-strong">Construyamos lo que viene.</div>
+      <div class="hero-value">Abierto a oportunidades en estrategia de IA, operaciones, producto, pricing y automatización aplicada.</div>
       </div>
       <div class="hero-ctas">
         <a href="https://calendly.com/fpostigo/30min" class="hero-cta hero-cta-primary" target="_blank">Agendar Entrevista</a>
-        <a href="resume.pdf" download="Felipe Postigo - Michigan Ross MBA.pdf" class="hero-cta hero-cta-secondary" target="_blank">Descargar CV</a>
+        <a href="../resume.pdf" download="../Felipe Postigo - Michigan Ross MBA.pdf" class="hero-cta hero-cta-secondary" target="_blank">Descargar CV</a>
         <a href="https://www.linkedin.com/in/felipe-postigo/" class="hero-cta hero-cta-secondary" target="_blank" title="LinkedIn Profile">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           LinkedIn
         </a>
-        <a href="mailto:fpostigo@umich.edu" class="hero-cta hero-cta-secondary" title="Send Email">
+        <a href="mailto:fpostigo@umich.edu?subject=Interview%20Request&body=Hi%20Felipe,%0A%0AI%20think%20you%27re%20an%20amazing%20candidate%20and%20would%20love%20to%20schedule%20an%20interview%20with%20you.%20Let%27s%20find%20a%20time%20that%20works.%0A%0ABest," class="hero-cta hero-cta-secondary" title="Send Email">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           Email
         </a>
       </div>
     </div>
     <div class="hero-right">
-      <svg viewBox="0 0 400 400" width="400" height="400" style="max-width:100%;">
+      <svg class="hero-graph" viewBox="0 0 400 400" width="340" height="340" style="max-width:100%;">
+        <!-- Background circles -->
         <circle cx="200" cy="200" r="180" fill="none" stroke="rgba(184,149,106,0.15)" stroke-width="1" stroke-dasharray="4 4"/>
         <circle cx="200" cy="200" r="140" fill="none" stroke="rgba(184,149,106,0.2)" stroke-width="1"/>
         <circle cx="200" cy="200" r="90" fill="none" stroke="rgba(184,149,106,0.25)" stroke-width="1"/>
+        <!-- Radial lines -->
         <line x1="200" y1="200" x2="200" y2="40" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
         <line x1="200" y1="200" x2="338" y2="110" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
         <line x1="200" y1="200" x2="338" y2="290" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
         <line x1="200" y1="200" x2="200" y2="360" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
         <line x1="200" y1="200" x2="62" y2="290" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
         <line x1="200" y1="200" x2="62" y2="110" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+        <!-- Central disc -->
         <circle cx="200" cy="200" r="65" fill="url(#goldGradient)" stroke="rgba(184,149,106,0.5)" stroke-width="2"/>
-        <text x="200" y="175" text-anchor="middle" fill="white" font-size="9" font-family="Inter,sans-serif" font-weight="600">BUSINESS</text>
-        <text x="200" y="195" text-anchor="middle" fill="white" font-size="16" font-family="Space Grotesk,sans-serif" font-weight="700">IMPACT</text>
+        <text x="200" y="190" text-anchor="middle" fill="white" font-size="16" font-family="Space Grotesk,sans-serif" font-weight="700">IMPACT</text>
         <text x="200" y="212" text-anchor="middle" fill="white" font-size="16" font-family="Space Grotesk,sans-serif" font-weight="700">ENGINE</text>
-        <line x1="165" y1="222" x2="235" y2="222" stroke="white" stroke-width="0.5" opacity="0.6"/>
-        <text x="200" y="235" text-anchor="middle" fill="white" font-size="8" font-family="Inter,sans-serif" font-weight="600">AI-POWERED</text>
-        <text x="200" y="248" text-anchor="middle" fill="white" font-size="8" font-family="Inter,sans-serif" font-weight="600">DECISION SYSTEMS</text>
+        <!-- Gradients -->
         <defs>
           <radialGradient id="goldGradient" cx="30%" cy="30%">
             <stop offset="0%" stop-color="#d4b896"/>
@@ -745,62 +791,44 @@ body {
             <stop offset="100%" stop-color="#0f1a30"/>
           </linearGradient>
         </defs>
+        <!-- Node 1: FORECASTING (top) -->
         <g transform="translate(200,30)">
           <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
-          <text x="-45" y="-2" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">FORECASTING</text>
-          <text x="-45" y="8" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">PREDICT DEMAND.</text>
-          <text x="-45" y="16" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">REDUCE UNCERTAINTY.</text>
-          <circle cx="40" cy="0" r="12" fill="rgba(184,149,106,0.2)" stroke="rgba(184,149,106,0.5)" stroke-width="1"/>
-          <text x="40" y="4" text-anchor="middle" fill="#b8956a" font-size="12" font-family="Space Grotesk,sans-serif">&#x25B2;</text>
+          <text x="0" y="4" text-anchor="middle" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">FORECASTING</text>
         </g>
+        <!-- Node 2: WORKFLOWS (upper-right) -->
         <g transform="translate(338,110)">
           <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
-          <text x="-45" y="-2" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">WORKFLOWS</text>
-          <text x="-45" y="8" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">ORCHESTRATE PROCESSES.</text>
-          <text x="-45" y="16" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">ELIMINATE FRICTION.</text>
-          <circle cx="40" cy="0" r="12" fill="rgba(184,149,106,0.2)" stroke="rgba(184,149,106,0.5)" stroke-width="1"/>
-          <text x="40" y="4" text-anchor="middle" fill="#b8956a" font-size="10" font-family="Space Grotesk,sans-serif">&#x21BA;</text>
+          <text x="0" y="4" text-anchor="middle" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">WORKFLOWS</text>
         </g>
+        <!-- Node 3: AUTOMATION (lower-right) -->
         <g transform="translate(338,290)">
           <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
-          <text x="-45" y="-2" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">AUTOMATION</text>
-          <text x="-45" y="8" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">EXECUTE FASTER.</text>
-          <text x="-45" y="16" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">SAVE TIME. SCALE IMPACT.</text>
-          <circle cx="40" cy="0" r="12" fill="rgba(184,149,106,0.2)" stroke="rgba(184,149,106,0.5)" stroke-width="1"/>
-          <text x="40" y="4" text-anchor="middle" fill="#b8956a" font-size="10" font-family="Space Grotesk,sans-serif">&#x26A1;</text>
+          <text x="0" y="4" text-anchor="middle" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">AUTOMATION</text>
         </g>
+        <!-- Node 4: EXECUTION (bottom) -->
         <g transform="translate(200,370)">
           <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
-          <text x="-45" y="-2" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">EXECUTION</text>
-          <text x="-45" y="8" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">TURN PLANS INTO ACTION.</text>
-          <text x="-45" y="16" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">DELIVER RESULTS.</text>
-          <circle cx="40" cy="0" r="12" fill="rgba(184,149,106,0.2)" stroke="rgba(184,149,106,0.5)" stroke-width="1"/>
-          <text x="40" y="4" text-anchor="middle" fill="#b8956a" font-size="12" font-family="Space Grotesk,sans-serif">&#x25B2;</text>
+          <text x="0" y="4" text-anchor="middle" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">EXECUTION</text>
         </g>
+        <!-- Node 5: DECISIONS (lower-left) -->
         <g transform="translate(62,290)">
           <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
-          <text x="-45" y="-2" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">DECISIONS</text>
-          <text x="-45" y="8" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">PRIORITIZE OPTIONS.</text>
-          <text x="-45" y="16" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">DRIVE CONFIDENCE.</text>
-          <circle cx="40" cy="0" r="12" fill="rgba(184,149,106,0.2)" stroke="rgba(184,149,106,0.5)" stroke-width="1"/>
-          <text x="40" y="4" text-anchor="middle" fill="#b8956a" font-size="10" font-family="Space Grotesk,sans-serif">&#x25CE;</text>
+          <text x="0" y="4" text-anchor="middle" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">DECISIONS</text>
         </g>
+        <!-- Node 6: AI SYSTEMS (upper-left) -->
         <g transform="translate(62,110)">
           <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
-          <text x="-45" y="-2" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">AI SYSTEMS</text>
-          <text x="-45" y="8" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">APPLY INTELLIGENCE.</text>
-          <text x="-45" y="16" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">AUTOMATE INSIGHTS.</text>
-          <circle cx="40" cy="0" r="12" fill="rgba(184,149,106,0.2)" stroke="rgba(184,149,106,0.5)" stroke-width="1"/>
-          <text x="40" y="4" text-anchor="middle" fill="#b8956a" font-size="10" font-family="Space Grotesk,sans-serif">&#x1F9E0;</text>
+          <text x="0" y="4" text-anchor="middle" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">AI SYSTEMS</text>
         </g>
-        <circle cx="200" cy="200" r="4" fill="#b8956a"/>
-        <circle cx="200" cy="40" r="3" fill="#b8956a"/>
-        <circle cx="338" cy="110" r="3" fill="#b8956a"/>
-        <circle cx="338" cy="290" r="3" fill="#b8956a"/>
-        <circle cx="200" cy="360" r="3" fill="#b8956a"/>
-        <circle cx="62" cy="290" r="3" fill="#b8956a"/>
-        <circle cx="62" cy="110" r="3" fill="#b8956a"/>
+        <!-- Junction dots removed -->
       </svg>
+      <div class="role-fit-strip" style="margin-top: 12px;">
+        <span class="role-fit-pill">Estrategia de IA</span>
+        <span class="role-fit-pill">Planificación Comercial</span>
+        <span class="role-fit-pill">Forecasting</span>
+        <span class="role-fit-pill">Soporte de Decisiones</span>
+      </div>
     </div>
   </div>
 </section>
@@ -828,36 +856,36 @@ body {
           Michigan
         </div>
         <div class="logo-item">
-          <div class="logo-wrap"><img src="/logo_uc_transparent_v2.png" alt="UC Chile"></div>
+          <div class="logo-wrap"><img src="../logo_uc_transparent_v2.png" alt="UC Chile"></div>
           UC Chile
         </div>
       </div>
     </div>
     <div class="card">
-      <div class="card-title">Infraestructura IA</div>
+      <div class="card-title">Infraestructura de IA</div>
       <div class="logo-grid logo-grid-3">
         <div class="logo-item">
-          <div class="logo-wrap"><img src="/logo_advisor.webp" alt="Hermes"></div>
+          <div class="logo-wrap"><img src="../logo_advisor.webp" alt="Hermes"></div>
           Hermes
         </div>
         <div class="logo-item">
-          <div class="logo-wrap"><img src="/logo_openai_icon_64.png" alt="OpenAI"></div>
+          <div class="logo-wrap"><img src="../logo_openai_icon_64.png" alt="OpenAI"></div>
           OpenAI
         </div>
         <div class="logo-item">
-          <div class="logo-wrap"><img src="/logo_claude_icon.png" alt="Anthropic"></div>
+          <div class="logo-wrap"><img src="../logo_claude_icon.png" alt="Anthropic"></div>
           Anthropic
         </div>
         <div class="logo-item">
-          <div class="logo-wrap"><img src="/logo_fireworks_icon.png" alt="Fireworks"></div>
+          <div class="logo-wrap"><img src="../logo_fireworks_icon.png" alt="Fireworks"></div>
           Fireworks
         </div>
         <div class="logo-item">
-          <div class="logo-wrap"><img src="/logo_llama.png" alt="llama.cpp"></div>
+          <div class="logo-wrap"><img src="../logo_llama.png" alt="llama.cpp"></div>
           llama.cpp
         </div>
         <div class="logo-item">
-          <div class="logo-wrap"><img src="/logo_qwen_icon.png" alt="Qwen"></div>
+          <div class="logo-wrap"><img src="../logo_qwen_icon.png" alt="Qwen"></div>
           Qwen
         </div>
       </div>
@@ -866,7 +894,7 @@ body {
       <div class="card-title">Inteligencia de Negocio</div>
       <div class="logo-grid logo-grid-2">
         <div class="logo-item">
-          <div class="logo-wrap"><img src="/logo_excel.png" alt="Excel"></div>
+          <div class="logo-wrap"><img src="../logo_excel.png" alt="Excel"></div>
           Excel
         </div>
         <div class="logo-item">
@@ -881,32 +909,32 @@ body {
   <section class="center-col">
     <div class="project-card">
       <div class="project-header">
-        <div class="project-title">Pronósticos ML y Detección de Riesgo de Margen</div>
+        <div class="project-title">Forecasting con ML y Detección de Riesgo de Margen</div>
         <span class="project-badge badge-blue">Prototipo</span>
       </div>
-      <div class="project-desc">Construidos prototipos de pronósticos y señales de margen para detectar riesgo de negocio más temprano, apoyar conversaciones de planificación y convertir output de modelos en decisiones comerciales. Trabajo de pronósticos alcanzó 90%+ de precisión.</div>
+      <div class="project-desc">Construyó prototipos de forecasting y señales de margen para detectar riesgo de negocio antes, apoyar conversaciones de planificación y convertir output de modelos en decisiones comerciales. El trabajo de forecasting alcanzó 90%+ de precisión.</div>
     </div>
     <div class="project-card">
       <div class="project-header">
         <div class="project-title">Sistema de Automatización de Flujos de Negocio</div>
         <span class="project-badge badge-green">Producción</span>
       </div>
-      <div class="project-desc">Convierte procesos manuales recurrentes en bucles de ejecución programados y monitoreados. Muestra cómo los equipos de negocio pueden pasar de análisis puntuales a sistemas operativos siempre activos que ahorran tiempo y reducen la carga de seguimiento.</div>
+      <div class="project-desc">Convierte procesos manuales recurrentes en loops de ejecución programados y monitoreados. Muestra cómo equipos de negocio pueden pasar de análisis one-off a sistemas operativos always-on que ahorran tiempo y reducen carga de seguimiento.</div>
     </div>
     <div class="project-card">
       <div class="project-header">
         <div class="project-title">Inteligencia Financiera y Soporte de Decisiones</div>
         <span class="project-badge badge-green">Producción</span>
       </div>
-      <div class="project-desc">Sistema local de soporte de decisiones para clasificación de transacciones, detección de anomalías y visibilidad de gastos — un prototipo práctico para flujos de FP&A asistido por IA y planificación comercial.</div>
+      <div class="project-desc">Sistema local de soporte de decisiones para clasificación de transacciones, detección de anomalías y visibilidad de gastos — un prototipo práctico para FP&A asistido por IA y flujos de planificación comercial.</div>
     </div>
     <div class="video-demo">
       <div class="video-demo-header">
-        <div class="video-demo-title">Mira automatización de flujos en acción</div>
-        <div class="video-demo-badge">PRODUCCIÓN</div>
+        <div class="video-demo-title">Ver automatización de flujos en acción</div>
+        <div class="video-demo-badge">PRODUCTION</div>
       </div>
       <div class="video-demo-player">
-        <iframe src="https://www.youtube.com/embed/yAfvXZR69eY?rel=0&modestbranding=1&playsinline=1" title="Demo de ejecución de tareas PC-a-Android" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/yAfvXZR69eY?rel=0&modestbranding=1&playsinline=1" title="Autonomous Workflow Engine Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
     </div>
   </section>
@@ -915,14 +943,14 @@ body {
   <aside class="right-col">
     <div class="agent-panel">
       <div class="agent-panel-title">
-        <span><span class="agent-live"></span> Agentes IA — Framework SMART</span>
+        <span><span class="agent-live"></span> Agentes de IA — Framework SMART</span>
       </div>
       <ul class="agent-list">
         <li class="agent-item">
           <div style="display:flex;align-items:center;gap:8px;">
             <span class="agent-icon" style="background:#4f46e5">S</span>
             <div>
-              <div class="agent-name">Coordinación Sistemas</div>
+              <div class="agent-name">Coordinación de Sistemas</div>
               <div class="agent-desc">Supervisión, enrutamiento y confiabilidad</div>
             </div>
           </div>
@@ -931,7 +959,7 @@ body {
           <div style="display:flex;align-items:center;gap:8px;">
             <span class="agent-icon" style="background:#0891b2">M</span>
             <div>
-              <div class="agent-name">Monitoreo Mercado</div>
+              <div class="agent-name">Monitoreo de Mercado</div>
               <div class="agent-desc">Señales, briefings y listas de seguimiento</div>
             </div>
           </div>
@@ -940,7 +968,7 @@ body {
           <div style="display:flex;align-items:center;gap:8px;">
             <span class="agent-icon" style="background:#ea580c">A</span>
             <div>
-              <div class="agent-name">Automatización Flujos</div>
+              <div class="agent-name">Automatización de Flujos</div>
               <div class="agent-desc">Ejecución de tareas repetibles</div>
             </div>
           </div>
@@ -959,7 +987,7 @@ body {
             <span class="agent-icon" style="background:#db2777">T</span>
             <div>
               <div class="agent-name">Soporte Táctico de Decisiones</div>
-              <div class="agent-desc">Prompts de planificación y soporte siguiente paso</div>
+              <div class="agent-desc">Prompts de planificación y soporte de siguientes pasos</div>
             </div>
           </div>
         </li>
@@ -997,26 +1025,26 @@ body {
   <div class="exp-grid">
     <div class="exp-card">
       <div class="exp-card-header">
-        <img src="/logo_dell.png" alt="Dell">
+        <img src="../logo_dell.png" alt="Dell">
         <div class="exp-company">Dell Technologies</div>
       </div>
       <div class="exp-role">Líder — Analytics, IA y Estrategia de Programas (2023–2026)</div>
-      <div class="exp-desc">Lideró transformación digital de proceso de 2 personas/80 horas a operación optimizada de 1 persona. $16B+ en revenue de servidores enterprise con 90%+ de precisión en pronósticos. Construyó modelos de pronóstico habilitados por IA y ecosistemas de reportes ejecutivos.</div>
+      <div class="exp-desc">Lideró transformación digital de proceso de 2 personas/80 horas a operación optimizada de 1 persona. $16B+ en revenue de servidores enterprise con 90%+ precisión de forecast. Construyó modelos de forecasting con IA y ecosistemas de reporting ejecutivo.</div>
       <div class="exp-tags">
-        <span class="exp-tag">Pronósticos</span>
-        <span class="exp-tag">Estrategia Pricing</span>
+        <span class="exp-tag">Forecasting</span>
+        <span class="exp-tag">Estrategia de Pricing</span>
       </div>
     </div>
     <div class="exp-card">
       <div class="exp-card-header">
-        <img src="/logo_acgs.png" alt="ACHS">
+        <img src="../logo_acgs.png" alt="ACHS">
         <div class="exp-company">ACHS (Hospital)</div>
       </div>
       <div class="exp-role">Jefe Comercial (2020–2021)</div>
-      <div class="exp-desc">Rediseñó flujos comerciales basados en datos y engagement de clientes aumentando ventas 20%. Construyó dashboards de performance comercial y analítica operacional reduciendo esfuerzo de reportes en 90%.</div>
+      <div class="exp-desc">Rediseñó flujos comerciales y engagement de clientes aumentando ventas 20%. Construyó dashboards de performance comercial y analítica operativa reduciendo esfuerzo de reporte en 90%.</div>
       <div class="exp-tags">
-        <span class="exp-tag">Operaciones Comerciales</span>
-        <span class="exp-tag">Automatización Procesos</span>
+        <span class="exp-tag">Ops Comercial</span>
+        <span class="exp-tag">Automatización de Procesos</span>
       </div>
     </div>
     <div class="exp-card">
@@ -1024,10 +1052,10 @@ body {
         <img src="../logo_moller_new.png" alt="Moller">
         <div class="exp-company">Moller y Perez-Cotapos</div>
       </div>
-      <div class="exp-role">Subgerente — Desarrollo Negocios Inmobiliarios (2018–2020)</div>
-      <div class="exp-desc">Lideró equipo de 7 analistas. Adquirió 10 propiedades por $64.6M. 22 proyectos de inversión, +60% de utilidad unidad de negocio. Automatizó modelos de pronóstico (+50% precisión, -25% tiempo ejecución).</div>
+      <div class="exp-role">Gerente Asociado — Desarrollo de Negocios Inmobiliarios (2018–2020)</div>
+      <div class="exp-desc">Lideró equipo de 7 analistas. Adquirió 10 propiedades por $64.6M. 22 proyectos de inversión, +60% utilidad de unidad de negocio. Automatizó modelos de forecast (+50% precisión, -25% tiempo de ejecución).</div>
       <div class="exp-tags">
-        <span class="exp-tag">Desarrollo Negocios</span>
+        <span class="exp-tag">Desarrollo de Negocios</span>
         <span class="exp-tag">Inversiones</span>
       </div>
     </div>
@@ -1036,10 +1064,10 @@ body {
         <img src="../logo_moller_new.png" alt="Moller">
         <div class="exp-company">Moller y Perez-Cotapos</div>
       </div>
-      <div class="exp-role">Jefe Desarrollo Negocios Inmobiliarios (2017–2018)</div>
-      <div class="exp-desc">Desarrolló y presentó estrategia a directorio, adquirió 9 propiedades por $57M. Cerró 8 operaciones de fondos por $40M con 11% ROI. Evaluó 1.2K propiedades por $4.2B.</div>
+      <div class="exp-role">Jefe de Desarrollo de Negocios Inmobiliarios (2017–2018)</div>
+      <div class="exp-desc">Desarrolló y presentó estrategia a directorio, adquirió 9 propiedades por $57M. Cerró 8 fondos por $40M a 11% ROI. Evaluó 1.2K propiedades por $4.2B.</div>
       <div class="exp-tags">
-        <span class="exp-tag">Desarrollo Negocios</span>
+        <span class="exp-tag">Desarrollo de Negocios</span>
         <span class="exp-tag">Negociación</span>
       </div>
     </div>
@@ -1060,10 +1088,10 @@ body {
         <img src="../logo_moller_new.png" alt="Moller">
         <div class="exp-company">Moller y Perez-Cotapos</div>
       </div>
-      <div class="exp-role">Ingeniero Desarrollo — División Inmobiliaria (2012–2014)</div>
-      <div class="exp-desc">Realizó investigación de mercado y modelación financiera sobre cientos de propiedades anualmente.</div>
+      <div class="exp-role">Ingeniero de Desarrollo — División Inmobiliaria (2012–2014)</div>
+      <div class="exp-desc">Realizó investigación de mercado y modelado financiero en cientos de propiedades al año.</div>
       <div class="exp-tags">
-        <span class="exp-tag">Análisis Mercado</span>
+        <span class="exp-tag">Análisis de Mercado</span>
         <span class="exp-tag">Evaluación Financiera</span>
       </div>
     </div>
@@ -1073,18 +1101,18 @@ body {
         <div class="exp-company">University of Michigan</div>
       </div>
       <div class="exp-role">MBA, Stephen M. Ross School of Business (2023)</div>
-      <div class="exp-desc">Becado con Dean's Fellowship (Beca de Mérito con Matrícula Completa). Enfoque en estrategia y operaciones.</div>
+      <div class="exp-desc">Becado con Dean's Fellowship (Beca de Matrícula Completa por Mérito). Enfoque en estrategia y operaciones.</div>
       <div class="exp-tags">
         <span class="exp-tag">MBA</span>
       </div>
     </div>
     <div class="exp-card">
       <div class="exp-card-header">
-        <img src="/logo_uc_transparent_v2.png" alt="UC">
-        <div class="exp-company">Universidad Catolica de Chile</div>
+        <img src="../logo_uc_transparent_v2.png" alt="UC">
+        <div class="exp-company">Universidad Católica de Chile</div>
       </div>
-      <div class="exp-role">BBA, Beca Honors (2012)</div>
-      <div class="exp-desc">Becado con Beca Honors. Graduado top 11%. Asistente de cátedra y mentoría.</div>
+      <div class="exp-role">BBA, Honors Scholarship (2012)</div>
+      <div class="exp-desc">Awarded Honors Scholarship. Graduated top 11%. Teaching assistant and mentorship.</div>
       <div class="exp-tags">
         <span class="exp-tag">BBA</span>
       </div>
@@ -1096,8 +1124,8 @@ body {
      FOOTER
      ============================================ -->
 <footer class="footer">
-  <p>Construido como un sistema productivo de IA práctico para investigación, planificación, automatización y soporte de decisiones</p>
-  <p class="footer-sub">Diseñado para mostrar adopción práctica de IA en negocios: flujos de trabajo medibles, ejecución confiable y soporte de decisiones comerciales.</p>
+  <p>Built as a hands-on AI productivity system for research, planning, automation, and decision support</p>
+  <p class="footer-sub">Designed to show practical business AI adoption: measurable workflows, reliable execution, and commercial decision support.</p>
   <div class="hero-contact-links">
     <a href="https://www.linkedin.com/in/felipe-postigo/" class="hero-contact-link" target="_blank" title="LinkedIn Profile">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>

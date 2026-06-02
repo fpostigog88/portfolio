@@ -86,7 +86,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   width: 100%;
   min-width: 0;
   height: 100%;
@@ -210,7 +210,7 @@ body {
   justify-content: center;
   gap: 6px;
   flex-wrap: nowrap;
-  margin-top: auto;
+  margin-top: 0;
   margin-bottom: 0;
   width: 100%;
 }
@@ -704,7 +704,7 @@ body {
     window.location.href = '/es/';
   }
 </script>
-  <!-- deploy: ee57670-force -->
+<!-- deploy: v11-live -->
 </head>
 <body>
 
@@ -764,11 +764,21 @@ body {
     </div>
     <div class="hero-right">
       <svg class="hero-graph" viewBox="0 0 400 400" width="340" height="340" style="max-width:100%;">
+        <!-- Background circles -->
+        <circle cx="200" cy="200" r="180" fill="none" stroke="rgba(184,149,106,0.15)" stroke-width="1" stroke-dasharray="4 4"/>
+        <circle cx="200" cy="200" r="140" fill="none" stroke="rgba(184,149,106,0.2)" stroke-width="1"/>
+        <circle cx="200" cy="200" r="90" fill="none" stroke="rgba(184,149,106,0.25)" stroke-width="1"/>
+        <!-- Radial lines -->
+        <line x1="200" y1="200" x2="200" y2="40" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+        <line x1="200" y1="200" x2="338" y2="110" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+        <line x1="200" y1="200" x2="338" y2="290" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+        <line x1="200" y1="200" x2="200" y2="360" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+        <line x1="200" y1="200" x2="62" y2="290" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+        <line x1="200" y1="200" x2="62" y2="110" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
         <!-- Central disc -->
         <circle cx="200" cy="200" r="65" fill="url(#goldGradient)" stroke="rgba(184,149,106,0.5)" stroke-width="2"/>
-        <text x="200" y="175" text-anchor="middle" fill="white" font-size="13" font-family="Inter,sans-serif" font-weight="600">BUSINESS</text>
-        <text x="200" y="205" text-anchor="middle" fill="white" font-size="24" font-family="Space Grotesk,sans-serif" font-weight="700">IMPACT</text>
-        <text x="200" y="232" text-anchor="middle" fill="white" font-size="24" font-family="Space Grotesk,sans-serif" font-weight="700">ENGINE</text>
+        <text x="200" y="190" text-anchor="middle" fill="white" font-size="16" font-family="Space Grotesk,sans-serif" font-weight="700">IMPACT</text>
+        <text x="200" y="212" text-anchor="middle" fill="white" font-size="16" font-family="Space Grotesk,sans-serif" font-weight="700">ENGINE</text>
         <!-- Gradients -->
         <defs>
           <radialGradient id="goldGradient" cx="30%" cy="30%">
@@ -776,9 +786,44 @@ body {
             <stop offset="50%" stop-color="#b8956a"/>
             <stop offset="100%" stop-color="#8a6d4a"/>
           </radialGradient>
+          <linearGradient id="nodeGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#1a2a4a"/>
+            <stop offset="100%" stop-color="#0f1a30"/>
+          </linearGradient>
         </defs>
+        <!-- Node 1: FORECASTING (top) -->
+        <g transform="translate(200,30)">
+          <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+          <text x="0" y="4" text-anchor="middle" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">FORECASTING</text>
+        </g>
+        <!-- Node 2: WORKFLOWS (upper-right) -->
+        <g transform="translate(338,110)">
+          <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+          <text x="0" y="4" text-anchor="middle" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">WORKFLOWS</text>
+        </g>
+        <!-- Node 3: AUTOMATION (lower-right) -->
+        <g transform="translate(338,290)">
+          <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+          <text x="0" y="4" text-anchor="middle" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">AUTOMATION</text>
+        </g>
+        <!-- Node 4: EXECUTION (bottom) -->
+        <g transform="translate(200,370)">
+          <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+          <text x="0" y="4" text-anchor="middle" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">EXECUTION</text>
+        </g>
+        <!-- Node 5: DECISIONS (lower-left) -->
+        <g transform="translate(62,290)">
+          <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+          <text x="0" y="4" text-anchor="middle" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">DECISIONS</text>
+        </g>
+        <!-- Node 6: AI SYSTEMS (upper-left) -->
+        <g transform="translate(62,110)">
+          <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+          <text x="0" y="4" text-anchor="middle" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">AI SYSTEMS</text>
+        </g>
+        <!-- Junction dots removed -->
       </svg>
-      <div class="role-fit-strip">
+      <div class="role-fit-strip" style="margin-top: 12px;">
         <span class="role-fit-pill">AI Strategy</span>
         <span class="role-fit-pill">Commercial Planning</span>
         <span class="role-fit-pill">Forecasting</span>
