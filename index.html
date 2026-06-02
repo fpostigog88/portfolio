@@ -4,77 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Felipe Postigo — MBA | Applied AI</title>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QNWVGSNNHS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-QNWVGSNNHS');
-</script>
-<!-- Language Detection -->
-<script>
-  (function() {
-    var lang = navigator.language || navigator.userLanguage;
-    if (lang && lang.startsWith('es') && !window.location.pathname.startsWith('/es')) {
-      window.location.href = '/es/';
-    }
-  })();
-</script>
+<!-- Google Analytics removed -->
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
 
-/* Cookie consent banner */
-.cookie-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: var(--text);
-  color: #fff;
-  padding: 14px 24px;
-  font-size: 0.8rem;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-.cookie-banner p {
-  margin: 0;
-  color: rgba(255,255,255,0.8);
-}
-.cookie-banner a {
-  color: var(--accent-light);
-  text-decoration: underline;
-}
-.cookie-btn {
-  padding: 8px 18px;
-  border-radius: 6px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  cursor: pointer;
-  border: none;
-  transition: all 0.2s;
-}
-.cookie-btn-accept {
-  background: var(--accent);
-  color: white;
-}
-.cookie-btn-accept:hover {
-  background: var(--accent-light);
-}
-.cookie-btn-dismiss {
-  background: transparent;
-  color: rgba(255,255,255,0.6);
-  border: 1px solid rgba(255,255,255,0.2);
-}
-.cookie-btn-dismiss:hover {
-  color: white;
-  border-color: rgba(255,255,255,0.4);
-}
-.cookie-hidden { display: none !important; }
 
 :root {
   --bg: #faf9f7;
@@ -718,9 +651,6 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .agent-item:last-child { border-bottom: none; }
 .agent-name {
   font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 8px;
   margin-bottom: 2px;
 }
 .agent-icon {
@@ -737,7 +667,6 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .agent-desc {
   font-size: 0.7rem;
   color: var(--text-muted);
-  margin-left: 30px;
   margin-top: 2px;
 }
 .agent-status {
@@ -782,7 +711,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   .exp-grid { grid-template-columns: 1fr; }
   .experience-section { padding: 0 16px 32px; }
   .footer { padding: 24px 16px; }
-  .video-demo iframe { height: 200px; }
+  .video-demo iframe { height: 300px; }
 }
 </style>
 </head>
@@ -792,13 +721,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-left">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-        <div class="hero-badge"><span class="dot"></span> Available for hire</div>
-        <div class="lang-toggle" style="display:flex;gap:4px;align-items:center;">
-          <a href="/" style="font-size:0.7rem;font-weight:600;color:#fff;text-decoration:none;padding:4px 8px;border-radius:4px;background:var(--accent);border:1px solid var(--accent);">EN</a>
-          <a href="/es/" style="font-size:0.7rem;font-weight:600;color:var(--text-secondary);text-decoration:none;padding:4px 8px;border-radius:4px;border:1px solid var(--border);">ES</a>
-        </div>
-      </div>
+      <div class="hero-badge"><span class="dot"></span> Available for hire</div>
       <h1>Felipe Postigo</h1>
       <div class="hero-subtitle">Commercial Strategy | Applied AI</div>
       <div class="hero-value">I am a Michigan Ross MBA and commercial strategy operator focused on applied AI, pricing, automation, and business systems. My work sits at the intersection of business judgment and technical execution: translating ambiguous problems into models, workflows, dashboards, and AI-enabled systems that improve decision speed. I am especially interested in roles where AI, strategy, operations, and product thinking intersect.</div>
@@ -958,9 +881,8 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <div class="video-demo-badge">Production</div>
       </div>
       <div class="video-demo-player" style="flex:1;display:flex;flex-direction:column;">
-        <div class="video-demo-text">PC-to-Android task execution demo</div>
-        <div style="border-radius:8px;overflow:hidden;border:1px solid var(--border);background:#000;flex:1;min-height:190px;">
-          <iframe width="100%" height="100%" style="width:100%;height:100%;min-height:190px;display:block;border:0;" src="https://www.youtube.com/embed/yAfvXZR69eY?rel=0&modestbranding=1&playsinline=1" title="Autonomous Workflow Engine Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid var(--border);background:#000;flex:1;min-height:300px;">
+          <iframe width="100%" height="100%" style="width:100%;height:100%;min-height:300px;display:block;border:0;" src="https://www.youtube.com/embed/yAfvXZR69eY?rel=0&modestbranding=1&playsinline=1" title="Autonomous Workflow Engine Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -971,48 +893,56 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div class="right-col" style="display:flex;flex-direction:column;gap:16px;justify-content:space-between;flex:0 0 280px;">
     <div class="agent-panel">
       <div class="agent-panel-title">
-        <span><span class="agent-live"></span> AI Workflow Capabilities</span>
+        <span><span class="agent-live"></span> SMART Capabilities</span>
       </div>
       <ul class="agent-list">
         <li class="agent-item">
-          <div>
-            <div class="agent-name"><span class="agent-icon" style="background:#4f46e5">S</span>System Coordination</div>
-            <div class="agent-desc">Oversight, routing, and reliability</div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="agent-icon" style="background:#4f46e5">S</span>
+            <div>
+              <div class="agent-name">System Coordination</div>
+              <div class="agent-desc">Oversight, routing, and reliability</div>
+            </div>
           </div>
           <span class="agent-status status-active">Active</span>
         </li>
         <li class="agent-item">
-          <div>
-            <div class="agent-name"><span class="agent-icon" style="background:#059669">F</span>Finance Analysis</div>
-            <div class="agent-desc">Tracking, classification, anomaly review</div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="agent-icon" style="background:#0891b2">M</span>
+            <div>
+              <div class="agent-name">Market Monitoring</div>
+              <div class="agent-desc">Signals, briefings, and watchlists</div>
+            </div>
           </div>
           <span class="agent-status status-active">Active</span>
         </li>
         <li class="agent-item">
-          <div>
-            <div class="agent-name"><span class="agent-icon" style="background:#7c3aed">R</span>Research Synthesis</div>
-            <div class="agent-desc">Market, technical, and strategic research</div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="agent-icon" style="background:#ea580c">A</span>
+            <div>
+              <div class="agent-name">Workflow Automation</div>
+              <div class="agent-desc">Repeatable task execution</div>
+            </div>
           </div>
           <span class="agent-status status-active">Active</span>
         </li>
         <li class="agent-item">
-          <div>
-            <div class="agent-name"><span class="agent-icon" style="background:#ea580c">A</span>Workflow Automation</div>
-            <div class="agent-desc">Repeatable task execution</div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="agent-icon" style="background:#7c3aed">R</span>
+            <div>
+              <div class="agent-name">Research Synthesis</div>
+              <div class="agent-desc">Market, technical, and strategic research</div>
+            </div>
           </div>
           <span class="agent-status status-active">Active</span>
         </li>
         <li class="agent-item">
-          <div>
-            <div class="agent-name"><span class="agent-icon" style="background:#0891b2">M</span>Market Monitoring</div>
-            <div class="agent-desc">Signals, briefings, and watchlists</div>
-          </div>
-          <span class="agent-status status-active">Active</span>
-        </li>
-        <li class="agent-item">
-          <div>
-            <div class="agent-name"><span class="agent-icon" style="background:#db2777">D</span>Decision Support</div>
-            <div class="agent-desc">Planning prompts and next-step support</div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="agent-icon" style="background:#db2777">T</span>
+            <div>
+              <div class="agent-name">Tactical Decision Support</div>
+              <div class="agent-desc">Planning prompts and next-step support</div>
+            </div>
           </div>
           <span class="agent-status status-active">Active</span>
         </li>
@@ -1127,31 +1057,6 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     </a>
   </div>
 </div>
-
-<!-- Cookie Consent Banner -->
-<div id="cookie-banner" class="cookie-banner cookie-hidden">
-  <p>This site uses Google Analytics to understand how visitors find the portfolio. <a href="https://policies.google.com/technologies/cookies" target="_blank">Learn more</a></p>
-  <div style="display:flex;gap:8px;">
-    <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Accept</button>
-    <button class="cookie-btn cookie-btn-dismiss" onclick="dismissCookies()">Decline</button>
-  </div>
-</div>
-
-<script>
-  // Cookie consent logic
-  function acceptCookies() {
-    localStorage.setItem('cookie_consent', 'accepted');
-    document.getElementById('cookie-banner').classList.add('cookie-hidden');
-  }
-  function dismissCookies() {
-    localStorage.setItem('cookie_consent', 'declined');
-    document.getElementById('cookie-banner').classList.add('cookie-hidden');
-  }
-  // Show banner if not yet decided
-  if (!localStorage.getItem('cookie_consent')) {
-    document.getElementById('cookie-banner').classList.remove('cookie-hidden');
-  }
-</script>
 
 </body>
 </html>
