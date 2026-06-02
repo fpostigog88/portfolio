@@ -64,7 +64,9 @@ body {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 420px;
-  gap: 48px;
+  grid-template-rows: auto auto;
+  column-gap: 48px;
+  row-gap: 22px;
   align-items: stretch;
   text-align: left;
   position: relative;
@@ -88,6 +90,7 @@ body {
   width: 100%;
   min-width: 0;
   height: 100%;
+  padding-top: 8px;
 }
 .hero-graph {
   width: 100%;
@@ -95,13 +98,16 @@ body {
   display: block;
 }
 .hero-header {
+  grid-column: 1 / -1;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
   width: 100%;
+  position: relative;
+  text-align: center;
 }
 .hero-header-text {
-  flex: 1;
+  flex: 0 1 auto;
 }
 .hero h1 {
   font-family: 'Space Grotesk', sans-serif;
@@ -109,7 +115,7 @@ body {
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.1;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   color: var(--text);
 }
 .hero h1 .highlight { color: var(--accent-dark); }
@@ -134,6 +140,9 @@ body {
   margin-bottom: 4px;
 }
 .lang-toggle {
+  position: absolute;
+  right: 0;
+  top: 0;
   display: flex;
   gap: 4px;
   align-items: center;
@@ -668,7 +677,9 @@ body {
   .hero-stats { grid-template-columns: repeat(4, 1fr); }
   .exp-grid { grid-template-columns: repeat(2, 1fr); }
   .hero-inner { grid-template-columns: 1fr; gap: 32px; }
-  .hero-right { order: -1; }
+  .hero-header { grid-column: 1; }
+  .lang-toggle { position: static; margin-left: 12px; }
+  .hero-right { order: -1; padding-top: 0; }
   .hero-right svg { width: 320px; height: 320px; }
 }
 @media (max-width: 768px) {
@@ -702,20 +713,20 @@ body {
      ============================================ -->
 <section class="hero">
   <div class="hero-inner">
+    <div class="hero-header">
+      <div class="hero-header-text">
+        <h1>Felipe Postigo</h1>
+        <div class="hero-subtitle">Commercial Strategy | Applied AI</div>
+      </div>
+      <div class="lang-toggle">
+        <a href="/" class="active">EN</a>
+        <a href="/es/">ES</a>
+      </div>
+    </div>
     <div class="hero-left">
       <div class="hero-left-content">
-      <div class="hero-header">
-        <div class="hero-header-text">
-          <h1>Felipe Postigo</h1>
-          <div class="hero-subtitle">Commercial Strategy | Applied AI</div>
-        </div>
-        <div class="lang-toggle">
-          <a href="/" class="active">EN</a>
-          <a href="/es/">ES</a>
-        </div>
-      </div>
       <div class="hero-value">
-        I am a Michigan Ross MBA and commercial strategy operator focused on applied AI, pricing, automation, and business systems. My work sits at the intersection of business judgment and technical execution: translating ambiguous problems into models, workflows, dashboards, and AI-enabled systems that improve decision speed. I am especially interested in roles where AI, strategy, operations, and product thinking intersect.
+        Michigan Ross MBA and commercial strategy operator focused on applied AI, pricing, automation, and business systems.<br><br>I build models, workflows, and AI-enabled systems that improve execution and decision speed.
       </div>
       <div class="hero-stats">
         <div class="hero-stat">
