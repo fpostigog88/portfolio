@@ -90,7 +90,6 @@ body {
   width: 100%;
   min-width: 0;
   height: 100%;
-  padding-top: 8px;
 }
 .hero-graph {
   width: 100%;
@@ -211,7 +210,7 @@ body {
   justify-content: center;
   gap: 6px;
   flex-wrap: nowrap;
-  margin-top: 10px;
+  margin-top: auto;
   margin-bottom: 0;
   width: 100%;
 }
@@ -756,7 +755,7 @@ body {
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           LinkedIn
         </a>
-        <a href="mailto:fpostigo@umich.edu" class="hero-cta hero-cta-secondary" title="Send Email">
+        <a href="mailto:fpostigo@umich.edu?subject=Interview%20Request&body=Hi%20Felipe,%0A%0AI%20think%20you%27re%20an%20amazing%20candidate%20and%20would%20love%20to%20schedule%20an%20interview%20with%20you.%20Let%27s%20find%20a%20time%20that%20works.%0A%0ABest," class="hero-cta hero-cta-secondary" title="Send Email">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           Email
         </a>
@@ -777,12 +776,9 @@ body {
         <line x1="200" y1="200" x2="62" y2="110" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
         <!-- Central disc -->
         <circle cx="200" cy="200" r="65" fill="url(#goldGradient)" stroke="rgba(184,149,106,0.5)" stroke-width="2"/>
-        <text x="200" y="175" text-anchor="middle" fill="white" font-size="9" font-family="Inter,sans-serif" font-weight="600">BUSINESS</text>
-        <text x="200" y="195" text-anchor="middle" fill="white" font-size="16" font-family="Space Grotesk,sans-serif" font-weight="700">IMPACT</text>
-        <text x="200" y="212" text-anchor="middle" fill="white" font-size="16" font-family="Space Grotesk,sans-serif" font-weight="700">ENGINE</text>
-        <line x1="165" y1="222" x2="235" y2="222" stroke="white" stroke-width="0.5" opacity="0.6"/>
-        <text x="200" y="235" text-anchor="middle" fill="white" font-size="8" font-family="Inter,sans-serif" font-weight="600">AI-POWERED</text>
-        <text x="200" y="248" text-anchor="middle" fill="white" font-size="8" font-family="Inter,sans-serif" font-weight="600">DECISION SYSTEMS</text>
+        <text x="200" y="175" text-anchor="middle" fill="white" font-size="13" font-family="Inter,sans-serif" font-weight="600">BUSINESS</text>
+        <text x="200" y="205" text-anchor="middle" fill="white" font-size="24" font-family="Space Grotesk,sans-serif" font-weight="700">IMPACT</text>
+        <text x="200" y="232" text-anchor="middle" fill="white" font-size="24" font-family="Space Grotesk,sans-serif" font-weight="700">ENGINE</text>
         <!-- Gradients -->
         <defs>
           <radialGradient id="goldGradient" cx="30%" cy="30%">
@@ -790,65 +786,7 @@ body {
             <stop offset="50%" stop-color="#b8956a"/>
             <stop offset="100%" stop-color="#8a6d4a"/>
           </radialGradient>
-          <linearGradient id="nodeGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#1a2a4a"/>
-            <stop offset="100%" stop-color="#0f1a30"/>
-          </linearGradient>
         </defs>
-        <!-- Node 1: FORECASTING (top) -->
-        <g transform="translate(200,30)">
-          <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
-          <text x="-45" y="-2" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">FORECASTING</text>
-          <text x="-45" y="8" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">PREDICT DEMAND.</text>
-          <text x="-45" y="16" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">REDUCE UNCERTAINTY.</text>
-          <circle cx="40" cy="0" r="12" fill="rgba(184,149,106,0.2)" stroke="rgba(184,149,106,0.5)" stroke-width="1"/>
-          <text x="40" y="4" text-anchor="middle" fill="#b8956a" font-size="12" font-family="Space Grotesk,sans-serif">&#x25B2;</text>
-        </g>
-        <!-- Node 2: WORKFLOWS (upper-right) -->
-        <g transform="translate(338,110)">
-          <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
-          <text x="-45" y="-2" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">WORKFLOWS</text>
-          <text x="-45" y="8" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">ORCHESTRATE PROCESSES.</text>
-          <text x="-45" y="16" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">ELIMINATE FRICTION.</text>
-          <circle cx="40" cy="0" r="12" fill="rgba(184,149,106,0.2)" stroke="rgba(184,149,106,0.5)" stroke-width="1"/>
-          <text x="40" y="4" text-anchor="middle" fill="#b8956a" font-size="10" font-family="Space Grotesk,sans-serif">&#x21BA;</text>
-        </g>
-        <!-- Node 3: AUTOMATION (lower-right) -->
-        <g transform="translate(338,290)">
-          <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
-          <text x="-45" y="-2" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">AUTOMATION</text>
-          <text x="-45" y="8" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">EXECUTE FASTER.</text>
-          <text x="-45" y="16" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">SAVE TIME. SCALE IMPACT.</text>
-          <circle cx="40" cy="0" r="12" fill="rgba(184,149,106,0.2)" stroke="rgba(184,149,106,0.5)" stroke-width="1"/>
-          <text x="40" y="4" text-anchor="middle" fill="#b8956a" font-size="10" font-family="Space Grotesk,sans-serif">&#x26A1;</text>
-        </g>
-        <!-- Node 4: EXECUTION (bottom) -->
-        <g transform="translate(200,370)">
-          <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
-          <text x="-45" y="-2" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">EXECUTION</text>
-          <text x="-45" y="8" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">TURN PLANS INTO ACTION.</text>
-          <text x="-45" y="16" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">DELIVER RESULTS.</text>
-          <circle cx="40" cy="0" r="12" fill="rgba(184,149,106,0.2)" stroke="rgba(184,149,106,0.5)" stroke-width="1"/>
-          <text x="40" y="4" text-anchor="middle" fill="#b8956a" font-size="12" font-family="Space Grotesk,sans-serif">&#x25B2;</text>
-        </g>
-        <!-- Node 5: DECISIONS (lower-left) -->
-        <g transform="translate(62,290)">
-          <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
-          <text x="-45" y="-2" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">DECISIONS</text>
-          <text x="-45" y="8" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">PRIORITIZE OPTIONS.</text>
-          <text x="-45" y="16" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">DRIVE CONFIDENCE.</text>
-          <circle cx="40" cy="0" r="12" fill="rgba(184,149,106,0.2)" stroke="rgba(184,149,106,0.5)" stroke-width="1"/>
-          <text x="40" y="4" text-anchor="middle" fill="#b8956a" font-size="10" font-family="Space Grotesk,sans-serif">&#x25CE;</text>
-        </g>
-        <!-- Node 6: AI SYSTEMS (upper-left) -->
-        <g transform="translate(62,110)">
-          <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
-          <text x="-45" y="-2" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">AI SYSTEMS</text>
-          <text x="-45" y="8" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">APPLY INTELLIGENCE.</text>
-          <text x="-45" y="16" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">AUTOMATE INSIGHTS.</text>
-          <circle cx="40" cy="0" r="12" fill="rgba(184,149,106,0.2)" stroke="rgba(184,149,106,0.5)" stroke-width="1"/>
-          <text x="40" y="4" text-anchor="middle" fill="#b8956a" font-size="10" font-family="Space Grotesk,sans-serif">&#x1F9E0;</text>
-        </g>
       </svg>
       <div class="role-fit-strip">
         <span class="role-fit-pill">AI Strategy</span>
