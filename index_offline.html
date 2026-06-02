@@ -62,36 +62,33 @@ body {
 .hero-inner {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 48px;
   align-items: center;
-  text-align: center;
+  text-align: left;
   position: relative;
   z-index: 1;
-  gap: 24px;
 }
-.hero-badge {
-  display: inline-flex;
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.hero-right {
+  display: flex;
   align-items: center;
-  gap: 8px;
-  background: var(--accent-glow);
-  border: 1px solid rgba(184, 149, 106, 0.3);
-  color: var(--accent-dark);
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 16px;
+  justify-content: center;
 }
-.hero-badge .dot {
-  width: 6px; height: 6px;
-  background: var(--accent);
-  border-radius: 50%;
-  animation: pulse 2s infinite;
+.hero-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
 }
-@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+.hero-header-text {
+  flex: 1;
+}
 .hero h1 {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 2.8rem;
@@ -111,12 +108,10 @@ body {
 .hero-value {
   font-size: 0.95rem;
   color: var(--text-muted);
-  max-width: 700px;
+  max-width: 100%;
   line-height: 1.6;
   margin-bottom: 16px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: left;
 }
 .hero-value-strong {
   font-weight: 600;
@@ -124,15 +119,10 @@ body {
   margin-top: 8px;
   margin-bottom: 4px;
 }
-
-/* ============================================
-   LANGUAGE TOGGLE
-   ============================================ */
 .lang-toggle {
   display: flex;
   gap: 4px;
   align-items: center;
-  margin-bottom: 8px;
 }
 .lang-toggle a {
   font-size: 0.7rem;
@@ -148,38 +138,34 @@ body {
   color: #fff;
   border-color: var(--accent);
 }
-
-/* ============================================
-   STAT CARDS
-   ============================================ */
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: 12px;
   max-width: 100%;
   width: 100%;
-  margin: 16px auto;
+  margin: 8px 0;
 }
 .hero-stat {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 10px;
-  padding: 20px;
+  padding: 16px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  min-height: 140px;
+  min-height: 120px;
   height: 100%;
 }
 .hero-stat-value {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--accent-dark);
-  margin-bottom: 8px;
-  min-height: 2.2rem;
+  margin-bottom: 6px;
+  min-height: 2rem;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -187,50 +173,29 @@ body {
   white-space: nowrap;
 }
 .hero-stat-label {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  min-height: 50px;
+  min-height: 40px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   line-height: 1.3;
 }
-
-/* ============================================
-   ROLE FIT PILLS
-   ============================================ */
 .role-fit-strip {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
-.role-fit-pill {
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  color: var(--accent-dark);
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.035em;
-}
-
-/* ============================================
-   CTA BUTTONS
-   ============================================ */
 .hero-ctas {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  justify-content: center;
-  max-width: 800px;
+  max-width: 100%;
   width: 100%;
-  margin: 0 auto;
+  margin: 0;
 }
 .hero-cta {
   display: inline-flex;
@@ -668,6 +633,9 @@ body {
   .left-col, .right-col, .center-col { flex: 1 1 auto !important; width: 100% !important; }
   .hero-stats { grid-template-columns: repeat(4, 1fr); }
   .exp-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+  .hero-right { order: -1; }
+  .hero-right svg { width: 320px; height: 320px; }
 }
 @media (max-width: 768px) {
   .main { flex-direction: column; padding: 16px; }
@@ -681,6 +649,10 @@ body {
   .experience-section { padding: 0 16px 32px; }
   .footer { padding: 24px 16px; }
   .video-demo-player iframe { height: 300px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 24px; }
+  .hero-right svg { width: 280px; height: 280px; }
+  .hero-header { flex-direction: column; gap: 8px; }
+  .lang-toggle { align-self: flex-start; }
 }
 </style>
 <script>
@@ -696,53 +668,155 @@ body {
      ============================================ -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-badge"><span class="dot"></span> Available for hire</div>
-    <div class="lang-toggle">
-      <a href="/" class="active">EN</a>
-      <a href="/es/">ES</a>
-    </div>
-    <h1>Felipe Postigo</h1>
-    <div class="hero-subtitle">Commercial Strategy | Applied AI</div>
-    <div class="hero-value">
-      I am a Michigan Ross MBA and commercial strategy operator focused on applied AI, pricing, automation, and business systems. My work sits at the intersection of business judgment and technical execution: translating ambiguous problems into models, workflows, dashboards, and AI-enabled systems that improve decision speed. I am especially interested in roles where AI, strategy, operations, and product thinking intersect.
-    </div>
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <div class="hero-stat-value">90%+</div>
-        <div class="hero-stat-label">Forecast accuracy achieved in Excel models and AI + ML-assisted planning pilots</div>
+    <div class="hero-left">
+      <div class="hero-header">
+        <div class="hero-header-text">
+          <h1>Felipe Postigo</h1>
+          <div class="hero-subtitle">Commercial Strategy | Applied AI</div>
+        </div>
+        <div class="lang-toggle">
+          <a href="/" class="active">EN</a>
+          <a href="/es/">ES</a>
+        </div>
       </div>
-      <div class="hero-stat">
-        <div class="hero-stat-value">120+ hours</div>
-        <div class="hero-stat-label">Manual reporting effort eliminated through automation</div>
+      <div class="hero-value">
+        I am a Michigan Ross MBA and commercial strategy operator focused on applied AI, pricing, automation, and business systems. My work sits at the intersection of business judgment and technical execution: translating ambiguous problems into models, workflows, dashboards, and AI-enabled systems that improve decision speed. I am especially interested in roles where AI, strategy, operations, and product thinking intersect.
       </div>
-      <div class="hero-stat">
-        <div class="hero-stat-value">10+ years</div>
-        <div class="hero-stat-label">Commercial strategy, pricing, operations, and business development experience</div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-value">90%+</div>
+          <div class="hero-stat-label">Forecast accuracy achieved in Excel models and AI + ML-assisted planning pilots</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">120+ hours</div>
+          <div class="hero-stat-label">Manual reporting effort eliminated through automation</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">10+ years</div>
+          <div class="hero-stat-label">Commercial strategy, pricing, operations, and business development experience</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">6-agent system</div>
+          <div class="hero-stat-label">Autonomous AI ecosystem built for research, planning, and execution</div>
+        </div>
       </div>
-      <div class="hero-stat">
-        <div class="hero-stat-value">6-agent system</div>
-        <div class="hero-stat-label">Autonomous AI ecosystem built for research, planning, and execution</div>
+      <div class="hero-value hero-value-strong">Let's build what comes next.</div>
+      <div class="hero-value">Open to AI strategy, business operations, product, pricing, and applied automation opportunities.</div>
+      <div class="role-fit-strip">
+        <span class="role-fit-pill">AI Strategy</span>
+        <span class="role-fit-pill">Commercial Planning</span>
+        <span class="role-fit-pill">Forecasting</span>
+        <span class="role-fit-pill">Decision Support</span>
+      </div>
+      <div class="hero-ctas">
+        <a href="https://calendly.com/fpostigo/30min" class="hero-cta hero-cta-primary" target="_blank">Schedule Interview</a>
+        <a href="resume.pdf" download="Felipe Postigo - Michigan Ross MBA.pdf" class="hero-cta hero-cta-secondary" target="_blank">Download Resume</a>
+        <a href="https://www.linkedin.com/in/felipe-postigo/" class="hero-cta hero-cta-secondary" target="_blank" title="LinkedIn Profile">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="mailto:fpostigo@umich.edu" class="hero-cta hero-cta-secondary" title="Send Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Email
+        </a>
       </div>
     </div>
-    <div class="hero-value hero-value-strong">Let's build what comes next.</div>
-    <div class="hero-value">Open to AI strategy, business operations, product, pricing, and applied automation opportunities.</div>
-    <div class="role-fit-strip">
-      <span class="role-fit-pill">AI Strategy</span>
-      <span class="role-fit-pill">Commercial Planning</span>
-      <span class="role-fit-pill">Forecasting</span>
-      <span class="role-fit-pill">Decision Support</span>
-    </div>
-    <div class="hero-ctas">
-      <a href="https://calendly.com/fpostigo/30min" class="hero-cta hero-cta-primary" target="_blank">Schedule Interview</a>
-      <a href="resume.pdf" download="Felipe Postigo - Michigan Ross MBA.pdf" class="hero-cta hero-cta-secondary" target="_blank">Download Resume</a>
-      <a href="https://www.linkedin.com/in/felipe-postigo/" class="hero-cta hero-cta-secondary" target="_blank" title="LinkedIn Profile">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        LinkedIn
-      </a>
-      <a href="mailto:fpostigo@umich.edu" class="hero-cta hero-cta-secondary" title="Send Email">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        Email
-      </a>
+    <div class="hero-right">
+      <svg viewBox="0 0 400 400" width="400" height="400" style="max-width:100%;">
+        <!-- Background circles -->
+        <circle cx="200" cy="200" r="180" fill="none" stroke="rgba(184,149,106,0.15)" stroke-width="1" stroke-dasharray="4 4"/>
+        <circle cx="200" cy="200" r="140" fill="none" stroke="rgba(184,149,106,0.2)" stroke-width="1"/>
+        <circle cx="200" cy="200" r="90" fill="none" stroke="rgba(184,149,106,0.25)" stroke-width="1"/>
+        <!-- Radial lines -->
+        <line x1="200" y1="200" x2="200" y2="40" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+        <line x1="200" y1="200" x2="338" y2="110" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+        <line x1="200" y1="200" x2="338" y2="290" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+        <line x1="200" y1="200" x2="200" y2="360" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+        <line x1="200" y1="200" x2="62" y2="290" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+        <line x1="200" y1="200" x2="62" y2="110" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+        <!-- Central disc -->
+        <circle cx="200" cy="200" r="65" fill="url(#goldGradient)" stroke="rgba(184,149,106,0.5)" stroke-width="2"/>
+        <text x="200" y="175" text-anchor="middle" fill="white" font-size="9" font-family="Inter,sans-serif" font-weight="600">BUSINESS</text>
+        <text x="200" y="195" text-anchor="middle" fill="white" font-size="16" font-family="Space Grotesk,sans-serif" font-weight="700">IMPACT</text>
+        <text x="200" y="212" text-anchor="middle" fill="white" font-size="16" font-family="Space Grotesk,sans-serif" font-weight="700">ENGINE</text>
+        <line x1="165" y1="222" x2="235" y2="222" stroke="white" stroke-width="0.5" opacity="0.6"/>
+        <text x="200" y="235" text-anchor="middle" fill="white" font-size="8" font-family="Inter,sans-serif" font-weight="600">AI-POWERED</text>
+        <text x="200" y="248" text-anchor="middle" fill="white" font-size="8" font-family="Inter,sans-serif" font-weight="600">DECISION SYSTEMS</text>
+        <!-- Gradients -->
+        <defs>
+          <radialGradient id="goldGradient" cx="30%" cy="30%">
+            <stop offset="0%" stop-color="#d4b896"/>
+            <stop offset="50%" stop-color="#b8956a"/>
+            <stop offset="100%" stop-color="#8a6d4a"/>
+          </radialGradient>
+          <linearGradient id="nodeGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#1a2a4a"/>
+            <stop offset="100%" stop-color="#0f1a30"/>
+          </linearGradient>
+        </defs>
+        <!-- Node 1: FORECASTING (top) -->
+        <g transform="translate(200,30)">
+          <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+          <text x="-45" y="-2" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">FORECASTING</text>
+          <text x="-45" y="8" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">PREDICT DEMAND.</text>
+          <text x="-45" y="16" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">REDUCE UNCERTAINTY.</text>
+          <circle cx="40" cy="0" r="12" fill="rgba(184,149,106,0.2)" stroke="rgba(184,149,106,0.5)" stroke-width="1"/>
+          <text x="40" y="4" text-anchor="middle" fill="#b8956a" font-size="12" font-family="Space Grotesk,sans-serif">&#x25B2;</text>
+        </g>
+        <!-- Node 2: WORKFLOWS (upper-right) -->
+        <g transform="translate(338,110)">
+          <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+          <text x="-45" y="-2" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">WORKFLOWS</text>
+          <text x="-45" y="8" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">ORCHESTRATE PROCESSES.</text>
+          <text x="-45" y="16" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">ELIMINATE FRICTION.</text>
+          <circle cx="40" cy="0" r="12" fill="rgba(184,149,106,0.2)" stroke="rgba(184,149,106,0.5)" stroke-width="1"/>
+          <text x="40" y="4" text-anchor="middle" fill="#b8956a" font-size="10" font-family="Space Grotesk,sans-serif">&#x21BA;</text>
+        </g>
+        <!-- Node 3: AUTOMATION (lower-right) -->
+        <g transform="translate(338,290)">
+          <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+          <text x="-45" y="-2" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">AUTOMATION</text>
+          <text x="-45" y="8" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">EXECUTE FASTER.</text>
+          <text x="-45" y="16" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">SAVE TIME. SCALE IMPACT.</text>
+          <circle cx="40" cy="0" r="12" fill="rgba(184,149,106,0.2)" stroke="rgba(184,149,106,0.5)" stroke-width="1"/>
+          <text x="40" y="4" text-anchor="middle" fill="#b8956a" font-size="10" font-family="Space Grotesk,sans-serif">&#x26A1;</text>
+        </g>
+        <!-- Node 4: EXECUTION (bottom) -->
+        <g transform="translate(200,370)">
+          <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+          <text x="-45" y="-2" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">EXECUTION</text>
+          <text x="-45" y="8" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">TURN PLANS INTO ACTION.</text>
+          <text x="-45" y="16" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">DELIVER RESULTS.</text>
+          <circle cx="40" cy="0" r="12" fill="rgba(184,149,106,0.2)" stroke="rgba(184,149,106,0.5)" stroke-width="1"/>
+          <text x="40" y="4" text-anchor="middle" fill="#b8956a" font-size="12" font-family="Space Grotesk,sans-serif">&#x25B2;</text>
+        </g>
+        <!-- Node 5: DECISIONS (lower-left) -->
+        <g transform="translate(62,290)">
+          <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+          <text x="-45" y="-2" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">DECISIONS</text>
+          <text x="-45" y="8" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">PRIORITIZE OPTIONS.</text>
+          <text x="-45" y="16" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">DRIVE CONFIDENCE.</text>
+          <circle cx="40" cy="0" r="12" fill="rgba(184,149,106,0.2)" stroke="rgba(184,149,106,0.5)" stroke-width="1"/>
+          <text x="40" y="4" text-anchor="middle" fill="#b8956a" font-size="10" font-family="Space Grotesk,sans-serif">&#x25CE;</text>
+        </g>
+        <!-- Node 6: AI SYSTEMS (upper-left) -->
+        <g transform="translate(62,110)">
+          <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+          <text x="-45" y="-2" fill="white" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">AI SYSTEMS</text>
+          <text x="-45" y="8" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">APPLY INTELLIGENCE.</text>
+          <text x="-45" y="16" fill="#8b8b9a" font-size="6" font-family="Inter,sans-serif">AUTOMATE INSIGHTS.</text>
+          <circle cx="40" cy="0" r="12" fill="rgba(184,149,106,0.2)" stroke="rgba(184,149,106,0.5)" stroke-width="1"/>
+          <text x="40" y="4" text-anchor="middle" fill="#b8956a" font-size="10" font-family="Space Grotesk,sans-serif">&#x1F9E0;</text>
+        </g>
+        <!-- Junction dots -->
+        <circle cx="200" cy="200" r="4" fill="#b8956a"/>
+        <circle cx="200" cy="40" r="3" fill="#b8956a"/>
+        <circle cx="338" cy="110" r="3" fill="#b8956a"/>
+        <circle cx="338" cy="290" r="3" fill="#b8956a"/>
+        <circle cx="200" cy="360" r="3" fill="#b8956a"/>
+        <circle cx="62" cy="290" r="3" fill="#b8956a"/>
+        <circle cx="62" cy="110" r="3" fill="#b8956a"/>
+      </svg>
     </div>
   </div>
 </section>
@@ -779,6 +853,10 @@ body {
       <div class="card-title">AI Infrastructure</div>
       <div class="logo-grid logo-grid-3">
         <div class="logo-item">
+          <div class="logo-wrap"><img src="logo_advisor.webp" alt="Hermes"></div>
+          Hermes
+        </div>
+        <div class="logo-item">
           <div class="logo-wrap"><img src="logo_openai_icon_64.png" alt="OpenAI"></div>
           OpenAI
         </div>
@@ -797,10 +875,6 @@ body {
         <div class="logo-item">
           <div class="logo-wrap"><img src="logo_qwen_icon.png" alt="Qwen"></div>
           Qwen
-        </div>
-        <div class="logo-item">
-          <div class="logo-wrap"><img src="logo_advisor.webp" alt="Hermes"></div>
-          Hermes
         </div>
       </div>
     </div>
