@@ -704,6 +704,7 @@ body {
     window.location.href = '/es/';
   }
 </script>
+  <!-- deploy: ee57670-force -->
 </head>
 <body>
 
@@ -786,7 +787,53 @@ body {
             <stop offset="50%" stop-color="#b8956a"/>
             <stop offset="100%" stop-color="#8a6d4a"/>
           </radialGradient>
+          <linearGradient id="nodeGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#1a2a4a"/>
+            <stop offset="100%" stop-color="#0f1a30"/>
+          </linearGradient>
         </defs>
+        <!-- Node 1: FORECASTING (top) -->
+        <g transform="translate(200,30)">
+          <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+          <text x="-45" y="-2" fill="white" font-size="11" font-family="Space Grotesk,sans-serif" font-weight="700">FORECASTING</text>
+          <circle cx="40" cy="0" r="12" fill="rgba(184,149,106,0.2)" stroke="rgba(184,149,106,0.5)" stroke-width="1"/>
+          <text x="40" y="4" text-anchor="middle" fill="#b8956a" font-size="12" font-family="Space Grotesk,sans-serif">&#x25B2;</text>
+        </g>
+        <!-- Node 2: WORKFLOWS (upper-right) -->
+        <g transform="translate(338,110)">
+          <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+          <text x="-45" y="-2" fill="white" font-size="11" font-family="Space Grotesk,sans-serif" font-weight="700">WORKFLOWS</text>
+          <circle cx="40" cy="0" r="12" fill="rgba(184,149,106,0.2)" stroke="rgba(184,149,106,0.5)" stroke-width="1"/>
+          <text x="40" y="4" text-anchor="middle" fill="#b8956a" font-size="10" font-family="Space Grotesk,sans-serif">&#x21BA;</text>
+        </g>
+        <!-- Node 3: AUTOMATION (lower-right) -->
+        <g transform="translate(338,290)">
+          <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+          <text x="-45" y="-2" fill="white" font-size="11" font-family="Space Grotesk,sans-serif" font-weight="700">AUTOMATION</text>
+          <circle cx="40" cy="0" r="12" fill="rgba(184,149,106,0.2)" stroke="rgba(184,149,106,0.5)" stroke-width="1"/>
+          <text x="40" y="4" text-anchor="middle" fill="#b8956a" font-size="10" font-family="Space Grotesk,sans-serif">&#x26A1;</text>
+        </g>
+        <!-- Node 4: EXECUTION (bottom) -->
+        <g transform="translate(200,370)">
+          <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+          <text x="-45" y="-2" fill="white" font-size="11" font-family="Space Grotesk,sans-serif" font-weight="700">EXECUTION</text>
+          <circle cx="40" cy="0" r="12" fill="rgba(184,149,106,0.2)" stroke="rgba(184,149,106,0.5)" stroke-width="1"/>
+          <text x="40" y="4" text-anchor="middle" fill="#b8956a" font-size="12" font-family="Space Grotesk,sans-serif">&#x25B2;</text>
+        </g>
+        <!-- Node 5: DECISIONS (lower-left) -->
+        <g transform="translate(62,290)">
+          <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+          <text x="-45" y="-2" fill="white" font-size="11" font-family="Space Grotesk,sans-serif" font-weight="700">DECISIONS</text>
+          <circle cx="40" cy="0" r="12" fill="rgba(184,149,106,0.2)" stroke="rgba(184,149,106,0.5)" stroke-width="1"/>
+          <text x="40" y="4" text-anchor="middle" fill="#b8956a" font-size="10" font-family="Space Grotesk,sans-serif">&#x25CE;</text>
+        </g>
+        <!-- Node 6: AI SYSTEMS (upper-left) -->
+        <g transform="translate(62,110)">
+          <rect x="-55" y="-18" width="110" height="36" rx="18" fill="url(#nodeGrad)" stroke="rgba(184,149,106,0.4)" stroke-width="1"/>
+          <text x="-45" y="-2" fill="white" font-size="11" font-family="Space Grotesk,sans-serif" font-weight="700">AI SYSTEMS</text>
+          <circle cx="40" cy="0" r="12" fill="rgba(184,149,106,0.2)" stroke="rgba(184,149,106,0.5)" stroke-width="1"/>
+          <text x="40" y="4" text-anchor="middle" fill="#b8956a" font-size="10" font-family="Space Grotesk,sans-serif">&#x1F9E0;</text>
+        </g>
       </svg>
       <div class="role-fit-strip">
         <span class="role-fit-pill">AI Strategy</span>
