@@ -4,11 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Felipe Postigo — MBA | Applied AI</title>
-<!-- Google Analytics removed -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
-
-
+/* ============================================
+   CSS VARIABLES
+   ============================================ */
 :root {
   --bg: #faf9f7;
   --bg-card: #ffffff;
@@ -27,11 +28,22 @@
   --danger: #dc2626;
 }
 
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.5;min-height:100vh}
+/* ============================================
+   BASE RESET
+   ============================================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  min-height: 100vh;
+}
 
-/* Hero */
+/* ============================================
+   HERO SECTION
+   ============================================ */
 .hero {
   background: linear-gradient(135deg, #ffffff 0%, #f5f3ef 50%, #faf9f7 100%);
   border-bottom: 1px solid var(--border);
@@ -79,7 +91,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   border-radius: 50%;
   animation: pulse 2s infinite;
 }
-@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 .hero h1 {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 2.8rem;
@@ -89,9 +101,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   margin-bottom: 12px;
   color: var(--text);
 }
-.hero h1 .highlight {
-  color: var(--accent-dark);
-}
+.hero h1 .highlight { color: var(--accent-dark); }
 .hero-subtitle {
   font-size: 1.15rem;
   color: var(--text-secondary);
@@ -108,95 +118,40 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   margin-left: auto;
   margin-right: auto;
 }
-.role-fit-strip {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 24px;
-}
-.role-fit-pill {
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  color: var(--accent-dark);
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.035em;
-}
-.hero-ctas {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.hero-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-.hero-cta-primary {
-  background: var(--accent);
-  color: white;
-}
-.hero-cta-primary:hover {
-  background: var(--accent-dark);
-  transform: translateY(-2px);
-}
-.hero-cta-secondary {
-  background: var(--bg-elevated);
-  color: var(--text-secondary);
-  border: 1px solid var(--border);
-}
-.hero-cta-secondary:hover {
-  border-color: var(--accent);
+.hero-value-strong {
+  font-weight: 600;
   color: var(--text);
+  margin-top: 8px;
+  margin-bottom: 4px;
 }
 
-/* Contact links */
-.hero-contact-links {
+/* ============================================
+   LANGUAGE TOGGLE
+   ============================================ */
+.lang-toggle {
   display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 16px;
-}
-.hero-contact-link {
-  display: inline-flex;
+  gap: 4px;
   align-items: center;
-  gap: 6px;
-  padding: 8px 14px;
-  border-radius: 8px;
-  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+.lang-toggle a {
+  font-size: 0.7rem;
   font-weight: 600;
   text-decoration: none;
-  color: var(--text-secondary);
-  background: var(--bg-card);
+  padding: 4px 8px;
+  border-radius: 4px;
   border: 1px solid var(--border);
-  transition: all 0.2s;
+  color: var(--text-secondary);
 }
-.hero-contact-link:hover {
+.lang-toggle a.active {
+  background: var(--accent);
+  color: #fff;
   border-color: var(--accent);
-  color: var(--accent-dark);
-  transform: translateY(-1px);
-}
-.hero-contact-link svg {
-  width: 15px;
-  height: 15px;
-  flex-shrink: 0;
 }
 
-.hero-right {
-  justify-self: end;
-  display: flex;
-  justify-content: end;
-  width: 100%;
-}
+/* ============================================
+   STAT CARDS
+   ============================================ */
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -243,7 +198,115 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   line-height: 1.3;
 }
 
-/* Main Layout */
+/* ============================================
+   ROLE FIT PILLS
+   ============================================ */
+.role-fit-strip {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+.role-fit-pill {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--accent-dark);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.035em;
+}
+
+/* ============================================
+   CTA BUTTONS
+   ============================================ */
+.hero-ctas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s;
+  flex: 1;
+  text-align: center;
+}
+.hero-cta-primary {
+  background: var(--accent);
+  color: white;
+}
+.hero-cta-primary:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+}
+.hero-cta-secondary {
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+.hero-cta-secondary:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+.hero-cta svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   CONTACT LINKS
+   ============================================ */
+.hero-contact-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 16px;
+}
+.hero-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+.hero-contact-link:hover {
+  border-color: var(--accent);
+  color: var(--accent-dark);
+  transform: translateY(-1px);
+}
+.hero-contact-link svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   MAIN LAYOUT
+   ============================================ */
 .main {
   max-width: 1200px;
   margin: 0 auto;
@@ -252,17 +315,36 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   gap: 16px;
   align-items: stretch;
 }
+.left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: space-between;
+  flex: 0 0 280px;
+}
+.center-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: space-between;
+  flex: 1 1 0;
+}
+.right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: space-between;
+  flex: 0 0 280px;
+}
 
-/* Cards */
+/* ============================================
+   CARDS
+   ============================================ */
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 24px;
-  margin-bottom: 16px;
-}
-.left-col .card, .right-col .card {
-  margin-bottom: 0;
 }
 .card-title {
   font-size: 0.8rem;
@@ -276,15 +358,16 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   justify-content: space-between;
 }
 
-/* Logos */
+/* ============================================
+   LOGOS
+   ============================================ */
 .logo-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   gap: 8px;
 }
-.logo-grid-5 {
-  grid-template-columns: repeat(5, 1fr);
-}
+.logo-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.logo-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.logo-grid-4 { grid-template-columns: repeat(4, 1fr); }
 .logo-item {
   display: flex;
   flex-direction: column;
@@ -306,12 +389,6 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   border-color: var(--accent);
   transform: translateY(-2px);
 }
-.logo-item img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  padding: 2px;
-}
 .logo-wrap {
   width: 32px;
   height: 32px;
@@ -324,91 +401,23 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   overflow: hidden;
 }
 .logo-wrap img {
-  width: 32px !important;
-  height: 32px !important;
-  object-fit: contain !important;
-}
-.logo-placeholder {
-  width: 32px; height: 32px;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: white;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
 }
 
-/* Experience */
-.exp-item {
-  padding: 12px 0;
-  border-bottom: 1px solid var(--border);
-}
-.exp-item:last-child { border-bottom: none; }
-.exp-company {
-  font-weight: 700;
-  font-size: 0.9rem;
-  margin-bottom: 2px;
-  color: var(--text);
-}
-.exp-role {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  margin-bottom: 4px;
-}
-.exp-desc {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  line-height: 1.5;
-}
-.exp-tag {
-  display: inline-block;
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 0.65rem;
-  font-weight: 600;
-  margin-top: 6px;
-  margin-right: 4px;
-  background: var(--bg-elevated);
-  color: var(--text-secondary);
-  border: 1px solid var(--border);
-}
-
-/* Experience Section (Full Width) */
-.experience-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 0 32px;
-}
-.exp-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  align-items: stretch;
-}
-.exp-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-}
-.exp-card > div:last-child {
-  margin-top: auto;
-}
-.exp-card .exp-company { font-size: 0.85rem; }
-.exp-card .exp-role { font-size: 0.75rem; margin-bottom: 6px; }
-.exp-card .exp-desc { font-size: 0.7rem; margin-bottom: 8px; }
-
-/* Center: Projects */
+/* ============================================
+   PROJECT CARDS
+   ============================================ */
 .project-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 16px 20px;
-  margin-bottom: 0;
   transition: all 0.2s;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 .project-card:hover {
   border-color: var(--accent);
@@ -433,70 +442,33 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
-.badge-green { background: rgba(5, 150, 105, 0.08); color: var(--success); border: 1px solid rgba(5, 150, 105, 0.15); }
-.badge-blue { background: rgba(37, 99, 235, 0.08); color: var(--info); border: 1px solid rgba(37, 99, 235, 0.15); }
-.badge-orange { background: rgba(217, 119, 6, 0.08); color: var(--warning); border: 1px solid rgba(217, 119, 6, 0.15); }
+.badge-green {
+  background: rgba(5, 150, 105, 0.08);
+  color: var(--success);
+  border: 1px solid rgba(5, 150, 105, 0.15);
+}
+.badge-blue {
+  background: rgba(37, 99, 235, 0.08);
+  color: var(--info);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+}
 .project-desc {
   font-size: 0.85rem;
   color: var(--text-secondary);
-  margin-bottom: 0;
   line-height: 1.5;
 }
-.project-metrics {
-  display: flex;
-  gap: 16px;
-  margin-bottom: 12px;
-  flex-wrap: wrap;
-}
-.project-metric {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-}
-.project-metric-value {
-  font-weight: 700;
-  color: var(--text);
-}
-.project-links {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-.project-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 14px;
-  border-radius: 8px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-.link-primary {
-  background: var(--accent);
-  color: white;
-}
-.link-primary:hover {
-  background: var(--accent-dark);
-}
-.link-secondary {
-  background: var(--bg-elevated);
-  color: var(--text-secondary);
-  border: 1px solid var(--border);
-}
-.link-secondary:hover {
-  border-color: var(--accent);
-  color: var(--text);
-}
 
-/* Video Demo */
+/* ============================================
+   VIDEO DEMO
+   ============================================ */
 .video-demo {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 12px 16px;
-  margin-bottom: 0;
-  color: var(--text);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 .video-demo-header {
   display: flex;
@@ -527,109 +499,22 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   border-radius: 10px;
   padding: 12px;
   text-align: center;
-  margin-bottom: 0;
-}
-.video-demo-icon {
-  font-size: 1.5rem;
-  margin-bottom: 8px;
-  color: var(--accent);
-}
-.video-demo-text {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  margin-bottom: 14px;
-}
-.video-demo-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  background: var(--accent);
-  color: var(--bg);
-  border-radius: 8px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: all 0.2s;
-  font-size: 0.85rem;
-}
-.video-demo-btn:hover {
-  background: var(--accent-light);
-  transform: translateY(-2px);
-}
-
-/* Ecosystem Card */
-.ecosystem-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 16px;
-}
-.ecosystem-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-top: 12px;
-}
-.ecosystem-item {
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 14px;
-  text-align: center;
-}
-.ecosystem-icon {
-  width: 36px; height: 36px;
-  border-radius: 8px;
+  flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: white;
-  margin: 0 auto 8px;
+  flex-direction: column;
 }
-.ecosystem-name {
-  font-size: 0.8rem;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-.ecosystem-desc {
-  font-size: 0.7rem;
-  color: var(--text-muted);
+.video-demo-player iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  display: block;
+  border: 0;
+  border-radius: 8px;
 }
 
-/* Terminal */
-.terminal {
-  background: #0a0a10;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 16px;
-  font-family: 'JetBrains Mono', 'Fira Code', monospace;
-  font-size: 0.75rem;
-  line-height: 1.6;
-  overflow-x: auto;
-  margin-bottom: 16px;
-}
-.terminal-header {
-  display: flex;
-  gap: 6px;
-  margin-bottom: 12px;
-  align-items: center;
-}
-.terminal-dot {
-  width: 10px; height: 10px;
-  border-radius: 50%;
-}
-.terminal-dot.red { background: #ef4444; }
-.terminal-dot.yellow { background: #f59e0b; }
-.terminal-dot.green { background: #22c55e; }
-.terminal-line { color: var(--text-secondary); margin-bottom: 3px; }
-.terminal-prompt { color: var(--accent); }
-.terminal-success { color: var(--success); }
-.terminal-accent { color: var(--info); }
-
-/* Right: Agent Panel */
+/* ============================================
+   SMART CAPABILITIES PANEL
+   ============================================ */
 .agent-panel {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -686,17 +571,79 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   color: var(--text-muted);
   margin-top: 2px;
 }
-.agent-status {
-  font-size: 0.65rem;
-  font-weight: 600;
+
+/* ============================================
+   EXPERIENCE SECTION
+   ============================================ */
+.experience-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0 32px;
+}
+.experience-section .card-title {
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+.exp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-items: stretch;
+}
+.exp-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.exp-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.exp-card-header img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+.exp-company {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+.exp-role {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+.exp-desc {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.exp-tags {
+  margin-top: auto;
+}
+.exp-tag {
+  display: inline-block;
   padding: 2px 8px;
   border-radius: 4px;
-  flex-shrink: 0;
-  margin-top: 2px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  margin-top: 6px;
+  margin-right: 4px;
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
 }
-.status-active { background: rgba(5, 150, 105, 0.08); color: var(--success); }
 
-/* Footer */
+/* ============================================
+   FOOTER
+   ============================================ */
 .footer {
   max-width: 1200px;
   margin: 0 auto;
@@ -706,8 +653,14 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   font-size: 0.8rem;
   color: var(--text-muted);
 }
+.footer-sub {
+  margin-top: 6px;
+  font-size: 0.7rem;
+}
 
-/* Responsive */
+/* ============================================
+   RESPONSIVE
+   ============================================ */
 @media (max-width: 1024px) {
   .main { flex-direction: column; }
   .left-col, .right-col, .center-col { flex: 1 1 auto !important; width: 100% !important; }
@@ -721,16 +674,14 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   .hero h1 { font-size: 2rem; }
   .hero-stats { grid-template-columns: 1fr 1fr; }
   .logo-grid { grid-template-columns: repeat(4, 1fr); }
-  .ecosystem-grid { grid-template-columns: 1fr 1fr; }
   .hero-ctas { flex-direction: column; }
   .exp-grid { grid-template-columns: 1fr; }
   .experience-section { padding: 0 16px 32px; }
   .footer { padding: 24px 16px; }
-  .video-demo iframe { height: 300px; }
+  .video-demo-player iframe { height: 300px; }
 }
 </style>
 <script>
-  // Auto-detect Spanish browser and redirect
   if (navigator.language && navigator.language.startsWith('es')) {
     window.location.href = '/es/';
   }
@@ -738,17 +689,21 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 </head>
 <body>
 
-<!-- Hero -->
-<div class="hero">
+<!-- ============================================
+     HERO SECTION
+     ============================================ -->
+<section class="hero">
   <div class="hero-inner">
     <div class="hero-badge"><span class="dot"></span> Available for hire</div>
-    <div class="lang-toggle" style="display:flex;gap:4px;align-items:center;">
-      <a href="/" style="font-size:0.7rem;font-weight:600;color:#fff;text-decoration:none;padding:4px 8px;border-radius:4px;background:var(--accent);border:1px solid var(--accent);">EN</a>
-      <a href="/es/" style="font-size:0.7rem;font-weight:600;color:var(--text-secondary);text-decoration:none;padding:4px 8px;border-radius:4px;border:1px solid var(--border);">ES</a>
+    <div class="lang-toggle">
+      <a href="/" class="active">EN</a>
+      <a href="/es/">ES</a>
     </div>
     <h1>Felipe Postigo</h1>
     <div class="hero-subtitle">Commercial Strategy | Applied AI</div>
-    <div class="hero-value">I am a Michigan Ross MBA and commercial strategy operator focused on applied AI, pricing, automation, and business systems. My work sits at the intersection of business judgment and technical execution: translating ambiguous problems into models, workflows, dashboards, and AI-enabled systems that improve decision speed. I am especially interested in roles where AI, strategy, operations, and product thinking intersect.</div>
+    <div class="hero-value">
+      I am a Michigan Ross MBA and commercial strategy operator focused on applied AI, pricing, automation, and business systems. My work sits at the intersection of business judgment and technical execution: translating ambiguous problems into models, workflows, dashboards, and AI-enabled systems that improve decision speed. I am especially interested in roles where AI, strategy, operations, and product thinking intersect.
+    </div>
     <div class="hero-stats">
       <div class="hero-stat">
         <div class="hero-stat-value">90%+</div>
@@ -767,149 +722,137 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <div class="hero-stat-label">Autonomous AI ecosystem built for research, planning, and execution</div>
       </div>
     </div>
-    <div class="hero-value" style="font-weight:600;color:var(--text);margin-top:8px;">Let's build what comes&nbsp;next.</div>
-    <div class="hero-value" style="margin-top:4px;margin-bottom:12px;">Open to AI strategy, business operations, product, pricing, and applied automation opportunities.</div>
-    <div class="role-fit-strip" style="justify-content:center;">
+    <div class="hero-value hero-value-strong">Let's build what comes next.</div>
+    <div class="hero-value">Open to AI strategy, business operations, product, pricing, and applied automation opportunities.</div>
+    <div class="role-fit-strip">
       <span class="role-fit-pill">AI Strategy</span>
       <span class="role-fit-pill">Commercial Planning</span>
       <span class="role-fit-pill">Forecasting</span>
       <span class="role-fit-pill">Decision Support</span>
     </div>
-    <div class="hero-ctas" style="justify-content:center;max-width:800px;width:100%;margin:0 auto;">
-      <a href="https://calendly.com/fpostigo/30min" class="hero-cta hero-cta-primary" target="_blank" style="flex:1;text-align:center;justify-content:center;">Schedule Interview</a>
-      <a href="resume.pdf" download="Felipe Postigo - Michigan Ross MBA.pdf" class="hero-cta hero-cta-secondary" target="_blank" style="flex:1;text-align:center;justify-content:center;">Download Resume</a>
-      <a href="https://www.linkedin.com/in/felipe-postigo/" class="hero-cta hero-cta-secondary" target="_blank" title="LinkedIn Profile" style="flex:1;text-align:center;justify-content:center;">
-        <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    <div class="hero-ctas">
+      <a href="https://calendly.com/fpostigo/30min" class="hero-cta hero-cta-primary" target="_blank">Schedule Interview</a>
+      <a href="resume.pdf" download="Felipe Postigo - Michigan Ross MBA.pdf" class="hero-cta hero-cta-secondary" target="_blank">Download Resume</a>
+      <a href="https://www.linkedin.com/in/felipe-postigo/" class="hero-cta hero-cta-secondary" target="_blank" title="LinkedIn Profile">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         LinkedIn
       </a>
-      <a href="mailto:fpostigo@umich.edu" class="hero-cta hero-cta-secondary" title="Send Email" style="flex:1;text-align:center;justify-content:center;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <a href="mailto:fpostigo@umich.edu" class="hero-cta hero-cta-secondary" title="Send Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         Email
       </a>
     </div>
   </div>
-</div>
+</section>
 
-<!-- Main -->
-<div class="main" id="projects">
+<!-- ============================================
+     MAIN CONTENT (3-COLUMN LAYOUT)
+     ============================================ -->
+<main class="main" id="projects">
 
   <!-- LEFT COLUMN -->
-  <div class="left-col" style="display:flex;flex-direction:column;gap:16px;justify-content:space-between;flex:0 0 280px;">
-    <!-- Work Logos -->
+  <aside class="left-col">
     <div class="card">
       <div class="card-title">Work and Education</div>
-      <div class="logo-grid" style="grid-template-columns:repeat(2,1fr);gap:10px;">
+      <div class="logo-grid logo-grid-2">
         <div class="logo-item">
-          <div class="logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_Logo.svg" alt="Dell" style="width:32px!important;height:32px!important;object-fit:contain!important;"></div>
+          <div class="logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_Logo.svg" alt="Dell"></div>
           Dell
         </div>
         <div class="logo-item">
-          <div class="logo-wrap"><img src="logo_moller_new.png" alt="Moller" style="width:32px!important;height:32px!important;object-fit:contain!important;"></div>
+          <div class="logo-wrap"><img src="logo_moller_new.png" alt="Moller"></div>
           Moller
         </div>
         <div class="logo-item">
-          <div class="logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Michigan_Wolverines_logo.svg" alt="Michigan" style="width:32px!important;height:32px!important;object-fit:contain!important;"></div>
+          <div class="logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Michigan_Wolverines_logo.svg" alt="Michigan"></div>
           Michigan
         </div>
         <div class="logo-item">
-          <div class="logo-wrap"><img src="logo_uc_transparent_v2.png" alt="UC" style="width:32px!important;height:32px!important;object-fit:contain!important;"></div>
+          <div class="logo-wrap"><img src="logo_uc_transparent_v2.png" alt="UC Chile"></div>
           UC Chile
         </div>
       </div>
     </div>
-
-    <!-- Tech Logos -->
     <div class="card">
       <div class="card-title">AI Infrastructure</div>
-      <div class="logo-grid" style="grid-template-columns:repeat(3,1fr);gap:8px;">
+      <div class="logo-grid logo-grid-3">
         <div class="logo-item">
-          <div class="logo-wrap"><img src="logo_openai_icon_64.png" alt="OpenAI" style="width:32px!important;height:32px!important;object-fit:contain!important;"></div>
+          <div class="logo-wrap"><img src="logo_openai_icon_64.png" alt="OpenAI"></div>
           OpenAI
         </div>
         <div class="logo-item">
-          <div class="logo-wrap"><img src="logo_claude_icon.png" alt="Anthropic" style="width:32px!important;height:32px!important;object-fit:contain!important;"></div>
+          <div class="logo-wrap"><img src="logo_claude_icon.png" alt="Anthropic"></div>
           Anthropic
         </div>
         <div class="logo-item">
-          <div class="logo-wrap"><img src="logo_fireworks_icon.png" alt="Fireworks" style="width:32px!important;height:32px!important;object-fit:contain!important;"></div>
+          <div class="logo-wrap"><img src="logo_fireworks_icon.png" alt="Fireworks"></div>
           Fireworks
         </div>
         <div class="logo-item">
-          <div class="logo-wrap"><img src="logo_llama.png" alt="llama.cpp" style="width:32px!important;height:32px!important;object-fit:contain!important;"></div>
+          <div class="logo-wrap"><img src="logo_llama.png" alt="llama.cpp"></div>
           llama.cpp
         </div>
         <div class="logo-item">
-          <div class="logo-wrap"><img src="logo_qwen_icon.png" alt="Qwen" style="width:32px!important;height:32px!important;object-fit:contain!important;"></div>
+          <div class="logo-wrap"><img src="logo_qwen_icon.png" alt="Qwen"></div>
           Qwen
         </div>
         <div class="logo-item">
-          <div class="logo-wrap"><img src="logo_advisor.webp" alt="Hermes" style="width:32px!important;height:32px!important;object-fit:contain!important;"></div>
+          <div class="logo-wrap"><img src="logo_advisor.webp" alt="Hermes"></div>
           Hermes
         </div>
       </div>
     </div>
-
     <div class="card">
       <div class="card-title">Business Intelligence</div>
-      <div class="logo-grid" style="grid-template-columns:repeat(2,1fr);gap:10px;">
+      <div class="logo-grid logo-grid-2">
         <div class="logo-item">
-          <div class="logo-wrap"><img src="logo_excel.png" alt="Excel" style="width:32px!important;height:32px!important;object-fit:contain!important;"></div>
+          <div class="logo-wrap"><img src="logo_excel.png" alt="Excel"></div>
           Excel
         </div>
         <div class="logo-item">
-          <div class="logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="PowerBI" style="width:32px!important;height:32px!important;object-fit:contain!important;"></div>
+          <div class="logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="PowerBI"></div>
           PowerBI
         </div>
       </div>
     </div>
-
-  </div>
+  </aside>
 
   <!-- CENTER COLUMN -->
-  <div class="center-col" style="display:flex;flex-direction:column;gap:16px;justify-content:space-between;flex:1 1 0;">
-
-    <!-- Projects -->
-    <div class="project-card" style="flex:1;display:flex;flex-direction:column;">
+  <section class="center-col">
+    <div class="project-card">
       <div class="project-header">
         <div class="project-title">ML Forecasting and Margin Risk Detection</div>
         <span class="project-badge badge-blue">Prototype</span>
       </div>
       <div class="project-desc">Built forecasting and margin-signal prototypes to flag business risk earlier, support planning conversations, and turn model output into commercial decisions. Forecasting work reached 90%+ accuracy.</div>
     </div>
-
-    <div class="project-card" style="flex:1;display:flex;flex-direction:column;">
+    <div class="project-card">
       <div class="project-header">
         <div class="project-title">Business Workflow Automation System</div>
         <span class="project-badge badge-green">Production</span>
       </div>
       <div class="project-desc">Turns recurring manual processes into scheduled, monitored execution loops. Shows how business teams can move from one-off analysis to always-on operating systems that save time and reduce follow-up load.</div>
     </div>
-
-    <div class="project-card" style="flex:1;display:flex;flex-direction:column;">
+    <div class="project-card">
       <div class="project-header">
         <div class="project-title">Finance Intelligence and Decision Support</div>
         <span class="project-badge badge-green">Production</span>
       </div>
       <div class="project-desc">Local decision-support system for transaction classification, anomaly detection, and spending visibility — a practical prototype for AI-assisted FP&A and commercial planning workflows.</div>
     </div>
-
-    <!-- Video Demo -->
-    <div class="video-demo" style="flex:1;display:flex;flex-direction:column;">
+    <div class="video-demo">
       <div class="video-demo-header">
         <div class="video-demo-title">Watch workflow automation in action</div>
         <div class="video-demo-badge">Production</div>
       </div>
-      <div class="video-demo-player" style="flex:1;display:flex;flex-direction:column;">
-        <div style="border-radius:8px;overflow:hidden;border:1px solid var(--border);background:#000;flex:1;min-height:300px;">
-          <iframe width="100%" height="100%" style="width:100%;height:100%;min-height:300px;display:block;border:0;" src="https://www.youtube.com/embed/yAfvXZR69eY?rel=0&modestbranding=1&playsinline=1" title="Autonomous Workflow Engine Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
+      <div class="video-demo-player">
+        <iframe src="https://www.youtube.com/embed/yAfvXZR69eY?rel=0&modestbranding=1&playsinline=1" title="Autonomous Workflow Engine Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
     </div>
-
-  </div>
+  </section>
 
   <!-- RIGHT COLUMN -->
-  <div class="right-col" style="display:flex;flex-direction:column;gap:16px;justify-content:space-between;flex:0 0 280px;">
+  <aside class="right-col">
     <div class="agent-panel">
       <div class="agent-panel-title">
         <span><span class="agent-live"></span> SMART Capabilities</span>
@@ -962,105 +905,140 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         </li>
       </ul>
     </div>
-
     <div class="card">
       <div class="card-title">Core Infrastructure</div>
-      <div class="logo-grid" style="grid-template-columns:repeat(2,1fr);gap:10px;">
-        <div class="logo-item"><div class="logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" style="width:32px!important;height:32px!important;object-fit:contain!important;"></div>Python</div>
-        <div class="logo-item"><div class="logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Sqlite-square-icon.svg" alt="SQLite" style="width:32px!important;height:32px!important;object-fit:contain!important;"></div>SQLite</div>
-        <div class="logo-item"><div class="logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" alt="Docker" style="width:32px!important;height:32px!important;object-fit:contain!important;"></div>Docker</div>
-        <div class="logo-item"><div class="logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" style="width:32px!important;height:32px!important;object-fit:contain!important;"></div>GitHub</div>
+      <div class="logo-grid logo-grid-2">
+        <div class="logo-item">
+          <div class="logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python"></div>
+          Python
+        </div>
+        <div class="logo-item">
+          <div class="logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Sqlite-square-icon.svg" alt="SQLite"></div>
+          SQLite
+        </div>
+        <div class="logo-item">
+          <div class="logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" alt="Docker"></div>
+          Docker
+        </div>
+        <div class="logo-item">
+          <div class="logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub"></div>
+          GitHub
+        </div>
       </div>
     </div>
+  </aside>
+</main>
 
-
-  </div>
-</div>
-
-<!-- Experience Section (Full Width) -->
-<div class="experience-section" id="experience">
-  <div class="card-title" style="margin-bottom:16px;font-size:1rem;color:var(--accent-dark);">Experience</div>
+<!-- ============================================
+     EXPERIENCE SECTION
+     ============================================ -->
+<section class="experience-section" id="experience">
+  <div class="card-title">Experience</div>
   <div class="exp-grid">
     <div class="exp-card">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-        <img src="logo_dell.png" alt="Dell" style="width:32px;height:32px;object-fit:contain;">
+      <div class="exp-card-header">
+        <img src="logo_dell.png" alt="Dell">
         <div class="exp-company">Dell Technologies</div>
       </div>
       <div class="exp-role">Lead — Analytics, AI and Program Strategy (2023–2026)</div>
       <div class="exp-desc">Led digital transformation from 2-person 80-hour process to 1-person streamlined operation. $16B+ enterprise server revenue with 90%+ forecast accuracy. Built AI-enabled forecasting models and executive reporting ecosystems.</div>
-      <div><span class="exp-tag">Forecasting</span><span class="exp-tag">Pricing Strategy</span></div>
+      <div class="exp-tags">
+        <span class="exp-tag">Forecasting</span>
+        <span class="exp-tag">Pricing Strategy</span>
+      </div>
     </div>
     <div class="exp-card">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-        <img src="logo_acgs.png" alt="ACHS" style="width:32px;height:32px;object-fit:cover;border-radius:4px;">
+      <div class="exp-card-header">
+        <img src="logo_acgs.png" alt="ACHS">
         <div class="exp-company">ACHS (Hospital)</div>
       </div>
       <div class="exp-role">Commercial Head (2020–2021)</div>
       <div class="exp-desc">Redesigned data-driven commercial workflows and customer engagement increasing sales 20%. Built commercial performance dashboards and operational analytics reducing reporting effort by 90%.</div>
-      <div><span class="exp-tag">Commercial Ops</span><span class="exp-tag">Process Automation</span></div>
+      <div class="exp-tags">
+        <span class="exp-tag">Commercial Ops</span>
+        <span class="exp-tag">Process Automation</span>
+      </div>
     </div>
     <div class="exp-card">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-        <img src="logo_moller_new.png" alt="Moller" style="width:32px;height:32px;object-fit:contain;">
+      <div class="exp-card-header">
+        <img src="logo_moller_new.png" alt="Moller">
         <div class="exp-company">Moller y Perez-Cotapos</div>
       </div>
       <div class="exp-role">Associate Manager — Real Estate Business Development (2018–2020)</div>
       <div class="exp-desc">Led team of 7 analysts. Acquired 10 properties worth $64.6M. 22 investment projects, +60% business unit profit. Automated forecasting models (+50% accuracy, -25% execution time).</div>
-      <div><span class="exp-tag">Business Development</span><span class="exp-tag">Investments</span></div>
+      <div class="exp-tags">
+        <span class="exp-tag">Business Development</span>
+        <span class="exp-tag">Investments</span>
+      </div>
     </div>
     <div class="exp-card">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-        <img src="logo_moller_new.png" alt="Moller" style="width:32px;height:32px;object-fit:contain;">
+      <div class="exp-card-header">
+        <img src="logo_moller_new.png" alt="Moller">
         <div class="exp-company">Moller y Perez-Cotapos</div>
       </div>
       <div class="exp-role">Head of Real Estate Business Development (2017–2018)</div>
       <div class="exp-desc">Developed and presented strategy to board of directors, acquired 9 properties for $57M. Closed 8 fund deals for $40M at 11% ROI. Evaluated 1.2K properties worth $4.2B.</div>
-      <div><span class="exp-tag">Business Development</span><span class="exp-tag">Negotiation</span></div>
+      <div class="exp-tags">
+        <span class="exp-tag">Business Development</span>
+        <span class="exp-tag">Negotiation</span>
+      </div>
     </div>
     <div class="exp-card">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-        <img src="logo_moller_new.png" alt="Moller" style="width:32px;height:32px;object-fit:contain;">
+      <div class="exp-card-header">
+        <img src="logo_moller_new.png" alt="Moller">
         <div class="exp-company">Moller y Perez-Cotapos</div>
       </div>
       <div class="exp-role">Real Estate Product Manager (2014–2017)</div>
       <div class="exp-desc">Directed cross-functional execution across sales, marketing, construction, and development. +25% monthly sales. Resolved permitting bottlenecks. Negotiated construction contracts for cost/quality.</div>
-      <div><span class="exp-tag">Product</span><span class="exp-tag">Operations</span></div>
+      <div class="exp-tags">
+        <span class="exp-tag">Product</span>
+        <span class="exp-tag">Operations</span>
+      </div>
     </div>
     <div class="exp-card">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-        <img src="logo_moller_new.png" alt="Moller" style="width:32px;height:32px;object-fit:contain;">
+      <div class="exp-card-header">
+        <img src="logo_moller_new.png" alt="Moller">
         <div class="exp-company">Moller y Perez-Cotapos</div>
       </div>
       <div class="exp-role">Development Engineer — Real Estate Division (2012–2014)</div>
       <div class="exp-desc">Conducted market research and financial modeling on hundreds of properties yearly.</div>
-      <div><span class="exp-tag">Market Analysis</span><span class="exp-tag">Financial Evaluation</span></div>
+      <div class="exp-tags">
+        <span class="exp-tag">Market Analysis</span>
+        <span class="exp-tag">Financial Evaluation</span>
+      </div>
     </div>
     <div class="exp-card">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Michigan_Wolverines_logo.svg" alt="Michigan" style="width:32px;height:32px;object-fit:contain;">
+      <div class="exp-card-header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Michigan_Wolverines_logo.svg" alt="Michigan">
         <div class="exp-company">University of Michigan</div>
       </div>
       <div class="exp-role">MBA, Stephen M. Ross School of Business (2023)</div>
       <div class="exp-desc">Awarded Dean's Fellowship (Merit Full-Tuition Scholarship). Focus on strategy and operations.</div>
-      <div><span class="exp-tag">MBA</span></div>
+      <div class="exp-tags">
+        <span class="exp-tag">MBA</span>
+      </div>
     </div>
     <div class="exp-card">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-        <img src="logo_uc_transparent_v2.png" alt="UC" style="width:32px;height:32px;object-fit:contain;">
+      <div class="exp-card-header">
+        <img src="logo_uc_transparent_v2.png" alt="UC">
         <div class="exp-company">Universidad Catolica de Chile</div>
       </div>
       <div class="exp-role">BBA, Honors Scholarship (2012)</div>
       <div class="exp-desc">Awarded Honors Scholarship. Graduated top 11%. Teaching assistant and mentorship.</div>
-      <div><span class="exp-tag">BBA</span></div>
+      <div class="exp-tags">
+        <span class="exp-tag">BBA</span>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- Footer -->
-<div class="footer">
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer class="footer">
   <p>Built as a hands-on AI productivity system for research, planning, automation, and decision support</p>
-  <p style="margin-top:6px;font-size:0.7rem">Designed to show practical business AI adoption: measurable workflows, reliable execution, and commercial decision support.</p>
-  <div class="hero-contact-links" style="justify-content:center;margin-top:16px;">
+  <p class="footer-sub">Designed to show practical business AI adoption: measurable workflows, reliable execution, and commercial decision support.</p>
+  <div class="hero-contact-links">
     <a href="https://www.linkedin.com/in/felipe-postigo/" class="hero-contact-link" target="_blank" title="LinkedIn Profile">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
       LinkedIn
@@ -1070,7 +1048,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       Email
     </a>
   </div>
-</div>
+</footer>
 
 </body>
 </html>
