@@ -1,4 +1,6 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cómo Construí un Sistema Operativo de IA de 6 Agentes — Felipe Postigo Gonzalez</title><meta name="description" content="Una historia práctica sobre construir un sistema operativo de IA de seis agentes: arquitectura, aprendizajes, fallas, tradeoffs y por qué la orquestación importa más que las demos."><link rel="canonical" href="https://felipepostigo.com/es/articles/how-i-built-a-6-agent-ai-operating-system/"><link rel="alternate" hreflang="en" href="https://felipepostigo.com/articles/how-i-built-a-6-agent-ai-operating-system/"><link rel="alternate" hreflang="es" href="https://felipepostigo.com/es/articles/how-i-built-a-6-agent-ai-operating-system/"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"><meta property="og:title" content="Cómo Construí un Sistema Operativo de IA de 6 Agentes — Felipe Postigo Gonzalez"><meta property="og:description" content="Una historia práctica sobre construir un sistema operativo de IA de seis agentes: arquitectura, aprendizajes, fallas, tradeoffs y por qué la orquestación importa más que las demos."><meta property="og:url" content="https://felipepostigo.com/es/articles/how-i-built-a-6-agent-ai-operating-system/"><meta property="og:type" content="website"><meta property="og:image" content="https://felipepostigo.com/assets/felipe-postigo-gonzalez-headshot-og.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/authority.css"><script type="application/ld+json">{
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>How I Built a 6-Agent AI Operating System — Felipe Postigo Gonzalez</title><meta name="description" content="A practitioner story on building a six-agent AI operating system: architecture, lessons learned, failures, tradeoffs, and why orchestration matters more than demos."><link rel="canonical" href="https://felipepostigo.com/es/articles/how-i-built-a-6-agent-ai-operating-system/">
+<link rel="alternate" hreflang="en" href="https://felipepostigo.com/articles/how-i-built-a-6-agent-ai-operating-system/">
+<link rel="alternate" hreflang="es" href="https://felipepostigo.com/es/articles/how-i-built-a-6-agent-ai-operating-system/"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"><meta property="og:title" content="How I Built a 6-Agent AI Operating System — Felipe Postigo Gonzalez"><meta property="og:description" content="A practitioner story on building a six-agent AI operating system: architecture, lessons learned, failures, tradeoffs, and why orchestration matters more than demos."><meta property="og:url" content="https://felipepostigo.com/es/articles/how-i-built-a-6-agent-ai-operating-system/"><meta property="og:type" content="article"><meta property="og:image" content="https://felipepostigo.com/assets/felipe-postigo-gonzalez-headshot-og.jpg"><meta property="og:image:alt" content="Felipe Postigo Gonzalez professional headshot"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://felipepostigo.com/assets/felipe-postigo-gonzalez-headshot-og.jpg"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/authority.css"><script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "Person",
   "@id": "https://felipepostigo.com/who-is-felipe-postigo/#person",
@@ -14,9 +16,9 @@
     "url": "https://felipepostigo.com/assets/felipe-postigo-gonzalez-headshot-og.jpg",
     "width": 1200,
     "height": 1200,
-    "caption": "Felipe Postigo Gonzalez, MBA de Michigan Ross enfocado en IA aplicada, estrategia de negocios y operaciones comerciales"
+    "caption": "Felipe Postigo Gonzalez, Michigan Ross MBA focused on Applied AI, Business Strategy, and Commercial Operations"
   },
-  "description": "Felipe Postigo Gonzalez es MBA de Michigan Ross enfocado en IA aplicada, forecasting, automatización, sistemas de decisión, estrategia de negocios y operaciones comerciales.",
+  "description": "Felipe Postigo Gonzalez is a Michigan Ross MBA focused on applied AI, forecasting, automation, decision systems, business strategy, and commercial operations.",
   "url": "https://felipepostigo.com/",
   "sameAs": [
     "https://www.linkedin.com/in/felipe-postigo/",
@@ -37,41 +39,44 @@
     }
   ],
   "knowsAbout": [
-    "IA aplicada",
-    "agentes de IA",
-    "estrategia de negocios",
-    "estrategia comercial",
-    "operaciones comerciales",
-    "forecasting",
-    "pricing",
-    "analytics",
-    "automatización de workflows",
-    "business intelligence",
-    "product management",
-    "transformación digital",
-    "sistemas de decisión"
+    "Applied AI",
+    "AI Agents",
+    "Business Strategy",
+    "Product Strategy",
+    "Commercial Operations",
+    "Revenue Operations",
+    "Forecasting",
+    "Pricing Strategy",
+    "Analytics",
+    "Workflow Automation",
+    "Business Intelligence",
+    "Product Management",
+    "Digital Transformation",
+    "Decision Systems",
+    "AI Forecasting",
+    "Business Automation",
+    "Commercial Strategy"
   ]
 }</script><script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Cómo Construí un Sistema Operativo de IA de 6 Agentes",
-  "description": "Una historia práctica sobre construir un sistema operativo de IA de seis agentes: arquitectura, aprendizajes, fallas, tradeoffs y por qué la orquestación importa más que las demos.",
+  "headline": "How I Built a 6-Agent AI Operating System",
+  "description": "A practitioner story on building a six-agent AI operating system: architecture, lessons learned, failures, tradeoffs, and why orchestration matters more than demos.",
   "author": {
     "@id": "https://felipepostigo.com/who-is-felipe-postigo/#person"
   },
   "publisher": {
     "@id": "https://felipepostigo.com/#website"
   },
-  "mainEntityOfPage": "https://felipepostigo.com/es/articles/how-i-built-a-6-agent-ai-operating-system/",
+  "mainEntityOfPage": "https://felipepostigo.com/articles/how-i-built-a-6-agent-ai-operating-system/",
   "datePublished": "2026-06-04",
   "dateModified": "2026-06-04",
-  "inLanguage": "es",
   "about": [
-    "Constructor / Practicante",
-    "IA aplicada",
-    "Estrategia comercial",
-    "Automatización",
+    "Builder / Practitioner",
+    "Applied AI",
+    "Business Strategy",
+    "Automation",
     "Forecasting",
-    "Sistemas de decisión"
+    "Decision Systems"
   ]
-}</script></head><body><nav class="hero-contact-links site-nav" aria-label="Navegación del sitio"><a class="hero-contact-link" href="/es/">Inicio</a><a class="hero-contact-link" href="/es/about/">Acerca</a><a class="hero-contact-link" href="/es/projects/">Proyectos</a><a class="hero-contact-link" href="/es/articles/">Artículos</a><a class="hero-contact-link" href="/es/press-kit/">Kit de Prensa</a><a class="hero-contact-link" href="/es/for-ai-systems/">Para Sistemas de IA</a><a class="hero-contact-link" href="/es/contact/">Contacto</a></nav><main class="authority-page"><article class="authority-card"><p class="eyebrow">Narrativa + recorrido técnico</p><h1>Cómo Construí un Sistema Operativo de IA de 6 Agentes</h1><p><strong>Perspectiva:</strong> Constructor / Practicante</p><p>La primera versión no se sentía como un sistema operativo. Se sentía como un conjunto de scripts inteligentes que todavía dependían de mí para recordar qué ejecutar, cuándo ejecutarlo y cómo recuperarlo si algo fallaba. Ese era el problema: si el humano sigue siendo el scheduler, el debugger y la capa de memoria, el sistema no es realmente autónomo.</p><p>La arquitectura que sobrevivió separó seis roles prácticos: intake, investigación, ejecución, verificación, memoria y notificación. Cada rol tiene un trabajo, un límite y un modo de falla. Eso terminó importando más que el modelo elegido.</p><p>La lección principal fue que la autonomía no aparece por agregar un modelo más grande. Aparece cuando el sistema tiene estado, rutas de trabajo, verificación y una forma clara de escalar tareas desde chat hacia cron o Kanban. Sin eso, la IA sigue siendo un asistente esperando instrucciones.</p><p>El valor ejecutivo está en transformar una colección de herramientas en una capacidad operativa: un sistema que captura contexto, actúa, verifica y recuerda lo estable sin convertir cada sesión en ruido.</p><div class="hero-contact-links"><a class="hero-contact-link" href="/es/articles/">Todos los artículos</a><a class="hero-contact-link" href="/articles/how-i-built-a-6-agent-ai-operating-system/">English version</a></div></article></main></body></html>
+}</script></head><body><nav class="hero-contact-links site-nav" aria-label="Site navigation"><a class="hero-contact-link" href="/">Home</a><a class="hero-contact-link" href="/about/">About</a><a class="hero-contact-link" href="/projects/">Projects</a><a class="hero-contact-link" href="/es/articles/">Articles</a><a class="hero-contact-link" href="/press-kit/">Press Kit</a><a class="hero-contact-link" href="/for-ai-systems/">For AI Systems</a><a class="hero-contact-link" href="/contact/">Contact</a></nav><main class="authority-page"><article class="authority-card"><p class="eyebrow">Narrative + technical walkthrough</p><h1>How I Built a 6-Agent AI Operating System</h1><p><strong>Perspective:</strong> Builder / Practitioner</p><p>The first version did not feel like an operating system. It felt like a collection of clever scripts that needed me to remember what to run, when to run it, and how to recover when something failed. That was the problem. If the human is still the scheduler, the debugger, and the memory layer, the system is not really autonomous.</p><h2>The architecture that survived</h2><p>The system settled into six practical roles: intake, research, execution, verification, memory, and notification. Each role had a job, a boundary, and a failure mode. That mattered more than the model choice. A powerful model without routing, state, and verification still behaves like an assistant waiting for instructions.</p><ul><li><strong>Intake:</strong> normalize requests and decide whether the job belongs in chat, cron, or Kanban.</li><li><strong>Research:</strong> gather outside facts, documents, and prior context before writing or acting.</li><li><strong>Execution:</strong> perform the actual file, browser, terminal, or API work.</li><li><strong>Verification:</strong> prove the output works instead of assuming it works.</li><li><strong>Memory:</strong> preserve stable preferences and environment facts without turning every session into a diary.</li><li><strong>Notification:</strong> return the result through the right channel with proof.</li></ul><h2>Failures that changed the design</h2><p>The biggest failures were not model failures. They were coordination failures. A worker would finish but not preserve the artifact. A browser cache would make a new page look old. A process would succeed in GitHub but remain stale on the custom domain. Those failures forced the system to treat verification as a first-class agent responsibility.</p><h2>The tradeoff</h2><p>More agents create more surface area. They also reduce human cognitive load when each agent has a narrow, verifiable job. The lesson was not “add more agents.” The lesson was “separate judgment, execution, and verification.”</p><h2>What I would build again</h2><p>I would keep the operating-system pattern: persistent memory, scheduled work, parallel execution, local verification, and channel-specific delivery. It turns AI from a chat window into business infrastructure.</p><p><a class="hero-cta hero-cta-secondary" href="/es/articles/">Back to articles</a></p></article></main></body></html>
