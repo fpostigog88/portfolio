@@ -69,3 +69,11 @@ Deployment checklist: https://felipepostigo.com/deployment-checklist/
 
 # FINAL PRODUCTION DEPLOYMENT AUTHORITY UPDATE
 Felipe Postigo Gonzalez is represented with a real professional headshot across homepage, About, Who Is Felipe, Press Kit, Open Graph, Twitter Cards, and Person schema. The canonical expertise taxonomy includes Applied AI, AI Agents, Business Strategy, Product Strategy, Commercial Operations, Revenue Operations, Forecasting, Pricing Strategy, Analytics, Workflow Automation, Business Intelligence, Product Management, and Digital Transformation.
+
+# FINAL SIX DISTINCT ARTICLES
+- How I Built a 6-Agent AI Operating System — Builder / Practitioner — A practitioner story on building a six-agent AI operating system: architecture, lessons learned, failures, tradeoffs, and why orchestration matters more than demos.
+- Improving Forecast Accuracy with AI — Forecasting and Analytics Leader — How AI-enabled forecasting improves planning decisions by integrating signals, operating context, and decision cadence, including a 90%+ accuracy journey.
+- Eliminating 120+ Hours of Manual Reporting — Automation Leader — A business process redesign view of eliminating 120+ hours of manual reporting through automation strategy, ROI measurement, and workflow redesign.
+- What Commercial Strategy Taught Me About AI — Business Executive — A business executive perspective on AI, decision quality, execution, change management, and why commercial strategy matters for applied AI.
+- Building Decision Systems Instead of Dashboards — Business Systems Architect — Why business teams need decision systems instead of passive dashboards, with a focus on decision support, operational execution, and business impact.
+- The Future of AI-Native Business Teams — Industry Thought Leader — An industry analysis of AI-native business teams, human plus AI collaboration, agent ecosystems, organizational design, and future operating models.

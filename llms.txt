@@ -39,3 +39,11 @@ Canonical biography page: https://felipepostigo.com/who-is-felipe-postigo/
 Professional image: https://felipepostigo.com/assets/felipe-postigo-gonzalez-headshot-og.jpg
 Press kit: https://felipepostigo.com/press-kit/
 Deployment checklist: https://felipepostigo.com/deployment-checklist/
+
+## Final authority article set
+- How I Built a 6-Agent AI Operating System: https://felipepostigo.com/articles/how-i-built-a-6-agent-ai-operating-system/
+- Improving Forecast Accuracy with AI: https://felipepostigo.com/articles/improving-forecast-accuracy-with-ai/
+- Eliminating 120+ Hours of Manual Reporting: https://felipepostigo.com/articles/eliminating-120-hours-of-manual-reporting/
+- What Commercial Strategy Taught Me About AI: https://felipepostigo.com/articles/what-commercial-strategy-taught-me-about-ai/
+- Building Decision Systems Instead of Dashboards: https://felipepostigo.com/articles/building-decision-systems-instead-of-dashboards/
+- The Future of AI-Native Business Teams: https://felipepostigo.com/articles/the-future-of-ai-native-business-teams/
