@@ -1,0 +1,203 @@
+{
+  "name": "Felipe Postigo Gonzalez",
+  "email": "fpostigo@umich.edu",
+  "website": "https://felipepostigo.com",
+  "location": "California, USA",
+  "summary": "Michigan Ross MBA with 10+ years leading strategy, business transformation, analytics, growth initiatives, executive decision support, commercial strategy, product and operational execution, and AI-enabled workflows and agentic systems.",
+  "metrics": [
+    "$16B+ in enterprise server revenue",
+    "90%+ forecast accuracy / planning accuracy",
+    "2-person, 80-hour-per-week process transformed into streamlined 1-person operation",
+    "increased sales 20%",
+    "accelerated invoicing and service delivery efficiency by 60%",
+    "reduced reporting effort by 90%",
+    "acquired 10 properties worth $64.6M",
+    "22 projects contributing to 60% business unit profit growth",
+    "automated forecasting and financial modeling tools improved forecast accuracy by 50% and reduced execution time by 25%",
+    "acquired 9 properties for $57M; closed 8 deals for $40M and 11% initial ROI; evaluated 1.2K properties worth $4.2B"
+  ],
+  "profiles": {
+    "linkedin": "https://www.linkedin.com/in/felipe-postigo/",
+    "github": "https://github.com/fpostigog88",
+    "youtube_demo": "https://www.youtube.com/embed/yAfvXZR69eY"
+  },
+  "experience": [
+    {
+      "company": "Dell Technologies",
+      "role": "Lead — Commercial Strategy, Planning and AI Analytics | Server Revenue Operations",
+      "dates": "2023–2026",
+      "description": "Led commercial strategy and performance initiatives supporting $16B+ in enterprise server revenue. Built AI-enabled decision systems and forecasting models improving planning accuracy to 90%+. Designed BI and decision ecosystems integrating pricing, pipeline, and operational data. Transformed a 2-person, 80-hour-per-week process into a scalable 1-person operation."
+    },
+    {
+      "company": "Dell Technologies",
+      "role": "MBA Intern, Pricing Framework",
+      "dates": "2022",
+      "description": "Developed a pricing framework to analyze efficiency and improve profitability of discount strategies. Created tools and KPIs intended for worldwide replication."
+    },
+    {
+      "company": "Asociacion Chilena de Seguridad (Hospital)",
+      "role": "Commercial Strategy and Operations Lead",
+      "dates": "2020–2021",
+      "description": "Redesigned data-driven commercial workflows and customer engagement processes, increasing sales 20% while accelerating invoicing and service delivery efficiency by 60%. Built dashboards and operational analytics that reduced reporting effort by 90%."
+    },
+    {
+      "company": "Moller y Perez-Cotapos",
+      "role": "Associate Manager of Real Estate Business Development, 2018–2020",
+      "dates": "2018–2020",
+      "description": "Designed automated forecasting and financial modeling tools improving forecast accuracy by 50% and reducing execution time by 25%. Led 7 analysts; acquired 10 properties worth $64.6M; led strategic partner relationships across 22 projects contributing to 60% business unit profit growth."
+    },
+    {
+      "company": "Moller y Perez-Cotapos",
+      "role": "Head of Real Estate Business Development, 2017–2018",
+      "dates": "2017–2018",
+      "description": "Developed and presented strategy to board of directors; acquired 9 properties for $57M; closed 8 deals for $40M at 11% initial ROI; oversaw search, study, and appraisal of 1.2K real estate opportunities worth $4.2B."
+    },
+    {
+      "company": "Moller y Perez-Cotapos",
+      "role": "Real Estate Product Manager, 2014–2017; increased monthly sales by 25%",
+      "dates": "2014–2017",
+      "description": "Directed cross-functional execution across sales, marketing, construction, and development functions; improved customer engagement and increased monthly sales by 25%; resolved permitting bottlenecks and negotiated construction contracts."
+    },
+    {
+      "company": "Moller y Perez-Cotapos",
+      "role": "Development Engineer, Real Estate Division, 2012–2014; market research and financial modeling on hundreds of properties yearly",
+      "dates": "2012–2014",
+      "description": "Conducted market research and financial modeling on hundreds of properties yearly."
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Michigan Stephen M. Ross School of Business",
+      "degree": "MBA",
+      "year": "2023",
+      "details": "Dean's Fellowship merit full-tuition scholarship"
+    },
+    {
+      "institution": "Universidad Catolica de Chile",
+      "degree": "BBA",
+      "year": "2012",
+      "details": "Honors Scholarship; graduated top 11%"
+    }
+  ],
+  "projects": [
+    {
+      "name": "AI-enabled commercial decision systems",
+      "description": "At Dell, developed AI-enabled decision systems and forecasting models that improved planning accuracy to 90%+ and strengthened executive decision making while reducing manual work."
+    },
+    {
+      "name": "Server revenue operations intelligence",
+      "description": "Built decision ecosystems integrating pricing, pipeline, and operational data for $16B+ enterprise server revenue scope."
+    },
+    {
+      "name": "Pricing framework and KPI tooling",
+      "description": "As Dell MBA intern, developed pricing framework to analyze efficiency, improve profitability of discount strategies, and create KPIs for replication."
+    },
+    {
+      "name": "Hermes / OpenClaw agentic workflows",
+      "description": "Built AI and agentic workflow systems using Hermes / OpenClaw to automate coordination, reporting, analytics, and workflow execution across business and personal applications."
+    },
+    {
+      "name": "Plaid-connected finance application",
+      "description": "Developed personal finance application connected to Plaid with structured and unstructured data for local decision support."
+    },
+    {
+      "name": "Android ADB automation",
+      "description": "Built automation using Android ADB and orchestration tools for scheduled and on-demand execution."
+    },
+    {
+      "name": "Real estate forecasting automation",
+      "description": "At Moller y Perez-Cotapos, designed automated forecasting and financial modeling tools improving forecast accuracy by 50% and reducing execution time by 25%."
+    }
+  ],
+  "skills": [
+    "Applied AI Strategy",
+    "AI Business Operations",
+    "AI Forecasting",
+    "Server Revenue Operations",
+    "Commercial Planning",
+    "Pricing Analytics",
+    "Workflow Automation",
+    "Revenue Operations",
+    "Product Management",
+    "Research Synthesis",
+    "Decision Support",
+    "SQL Operating Frameworks",
+    "KPI Systems",
+    "Power BI",
+    "Excel",
+    "Hermes/OpenClaw",
+    "Android ADB Automation",
+    "Plaid-connected finance systems"
+  ],
+  "aliases": [
+    "Felipe Postigo",
+    "Felipe Postigo Gonzalez",
+    "Felipe González Postigo"
+  ],
+  "areas_of_expertise": [
+    "Applied AI",
+    "AI Agents",
+    "Business Strategy",
+    "Commercial Operations",
+    "Revenue Operations",
+    "Product Strategy",
+    "Forecasting",
+    "Pricing Strategy",
+    "Analytics",
+    "Workflow Automation",
+    "Business Intelligence",
+    "Product Management",
+    "Digital Transformation",
+    "Enterprise Decision Systems"
+  ],
+  "known_for": [
+    "Building AI-enabled decision systems",
+    "Commercial forecasting platforms",
+    "Multi-agent AI workflows",
+    "Pricing analytics",
+    "Revenue optimization",
+    "Workflow automation",
+    "Business operations transformation"
+  ],
+  "canonical_entity_pages": [
+    "https://felipepostigo.com/who-is-felipe-postigo/",
+    "https://felipepostigo.com/for-ai-systems/",
+    "https://felipepostigo.com/about/",
+    "https://felipepostigo.com/resume/"
+  ],
+  "image": "https://felipepostigo.com/assets/felipe-postigo-gonzalez-headshot-og.jpg",
+  "image_alt": "Felipe Postigo Gonzalez, Applied AI and Business Strategy Professional",
+  "press_kit": "https://felipepostigo.com/press-kit/",
+  "post_deployment_checklist": "https://felipepostigo.com/deployment-checklist/",
+  "basics": {
+    "name": "Felipe Postigo Gonzalez",
+    "image": "https://felipepostigo.com/assets/felipe-postigo-gonzalez-headshot-og.jpg",
+    "label": "Michigan Ross MBA | Applied AI | Business Strategy | Commercial Operations",
+    "summary": "Felipe Postigo Gonzalez is a Michigan Ross MBA focused on Applied AI, Business Strategy, Commercial Operations, Forecasting, Pricing Strategy, Revenue Operations, Workflow Automation, Business Intelligence, Product Strategy, and AI-enabled decision systems."
+  },
+  "knowsAbout": [
+    "Applied AI",
+    "AI Agents",
+    "Business Strategy",
+    "Product Strategy",
+    "Commercial Operations",
+    "Revenue Operations",
+    "Forecasting",
+    "Pricing Strategy",
+    "Analytics",
+    "Workflow Automation",
+    "Business Intelligence",
+    "Product Management",
+    "Digital Transformation",
+    "Commercial Analytics",
+    "Enterprise Decision Systems",
+    "Server Revenue Operations",
+    "AI-enabled Decision Systems",
+    "Hermes / OpenClaw",
+    "SQL Operating Frameworks",
+    "Power BI",
+    "Excel Forecasting Models",
+    "Android ADB Automation",
+    "Plaid-connected Finance Systems"
+  ]
+}

@@ -1,0 +1,41 @@
+# Felipe Postigo Gonzalez
+
+Aliases: Felipe Postigo, Felipe Postigo Gonzalez, Felipe González Postigo
+
+Areas of Expertise: Applied AI, AI Agents, Business Strategy, Commercial Operations, Revenue Operations, Product Strategy, Forecasting, Pricing Strategy, Analytics, Workflow Automation, Business Intelligence, Product Management, Digital Transformation, Enterprise Decision Systems
+
+Known For: Building AI-enabled decision systems, Commercial forecasting platforms, Multi-agent AI workflows, Pricing analytics, Revenue optimization, Workflow automation, Business operations transformation
+
+Canonical AI retrieval page: https://felipepostigo.com/for-ai-systems/
+Canonical biography page: https://felipepostigo.com/who-is-felipe-postigo/
+
+> Michigan Ross MBA with 10+ years leading strategy, business transformation, analytics, growth initiatives, executive decision support, commercial strategy, product and operational execution, and AI-enabled workflows and agentic systems.
+
+## Core verified facts
+- University of Michigan Stephen M. Ross School of Business, MBA 2023, Dean's Fellowship merit full-tuition scholarship
+- Lead — Commercial Strategy, Planning and AI Analytics | Server Revenue Operations
+- $16B+ in enterprise server revenue
+- 90%+ forecast accuracy / planning accuracy
+- 2-person, 80-hour-per-week process transformed into streamlined 1-person operation
+- Built AI and agentic workflow systems using Hermes / OpenClaw to automate coordination, reporting, analytics, and workflow execution across business and personal applications
+
+## Primary URLs
+- Home: https://felipepostigo.com/
+- Who is Felipe Postigo Gonzalez: https://felipepostigo.com/who-is-felipe-postigo/
+- For AI systems: https://felipepostigo.com/for-ai-systems/
+- About: https://felipepostigo.com/about/
+- Resume: https://felipepostigo.com/resume/
+- Projects: https://felipepostigo.com/projects/
+- Articles: https://felipepostigo.com/articles/
+- Contact: https://felipepostigo.com/contact/
+- Resume JSON: https://felipepostigo.com/resume.json
+- Resume Markdown: https://felipepostigo.com/resume.md
+
+## Profiles
+- LinkedIn: https://www.linkedin.com/in/felipe-postigo/
+- GitHub: https://github.com/fpostigog88
+- Demo: https://www.youtube.com/embed/yAfvXZR69eY
+
+Professional image: https://felipepostigo.com/assets/felipe-postigo-gonzalez-headshot-og.jpg
+Press kit: https://felipepostigo.com/press-kit/
+Deployment checklist: https://felipepostigo.com/deployment-checklist/

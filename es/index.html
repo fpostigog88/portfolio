@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Felipe Postigo — MBA | IA Aplicada</title>
+<title>Felipe Postigo Gonzalez — Estrategia Comercial e IA Aplicada</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QNWVGSNNHS"></script>
@@ -13,6 +13,9 @@
   gtag('js', new Date());
   gtag('config', 'G-QNWVGSNNHS');
 </script>
+<meta name="description" content="Felipe Postigo Gonzalez es MBA de Michigan Ross enfocado en estrategia comercial, IA aplicada, forecasting, pricing, automatización y sistemas de negocio.">
+<link rel="canonical" href="https://felipepostigo.com/es/">
+<meta name="robots" content="index, follow">
 <style>
 /* ============================================
    CSS VARIABLES
@@ -707,6 +710,13 @@ body {
 }
 </style>
 <!-- deploy: v11-live -->
+<meta property="og:image" content="https://felipepostigo.com/assets/felipe-postigo-gonzalez-headshot-og.jpg">
+<meta property="og:image:alt" content="Felipe Postigo Gonzalez, Applied AI and Business Strategy Professional">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="1200">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://felipepostigo.com/assets/felipe-postigo-gonzalez-headshot-og.jpg">
+<meta name="twitter:image:alt" content="Felipe Postigo Gonzalez, Applied AI and Business Strategy Professional">
 </head>
 <body>
 
@@ -721,8 +731,8 @@ body {
         <div class="hero-subtitle">Estrategia Comercial | IA Aplicada</div>
       </div>
       <div class="lang-toggle">
-        <a href="/">EN</a>
-        <a href="/es/" class="active">ES</a>
+        <a href="/" data-lang-choice="en">EN</a>
+        <a href="/es/" class="active" data-lang-choice="es">ES</a>
       </div>
     </div>
     <div class="hero-left">
@@ -1138,7 +1148,20 @@ body {
       Email
     </a>
   </div>
-</footer>
+<nav class="hero-contact-links" aria-label="Authority site links"><a href="/who-is-felipe-postigo/" class="hero-contact-link">Who Is Felipe Postigo Gonzalez</a><a href="/for-ai-systems/" class="hero-contact-link">For AI Systems</a><a href="/llms.txt" class="hero-contact-link">AI Reference</a></nav></footer>
 
+<script>
+(function() {
+  function setLang(lang) {
+    try { localStorage.setItem('preferredLanguage', lang); } catch (e) {}
+    document.cookie = 'preferredLanguage=' + lang + '; path=/; max-age=31536000; SameSite=Lax';
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('[data-lang-choice]').forEach(function(link) {
+      link.addEventListener('click', function() { setLang(link.getAttribute('data-lang-choice')); });
+    });
+  });
+})();
+</script>
 </body>
 </html>

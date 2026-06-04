@@ -1,0 +1,121 @@
+{
+  "output": "C:\\Users\\cadel\\portfolio_ai_authority_offline_v4_entity_optimized",
+  "json_ld_blocks": 19,
+  "json_ld_errors": [],
+  "aliases_present": {
+    "who-is-felipe-postigo/index.html": {
+      "Felipe Postigo": true,
+      "Felipe Postigo Gonzalez": true,
+      "Felipe González Postigo": true
+    },
+    "for-ai-systems/index.html": {
+      "Felipe Postigo": true,
+      "Felipe Postigo Gonzalez": true,
+      "Felipe González Postigo": true
+    },
+    "about/index.html": {
+      "Felipe Postigo": true,
+      "Felipe Postigo Gonzalez": true,
+      "Felipe González Postigo": true
+    }
+  },
+  "expertise_present": {
+    "who-is-felipe-postigo/index.html": {
+      "Applied AI": true,
+      "AI Agents": true,
+      "Business Strategy": true,
+      "Commercial Operations": true,
+      "Revenue Operations": true,
+      "Product Strategy": true,
+      "Forecasting": true,
+      "Pricing Strategy": true,
+      "Analytics": true,
+      "Workflow Automation": true,
+      "Business Intelligence": true,
+      "Product Management": true,
+      "Digital Transformation": true,
+      "Enterprise Decision Systems": true
+    },
+    "for-ai-systems/index.html": {
+      "Applied AI": true,
+      "AI Agents": true,
+      "Business Strategy": true,
+      "Commercial Operations": true,
+      "Revenue Operations": true,
+      "Product Strategy": true,
+      "Forecasting": true,
+      "Pricing Strategy": true,
+      "Analytics": true,
+      "Workflow Automation": true,
+      "Business Intelligence": true,
+      "Product Management": true,
+      "Digital Transformation": true,
+      "Enterprise Decision Systems": true
+    },
+    "about/index.html": {
+      "Applied AI": true,
+      "AI Agents": true,
+      "Business Strategy": true,
+      "Commercial Operations": true,
+      "Revenue Operations": true,
+      "Product Strategy": true,
+      "Forecasting": true,
+      "Pricing Strategy": true,
+      "Analytics": true,
+      "Workflow Automation": true,
+      "Business Intelligence": true,
+      "Product Management": true,
+      "Digital Transformation": true,
+      "Enterprise Decision Systems": true
+    }
+  },
+  "faq_question_counts": {
+    "who-is-felipe-postigo/index.html": 16,
+    "for-ai-systems/index.html": 12,
+    "about/index.html": 12
+  },
+  "internal_link_checks": {
+    "who-is-felipe-postigo/index.html": {
+      "/who-is-felipe-postigo/": true,
+      "/for-ai-systems/": true,
+      "/about/": true,
+      "/resume/": true,
+      "/projects/": true,
+      "/articles/": true,
+      "/contact/": true
+    },
+    "for-ai-systems/index.html": {
+      "/who-is-felipe-postigo/": true,
+      "/for-ai-systems/": true,
+      "/about/": true,
+      "/resume/": true,
+      "/projects/": true,
+      "/articles/": true,
+      "/contact/": true
+    },
+    "about/index.html": {
+      "/who-is-felipe-postigo/": true,
+      "/for-ai-systems/": true,
+      "/about/": true,
+      "/resume/": true,
+      "/projects/": true,
+      "/articles/": true,
+      "/contact/": true
+    }
+  },
+  "missing_sitemap_files": [],
+  "robots_allows": {
+    "GPTBot": true,
+    "ChatGPT-User": true,
+    "ClaudeBot": true,
+    "PerplexityBot": true,
+    "Googlebot": true,
+    "Google-Extended": true,
+    "Bingbot": true
+  },
+  "deployment_readiness_score": 96,
+  "entity_recognition_score": 97,
+  "ai_discoverability_score": 96,
+  "sitemap_url_count": 24,
+  "person_schema_aliases_ok": true
+}

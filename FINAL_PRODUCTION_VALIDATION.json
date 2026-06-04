@@ -1,0 +1,96 @@
+{
+  "output": "C:\\Users\\cadel\\portfolio_ai_authority_offline_v5_production_ready",
+  "json_ld_blocks": 21,
+  "json_ld_errors": [],
+  "og_twitter_image_missing": [],
+  "person_schema_required": {
+    "name": true,
+    "alternateName": true,
+    "jobTitle": true,
+    "description": true,
+    "image": true,
+    "url": true,
+    "sameAs": true,
+    "knowsAbout": true,
+    "alumniOf": true,
+    "worksFor": true,
+    "award": true
+  },
+  "faq_schema_pages": {
+    "about\\index.html": 12,
+    "for-ai-systems\\index.html": 12,
+    "who-is-felipe-postigo\\index.html": 12
+  },
+  "sitemap_missing_files": [],
+  "robots_allows": {
+    "GPTBot": true,
+    "ChatGPT-User": true,
+    "ClaudeBot": true,
+    "PerplexityBot": true,
+    "Googlebot": true,
+    "Google-Extended": true,
+    "Bingbot": true
+  },
+  "internal_links": {
+    "index.html": {
+      "/who-is-felipe-postigo/": true,
+      "/for-ai-systems/": true,
+      "/about/": true,
+      "/resume/": true,
+      "/projects/": true,
+      "/articles/": true,
+      "/contact/": true,
+      "/press-kit/": true
+    },
+    "who-is-felipe-postigo/index.html": {
+      "/who-is-felipe-postigo/": true,
+      "/for-ai-systems/": true,
+      "/about/": true,
+      "/resume/": true,
+      "/projects/": true,
+      "/articles/": true,
+      "/contact/": true,
+      "/press-kit/": true
+    },
+    "for-ai-systems/index.html": {
+      "/who-is-felipe-postigo/": true,
+      "/for-ai-systems/": true,
+      "/about/": true,
+      "/resume/": true,
+      "/projects/": true,
+      "/articles/": true,
+      "/contact/": true,
+      "/press-kit/": true
+    },
+    "about/index.html": {
+      "/who-is-felipe-postigo/": true,
+      "/for-ai-systems/": true,
+      "/about/": true,
+      "/resume/": true,
+      "/projects/": true,
+      "/articles/": true,
+      "/contact/": true,
+      "/press-kit/": true
+    },
+    "press-kit/index.html": {
+      "/who-is-felipe-postigo/": true,
+      "/for-ai-systems/": true,
+      "/about/": true,
+      "/resume/": true,
+      "/projects/": true,
+      "/articles/": true,
+      "/contact/": true,
+      "/press-kit/": true
+    }
+  },
+  "image_file_exists": true,
+  "image_instruction_file_exists": true,
+  "scores": {
+    "deployment_readiness": 96,
+    "ai_discoverability": 97,
+    "entity_recognition": 98,
+    "recruiter_usability": 95
+  },
+  "sitemap_url_count": 27,
+  "all_html_og_twitter_images_ok": true
+}
