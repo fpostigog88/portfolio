@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Felipe Postigo Gonzalez — Applied AI, Commercial Strategy, Forecasting</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QNWVGSNNHS"></script>
@@ -100,6 +105,7 @@ body {
 }
 .hero-left-content {
   flex: 1;
+  min-width: 0;
 }
 .hero-right {
   display: flex;
@@ -126,6 +132,8 @@ body {
 }
 .hero-header-text {
   flex: 0 1 auto;
+  min-width: 0;
+  max-width: 100%;
 }
 .hero h1 {
   font-family: 'Space Grotesk', sans-serif;
@@ -704,7 +712,9 @@ body {
   .main { flex-direction: column; padding: 16px; }
   .left-col, .right-col, .center-col { flex: 1 1 auto !important; width: 100% !important; }
   .hero { padding: 32px 16px; }
-  .hero h1 { font-size: 2rem; }
+  .hero h1 { font-size: 1.75rem; letter-spacing: -0.01em; }
+  .hero-subtitle { font-size: 1rem; word-break: break-word; overflow-wrap: anywhere; max-width: 100%; width: 100%; }
+  .hero-value { font-size: 0.88rem; text-align: left; word-break: break-word; overflow-wrap: anywhere; max-width: 100%; width: 100%; }
   .hero-stats { grid-template-columns: 1fr 1fr; }
   .logo-grid { grid-template-columns: repeat(4, 1fr); }
   .hero-ctas { flex-direction: column; }
@@ -713,9 +723,42 @@ body {
   .footer { padding: 24px 16px; }
   .video-demo-player iframe { height: 300px; }
   .hero-inner { grid-template-columns: 1fr; gap: 24px; }
-  .hero-right svg { width: 280px; height: 280px; }
+  .hero-right svg { width: 260px; height: 260px; }
   .hero-header { flex-direction: column; gap: 8px; }
   .lang-toggle { align-self: flex-start; }
+  .role-fit-strip { flex-wrap: wrap; gap: 6px; }
+  .role-fit-pill { font-size: 0.6rem; padding: 5px 6px; }
+  .hero-stat-value { font-size: 1.2rem; }
+  .hero-stat-label { font-size: 0.6rem; }
+  .hero-contact-links { flex-wrap: wrap; }
+  .hero-contact-link { font-size: 0.8rem; }
+}
+@media (max-width: 480px) {
+  .hero { padding: 24px 12px; }
+  .hero h1 { font-size: 1.5rem; }
+  .hero-subtitle { font-size: 0.9rem; word-break: break-word; overflow-wrap: anywhere; max-width: 100%; width: 100%; }
+  .hero-value { font-size: 0.85rem; word-break: break-word; overflow-wrap: anywhere; max-width: 100%; width: 100%; }
+  .hero-right svg { width: 240px; height: 240px; }
+  .hero-stats { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .hero-stat { padding: 12px; min-height: 100px; }
+  .hero-stat-value { font-size: 1.1rem; }
+  .hero-stat-label { font-size: 0.55rem; }
+  .role-fit-strip { gap: 4px; }
+  .role-fit-pill { font-size: 0.55rem; padding: 4px 5px; }
+  .hero-cta { font-size: 0.85rem; padding: 10px 16px; }
+  .hero-ctas { gap: 8px; }
+  .identity-headshot { width: 80px; height: 80px; }
+  .identity-chip { font-size: 0.65rem; padding: 4px 8px; }
+  .logo-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .logo-wrap { height: 48px; padding: 8px; }
+  .logo-wrap img { max-height: 28px; }
+  .hero-contact-links { gap: 8px; }
+  .hero-contact-link { font-size: 0.75rem; padding: 6px 10px; }
+  .video-demo-player iframe { height: 220px; }
+  .hero-left { padding: 0 4px; }
+  .hero-left-content { gap: 8px; }
+  .hero-header { gap: 4px; }
+  .lang-toggle a { font-size: 0.65rem; padding: 3px 6px; }
 }
 
 /* FINAL AUTHORITY / HEADSHOT OPTIMIZATION */
