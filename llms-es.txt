@@ -1,0 +1,24 @@
+# Felipe Postigo Gonzalez — Referencia para Sistemas de IA (Español)
+
+Alias: Felipe Postigo, Felipe Postigo Gonzalez, Felipe González Postigo, Felipe G. Postigo
+
+Áreas de expertise: IA aplicada, agentes de IA, estrategia de negocios, operaciones comerciales, revenue operations, forecasting, pricing strategy, analytics, automatización de workflows, business intelligence, product management, transformación digital, sistemas de decisión empresariales.
+
+Conocido por: construir sistemas de decisión habilitados por IA, plataformas de forecasting comercial, workflows multiagente, automatización de reporting y sistemas que convierten IA en impacto operativo.
+
+Páginas canónicas en español:
+- https://felipepostigo.com/es/
+- https://felipepostigo.com/es/about/
+- https://felipepostigo.com/es/projects/
+- https://felipepostigo.com/es/articles/
+- https://felipepostigo.com/es/press-kit/
+- https://felipepostigo.com/es/for-ai-systems/
+- https://felipepostigo.com/es/contact/
+
+Artículos en español:
+- Cómo Construí un Sistema Operativo de IA de 6 Agentes
+- Mejorando la Precisión del Forecast con IA
+- Eliminando 120+ Horas de Reporting Manual
+- Lo que la Estrategia Comercial me Enseñó sobre IA
+- Construyendo Sistemas de Decisión en Lugar de Dashboards
+- El Futuro de los Equipos de Negocio AI-Native

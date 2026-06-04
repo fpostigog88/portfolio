@@ -23,3 +23,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://felipepostigo.com/sitemap.xml
+
+# Spanish AI reference
+Allow: /llms-es.txt
