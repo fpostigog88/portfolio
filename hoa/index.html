@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOA Manager Dashboard</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+        .login-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #1a3a5c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .login-box {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+        .login-box h1 {
+            color: #1a3a5c;
+            margin-bottom: 10px;
+        }
+        .login-box p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .login-box input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        .login-box input:focus {
+            outline: none;
+            border-color: #1a3a5c;
+        }
+        .login-box button {
+            width: 100%;
+            padding: 12px;
+            background: #1a3a5c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login-box button:hover {
+            background: #2a4a6c;
+        }
+        .error {
+            color: #d32f2f;
+            margin-top: 10px;
+            display: none;
+        }
+        .header {
+            background: #1a3a5c;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            font-size: 24px;
+        }
+        .header .logout {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .header .logout:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        .stats-bar {
+            background: white;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .stat-box {
+            text-align: center;
+            padding: 15px 25px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            min-width: 120px;
+        }
+        .stat-box .number {
+            font-size: 28px;
+            font-weight: bold;
+            color: #1a3a5c;
+        }
+        .stat-box .label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+        }
+        .filters {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 1400px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .filters input, .filters select {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .filters input[type="text"] {
+            flex: 1;
+            min-width: 200px;
+        }
+        .filters button {
+            padding: 10px 20px;
+            background: #1a3a5c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .filters button:hover {
+            background: #2a4a6c;
+        }
+        .filters .export-btn {
+            background: #4caf50;
+        }
+        .filters .export-btn:hover {
+            background: #45a049;
+        }
+        .table-container {
+            max-width: 1400px;
+            margin: 0 auto 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th {
+            background: #1a3a5c;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            cursor: pointer;
+            user-select: none;
+            position: sticky;
+            top: 0;
+        }
+        th:hover {
+            background: #2a4a6c;
+        }
+        th.sort-asc::after {
+            content: ' ▲';
+        }
+        th.sort-desc::after {
+            content: ' ▼';
+        }
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+        tr:hover {
+            background: #f8f9fa;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .contact-info a {
+            color: #1a3a5c;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .contact-info .phone {
+            font-weight: 600;
+        }
+        .contact-info .email {
+            font-size: 13px;
+        }
+        .contact-info .mgmt {
+            font-size: 13px;
+            color: #666;
+        }
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .tag-has-phone {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+        .tag-has-email {
+            background: #e3f2fd;
+            color: #1565c0;
+        }
+        .tag-has-mgmt {
+            background: #fff3e0;
+            color: #e65100;
+        }
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 20px;
+            background: white;
+            border-radius: 0 0 8px 8px;
+        }
+        .pagination button {
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .pagination button:hover {
+            background: #f5f5f5;
+        }
+        .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .pagination .page-info {
+            color: #666;
+        }
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Screen -->
+    <div class="login-screen" id="loginScreen">
+        <div class="login-box">
+            <h1>🔐 HOA Dashboard</h1>
+            <p>Enter password to access the HOA contact database</p>
+            <input type="password" id="passwordInput" placeholder="Enter password..." onkeypress="if(event.key==='Enter')checkLogin()">
+            <button onclick="checkLogin()">Access Dashboard</button>
+            <div class="error" id="loginError">Incorrect password. Please try again.</div>
+        </div>
+    </div>
+
+    <!-- Main Dashboard -->
+    <div class="dashboard hidden" id="dashboard">
+        <div class="header">
+            <h1>🏢 HOA Manager Dashboard</h1>
+            <button class="logout" onclick="logout()">Logout</button>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat-box">
+                <div class="number" id="totalCount">0</div>
+                <div class="label">Total HOAs</div>
+            </div>
+            <div class="stat-box">
+                <div class="number" id="phoneCount">0</div>
+                <div class="label">With Phone</div>
+            </div>
+            <div class="stat-box">
+                <div class="number" id="emailCount">0</div>
+                <div class="label">With Email</div>
+            </div>
+            <div class="stat-box">
+                <div class="number" id="mgmtCount">0</div>
+                <div class="label">With Mgmt</div>
+            </div>
+            <div class="stat-box">
+                <div class="number" id="cityCount">0</div>
+                <div class="label">Cities</div>
+            </div>
+        </div>
+
+        <div class="filters">
+            <input type="text" id="searchInput" placeholder="Search HOA name..." oninput="filterData()">
+            <select id="cityFilter" onchange="filterData()">
+                <option value="">All Cities</option>
+            </select>
+            <select id="countyFilter" onchange="filterData()">
+                <option value="">All Counties</option>
+            </select>
+            <select id="contactFilter" onchange="filterData()">
+                <option value="">All Contacts</option>
+                <option value="phone">Has Phone</option>
+                <option value="email">Has Email</option>
+                <option value="mgmt">Has Management</option>
+                <option value="any">Has Any Contact</option>
+                <option value="none">No Contact Info</option>
+            </select>
+            <button onclick="clearFilters()">Clear Filters</button>
+            <button class="export-btn" onclick="exportCSV()">Export CSV</button>
+        </div>
+
+        <div class="table-container">
+            <table id="hoaTable">
+                <thead>
+                    <tr>
+                        <th onclick="sortBy('name')">HOA Name</th>
+                        <th onclick="sortBy('city')">City</th>
+                        <th onclick="sortBy('county')">County</th>
+                        <th onclick="sortBy('contact')">Contact Info</th>
+                        <th onclick="sortBy('units')">Units</th>
+                        <th>Tags</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+            <div class="no-results hidden" id="noResults">No HOAs found matching your filters.</div>
+            <div class="pagination" id="pagination">
+                <button onclick="prevPage()" id="prevBtn">Previous</button>
+                <span class="page-info" id="pageInfo">Page 1 of 1</span>
+                <button onclick="nextPage()" id="nextBtn">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const CORRECT_PASSWORD='HoaFPG';
+        const ITEMS_PER_PAGE = 50;
+        let hoaData = [];
+        let filteredData = [];
+        let currentPage = 1;
+        let sortColumn = 'name';
+        let sortDirection = 'asc';
+
+        // Check login
+        function checkLogin() {
+            const input = document.getElementById('passwordInput').value;
+            if (input === CORRECT_PASSWORD) {
+                document.getElementById('loginScreen').classList.add('hidden');
+                document.getElementById('dashboard').classList.remove('hidden');
+                loadData();
+            } else {
+                document.getElementById('loginError').style.display = 'block';
+                document.getElementById('passwordInput').value = '';
+            }
+        }
+
+        function logout() {
+            document.getElementById('loginScreen').classList.remove('hidden');
+            document.getElementById('dashboard').classList.add('hidden');
+            document.getElementById('passwordInput').value = '';
+            document.getElementById('loginError').style.display = 'none';
+        }
+
+        // Load data
+        async function loadData() {
+            try {
+                const response = await fetch('hoa_data.json');
+                hoaData = await response.json();
+                populateFilters();
+                filterData();
+                updateStats();
+            } catch (error) {
+                console.error('Error loading data:', error);
+                document.getElementById('tableBody').innerHTML = '<tr><td colspan="6" style="text-align:center;padding:40px;color:#d32f2f;">Error loading data. Please refresh the page.</td></tr>';
+            }
+        }
+
+        // Populate filter dropdowns
+        function populateFilters() {
+            const cities = [...new Set(hoaData.map(h => h.city).filter(Boolean))].sort();
+            const counties = [...new Set(hoaData.map(h => h.county).filter(Boolean))].sort();
+            
+            const citySelect = document.getElementById('cityFilter');
+            cities.forEach(city => {
+                const option = document.createElement('option');
+                option.value = city;
+                option.textContent = city;
+                citySelect.appendChild(option);
+            });
+
+            const countySelect = document.getElementById('countyFilter');
+            counties.forEach(county => {
+                const option = document.createElement('option');
+                option.value = county;
+                option.textContent = county;
+                countySelect.appendChild(option);
+            });
+        }
+
+        // Update statistics
+        function updateStats() {
+            document.getElementById('totalCount').textContent = hoaData.length;
+            document.getElementById('phoneCount').textContent = hoaData.filter(h => h.phone).length;
+            document.getElementById('emailCount').textContent = hoaData.filter(h => h.email).length;
+            document.getElementById('mgmtCount').textContent = hoaData.filter(h => h.management).length;
+            document.getElementById('cityCount').textContent = new Set(hoaData.map(h => h.city)).size;
+        }
+
+        // Filter data
+        function filterData() {
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            const city = document.getElementById('cityFilter').value;
+            const county = document.getElementById('countyFilter').value;
+            const contact = document.getElementById('contactFilter').value;
+
+            filteredData = hoaData.filter(hoa => {
+                // Search filter
+                if (search && !hoa.name.toLowerCase().includes(search) && 
+                    !hoa.city.toLowerCase().includes(search) &&
+                    !hoa.management.toLowerCase().includes(search)) {
+                    return false;
+                }
+
+                // City filter
+                if (city && hoa.city !== city) {
+                    return false;
+                }
+
+                // County filter
+                if (county && hoa.county !== county) {
+                    return false;
+                }
+
+                // Contact filter
+                if (contact === 'phone' && !hoa.phone) return false;
+                if (contact === 'email' && !hoa.email) return false;
+                if (contact === 'mgmt' && !hoa.management) return false;
+                if (contact === 'any' && !hoa.phone && !hoa.email && !hoa.management) return false;
+                if (contact === 'none' && (hoa.phone || hoa.email || hoa.management)) return false;
+
+                return true;
+            });
+
+            // Sort
+            sortData();
+
+            currentPage = 1;
+            renderTable();
+        }
+
+        // Sort data
+        function sortData() {
+            filteredData.sort((a, b) => {
+                let valA, valB;
+                
+                switch(sortColumn) {
+                    case 'name':
+                        valA = a.name.toLowerCase();
+                        valB = b.name.toLowerCase();
+                        break;
+                    case 'city':
+                        valA = a.city.toLowerCase();
+                        valB = b.city.toLowerCase();
+                        break;
+                    case 'county':
+                        valA = a.county.toLowerCase();
+                        valB = b.county.toLowerCase();
+                        break;
+                    case 'units':
+                        valA = parseInt(a.units) || 0;
+                        valB = parseInt(b.units) || 0;
+                        break;
+                    case 'contact':
+                        valA = (a.phone ? 1 : 0) + (a.email ? 2 : 0) + (a.management ? 4 : 0);
+                        valB = (b.phone ? 1 : 0) + (b.email ? 2 : 0) + (b.management ? 4 : 0);
+                        break;
+                    default:
+                        valA = a.name.toLowerCase();
+                        valB = b.name.toLowerCase();
+                }
+
+                if (valA < valB) return sortDirection === 'asc' ? -1 : 1;
+                if (valA > valB) return sortDirection === 'asc' ? 1 : -1;
+                return 0;
+            });
+        }
+
+        // Sort by column
+        function sortBy(column) {
+            if (sortColumn === column) {
+                sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+            } else {
+                sortColumn = column;
+                sortDirection = 'asc';
+            }
+            
+            // Update header indicators
+            document.querySelectorAll('th').forEach(th => {
+                th.classList.remove('sort-asc', 'sort-desc');
+            });
+            
+            const headers = document.querySelectorAll('th');
+            const columnIndex = ['name', 'city', 'county', 'contact', 'units'].indexOf(column);
+            if (columnIndex >= 0 && headers[columnIndex]) {
+                headers[columnIndex].classList.add(sortDirection === 'asc' ? 'sort-asc' : 'sort-desc');
+            }
+
+            filterData();
+        }
+
+        // Render table
+        function renderTable() {
+            const tbody = document.getElementById('tableBody');
+            const start = (currentPage - 1) * ITEMS_PER_PAGE;
+            const end = start + ITEMS_PER_PAGE;
+            const pageData = filteredData.slice(start, end);
+
+            if (pageData.length === 0) {
+                document.getElementById('noResults').classList.remove('hidden');
+                tbody.innerHTML = '';
+            } else {
+                document.getElementById('noResults').classList.add('hidden');
+                tbody.innerHTML = pageData.map(hoa => `
+                    <tr>
+                        <td>
+                            <strong>${escapeHtml(hoa.name)}</strong>
+                            ${hoa.address ? `<br><small style="color:#666">${escapeHtml(hoa.address)}</small>` : ''}
+                        </td>
+                        <td>${escapeHtml(hoa.city)}</td>
+                        <td>${escapeHtml(hoa.county)}</td>
+                        <td>
+                            <div class="contact-info">
+                                ${hoa.phone ? `<a href="tel:${hoa.phone}" class="phone">📞 ${hoa.phone}</a>` : ''}
+                                ${hoa.email ? `<a href="mailto:${hoa.email}" class="email">✉️ ${hoa.email}</a>` : ''}
+                                ${hoa.management ? `<span class="mgmt">🏢 ${escapeHtml(hoa.management)}</span>` : ''}
+                            </div>
+                        </td>
+                        <td>${hoa.units || '-'}</td>
+                        <td>
+                            ${hoa.phone ? '<span class="tag tag-has-phone">Phone</span>' : ''}
+                            ${hoa.email ? '<span class="tag tag-has-email">Email</span>' : ''}
+                            ${hoa.management ? '<span class="tag tag-has-mgmt">Mgmt</span>' : ''}
+                        </td>
+                    </tr>
+                `).join('');
+            }
+
+            // Update pagination
+            const totalPages = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
+            document.getElementById('pageInfo').textContent = `Page ${currentPage} of ${totalPages} (${filteredData.length} results)`;
+            document.getElementById('prevBtn').disabled = currentPage === 1;
+            document.getElementById('nextBtn').disabled = currentPage === totalPages || totalPages === 0;
+        }
+
+        // Pagination
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                renderTable();
+            }
+        }
+
+        function nextPage() {
+            const totalPages = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderTable();
+            }
+        }
+
+        // Clear filters
+        function clearFilters() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('cityFilter').value = '';
+            document.getElementById('countyFilter').value = '';
+            document.getElementById('contactFilter').value = '';
+            filterData();
+        }
+
+        // Export CSV
+        function exportCSV() {
+            const headers = ['ID', 'HOA Name', 'City', 'County', 'Phone', 'Email', 'Management Company', 'Units', 'Address'];
+            const rows = filteredData.map(hoa => [
+                hoa.id,
+                hoa.name,
+                hoa.city,
+                hoa.county,
+                hoa.phone,
+                hoa.email,
+                hoa.management,
+                hoa.units,
+                hoa.address
+            ]);
+            
+            const csv = [headers, ...rows]
+                .map(row => row.map(cell => `"${(cell || '').replace(/"/g, '""')}"`).join(','))
+                .join('\n');
+            
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'hoa_contacts.csv';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        // Escape HTML
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+</html>
