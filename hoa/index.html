@@ -3,24 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOA Manager Dashboard</title>
+    <title>HOA Lead Dashboard</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             background: #f5f5f5;
             color: #333;
+            line-height: 1.5;
         }
+        
+        /* Login Screen */
         .login-screen {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             background: #1a3a5c;
             display: flex;
             align-items: center;
@@ -30,27 +27,22 @@
         .login-box {
             background: white;
             padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
             text-align: center;
-            max-width: 400px;
+            max-width: 420px;
             width: 90%;
         }
-        .login-box h1 {
-            color: #1a3a5c;
-            margin-bottom: 10px;
-        }
-        .login-box p {
-            color: #666;
-            margin-bottom: 30px;
-        }
+        .login-box h1 { color: #1a3a5c; margin-bottom: 8px; font-size: 28px; }
+        .login-box p { color: #666; margin-bottom: 24px; font-size: 14px; }
         .login-box input {
             width: 100%;
-            padding: 12px;
+            padding: 12px 16px;
             border: 2px solid #ddd;
-            border-radius: 4px;
+            border-radius: 8px;
             font-size: 16px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            transition: border-color 0.2s;
         }
         .login-box input:focus {
             outline: none;
@@ -58,300 +50,500 @@
         }
         .login-box button {
             width: 100%;
-            padding: 12px;
+            padding: 14px;
             background: #1a3a5c;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
             font-size: 16px;
             cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s;
         }
-        .login-box button:hover {
-            background: #2a4a6c;
-        }
+        .login-box button:hover { background: #2a4a6c; }
         .error {
             color: #d32f2f;
             margin-top: 10px;
+            font-size: 14px;
             display: none;
         }
+        
+        /* Header */
         .header {
             background: #1a3a5c;
             color: white;
-            padding: 20px;
+            padding: 16px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
         }
-        .header h1 {
-            font-size: 24px;
+        .header h1 { font-size: 22px; font-weight: 600; }
+        .header-right { display: flex; align-items: center; gap: 12px; }
+        .user-badge {
+            background: rgba(255,255,255,0.15);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
         }
-        .header .logout {
-            background: rgba(255,255,255,0.2);
+        .btn {
+            background: rgba(255,255,255,0.15);
             color: white;
             border: none;
             padding: 8px 16px;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
+            font-size: 13px;
+            transition: background 0.2s;
         }
-        .header .logout:hover {
-            background: rgba(255,255,255,0.3);
-        }
+        .btn:hover { background: rgba(255,255,255,0.25); }
+        .btn-primary { background: #4CAF50; }
+        .btn-primary:hover { background: #45a049; }
+        .btn-danger { background: #f44336; }
+        .btn-danger:hover { background: #da190b; }
+        
+        /* Stats Bar */
         .stats-bar {
             background: white;
-            padding: 20px;
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 16px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            border-bottom: 1px solid #e0e0e0;
         }
         .stat-box {
             text-align: center;
-            padding: 15px 25px;
-            background: #f8f9fa;
+            padding: 12px;
             border-radius: 8px;
-            min-width: 120px;
+            background: #f8f9fa;
         }
         .stat-box .number {
-            font-size: 28px;
-            font-weight: bold;
+            font-size: 24px;
+            font-weight: 700;
             color: #1a3a5c;
         }
         .stat-box .label {
             font-size: 12px;
             color: #666;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
+        
+        /* Filters */
         .filters {
             background: white;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 1400px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 16px 20px;
             display: flex;
-            gap: 15px;
             flex-wrap: wrap;
+            gap: 10px;
             align-items: center;
+            border-bottom: 1px solid #e0e0e0;
         }
         .filters input, .filters select {
-            padding: 10px;
+            padding: 10px 14px;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 6px;
             font-size: 14px;
+            min-width: 140px;
         }
-        .filters input[type="text"] {
+        .filters input:focus, .filters select:focus {
+            outline: none;
+            border-color: #1a3a5c;
+        }
+        .filters .search-box {
             flex: 1;
             min-width: 200px;
         }
-        .filters button {
-            padding: 10px 20px;
-            background: #1a3a5c;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .filters button:hover {
-            background: #2a4a6c;
-        }
-        .filters .export-btn {
-            background: #4caf50;
-        }
-        .filters .export-btn:hover {
-            background: #45a049;
-        }
+        
+        /* Table */
         .table-container {
-            max-width: 1400px;
-            margin: 0 auto 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            overflow: auto;
+            padding: 20px;
+            overflow-x: auto;
         }
         table {
             width: 100%;
             border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         th {
             background: #1a3a5c;
             color: white;
-            padding: 12px;
+            padding: 12px 16px;
             text-align: left;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
             cursor: pointer;
             user-select: none;
-            position: sticky;
-            top: 0;
         }
-        th:hover {
-            background: #2a4a6c;
-        }
-        th.sort-asc::after {
-            content: ' ▲';
-        }
-        th.sort-desc::after {
-            content: ' ▼';
-        }
+        th:hover { background: #2a4a6c; }
+        th .sort-indicator { margin-left: 4px; opacity: 0.5; }
         td {
-            padding: 12px;
-            border-bottom: 1px solid #eee;
+            padding: 12px 16px;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 14px;
+            vertical-align: top;
         }
-        tr:hover {
-            background: #f8f9fa;
-        }
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-        .contact-info a {
-            color: #1a3a5c;
-            text-decoration: none;
-        }
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        .contact-info .phone {
-            font-weight: 600;
-        }
-        .contact-info .email {
-            font-size: 13px;
-        }
-        .contact-info .mgmt {
-            font-size: 13px;
-            color: #666;
-        }
-        .tag {
+        tr:hover { background: #f8f9fa; }
+        
+        /* Status badges */
+        .status-badge {
             display: inline-block;
-            padding: 2px 8px;
+            padding: 4px 10px;
             border-radius: 12px;
             font-size: 12px;
-            font-weight: 500;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            cursor: pointer;
         }
-        .tag-has-phone {
-            background: #e8f5e9;
-            color: #2e7d32;
+        .status-new { background: #e3f2fd; color: #1976d2; }
+        .status-contacted { background: #fff3e0; color: #f57c00; }
+        .status-interested { background: #e8f5e9; color: #388e3c; }
+        .status-not-interested { background: #fce4ec; color: #c2185b; }
+        .status-follow-up { background: #f3e5f5; color: #7b1fa2; }
+        .status-closed { background: #e0e0e0; color: #616161; }
+        
+        /* Contact score */
+        .score-bar {
+            width: 60px;
+            height: 6px;
+            background: #e0e0e0;
+            border-radius: 3px;
+            overflow: hidden;
         }
-        .tag-has-email {
-            background: #e3f2fd;
-            color: #1565c0;
+        .score-fill {
+            height: 100%;
+            border-radius: 3px;
         }
-        .tag-has-mgmt {
-            background: #fff3e0;
-            color: #e65100;
+        .score-high { background: #4CAF50; }
+        .score-medium { background: #FF9800; }
+        .score-low { background: #f44336; }
+        
+        /* Action buttons */
+        .action-btn {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            margin: 2px;
+            transition: opacity 0.2s;
         }
-        .no-results {
-            text-align: center;
-            padding: 40px;
+        .action-btn:hover { opacity: 0.8; }
+        .btn-call { background: #4CAF50; color: white; }
+        .btn-email { background: #2196F3; color: white; }
+        .btn-edit { background: #FF9800; color: white; }
+        
+        /* Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        .modal h2 { margin-bottom: 16px; color: #1a3a5c; }
+        .modal-row { margin-bottom: 14px; }
+        .modal-row label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
             color: #666;
+            margin-bottom: 4px;
+            text-transform: uppercase;
         }
+        .modal-row input, .modal-row select, .modal-row textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+        }
+        .modal-row textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+        
+        /* Mobile Cards */
+        .mobile-cards {
+            display: none;
+        }
+        .mobile-card {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .mobile-card h3 {
+            font-size: 16px;
+            color: #1a3a5c;
+            margin-bottom: 8px;
+        }
+        .mobile-card .meta {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 4px;
+        }
+        .mobile-card .actions {
+            margin-top: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        
+        /* Pagination */
         .pagination {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             padding: 20px;
-            background: white;
-            border-radius: 0 0 8px 8px;
         }
         .pagination button {
             padding: 8px 16px;
             border: 1px solid #ddd;
             background: white;
+            border-radius: 6px;
             cursor: pointer;
-            border-radius: 4px;
-        }
-        .pagination button:hover {
-            background: #f5f5f5;
+            font-size: 14px;
         }
         .pagination button:disabled {
             opacity: 0.5;
             cursor: not-allowed;
         }
-        .pagination .page-info {
-            color: #666;
+        .pagination button:hover:not(:disabled) {
+            background: #f0f0f0;
         }
-        .hidden {
-            display: none !important;
+        
+        /* Hidden */
+        .hidden { display: none !important; }
+        
+        /* No results */
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-size: 16px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 { font-size: 18px; }
+            .header-right { flex-wrap: wrap; }
+            .table-container { display: none; }
+            .mobile-cards { display: block; padding: 12px; }
+            .stats-bar { grid-template-columns: repeat(2, 1fr); }
+            .filters { flex-direction: column; align-items: stretch; }
+            .filters input, .filters select { width: 100%; }
+        }
+        
+        /* User management */
+        .user-panel {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 200;
+            align-items: center;
+            justify-content: center;
+        }
+        .user-panel.active { display: flex; }
+        .user-panel .modal { max-width: 400px; }
+        .user-list {
+            margin: 12px 0;
+        }
+        .user-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            margin-bottom: 6px;
+        }
+        
+        /* Toast notifications */
+        .toast-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .toast {
+            padding: 12px 20px;
+            border-radius: 8px;
+            color: white;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            animation: slideIn 0.3s ease;
+            max-width: 300px;
+        }
+        .toast-success { background: #4CAF50; }
+        .toast-error { background: #f44336; }
+        .toast-info { background: #2196F3; }
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
         }
     </style>
 </head>
 <body>
+    <div class="toast-container" id="toastContainer"></div>
+    
     <!-- Login Screen -->
     <div class="login-screen" id="loginScreen">
         <div class="login-box">
-            <h1>🔐 HOA Dashboard</h1>
-            <p>Enter password to access the HOA contact database</p>
-            <input type="password" id="passwordInput" placeholder="Enter password..." onkeypress="if(event.key==='Enter')checkLogin()">
-            <button onclick="checkLogin()">Access Dashboard</button>
-            <div class="error" id="loginError">Incorrect password. Please try again.</div>
+            <h1>🏠 HOA Lead Dashboard</h1>
+            <p>California HOA Database for Pest Control Sales</p>
+            <input type="text" id="usernameInput" placeholder="Username" autocomplete="username">
+            <input type="password" id="passwordInput" placeholder="Password" autocomplete="current-password">
+            <button onclick="login()">Sign In</button>
+            <div class="error" id="loginError">Invalid username or password</div>
+            <p style="margin-top: 20px; font-size: 12px; color: #999;">
+                Default: admin / admin123<br>
+                <a href="#" onclick="showUserPanel()" style="color: #1a3a5c;">Manage Users</a>
+            </p>
         </div>
     </div>
-
+    
+    <!-- User Management Panel -->
+    <div class="user-panel" id="userPanel">
+        <div class="modal">
+            <h2>👥 User Management</h2>
+            <div class="modal-row">
+                <label>Add New User</label>
+                <input type="text" id="newUsername" placeholder="Username">
+                <input type="password" id="newPassword" placeholder="Password" style="margin-top:8px;">
+                <select id="newRole" style="margin-top:8px;">
+                    <option value="admin">Admin</option>
+                    <option value="rep">Sales Rep</option>
+                    <option value="viewer">Viewer</option>
+                </select>
+                <button class="btn btn-primary" onclick="addUser()" style="margin-top:8px;width:100%;">Add User</button>
+            </div>
+            <div class="user-list" id="userList"></div>
+            <div class="modal-actions">
+                <button class="btn" onclick="hideUserPanel()">Close</button>
+            </div>
+        </div>
+    </div>
+    
     <!-- Main Dashboard -->
     <div class="dashboard hidden" id="dashboard">
         <div class="header">
-            <h1>🏢 HOA Manager Dashboard</h1>
-            <button class="logout" onclick="logout()">Logout</button>
+            <h1>🏠 HOA Lead Dashboard</h1>
+            <div class="header-right">
+                <span class="user-badge" id="currentUserBadge">User</span>
+                <button class="btn" onclick="showUserPanel()">👥 Users</button>
+                <button class="btn btn-primary" onclick="exportCSV()">📊 Export CSV</button>
+                <button class="btn btn-danger" onclick="logout()">Logout</button>
+            </div>
         </div>
-
-        <div class="stats-bar">
+        
+        <div class="stats-bar" id="statsBar">
             <div class="stat-box">
-                <div class="number" id="totalCount">0</div>
+                <div class="number" id="statTotal">0</div>
                 <div class="label">Total HOAs</div>
             </div>
             <div class="stat-box">
-                <div class="number" id="phoneCount">0</div>
+                <div class="number" id="statPhone">0</div>
                 <div class="label">With Phone</div>
             </div>
             <div class="stat-box">
-                <div class="number" id="emailCount">0</div>
+                <div class="number" id="statEmail">0</div>
                 <div class="label">With Email</div>
             </div>
             <div class="stat-box">
-                <div class="number" id="mgmtCount">0</div>
+                <div class="number" id="statMgmt">0</div>
                 <div class="label">With Mgmt</div>
             </div>
             <div class="stat-box">
-                <div class="number" id="cityCount">0</div>
-                <div class="label">Cities</div>
+                <div class="number" id="statContacted">0</div>
+                <div class="label">Contacted</div>
+            </div>
+            <div class="stat-box">
+                <div class="number" id="statInterested">0</div>
+                <div class="label">Interested</div>
             </div>
         </div>
-
+        
         <div class="filters">
-            <input type="text" id="searchInput" placeholder="Search HOA name..." oninput="filterData()">
+            <input type="text" class="search-box" id="searchInput" placeholder="Search name, city, zip..." onkeyup="filterData()">
             <select id="cityFilter" onchange="filterData()">
                 <option value="">All Cities</option>
             </select>
             <select id="countyFilter" onchange="filterData()">
                 <option value="">All Counties</option>
             </select>
-            <select id="contactFilter" onchange="filterData()">
-                <option value="">All Contacts</option>
-                <option value="phone">Has Phone</option>
-                <option value="email">Has Email</option>
-                <option value="mgmt">Has Management</option>
-                <option value="any">Has Any Contact</option>
-                <option value="none">No Contact Info</option>
+            <select id="statusFilter" onchange="filterData()">
+                <option value="">All Statuses</option>
+                <option value="New">New</option>
+                <option value="Contacted">Contacted</option>
+                <option value="Interested">Interested</option>
+                <option value="Not Interested">Not Interested</option>
+                <option value="Follow Up">Follow Up</option>
+                <option value="Closed">Closed</option>
             </select>
-            <button onclick="clearFilters()">Clear Filters</button>
-            <button class="export-btn" onclick="exportCSV()">Export CSV</button>
+            <select id="assignedFilter" onchange="filterData()">
+                <option value="">All Reps</option>
+            </select>
+            <select id="scoreFilter" onchange="filterData()">
+                <option value="">All Scores</option>
+                <option value="80">High (80+)</option>
+                <option value="50">Medium (50+)</option>
+                <option value="20">Low (20+)</option>
+            </select>
+            <button class="btn" onclick="clearFilters()" style="background:#666;">Clear</button>
         </div>
-
+        
+        <!-- Desktop Table -->
         <div class="table-container">
             <table id="hoaTable">
                 <thead>
                     <tr>
-                        <th onclick="sortBy('name')">HOA Name</th>
-                        <th onclick="sortBy('city')">City</th>
-                        <th onclick="sortBy('county')">County</th>
-                        <th onclick="sortBy('contact')">Contact Info</th>
-                        <th onclick="sortBy('units')">Units</th>
-                        <th>Tags</th>
+                        <th onclick="sortBy('name')">HOA Name <span class="sort-indicator">↕</span></th>
+                        <th onclick="sortBy('city')">City <span class="sort-indicator">↕</span></th>
+                        <th onclick="sortBy('county')">County <span class="sort-indicator">↕</span></th>
+                        <th>Contact Info</th>
+                        <th onclick="sortBy('units')">Units <span class="sort-indicator">↕</span></th>
+                        <th onclick="sortBy('status')">Status <span class="sort-indicator">↕</span></th>
+                        <th onclick="sortBy('contact_score')">Score <span class="sort-indicator">↕</span></th>
+                        <th onclick="sortBy('assigned_to')">Assigned <span class="sort-indicator">↕</span></th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody id="tableBody">
-                </tbody>
+                <tbody id="tableBody"></tbody>
             </table>
             <div class="no-results hidden" id="noResults">No HOAs found matching your filters.</div>
             <div class="pagination" id="pagination">
@@ -360,162 +552,298 @@
                 <button onclick="nextPage()" id="nextBtn">Next</button>
             </div>
         </div>
+        
+        <!-- Mobile Cards -->
+        <div class="mobile-cards" id="mobileCards"></div>
+        <div class="pagination" id="mobilePagination">
+            <button onclick="prevPage()" id="mobilePrevBtn">Previous</button>
+            <span id="mobilePageInfo">Page 1 of 1</span>
+            <button onclick="nextPage()" id="mobileNextBtn">Next</button>
+        </div>
     </div>
-
+    
+    <!-- Edit Modal -->
+    <div class="modal-overlay" id="editModal">
+        <div class="modal">
+            <h2>✏️ Edit HOA</h2>
+            <input type="hidden" id="editId">
+            <div class="modal-row">
+                <label>HOA Name</label>
+                <input type="text" id="editName" readonly>
+            </div>
+            <div class="modal-row">
+                <label>Status</label>
+                <select id="editStatus">
+                    <option value="New">New</option>
+                    <option value="Contacted">Contacted</option>
+                    <option value="Interested">Interested</option>
+                    <option value="Not Interested">Not Interested</option>
+                    <option value="Follow Up">Follow Up</option>
+                    <option value="Closed">Closed</option>
+                </select>
+            </div>
+            <div class="modal-row">
+                <label>Assigned To</label>
+                <select id="editAssigned"></select>
+            </div>
+            <div class="modal-row">
+                <label>Notes</label>
+                <textarea id="editNotes"></textarea>
+            </div>
+            <div class="modal-row">
+                <label>Contact Attempts</label>
+                <input type="number" id="editAttempts" min="0">
+            </div>
+            <div class="modal-row">
+                <label>Last Contact Result</label>
+                <input type="text" id="editResult" placeholder="e.g., Left voicemail, Scheduled demo">
+            </div>
+            <div class="modal-actions">
+                <button class="btn" onclick="hideEditModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="saveEdit()">Save</button>
+            </div>
+        </div>
+    </div>
+    
     <script>
-        const CORRECT_PASSWORD='HoaFPG';
+        // ============ AUTHENTICATION ============
+        const DEFAULT_USERS = [
+            { username: 'admin', password: 'admin123', role: 'admin', name: 'Administrator' },
+            { username: 'felipe', password: 'pest2024', role: 'admin', name: 'Felipe' }
+        ];
+        
+        const STORAGE_KEY_USERS = 'hoa_users';
+        const STORAGE_KEY_SESSION = 'hoa_session';
+        const STORAGE_KEY_DATA = 'hoa_crm_data';
         const ITEMS_PER_PAGE = 50;
+        
         let hoaData = [];
         let filteredData = [];
         let currentPage = 1;
         let sortColumn = 'name';
         let sortDirection = 'asc';
-
-        // Check login
-        function checkLogin() {
-            const input = document.getElementById('passwordInput').value;
-            if (input === CORRECT_PASSWORD) {
+        let currentUser = null;
+        
+        function initUsers() {
+            let users = JSON.parse(localStorage.getItem(STORAGE_KEY_USERS) || 'null');
+            if (!users) {
+                users = DEFAULT_USERS;
+                localStorage.setItem(STORAGE_KEY_USERS, JSON.stringify(users));
+            }
+            return users;
+        }
+        
+        function getUsers() {
+            return JSON.parse(localStorage.getItem(STORAGE_KEY_USERS) || '[]');
+        }
+        
+        function saveUsers(users) {
+            localStorage.setItem(STORAGE_KEY_USERS, JSON.stringify(users));
+        }
+        
+        function login() {
+            const username = document.getElementById('usernameInput').value.trim();
+            const password = document.getElementById('passwordInput').value;
+            const users = getUsers();
+            const user = users.find(u => u.username === username && u.password === password);
+            
+            if (user) {
+                currentUser = user;
+                const session = { username: user.username, name: user.name, role: user.role, timestamp: Date.now() };
+                localStorage.setItem(STORAGE_KEY_SESSION, JSON.stringify(session));
                 document.getElementById('loginScreen').classList.add('hidden');
                 document.getElementById('dashboard').classList.remove('hidden');
+                document.getElementById('currentUserBadge').textContent = user.name || user.username;
                 loadData();
             } else {
                 document.getElementById('loginError').style.display = 'block';
                 document.getElementById('passwordInput').value = '';
             }
         }
-
+        
         function logout() {
+            currentUser = null;
+            localStorage.removeItem(STORAGE_KEY_SESSION);
             document.getElementById('loginScreen').classList.remove('hidden');
             document.getElementById('dashboard').classList.add('hidden');
+            document.getElementById('usernameInput').value = '';
             document.getElementById('passwordInput').value = '';
             document.getElementById('loginError').style.display = 'none';
         }
-
-        // Load data
-        async function loadData() {
-            try {
-                const response = await fetch('hoa_data.json');
-                hoaData = await response.json();
-                populateFilters();
-                filterData();
-                updateStats();
-            } catch (error) {
-                console.error('Error loading data:', error);
-                document.getElementById('tableBody').innerHTML = '<tr><td colspan="6" style="text-align:center;padding:40px;color:#d32f2f;">Error loading data. Please refresh the page.</td></tr>';
+        
+        function checkSession() {
+            const session = JSON.parse(localStorage.getItem(STORAGE_KEY_SESSION) || 'null');
+            if (session && session.timestamp && Date.now() - session.timestamp < 24 * 60 * 60 * 1000) {
+                const users = getUsers();
+                const user = users.find(u => u.username === session.username);
+                if (user) {
+                    currentUser = user;
+                    document.getElementById('loginScreen').classList.add('hidden');
+                    document.getElementById('dashboard').classList.remove('hidden');
+                    document.getElementById('currentUserBadge').textContent = user.name || user.username;
+                    loadData();
+                    return true;
+                }
             }
+            return false;
         }
-
-        // Populate filter dropdowns
+        
+        // ============ USER MANAGEMENT ============
+        function showUserPanel() {
+            document.getElementById('userPanel').classList.add('active');
+            renderUserList();
+        }
+        
+        function hideUserPanel() {
+            document.getElementById('userPanel').classList.remove('active');
+        }
+        
+        function renderUserList() {
+            const users = getUsers();
+            const list = document.getElementById('userList');
+            list.innerHTML = users.map(u => `
+                <div class="user-item">
+                    <span><strong>${u.name || u.username}</strong> (${u.role})</span>
+                    <button class="btn btn-danger" onclick="deleteUser('${u.username}')" style="padding:4px 10px;font-size:12px;">Delete</button>
+                </div>
+            `).join('');
+        }
+        
+        function addUser() {
+            const username = document.getElementById('newUsername').value.trim();
+            const password = document.getElementById('newPassword').value;
+            const role = document.getElementById('newRole').value;
+            
+            if (!username || !password) {
+                showToast('Username and password required', 'error');
+                return;
+            }
+            
+            const users = getUsers();
+            if (users.find(u => u.username === username)) {
+                showToast('Username already exists', 'error');
+                return;
+            }
+            
+            users.push({ username, password, role, name: username });
+            saveUsers(users);
+            document.getElementById('newUsername').value = '';
+            document.getElementById('newPassword').value = '';
+            renderUserList();
+            showToast('User added successfully', 'success');
+            populateAssignedFilter();
+        }
+        
+        function deleteUser(username) {
+            if (username === 'admin') {
+                showToast('Cannot delete admin', 'error');
+                return;
+            }
+            const users = getUsers().filter(u => u.username !== username);
+            saveUsers(users);
+            renderUserList();
+            populateAssignedFilter();
+            showToast('User deleted', 'success');
+        }
+        
+        // ============ DATA LOADING ============
+        function loadData() {
+            initUsers();
+            fetch('hoa_data.json')
+                .then(r => r.json())
+                .then(data => {
+                    hoaData = data.map(h => ({
+                        ...h,
+                        status: h.status || 'New',
+                        notes: h.notes || '',
+                        assigned_to: h.assigned_to || '',
+                        last_contact_date: h.last_contact_date || '',
+                        contact_attempts: h.contact_attempts || 0,
+                        last_contact_result: h.last_contact_result || '',
+                        contact_score: h.contact_score || 0,
+                    }));
+                    // Load CRM data from localStorage
+                    const crmData = JSON.parse(localStorage.getItem(STORAGE_KEY_DATA) || '{}');
+                    hoaData.forEach(h => {
+                        if (crmData[h.id]) {
+                            Object.assign(h, crmData[h.id]);
+                        }
+                    });
+                    populateFilters();
+                    filterData();
+                    updateStats();
+                })
+                .catch(err => {
+                    showToast('Error loading data: ' + err.message, 'error');
+                });
+        }
+        
+        // ============ FILTERS ============
         function populateFilters() {
             const cities = [...new Set(hoaData.map(h => h.city).filter(Boolean))].sort();
             const counties = [...new Set(hoaData.map(h => h.county).filter(Boolean))].sort();
             
             const citySelect = document.getElementById('cityFilter');
-            cities.forEach(city => {
-                const option = document.createElement('option');
-                option.value = city;
-                option.textContent = city;
-                citySelect.appendChild(option);
-            });
-
+            citySelect.innerHTML = '<option value="">All Cities</option>' +
+                cities.map(c => `<option value="${c}">${c}</option>`).join('');
+            
             const countySelect = document.getElementById('countyFilter');
-            counties.forEach(county => {
-                const option = document.createElement('option');
-                option.value = county;
-                option.textContent = county;
-                countySelect.appendChild(option);
-            });
+            countySelect.innerHTML = '<option value="">All Counties</option>' +
+                counties.map(c => `<option value="${c}">${c}</option>`).join('');
+            
+            populateAssignedFilter();
         }
-
-        // Update statistics
-        function updateStats() {
-            document.getElementById('totalCount').textContent = hoaData.length;
-            document.getElementById('phoneCount').textContent = hoaData.filter(h => h.phone).length;
-            document.getElementById('emailCount').textContent = hoaData.filter(h => h.email).length;
-            document.getElementById('mgmtCount').textContent = hoaData.filter(h => h.management).length;
-            document.getElementById('cityCount').textContent = new Set(hoaData.map(h => h.city)).size;
+        
+        function populateAssignedFilter() {
+            const users = getUsers();
+            const select = document.getElementById('assignedFilter');
+            select.innerHTML = '<option value="">All Reps</option>' +
+                users.map(u => `<option value="${u.name || u.username}">${u.name || u.username}</option>`).join('');
+            
+            const editSelect = document.getElementById('editAssigned');
+            editSelect.innerHTML = '<option value="">Unassigned</option>' +
+                users.map(u => `<option value="${u.name || u.username}">${u.name || u.username}</option>`).join('');
         }
-
-        // Filter data
+        
         function filterData() {
             const search = document.getElementById('searchInput').value.toLowerCase();
             const city = document.getElementById('cityFilter').value;
             const county = document.getElementById('countyFilter').value;
-            const contact = document.getElementById('contactFilter').value;
-
-            filteredData = hoaData.filter(hoa => {
-                // Search filter
-                if (search && !hoa.name.toLowerCase().includes(search) && 
-                    !hoa.city.toLowerCase().includes(search) &&
-                    !hoa.management.toLowerCase().includes(search)) {
-                    return false;
-                }
-
-                // City filter
-                if (city && hoa.city !== city) {
-                    return false;
-                }
-
-                // County filter
-                if (county && hoa.county !== county) {
-                    return false;
-                }
-
-                // Contact filter
-                if (contact === 'phone' && !hoa.phone) return false;
-                if (contact === 'email' && !hoa.email) return false;
-                if (contact === 'mgmt' && !hoa.management) return false;
-                if (contact === 'any' && !hoa.phone && !hoa.email && !hoa.management) return false;
-                if (contact === 'none' && (hoa.phone || hoa.email || hoa.management)) return false;
-
+            const status = document.getElementById('statusFilter').value;
+            const assigned = document.getElementById('assignedFilter').value;
+            const score = document.getElementById('scoreFilter').value;
+            
+            filteredData = hoaData.filter(h => {
+                if (search && !((h.name || '').toLowerCase().includes(search) ||
+                              (h.city || '').toLowerCase().includes(search) ||
+                              (h.address || '').toLowerCase().includes(search) ||
+                              (h.phone || '').includes(search))) return false;
+                if (city && h.city !== city) return false;
+                if (county && h.county !== county) return false;
+                if (status && h.status !== status) return false;
+                if (assigned && h.assigned_to !== assigned) return false;
+                if (score && (h.contact_score || 0) < parseInt(score)) return false;
                 return true;
             });
-
-            // Sort
-            sortData();
-
+            
             currentPage = 1;
+            sortData();
             renderTable();
+            renderMobileCards();
+            updatePagination();
         }
-
-        // Sort data
-        function sortData() {
-            filteredData.sort((a, b) => {
-                let valA, valB;
-                
-                switch(sortColumn) {
-                    case 'name':
-                        valA = a.name.toLowerCase();
-                        valB = b.name.toLowerCase();
-                        break;
-                    case 'city':
-                        valA = a.city.toLowerCase();
-                        valB = b.city.toLowerCase();
-                        break;
-                    case 'county':
-                        valA = a.county.toLowerCase();
-                        valB = b.county.toLowerCase();
-                        break;
-                    case 'units':
-                        valA = parseInt(a.units) || 0;
-                        valB = parseInt(b.units) || 0;
-                        break;
-                    case 'contact':
-                        valA = (a.phone ? 1 : 0) + (a.email ? 2 : 0) + (a.management ? 4 : 0);
-                        valB = (b.phone ? 1 : 0) + (b.email ? 2 : 0) + (b.management ? 4 : 0);
-                        break;
-                    default:
-                        valA = a.name.toLowerCase();
-                        valB = b.name.toLowerCase();
-                }
-
-                if (valA < valB) return sortDirection === 'asc' ? -1 : 1;
-                if (valA > valB) return sortDirection === 'asc' ? 1 : -1;
-                return 0;
-            });
+        
+        function clearFilters() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('cityFilter').value = '';
+            document.getElementById('countyFilter').value = '';
+            document.getElementById('statusFilter').value = '';
+            document.getElementById('assignedFilter').value = '';
+            document.getElementById('scoreFilter').value = '';
+            filterData();
         }
-
-        // Sort by column
+        
+        // ============ SORTING ============
         function sortBy(column) {
             if (sortColumn === column) {
                 sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
@@ -523,126 +851,285 @@
                 sortColumn = column;
                 sortDirection = 'asc';
             }
-            
-            // Update header indicators
-            document.querySelectorAll('th').forEach(th => {
-                th.classList.remove('sort-asc', 'sort-desc');
-            });
-            
-            const headers = document.querySelectorAll('th');
-            const columnIndex = ['name', 'city', 'county', 'contact', 'units'].indexOf(column);
-            if (columnIndex >= 0 && headers[columnIndex]) {
-                headers[columnIndex].classList.add(sortDirection === 'asc' ? 'sort-asc' : 'sort-desc');
-            }
-
-            filterData();
+            sortData();
+            renderTable();
+            renderMobileCards();
         }
-
-        // Render table
+        
+        function sortData() {
+            filteredData.sort((a, b) => {
+                let va = a[sortColumn] || '';
+                let vb = b[sortColumn] || '';
+                if (typeof va === 'string') va = va.toLowerCase();
+                if (typeof vb === 'string') vb = vb.toLowerCase();
+                if (va < vb) return sortDirection === 'asc' ? -1 : 1;
+                if (va > vb) return sortDirection === 'asc' ? 1 : -1;
+                return 0;
+            });
+        }
+        
+        // ============ RENDERING ============
         function renderTable() {
-            const tbody = document.getElementById('tableBody');
             const start = (currentPage - 1) * ITEMS_PER_PAGE;
             const end = start + ITEMS_PER_PAGE;
             const pageData = filteredData.slice(start, end);
-
-            if (pageData.length === 0) {
-                document.getElementById('noResults').classList.remove('hidden');
-                tbody.innerHTML = '';
-            } else {
-                document.getElementById('noResults').classList.add('hidden');
-                tbody.innerHTML = pageData.map(hoa => `
-                    <tr>
-                        <td>
-                            <strong>${escapeHtml(hoa.name)}</strong>
-                            ${hoa.address ? `<br><small style="color:#666">${escapeHtml(hoa.address)}</small>` : ''}
-                        </td>
-                        <td>${escapeHtml(hoa.city)}</td>
-                        <td>${escapeHtml(hoa.county)}</td>
-                        <td>
-                            <div class="contact-info">
-                                ${hoa.phone ? `<a href="tel:${hoa.phone}" class="phone">📞 ${hoa.phone}</a>` : ''}
-                                ${hoa.email ? `<a href="mailto:${hoa.email}" class="email">✉️ ${hoa.email}</a>` : ''}
-                                ${hoa.management ? `<span class="mgmt">🏢 ${escapeHtml(hoa.management)}</span>` : ''}
-                            </div>
-                        </td>
-                        <td>${hoa.units || '-'}</td>
-                        <td>
-                            ${hoa.phone ? '<span class="tag tag-has-phone">Phone</span>' : ''}
-                            ${hoa.email ? '<span class="tag tag-has-email">Email</span>' : ''}
-                            ${hoa.management ? '<span class="tag tag-has-mgmt">Mgmt</span>' : ''}
-                        </td>
-                    </tr>
-                `).join('');
-            }
-
-            // Update pagination
-            const totalPages = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
-            document.getElementById('pageInfo').textContent = `Page ${currentPage} of ${totalPages} (${filteredData.length} results)`;
-            document.getElementById('prevBtn').disabled = currentPage === 1;
-            document.getElementById('nextBtn').disabled = currentPage === totalPages || totalPages === 0;
+            const tbody = document.getElementById('tableBody');
+            
+            tbody.innerHTML = pageData.map(h => {
+                const statusClass = `status-${(h.status || 'new').toLowerCase().replace(' ', '-')}`;
+                const scoreClass = h.contact_score >= 80 ? 'score-high' : h.contact_score >= 50 ? 'score-medium' : 'score-low';
+                const contacts = [];
+                if (h.phone) contacts.push(`📞 ${h.phone}`);
+                if (h.email) contacts.push(`✉️ ${h.email}`);
+                if (h.management) contacts.push(`🏢 ${h.management}`);
+                
+                return `<tr>
+                    <td><strong>${h.name || 'N/A'}</strong><br><small style="color:#666;">${h.address || ''}</small></td>
+                    <td>${h.city || ''}</td>
+                    <td>${h.county || ''}</td>
+                    <td>${contacts.join('<br>') || '<span style="color:#999;">No contact info</span>'}</td>
+                    <td>${h.units || ''}</td>
+                    <td><span class="status-badge ${statusClass}" onclick="quickStatus(${h.id})">${h.status || 'New'}</span></td>
+                    <td>
+                        <div class="score-bar"><div class="score-fill ${scoreClass}" style="width:${h.contact_score || 0}%"></div></div>
+                        <small>${h.contact_score || 0}%</small>
+                    </td>
+                    <td>${h.assigned_to || '<span style="color:#999;">-</span>'}</td>
+                    <td>
+                        ${h.phone ? `<a href="tel:${h.phone}" class="action-btn btn-call">📞 Call</a>` : ''}
+                        ${h.email ? `<a href="mailto:${h.email}" class="action-btn btn-email">✉️ Email</a>` : ''}
+                        <button class="action-btn btn-edit" onclick="showEditModal(${h.id})">✏️ Edit</button>
+                    </td>
+                </tr>`;
+            }).join('');
+            
+            document.getElementById('noResults').classList.toggle('hidden', filteredData.length > 0);
         }
-
-        // Pagination
+        
+        function renderMobileCards() {
+            const start = (currentPage - 1) * ITEMS_PER_PAGE;
+            const end = start + ITEMS_PER_PAGE;
+            const pageData = filteredData.slice(start, end);
+            const container = document.getElementById('mobileCards');
+            
+            container.innerHTML = pageData.map(h => {
+                const statusClass = `status-${(h.status || 'new').toLowerCase().replace(' ', '-')}`;
+                const contacts = [];
+                if (h.phone) contacts.push(`📞 <a href="tel:${h.phone}">${h.phone}</a>`);
+                if (h.email) contacts.push(`✉️ <a href="mailto:${h.email}">${h.email}</a>`);
+                
+                return `<div class="mobile-card">
+                    <h3>${h.name || 'N/A'}</h3>
+                    <div class="meta">${h.city || ''}, ${h.county || ''} ${h.address || ''}</div>
+                    <div class="meta">${h.units ? h.units + ' units' : ''} ${h.management ? '· ' + h.management : ''}</div>
+                    <div class="meta">${contacts.join('<br>') || 'No contact info'}</div>
+                    <div class="meta">Score: ${h.contact_score || 0}% | Assigned: ${h.assigned_to || 'Unassigned'}</div>
+                    <div class="actions">
+                        <span class="status-badge ${statusClass}" onclick="quickStatus(${h.id})">${h.status || 'New'}</span>
+                        <button class="action-btn btn-edit" onclick="showEditModal(${h.id})">✏️ Edit</button>
+                    </div>
+                </div>`;
+            }).join('');
+        }
+        
+        function updatePagination() {
+            const totalPages = Math.ceil(filteredData.length / ITEMS_PER_PAGE) || 1;
+            const info = `Page ${currentPage} of ${totalPages} (${filteredData.length} total)`;
+            document.getElementById('pageInfo').textContent = info;
+            document.getElementById('mobilePageInfo').textContent = info;
+            document.getElementById('prevBtn').disabled = currentPage <= 1;
+            document.getElementById('nextBtn').disabled = currentPage >= totalPages;
+            document.getElementById('mobilePrevBtn').disabled = currentPage <= 1;
+            document.getElementById('mobileNextBtn').disabled = currentPage >= totalPages;
+        }
+        
         function prevPage() {
             if (currentPage > 1) {
                 currentPage--;
                 renderTable();
+                renderMobileCards();
+                updatePagination();
             }
         }
-
+        
         function nextPage() {
             const totalPages = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
             if (currentPage < totalPages) {
                 currentPage++;
                 renderTable();
+                renderMobileCards();
+                updatePagination();
             }
         }
-
-        // Clear filters
-        function clearFilters() {
-            document.getElementById('searchInput').value = '';
-            document.getElementById('cityFilter').value = '';
-            document.getElementById('countyFilter').value = '';
-            document.getElementById('contactFilter').value = '';
-            filterData();
+        
+        // ============ CRM EDITING ============
+        function showEditModal(id) {
+            const h = hoaData.find(x => x.id === id);
+            if (!h) return;
+            
+            document.getElementById('editId').value = id;
+            document.getElementById('editName').value = h.name || '';
+            document.getElementById('editStatus').value = h.status || 'New';
+            document.getElementById('editAssigned').value = h.assigned_to || '';
+            document.getElementById('editNotes').value = h.notes || '';
+            document.getElementById('editAttempts').value = h.contact_attempts || 0;
+            document.getElementById('editResult').value = h.last_contact_result || '';
+            
+            document.getElementById('editModal').style.display = 'flex';
         }
-
-        // Export CSV
+        
+        function hideEditModal() {
+            document.getElementById('editModal').style.display = 'none';
+        }
+        
+        function saveEdit() {
+            const id = parseInt(document.getElementById('editId').value);
+            const h = hoaData.find(x => x.id === id);
+            if (!h) return;
+            
+            h.status = document.getElementById('editStatus').value;
+            h.assigned_to = document.getElementById('editAssigned').value;
+            h.notes = document.getElementById('editNotes').value;
+            h.contact_attempts = parseInt(document.getElementById('editAttempts').value) || 0;
+            h.last_contact_result = document.getElementById('editResult').value;
+            h.last_contact_date = new Date().toISOString().split('T')[0];
+            
+            saveCRMData();
+            hideEditModal();
+            renderTable();
+            renderMobileCards();
+            updateStats();
+            showToast('Changes saved', 'success');
+        }
+        
+        function quickStatus(id) {
+            const h = hoaData.find(x => x.id === id);
+            if (!h) return;
+            
+            const statuses = ['New', 'Contacted', 'Interested', 'Not Interested', 'Follow Up', 'Closed'];
+            const currentIdx = statuses.indexOf(h.status || 'New');
+            const nextIdx = (currentIdx + 1) % statuses.length;
+            h.status = statuses[nextIdx];
+            
+            saveCRMData();
+            renderTable();
+            renderMobileCards();
+            updateStats();
+            showToast(`Status: ${h.status}`, 'success');
+        }
+        
+        function saveCRMData() {
+            const crmData = {};
+            hoaData.forEach(h => {
+                crmData[h.id] = {
+                    status: h.status,
+                    notes: h.notes,
+                    assigned_to: h.assigned_to,
+                    last_contact_date: h.last_contact_date,
+                    contact_attempts: h.contact_attempts,
+                    last_contact_result: h.last_contact_result,
+                };
+            });
+            localStorage.setItem(STORAGE_KEY_DATA, JSON.stringify(crmData));
+        }
+        
+        // ============ STATISTICS ============
+        function updateStats() {
+            document.getElementById('statTotal').textContent = hoaData.length;
+            document.getElementById('statPhone').textContent = hoaData.filter(h => h.phone).length;
+            document.getElementById('statEmail').textContent = hoaData.filter(h => h.email).length;
+            document.getElementById('statMgmt').textContent = hoaData.filter(h => h.management).length;
+            document.getElementById('statContacted').textContent = hoaData.filter(h => h.status !== 'New').length;
+            document.getElementById('statInterested').textContent = hoaData.filter(h => h.status === 'Interested' || h.status === 'Closed').length;
+        }
+        
+        // ============ CSV EXPORT (SANITIZED) ============
         function exportCSV() {
-            const headers = ['ID', 'HOA Name', 'City', 'County', 'Phone', 'Email', 'Management Company', 'Units', 'Address'];
-            const rows = filteredData.map(hoa => [
-                hoa.id,
-                hoa.name,
-                hoa.city,
-                hoa.county,
-                hoa.phone,
-                hoa.email,
-                hoa.management,
-                hoa.units,
-                hoa.address
+            const headers = ['ID', 'HOA Name', 'City', 'County', 'Phone', 'Email', 'Management', 'Units', 'Address', 'Status', 'Assigned To', 'Notes', 'Contact Attempts', 'Last Contact Date', 'Last Contact Result', 'Contact Score', 'Source URL'];
+            
+            const rows = filteredData.map(h => [
+                h.id,
+                sanitizeCSV(h.name),
+                sanitizeCSV(h.city),
+                sanitizeCSV(h.county),
+                sanitizeCSV(h.phone),
+                sanitizeCSV(h.email),
+                sanitizeCSV(h.management),
+                h.units,
+                sanitizeCSV(h.address),
+                h.status,
+                sanitizeCSV(h.assigned_to),
+                sanitizeCSV(h.notes),
+                h.contact_attempts,
+                h.last_contact_date,
+                sanitizeCSV(h.last_contact_result),
+                h.contact_score,
+                h.source_url,
             ]);
             
-            const csv = [headers, ...rows]
-                .map(row => row.map(cell => `"${(cell || '').replace(/"/g, '""')}"`).join(','))
-                .join('\n');
+            let csv = headers.join(',') + '\n';
+            rows.forEach(row => {
+                csv += row.map(cell => {
+                    const str = String(cell || '').replace(/"/g, '""');
+                    if (str.includes(',') || str.includes('\n') || str.includes('"')) {
+                        return `"${str}"`;
+                    }
+                    return str;
+                }).join(',') + '\n';
+            });
             
             const blob = new Blob([csv], { type: 'text/csv' });
-            const url = window.URL.createObjectURL(blob);
+            const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'hoa_contacts.csv';
+            a.download = `hoa_leads_${new Date().toISOString().split('T')[0]}.csv`;
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
-            window.URL.revokeObjectURL(url);
+            URL.revokeObjectURL(url);
+            
+            showToast(`Exported ${filteredData.length} records to CSV`, 'success');
         }
-
-        // Escape HTML
-        function escapeHtml(text) {
-            const div = document.createElement('div');
-            div.textContent = text;
-            return div.innerHTML;
+        
+        function sanitizeCSV(value) {
+            if (!value) return '';
+            const str = String(value);
+            // Prevent CSV formula injection by prefixing formula-triggering characters
+            const dangerous = /^[=+\-@\t\r]/;
+            if (dangerous.test(str)) {
+                return "'" + str;
+            }
+            return str;
         }
+        
+        // ============ TOAST NOTIFICATIONS ============
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+            toast.textContent = message;
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transition = 'opacity 0.3s';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+        
+        // ============ INITIALIZATION ============
+        window.addEventListener('DOMContentLoaded', () => {
+            initUsers();
+            if (!checkSession()) {
+                document.getElementById('loginScreen').classList.remove('hidden');
+            }
+        });
+        
+        // Enter key on login
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && !document.getElementById('loginScreen').classList.contains('hidden')) {
+                login();
+            }
+        });
     </script>
 </body>
 </html>
