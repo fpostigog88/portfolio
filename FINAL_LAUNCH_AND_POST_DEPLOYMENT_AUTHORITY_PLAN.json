@@ -1,0 +1,224 @@
+{
+  "scores": {
+    "launch_readiness": 97,
+    "search_readiness": 96,
+    "recruiter_conversion": 96,
+    "ai_discoverability": 96,
+    "entity_recognition": 98
+  },
+  "linkedin_recommendations": {
+    "fetch_status": "LinkedIn public page returned HTTP 999 from this environment, so exact live text was not machine-readable. Recommendations below are aligned to the website entity story and should be applied manually against the actual profile.",
+    "headline": "Michigan Ross MBA | Applied AI, Forecasting & Automation | Business Strategy + Commercial Operations | Building Decision Systems and Multi-Agent Workflows",
+    "about": "I work at the intersection of Applied AI, Business Strategy, and Commercial Operations. My focus is turning forecasting, pricing, revenue planning, and workflow bottlenecks into practical AI-enabled decision systems. At Dell Technologies, I supported $16B+ in enterprise server revenue scope and built AI-enabled planning systems that improved forecast accuracy to 90%+. I also build multi-agent workflow systems and automation pipelines that reduce manual work and improve decision speed. I am focused on roles where AI systems, business performance, forecasting, automation, product strategy, and commercial operations intersect.",
+    "experience_bullets": [
+      "Dell Technologies: emphasize Commercial Strategy, Planning and AI Analytics; $16B+ server revenue scope; 90%+ forecast accuracy; AI-enabled decision systems.",
+      "Use the same language as the website: Applied AI, Forecasting, Automation, Decision Systems, Business Performance.",
+      "Avoid generic consulting phrasing like \u201chelp companies transform with AI\u201d; use concrete operating outcomes."
+    ],
+    "featured_section": [
+      "Website: https://felipepostigo.com",
+      "Portfolio project: Multi-agent workflow system / Hermes + OpenClaw",
+      "Project: Finance intelligence / Plaid-connected analytics",
+      "Project: Automation systems and forecasting workflows",
+      "Resume PDF link"
+    ]
+  },
+  "github_audit": {
+    "actual_profile": {
+      "login": "fpostigog88",
+      "name": "Felipe Postigo",
+      "blog": "",
+      "bio": "Michigan Ross MBA | Strategy, Analytics & AI | Building automation and AI-agent workflows to solve real-world problems",
+      "public_repos": 6,
+      "followers": 0
+    },
+    "profile_readme_exists": false,
+    "repo_findings": [
+      {
+        "name": "portfolio",
+        "description": "Clean public portfolio site for Felipe Postigo",
+        "homepage": null,
+        "topics": []
+      },
+      {
+        "name": "zero-config-api-tests",
+        "description": "Auto-generate pytest suites from OpenAPI specs and HAR files",
+        "homepage": null,
+        "topics": []
+      },
+      {
+        "name": "multi-agent-orchestrator",
+        "description": "Framework for coordinating multiple AI agents with shared state and dependency resolution",
+        "homepage": null,
+        "topics": []
+      },
+      {
+        "name": "web-scraper-intelligence",
+        "description": "Production-grade web scraper with rate limiting, retry logic, and structured extraction",
+        "homepage": null,
+        "topics": []
+      },
+      {
+        "name": "testing-capabilities",
+        "description": "Python capability demos and experiments",
+        "homepage": null,
+        "topics": []
+      },
+      {
+        "name": "vllm-dflash",
+        "description": "DFlash vLLM for DGX Spark \u2014 Plug & Play Block-Diffusion Speculative Decoding",
+        "homepage": "https://huggingface.co/AEON-7",
+        "topics": []
+      }
+    ],
+    "recommended_profile_bio": "Michigan Ross MBA building Applied AI, forecasting, automation, and decision systems for commercial operations and business performance.",
+    "recommended_blog": "https://felipepostigo.com",
+    "recommended_profile_readme_sections": [
+      "Applied AI + Business Strategy positioning",
+      "Featured projects with website backlinks",
+      "Multi-agent ecosystem",
+      "Finance intelligence project",
+      "Automation systems",
+      "Forecasting / decision intelligence projects",
+      "Contact and resume links"
+    ],
+    "repo_recommendations": [
+      "Set GitHub profile name to Felipe Postigo Gonzalez for entity consistency.",
+      "Add felipepostigo.com to the GitHub website field.",
+      "Create profile README repo fpostigog88/fpostigog88.",
+      "Pin portfolio, multi-agent-orchestrator, finance intelligence/project repo if public, automation systems, and forecasting projects.",
+      "Add homepage/backlink to each priority repo.",
+      "Add topics: applied-ai, ai-agents, forecasting, automation, business-intelligence, commercial-operations, decision-systems.",
+      "Write README case studies around real outcomes, not generic demos."
+    ]
+  },
+  "launch_checklist": {
+    "google_search_console": [
+      "Add property https://felipepostigo.com/",
+      "Use DNS verification if possible; otherwise HTML file verification.",
+      "Submit sitemap: https://felipepostigo.com/sitemap.xml",
+      "Inspect and request indexing for /, /who-is-felipe-postigo/, /about/, /press-kit/, /resume/, /projects/, /llms.txt, /llms-full.txt.",
+      "Recheck Coverage/Indexing after 48-72 hours."
+    ],
+    "bing_webmaster_tools": [
+      "Import verified Google Search Console property or verify manually.",
+      "Submit sitemap: https://felipepostigo.com/sitemap.xml",
+      "Use URL Submission for homepage, who-is, about, press kit, resume, projects, llms files.",
+      "Recheck indexing after 48-72 hours."
+    ],
+    "post_deployment_accessibility_checks": [
+      "https://felipepostigo.com/sitemap.xml",
+      "https://felipepostigo.com/robots.txt",
+      "https://felipepostigo.com/llms.txt",
+      "https://felipepostigo.com/llms-full.txt"
+    ]
+  },
+  "priority_profiles": [
+    [
+      1,
+      "LinkedIn",
+      "Highest recruiter/entity impact. Add website URL, Featured website card, project links, same headshot, and same Applied AI / Business Strategy / Commercial Operations story."
+    ],
+    [
+      2,
+      "GitHub",
+      "High authority for AI systems. Add website URL, profile README, pinned repositories, repo descriptions, topics, and backlinks."
+    ],
+    [
+      3,
+      "Google Search Console",
+      "Highest search/indexing control. Verify property, submit sitemap, inspect priority URLs, request indexing."
+    ],
+    [
+      4,
+      "Bing Webmaster Tools",
+      "Important for Bing Copilot and Microsoft ecosystem retrieval. Verify/import, submit sitemap, request indexing."
+    ],
+    [
+      5,
+      "YouTube",
+      "Useful if demos are public. Add website to channel and video descriptions."
+    ],
+    [
+      6,
+      "Michigan Ross profile / alumni directory",
+      "Strong education/entity trust if available. Link back to FelipePostigo.com."
+    ],
+    [
+      7,
+      "Medium or Substack",
+      "Good for article distribution and backlinks, but only if content is actually maintained."
+    ],
+    [
+      8,
+      "Other professional profiles",
+      "Lower priority: Wellfound, Maven, Hugging Face, Kaggle, Crunchbase only if relevant and maintained."
+    ]
+  ],
+  "article_concepts": [
+    {
+      "title": "What Forecasting Systems Need Before AI Makes Them Useful",
+      "angle": "Use Dell-style revenue planning and 90%+ forecast accuracy as the anchor. Explain why decision context, operating cadence, and clear inputs matter more than model theater.",
+      "backlink": "Link to /projects/ and /who-is-felipe-postigo/"
+    },
+    {
+      "title": "From Manual Workflows to Decision Systems: How Automation Actually Improves Business Performance",
+      "angle": "Reference 120+ hours eliminated, workflow automation, and operating-system design. Focus on measurable process outcomes.",
+      "backlink": "Link to /press-kit/ and /projects/"
+    },
+    {
+      "title": "Applied AI for Commercial Operations: Where Strategy Meets Execution",
+      "angle": "Connect business strategy, commercial operations, pricing, forecasting, and revenue operations. Emphasize practical systems.",
+      "backlink": "Link to homepage and resume."
+    },
+    {
+      "title": "What Multi-Agent Systems Teach About Business Operations",
+      "angle": "Reference Hermes / OpenClaw and multi-agent workflow orchestration as a business operating system, not a hobby project.",
+      "backlink": "Link to /for-ai-systems/ and GitHub."
+    },
+    {
+      "title": "Decision Intelligence Is the Missing Layer Between Analytics and Action",
+      "angle": "Explain how BI dashboards, forecasting models, automation, and AI agents become useful only when tied to decisions and accountability.",
+      "backlink": "Link to /about/ and /projects/."
+    }
+  ],
+  "ai_retrieval_validation": {
+    "queries": [
+      "Felipe Postigo",
+      "Felipe Postigo Gonzalez",
+      "Who is Felipe Postigo?",
+      "Felipe Postigo AI",
+      "Felipe Postigo MBA",
+      "Felipe Postigo Dell",
+      "Applied AI Strategy",
+      "AI Forecasting"
+    ],
+    "likely_citation_pages": [
+      "Homepage",
+      "/who-is-felipe-postigo/",
+      "/about/",
+      "/press-kit/",
+      "/projects/",
+      "/resume/",
+      "/llms.txt",
+      "/llms-full.txt"
+    ],
+    "strengths": [
+      "Full name appears above the fold.",
+      "Person schema includes image, sameAs, alumniOf, knowsAbout, alternateName, and URL.",
+      "Press kit gives canonical bios and accomplishments.",
+      "llms files and resume.json support AI retrieval."
+    ],
+    "weaknesses": [
+      "External backlinks are still thin until LinkedIn, GitHub, YouTube, Michigan Ross, and article links are updated.",
+      "Search/AI visibility will lag until Google/Bing index the deployed version."
+    ],
+    "expected_timeline": [
+      "0-24 hours: site available after deployment and cache purge.",
+      "1-3 days: Search Console/Bing submissions can show crawled/indexed status.",
+      "1-4 weeks: branded queries improve as external profiles and backlinks converge.",
+      "30-90 days: AI retrieval confidence improves with public articles and consistent profile links."
+    ]
+  },
+  "recommendation": "Immediate deployment after approval; stop website development and shift to external authority building."
+}
