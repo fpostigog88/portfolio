@@ -1,0 +1,70 @@
+{
+  "output": "C:\\Users\\cadel\\portfolio_ai_authority_offline_v3_final_audit",
+  "urls": 23,
+  "articles_remaining": 8,
+  "json_ld_blocks": 19,
+  "json_ld_errors": [],
+  "article_word_counts": {
+    "dell-server-revenue-operations-applied-ai-where-forecasting-meets-executive-decisions": 821,
+    "from-80-hours-to-one-person-business-transformation-through-analytics-and-ai-workflows": 843,
+    "pricing-analytics-and-discount-strategy-lessons-from-dell-technologies": 797,
+    "ai-forecasting-from-commercial-reality-not-model-theater": 795,
+    "building-agentic-workflow-systems-with-hermes-and-openclaw": 795,
+    "applied-ai-across-technology-healthcare-and-real-estate-operations": 791,
+    "real-estate-forecasting-automation-before-the-ai-boom": 811,
+    "from-michigan-ross-mba-to-applied-ai-practitioner": 803
+  },
+  "raw_html_checks": {
+    "who-is-felipe-postigo/index.html": {
+      "Felipe Postigo Gonzalez": true,
+      "Dell Technologies": true,
+      "Michigan Ross": true,
+      "90%+": true
+    },
+    "for-ai-systems/index.html": {
+      "Full name: Felipe Postigo Gonzalez": true,
+      "Applied AI": true,
+      "Dell Technologies": true,
+      "Frequently Asked Questions": true
+    },
+    "about/index.html": {
+      "Felipe Postigo Gonzalez": true,
+      "FAQ": true,
+      "Dell Technologies": true
+    }
+  },
+  "robots_allows": {
+    "GPTBot": true,
+    "ChatGPT-User": true,
+    "ClaudeBot": true,
+    "PerplexityBot": true,
+    "Googlebot": true,
+    "Google-Extended": true,
+    "Bingbot": true
+  },
+  "missing_sitemap_files": [],
+  "min_article_words": 791,
+  "html_files_after_cleanup": [
+    "index.html",
+    "about/index.html",
+    "articles/index.html",
+    "articles/ai-forecasting-from-commercial-reality-not-model-theater/index.html",
+    "articles/applied-ai-across-technology-healthcare-and-real-estate-operations/index.html",
+    "articles/building-agentic-workflow-systems-with-hermes-and-openclaw/index.html",
+    "articles/dell-server-revenue-operations-applied-ai-where-forecasting-meets-executive-decisions/index.html",
+    "articles/from-80-hours-to-one-person-business-transformation-through-analytics-and-ai-workflows/index.html",
+    "articles/from-michigan-ross-mba-to-applied-ai-practitioner/index.html",
+    "articles/pricing-analytics-and-discount-strategy-lessons-from-dell-technologies/index.html",
+    "articles/real-estate-forecasting-automation-before-the-ai-boom/index.html",
+    "contact/index.html",
+    "es/index.html",
+    "fact-verification-report/index.html",
+    "final-audit-report/index.html",
+    "for-ai-systems/index.html",
+    "projects/index.html",
+    "resume/index.html",
+    "who-is-felipe-postigo/index.html"
+  ],
+  "stale_html_removed": true,
+  "deployment_readiness_score": 93
+}

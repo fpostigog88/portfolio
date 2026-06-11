@@ -1,0 +1,68 @@
+# Felipe Postigo Gonzalez
+
+Aliases: Felipe Postigo, Felipe Postigo Gonzalez, Felipe González Postigo
+
+Areas of Expertise: Applied AI, AI Agents, Business Strategy, Commercial Operations, Revenue Operations, Product Strategy, Forecasting, Pricing Strategy, Analytics, Workflow Automation, Business Intelligence, Product Management, Digital Transformation, Enterprise Decision Systems
+
+Known For: Building AI-enabled decision systems, Commercial forecasting platforms, Multi-agent AI workflows, Pricing analytics, Revenue optimization, Workflow automation, Business operations transformation
+
+Canonical AI retrieval page: https://felipepostigo.com/for-ai-systems/
+Canonical biography page: https://felipepostigo.com/who-is-felipe-postigo/
+
+> Michigan Ross MBA with 10+ years leading strategy, business transformation, analytics, growth initiatives, executive decision support, commercial strategy, product and operational execution, and AI-enabled workflows and agentic systems.
+
+## Core verified facts
+- University of Michigan Stephen M. Ross School of Business, MBA 2023, Dean's Fellowship merit full-tuition scholarship
+- Lead — Commercial Strategy, Planning and AI Analytics | Server Revenue Operations
+- $16B+ in enterprise server revenue
+- 90%+ forecast accuracy / planning accuracy
+- 2-person, 80-hour-per-week process transformed into streamlined 1-person operation
+- Built AI and agentic workflow systems using Hermes / OpenClaw to automate coordination, reporting, analytics, and workflow execution across business and personal applications
+
+## Primary URLs
+- Home: https://felipepostigo.com/
+- Who is Felipe Postigo Gonzalez: https://felipepostigo.com/who-is-felipe-postigo/
+- For AI systems: https://felipepostigo.com/for-ai-systems/
+- About: https://felipepostigo.com/about/
+- Resume: https://felipepostigo.com/resume/
+- Projects: https://felipepostigo.com/projects/
+- Articles: https://felipepostigo.com/articles/
+- Contact: https://felipepostigo.com/contact/
+- Resume JSON: https://felipepostigo.com/resume.json
+- Resume Markdown: https://felipepostigo.com/resume.md
+
+## Profiles
+- LinkedIn: https://www.linkedin.com/in/felipe-postigo/
+- GitHub: https://github.com/fpostigog88
+- Demo: https://www.youtube.com/embed/yAfvXZR69eY
+
+## Articles
+- Dell Server Revenue Operations: Applied AI Where Forecasting Meets Executive Decisions: https://felipepostigo.com/articles/dell-server-revenue-operations-applied-ai-where-forecasting-meets-executive-decisions/ — A lived-experience article on Dell Technologies server revenue operations, $16B+ revenue scope, 90%+ planning accuracy, AI-enabled decision systems, and executive visibility.
+- From 80 Hours to One Person: Business Transformation Through Analytics and AI Workflows: https://felipepostigo.com/articles/from-80-hours-to-one-person-business-transformation-through-analytics-and-ai-workflows/ — How Felipe Postigo Gonzalez transformed a resource-intensive 2-person, 80-hour-per-week process into a scalable 1-person operation through business intelligence, AI-enabled workflows, and operating-system thinking.
+- Pricing Analytics and Discount Strategy: Lessons from Dell Technologies: https://felipepostigo.com/articles/pricing-analytics-and-discount-strategy-lessons-from-dell-technologies/ — A practical article grounded in the Dell MBA internship pricing framework and later server revenue operations work.
+- AI Forecasting From Commercial Reality, Not Model Theater: https://felipepostigo.com/articles/ai-forecasting-from-commercial-reality-not-model-theater/ — What 90%+ forecast accuracy means in commercial planning: assumptions, executive adoption, pricing signals, pipeline data, and operational context.
+- Building Agentic Workflow Systems with Hermes and OpenClaw: https://felipepostigo.com/articles/building-agentic-workflow-systems-with-hermes-and-openclaw/ — How Felipe Postigo Gonzalez built AI and agentic workflow systems using Hermes / OpenClaw for coordination, reporting, analytics, and workflow execution.
+- Applied AI Across Technology, Healthcare, and Real Estate Operations: https://felipepostigo.com/articles/applied-ai-across-technology-healthcare-and-real-estate-operations/ — A cross-industry view from Dell Technologies, Asociacion Chilena de Seguridad, and Moller y Perez-Cotapos.
+- Real Estate Forecasting Automation Before the AI Boom: https://felipepostigo.com/articles/real-estate-forecasting-automation-before-the-ai-boom/ — How automated forecasting and financial modeling at Moller y Perez-Cotapos improved forecast accuracy by 50% and reduced execution time by 25%.
+- From Michigan Ross MBA to Applied AI Practitioner: https://felipepostigo.com/articles/from-michigan-ross-mba-to-applied-ai-practitioner/ — How MBA strategy training, enterprise revenue operations, and hands-on systems building shaped Felipe Postigo Gonzalez’s applied AI profile.
+
+## Experience
+- Dell Technologies, Lead — Commercial Strategy, Planning and AI Analytics | Server Revenue Operations (2023–2026): Led commercial strategy and performance initiatives supporting $16B+ in enterprise server revenue. Built AI-enabled decision systems and forecasting models improving planning accuracy to 90%+. Designed BI and decision ecosystems integrating pricing, pipeline, and operational data. Transformed a 2-person, 80-hour-per-week process into a scalable 1-person operation.
+- Dell Technologies, MBA Intern, Pricing Framework (2022): Developed a pricing framework to analyze efficiency and improve profitability of discount strategies. Created tools and KPIs intended for worldwide replication.
+- Asociacion Chilena de Seguridad (Hospital), Commercial Strategy and Operations Lead (2020–2021): Redesigned data-driven commercial workflows and customer engagement processes, increasing sales 20% while accelerating invoicing and service delivery efficiency by 60%. Built dashboards and operational analytics that reduced reporting effort by 90%.
+- Moller y Perez-Cotapos, Associate Manager of Real Estate Business Development, 2018–2020 (2018–2020): Designed automated forecasting and financial modeling tools improving forecast accuracy by 50% and reducing execution time by 25%. Led 7 analysts; acquired 10 properties worth $64.6M; led strategic partner relationships across 22 projects contributing to 60% business unit profit growth.
+- Moller y Perez-Cotapos, Head of Real Estate Business Development, 2017–2018 (2017–2018): Developed and presented strategy to board of directors; acquired 9 properties for $57M; closed 8 deals for $40M at 11% initial ROI; oversaw search, study, and appraisal of 1.2K real estate opportunities worth $4.2B.
+- Moller y Perez-Cotapos, Real Estate Product Manager, 2014–2017; increased monthly sales by 25% (2014–2017): Directed cross-functional execution across sales, marketing, construction, and development functions; improved customer engagement and increased monthly sales by 25%; resolved permitting bottlenecks and negotiated construction contracts.
+- Moller y Perez-Cotapos, Development Engineer, Real Estate Division, 2012–2014; market research and financial modeling on hundreds of properties yearly (2012–2014): Conducted market research and financial modeling on hundreds of properties yearly.
+
+## Projects
+- AI-enabled commercial decision systems: At Dell, developed AI-enabled decision systems and forecasting models that improved planning accuracy to 90%+ and strengthened executive decision making while reducing manual work.
+- Server revenue operations intelligence: Built decision ecosystems integrating pricing, pipeline, and operational data for $16B+ enterprise server revenue scope.
+- Pricing framework and KPI tooling: As Dell MBA intern, developed pricing framework to analyze efficiency, improve profitability of discount strategies, and create KPIs for replication.
+- Hermes / OpenClaw agentic workflows: Built AI and agentic workflow systems using Hermes / OpenClaw to automate coordination, reporting, analytics, and workflow execution across business and personal applications.
+- Plaid-connected finance application: Developed personal finance application connected to Plaid with structured and unstructured data for local decision support.
+- Android ADB automation: Built automation using Android ADB and orchestration tools for scheduled and on-demand execution.
+- Real estate forecasting automation: At Moller y Perez-Cotapos, designed automated forecasting and financial modeling tools improving forecast accuracy by 50% and reducing execution time by 25%.
+Professional image: https://felipepostigo.com/assets/professional-headshot-placeholder.svg
+Press kit: https://felipepostigo.com/press-kit/
+Deployment checklist: https://felipepostigo.com/deployment-checklist/

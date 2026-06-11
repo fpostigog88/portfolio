@@ -1,0 +1,16 @@
+{
+  "index.html": {
+    "old_forced_redirect_removed": true,
+    "preference_storage_present": true,
+    "en_button_sets_lang": true,
+    "es_button_sets_lang": true,
+    "spanish_default_redirect_present": true
+  },
+  "es/index.html": {
+    "old_forced_redirect_removed": true,
+    "preference_storage_present": true,
+    "en_button_sets_lang": true,
+    "es_button_sets_lang": true,
+    "spanish_default_redirect_present": true
+  }
+}
