@@ -221,6 +221,30 @@
             text-decoration: none;
             color: white;
         }
+        .cluster-list {
+            max-height: 220px;
+            overflow-y: auto;
+            margin-top: 10px;
+            padding-right: 4px;
+        }
+        .cluster-list-item {
+            padding: 8px 0;
+            border-top: 1px solid #e6e6e6;
+        }
+        .cluster-list-item:first-child {
+            border-top: none;
+            padding-top: 0;
+        }
+        .cluster-list-item .name {
+            font-weight: 600;
+            color: #1a3a5c;
+            margin-bottom: 4px;
+        }
+        .cluster-list-item .meta {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 6px;
+        }
         .popup-actions .btn-email { background: #2196F3; }
         .popup-actions .btn-edit { background: #FF9800; }
         .template-help {
@@ -1088,6 +1112,7 @@
                 disableClusteringAtZoom: 14,
                 maxClusterRadius: 45
             });
+            markerLayer.on('clusterclick', handleClusterClick);
             hoaMap.addLayer(markerLayer);
         }
 
@@ -1126,6 +1151,7 @@
                             <button class="btn-edit" onclick="showEditModal(${h.id})">Edit</button>
                         </div>
                     </div>`;
+                marker.hoaRecord = h;
                 marker.bindPopup(popup);
                 marker.bindTooltip(escapeHtml(h.name || 'HOA'), { direction: 'top', offset: [0, -10] });
                 markerLayer.addLayer(marker);
@@ -1135,6 +1161,52 @@
                 fitMapToMarkers();
                 mapHasAutoFit = true;
             }
+        }
+
+        function handleClusterClick(event) {
+            const cluster = event.layer;
+            const children = cluster.getAllChildMarkers();
+            if (!children.length) return;
+
+            if (children.length <= 25) {
+                if (event.originalEvent) {
+                    event.originalEvent.preventDefault();
+                    event.originalEvent.stopPropagation();
+                }
+                const html = buildClusterPopup(children);
+                L.popup({ maxWidth: 420 })
+                    .setLatLng(cluster.getLatLng())
+                    .setContent(html)
+                    .openOn(hoaMap);
+                return;
+            }
+
+            cluster.zoomToBounds();
+        }
+
+        function buildClusterPopup(children) {
+            const items = children
+                .map(marker => marker.hoaRecord)
+                .filter(Boolean)
+                .sort((a, b) => (a.name || '').localeCompare(b.name || ''))
+                .map(h => `
+                    <div class="cluster-list-item">
+                        <div class="name">${escapeHtml(h.name || 'HOA')}</div>
+                        <div class="meta">${escapeHtml(h.city || '')}${h.county ? `, ${escapeHtml(h.county)}` : ''}${h.address ? ` - ${escapeHtml(h.address)}` : ''}</div>
+                        <div class="popup-actions">
+                            ${h.email ? `<button class="btn-email" onclick="composeEmail(${h.id})">Email</button>` : ''}
+                            <button class="btn-edit" onclick="showEditModal(${h.id})">Edit</button>
+                        </div>
+                    </div>
+                `).join('');
+
+            return `
+                <div>
+                    <strong>${children.length} HOAs at this location</strong>
+                    <div style="font-size:12px;color:#666;margin-top:4px;">These records share the same map point, usually because only a city-level address was available.</div>
+                    <div class="cluster-list">${items}</div>
+                </div>
+            `;
         }
 
         function updatePagination() {
