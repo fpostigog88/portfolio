@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOA Lead Dashboard</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -154,6 +155,72 @@
         .filters .search-box {
             flex: 1;
             min-width: 200px;
+        }
+
+        /* Map */
+        .map-panel {
+            background: white;
+            margin: 20px;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .map-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .map-header h2 {
+            font-size: 18px;
+            color: #1a3a5c;
+        }
+        .map-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            color: #666;
+            font-size: 13px;
+        }
+        #hoaMap {
+            width: 100%;
+            height: 420px;
+            background: #eef3f7;
+        }
+        .popup-actions {
+            margin-top: 10px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .popup-actions a,
+        .popup-actions button {
+            border: none;
+            border-radius: 6px;
+            padding: 8px 10px;
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            color: white;
+        }
+        .popup-actions .btn-email { background: #2196F3; }
+        .popup-actions .btn-edit { background: #FF9800; }
+        .template-help {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 12px;
+            color: #555;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+        .template-help code {
+            background: #eef3f7;
+            padding: 2px 6px;
+            border-radius: 4px;
         }
         
         /* Table */
@@ -362,6 +429,8 @@
             .stats-bar { grid-template-columns: repeat(2, 1fr); }
             .filters { flex-direction: column; align-items: stretch; }
             .filters input, .filters select { width: 100%; }
+            .map-panel { margin: 12px; }
+            #hoaMap { height: 320px; }
         }
         
         /* User management */
@@ -466,6 +535,7 @@
             <div class="header-right">
                 <span class="user-badge" id="currentUserBadge">User</span>
                 <button class="btn" onclick="showUserPanel()">👥 Users</button>
+                <button class="btn" onclick="showEmailTemplateModal()">✉️ Edit Email Template</button>
                 <button class="btn btn-primary" onclick="exportCSV()">📊 Export CSV</button>
                 <button class="btn btn-danger" onclick="logout()">Logout</button>
             </div>
@@ -525,6 +595,17 @@
                 <option value="20">Low (20+)</option>
             </select>
             <button class="btn" onclick="clearFilters()" style="background:#666;">Clear</button>
+        </div>
+
+        <div class="map-panel">
+            <div class="map-header">
+                <h2>🗺️ HOA Map</h2>
+                <div class="map-meta">
+                    <span id="mapSummary">Loading mapped HOA locations...</span>
+                    <button class="btn" onclick="fitMapToMarkers()">Fit to Results</button>
+                </div>
+            </div>
+            <div id="hoaMap"></div>
         </div>
         
         <!-- Desktop Table -->
@@ -604,25 +685,57 @@
             </div>
         </div>
     </div>
+
+    <div class="modal-overlay" id="emailTemplateModal">
+        <div class="modal">
+            <h2>✉️ Outreach Email Template</h2>
+            <div class="modal-row">
+                <label>Subject</label>
+                <input type="text" id="emailTemplateSubject">
+            </div>
+            <div class="modal-row">
+                <label>Body</label>
+                <textarea id="emailTemplateBody" style="min-height:220px;"></textarea>
+            </div>
+            <div class="template-help">
+                <div><strong>Available placeholders</strong></div>
+                <div><code>{{hoa_name}}</code> <code>{{city}}</code> <code>{{county}}</code> <code>{{units}}</code> <code>{{management}}</code> <code>{{email}}</code> <code>{{phone}}</code> <code>{{address}}</code></div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn" onclick="hideEmailTemplateModal()">Cancel</button>
+                <button class="btn" onclick="resetEmailTemplate()">Reset Default</button>
+                <button class="btn btn-primary" onclick="saveEmailTemplate()">Save Template</button>
+            </div>
+        </div>
+    </div>
     
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script>
         // ============ AUTHENTICATION ============
         const DEFAULT_USERS = [
             { username: 'admin', password: 'admin123', role: 'admin', name: 'Administrator' },
             { username: 'felipe', password: 'pest2024', role: 'admin', name: 'Felipe' }
         ];
+        const DEFAULT_EMAIL_TEMPLATE = {
+            subject: 'Pest control services for {{hoa_name}}',
+            body: `Hello,\n\nI wanted to reach out about pest control support for {{hoa_name}} in {{city}}.\n\nWe help HOA communities with:\n- exterior and perimeter pest treatments\n- common-area pest prevention\n- responsive service for property managers and boards\n\nIf it helps, I can send over a simple proposal for {{hoa_name}} and answer any questions about service options for your community.\n\nBest,\n[Your Name]\n[Company]\n[Phone]`
+        };
         
         const STORAGE_KEY_USERS = 'hoa_users';
         const STORAGE_KEY_SESSION = 'hoa_session';
         const STORAGE_KEY_DATA = 'hoa_crm_data';
+        const STORAGE_KEY_EMAIL_TEMPLATE = 'hoa_email_template';
         const ITEMS_PER_PAGE = 50;
         
         let hoaData = [];
+        let hoaLocationsById = {};
         let filteredData = [];
         let currentPage = 1;
         let sortColumn = 'name';
         let sortDirection = 'asc';
         let currentUser = null;
+        let hoaMap = null;
+        let markerLayer = null;
         
         function initUsers() {
             let users = JSON.parse(localStorage.getItem(STORAGE_KEY_USERS) || 'null');
@@ -749,9 +862,12 @@
         // ============ DATA LOADING ============
         function loadData() {
             initUsers();
-            fetch('hoa_data.json')
-                .then(r => r.json())
-                .then(data => {
+            Promise.all([
+                fetch('hoa_data.json').then(r => r.json()),
+                fetch('hoa_locations.json').then(r => r.ok ? r.json() : []).catch(() => [])
+            ])
+                .then(([data, locations]) => {
+                    hoaLocationsById = Object.fromEntries((locations || []).map(loc => [loc.id, loc]));
                     hoaData = data.map(h => ({
                         ...h,
                         status: h.status || 'New',
@@ -768,7 +884,15 @@
                         if (crmData[h.id]) {
                             Object.assign(h, crmData[h.id]);
                         }
+                        const location = hoaLocationsById[h.id];
+                        if (location) {
+                            h.lat = location.lat;
+                            h.lon = location.lon;
+                            h.map_display_name = location.display_name || '';
+                            h.map_query = location.query || '';
+                        }
                     });
+                    initMap();
                     populateFilters();
                     filterData();
                     updateStats();
@@ -831,6 +955,7 @@
             renderTable();
             renderMobileCards();
             updatePagination();
+            refreshMap();
         }
         
         function clearFilters() {
@@ -897,7 +1022,7 @@
                     <td>${h.assigned_to || '<span style="color:#999;">-</span>'}</td>
                     <td>
                         ${h.phone ? `<a href="tel:${h.phone}" class="action-btn btn-call">📞 Call</a>` : ''}
-                        ${h.email ? `<a href="mailto:${h.email}" class="action-btn btn-email">✉️ Email</a>` : ''}
+                        ${h.email ? `<button class="action-btn btn-email" onclick="composeEmail(${h.id})">✉️ Outreach</button>` : ''}
                         <button class="action-btn btn-edit" onclick="showEditModal(${h.id})">✏️ Edit</button>
                     </td>
                 </tr>`;
@@ -926,12 +1051,68 @@
                     <div class="meta">Score: ${h.contact_score || 0}% | Assigned: ${h.assigned_to || 'Unassigned'}</div>
                     <div class="actions">
                         <span class="status-badge ${statusClass}" onclick="quickStatus(${h.id})">${h.status || 'New'}</span>
+                        ${h.email ? `<button class="action-btn btn-email" onclick="composeEmail(${h.id})">✉️ Outreach</button>` : ''}
                         <button class="action-btn btn-edit" onclick="showEditModal(${h.id})">✏️ Edit</button>
                     </div>
                 </div>`;
             }).join('');
         }
         
+        // ============ MAP ============
+        function initMap() {
+            if (hoaMap) return;
+            hoaMap = L.map('hoaMap', { scrollWheelZoom: false }).setView([38.5816, -121.4944], 8);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 18,
+                attribution: '&copy; OpenStreetMap contributors'
+            }).addTo(hoaMap);
+            markerLayer = L.layerGroup().addTo(hoaMap);
+        }
+
+        function fitMapToMarkers() {
+            if (!hoaMap || !markerLayer) return;
+            const layers = markerLayer.getLayers();
+            if (!layers.length) return;
+            const bounds = L.featureGroup(layers).getBounds();
+            hoaMap.fitBounds(bounds.pad(0.15));
+        }
+
+        function refreshMap() {
+            if (!hoaMap || !markerLayer) return;
+            markerLayer.clearLayers();
+            const mapped = filteredData.filter(h => Number.isFinite(h.lat) && Number.isFinite(h.lon));
+            document.getElementById('mapSummary').textContent = `${mapped.length} of ${filteredData.length} filtered HOAs shown on map`;
+
+            mapped.forEach(h => {
+                const marker = L.circleMarker([h.lat, h.lon], {
+                    radius: 6,
+                    weight: 1,
+                    color: '#1a3a5c',
+                    fillColor: h.contact_score >= 80 ? '#4CAF50' : h.contact_score >= 50 ? '#FF9800' : '#f44336',
+                    fillOpacity: 0.8,
+                });
+                const popup = `
+                    <div>
+                        <strong>${escapeHtml(h.name || 'HOA')}</strong><br>
+                        ${escapeHtml(h.city || '')}${h.county ? `, ${escapeHtml(h.county)}` : ''}<br>
+                        ${h.address ? `${escapeHtml(h.address)}<br>` : ''}
+                        ${h.email ? `✉️ ${escapeHtml(h.email)}<br>` : ''}
+                        ${h.phone ? `📞 ${escapeHtml(h.phone)}<br>` : ''}
+                        ${h.management ? `🏢 ${escapeHtml(h.management)}<br>` : ''}
+                        <div class="popup-actions">
+                            ${h.email ? `<button class="btn-email" onclick="composeEmail(${h.id})">Email</button>` : ''}
+                            <button class="btn-edit" onclick="showEditModal(${h.id})">Edit</button>
+                        </div>
+                    </div>`;
+                marker.bindPopup(popup);
+                markerLayer.addLayer(marker);
+            });
+
+            if (mapped.length) {
+                fitMapToMarkers();
+            }
+        }
+
         function updatePagination() {
             const totalPages = Math.ceil(filteredData.length / ITEMS_PER_PAGE) || 1;
             const info = `Page ${currentPage} of ${totalPages} (${filteredData.length} total)`;
@@ -962,6 +1143,72 @@
             }
         }
         
+        // ============ EMAIL TEMPLATE ============
+        function getEmailTemplate() {
+            return JSON.parse(localStorage.getItem(STORAGE_KEY_EMAIL_TEMPLATE) || 'null') || { ...DEFAULT_EMAIL_TEMPLATE };
+        }
+
+        function showEmailTemplateModal() {
+            const template = getEmailTemplate();
+            document.getElementById('emailTemplateSubject').value = template.subject || '';
+            document.getElementById('emailTemplateBody').value = template.body || '';
+            document.getElementById('emailTemplateModal').style.display = 'flex';
+        }
+
+        function hideEmailTemplateModal() {
+            document.getElementById('emailTemplateModal').style.display = 'none';
+        }
+
+        function saveEmailTemplate() {
+            const template = {
+                subject: document.getElementById('emailTemplateSubject').value,
+                body: document.getElementById('emailTemplateBody').value,
+            };
+            localStorage.setItem(STORAGE_KEY_EMAIL_TEMPLATE, JSON.stringify(template));
+            hideEmailTemplateModal();
+            showToast('Email template saved', 'success');
+        }
+
+        function resetEmailTemplate() {
+            document.getElementById('emailTemplateSubject').value = DEFAULT_EMAIL_TEMPLATE.subject;
+            document.getElementById('emailTemplateBody').value = DEFAULT_EMAIL_TEMPLATE.body;
+        }
+
+        function composeEmail(id) {
+            const h = hoaData.find(x => x.id === id);
+            if (!h || !h.email) {
+                showToast('No email address available for this HOA', 'error');
+                return;
+            }
+            const template = getEmailTemplate();
+            const subject = fillTemplate(template.subject || '', h);
+            const body = fillTemplate(template.body || '', h);
+            window.location.href = `mailto:${encodeURIComponent(h.email)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        function fillTemplate(template, hoa) {
+            const replacements = {
+                hoa_name: hoa.name || 'your HOA community',
+                city: hoa.city || '',
+                county: hoa.county || '',
+                units: hoa.units || 'your community',
+                management: hoa.management || 'your management team',
+                email: hoa.email || '',
+                phone: hoa.phone || '',
+                address: hoa.address || '',
+            };
+            return template.replace(/\{\{\s*(\w+)\s*\}\}/g, (_, key) => replacements[key] ?? '');
+        }
+
+        function escapeHtml(value) {
+            return String(value || '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
         // ============ CRM EDITING ============
         function showEditModal(id) {
             const h = hoaData.find(x => x.id === id);
