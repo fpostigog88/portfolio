@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #fff; font-family: Inter, system-ui, sans-serif; padding: 40px; }
+  .container { max-width: 760px; margin: 0 auto; }
+  h1 { font-size: 26px; color: #1a1a2e; text-align: center; margin-bottom: 8px; font-weight: 700; }
+  .subtitle { text-align: center; color: #6b7280; font-size: 13px; margin-bottom: 32px; }
+  .flow { display: flex; flex-direction: column; gap: 0; align-items: center; }
+  .row { display: flex; align-items: center; gap: 0; justify-content: center; }
+  .box {
+    border-radius: 10px;
+    padding: 14px 18px;
+    width: 170px;
+    text-align: center;
+    border: 2.5px solid;
+    font-size: 12.5px;
+    line-height: 1.45;
+    font-weight: 500;
+  }
+  .box-blue { background: #eff6ff; border-color: #3b82f6; color: #1e3a5f; }
+  .box-yellow { background: #fffbeb; border-color: #f59e0b; color: #78350f; }
+  .box-purple { background: #f5f3ff; border-color: #8b5cf6; color: #4c1d95; }
+  .box-red { background: #fef2f2; border-color: #ef4444; color: #7f1d1d; }
+  .box-pink { background: #fdf2f8; border-color: #ec4899; color: #831843; }
+  .box-green { background: #ecfdf5; border-color: #10b981; color: #064e3b; }
+  .box-dark { background: #1a1a2e; border-color: #1a1a2e; color: #fff; }
+  .arrow-h { color: #9ca3af; font-size: 20px; font-weight: 300; }
+  .arrow-v { color: #9ca3af; font-size: 20px; font-weight: 300; }
+  .connector { display: flex; align-items: center; justify-content: center; color: #d1d5db; font-size: 18px; min-height: 24px; }
+  .connector-h { min-width: 32px; }
+  .bottom-row { display: flex; gap: 16px; justify-content: center; margin-top: 4px; }
+  .footer { text-align: center; margin-top: 28px; color: #9ca3af; font-size: 13px; }
+  .label-top { font-size: 11px; color: #6b7280; text-align: center; margin-bottom: 4px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Walmart AI Agent — How It Works</h1>
+  <p class="subtitle">felipepostigo.com/articles/walmart-ai-agent-grocery-automation</p>
+
+  <!-- Row 1: Purchase History -> Frequency Analysis -> Qwen LLM -->
+  <div class="row" style="margin-bottom:4px">
+    <div class="box box-blue">Purchase History<br><span style="font-size:11px;color:#64748b">(JSON tracking file)</span></div>
+    <div class="connector connector-h">→</div>
+    <div class="box box-yellow">Frequency Analysis<br><span style="font-size:11px;color:#92400e">(Python script)</span></div>
+    <div class="connector connector-h">→</div>
+    <div class="box box-purple">Qwen LLM<br><span style="font-size:11px;color:#5b21b6">(Local llama.cpp)</span></div>
+  </div>
+
+  <!-- Down arrows from row 1 -->
+  <div class="connector" style="margin:-2px 0">↓</div>
+  <div class="connector" style="margin:-2px 0">↓</div>
+
+  <!-- Row 2: Cron Job + WhatsApp -> Decision -> Android ADB -->
+  <div class="row" style="margin-bottom:4px">
+    <div class="box box-red">Cron Job<br><span style="font-size:11px;color:#991b1b">(Overnight / on demand)</span></div>
+    <div class="connector connector-h">←</div>
+    <div class="box box-dark">Decision Engine<br><span style="font-size:11px;color:#94a3b8">(Reorder now vs wait)</span></div>
+    <div class="connector connector-h">→</div>
+    <div class="box box-green">Android ADB<br><span style="font-size:11px;color:#065f46">(Phone control)</span></div>
+  </div>
+
+  <!-- Down arrow -->
+  <div class="connector" style="margin:-2px 0">↓</div>
+
+  <!-- Final: Walmart App -->
+  <div class="row">
+    <div class="box box-dark" style="width:260px">Walmart App on Your Phone<br><span style="font-size:11px;color:#94a3b8">(Adds items to cart automatically)</span></div>
+  </div>
+
+  <!-- WhatsApp side note -->
+  <div style="text-align:center; margin-top:16px;">
+    <span class="box box-pink" style="font-size:12px">WhatsApp <span style="font-size:11px;color:#831843">(Human trigger + alert)</span></span>
+  </div>
+
+  <p class="footer">Self-healing · No cloud · No browser extensions · Runs in production</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Agent Manages My Grocery List — What AI Strategy Actually Looks Like — Felipe Postigo Gonzalez</title>
+<meta name="description" content="I built an AI agent that manages my grocery list using Android ADB, a local LLM, and purchase frequency analysis. Here's what AI strategy looks like when it's not just frameworks.">
+<link rel="canonical" href="https://felipepostigo.com/articles/walmart-ai-agent-grocery-automation/">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="AI Agent Manages My Grocery List — What AI Strategy Actually Looks Like">
+<meta property="og:description" content="I built an AI agent that manages my grocery list using Android ADB, a local LLM, and purchase frequency analysis. Here's what AI strategy looks like when it's not just frameworks.">
+<meta property="og:url" content="https://felipepostigo.com/articles/walmart-ai-agent-grocery-automation/">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/authority.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI Agent Manages My Grocery List — What AI Strategy Actually Looks Like",
+  "description": "I built an AI agent that manages my grocery list using Android ADB, a local LLM, and purchase frequency analysis. Here's what AI strategy looks like when it's not just frameworks.",
+  "author": {
+    "@id": "https://felipepostigo.com/who-is-felipe-postigo/#person"
+  },
+  "publisher": {
+    "@id": "https://felipepostigo.com/#organization"
+  },
+  "mainEntityOfPage": "https://felipepostigo.com/articles/walmart-ai-agent-grocery-automation/",
+  "datePublished": "2026-06-11",
+  "dateModified": "2026-06-11",
+  "keywords": [
+    "AI agents",
+    "grocery automation",
+    "agentic AI",
+    "AI strategy",
+    "Hermes",
+    "Nous Research",
+    "Qwen",
+    "Android ADB",
+    "automation"
+  ]
+}
+</script>
+<meta property="og:image" content="https://felipepostigo.com/assets/walmart-agent-diagram.png">
+<meta property="og:image:alt" content="Walmart AI Agent System Architecture">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta name="twitter:image" content="https://felipepostigo.com/assets/walmart-agent-diagram.png">
+</head>
+<body>
+<nav class="hero-contact-links" style="margin:18px auto;max-width:1200px" aria-label="Site navigation">
+<a class="hero-contact-link" href="/">Home</a>
+<a class="hero-contact-link" href="/who-is-felipe-postigo/">Who Is Felipe</a>
+<a class="hero-contact-link" href="/for-ai-systems/">For AI Systems</a>
+<a class="hero-contact-link" href="/about/">About</a>
+<a class="hero-contact-link" href="/resume/">Resume</a>
+<a class="hero-contact-link" href="/projects/">Projects</a>
+<a class="hero-contact-link" href="/articles/">Articles</a>
+<a class="hero-contact-link" href="/contact/">Contact</a>
+<a class="hero-contact-link" href="/press-kit/">Press Kit</a>
+</nav>
+<main class="authority-page">
+<article class="article-body">
+<div class="authority-kicker">Agentic Automation</div>
+<h1>AI Agent Manages My Grocery List — What AI Strategy Actually Looks Like</h1>
+<p class="hero-value">Most AI strategy conversations stay at the framework level. I wanted to see what the actual stack looks like when agents have to reason, decide, and act on real consumer apps.</p>
+<img src="/assets/walmart-agent-diagram.png" alt="Walmart AI Agent System Architecture" style="max-width:100%;border-radius:12px;margin:24px 0;">
+<div class="hero-contact-links">
+<span class="hero-contact-link">AI Agents</span>
+<span class="hero-contact-link">Agentic AI</span>
+<span class="hero-contact-link">AI Strategy</span>
+<span class="hero-contact-link">Automation</span>
+</div>
+
+<h2>What This Actually Is</h2>
+
+<p>A working proof of concept for AI agents that manage recurring operational tasks. The agent:</p>
+
+<ul>
+<li>Reasons across purchase history data to determine what matters</li>
+<li>Makes decisions — reorder now vs. wait — without a human in the loop</li>
+<li>Executes against a real consumer app, not a sandbox API</li>
+</ul>
+
+<p>The system runs on Android ADB as the execution layer, a local LLM (Qwen) for orchestration, and purchase frequency analysis that drives when the agent acts. It's cron-scheduled, self-healing, and has been running in production for months.</p>
+
+<h2>The Stack</h2>
+
+<p>No cloud dependencies. No browser extensions. No human intervention once it's set up.</p>
+
+<ul>
+<li><strong>Execution:</strong> Android ADB — the agent literally opens the Walmart app on my phone and adds items to cart</li>
+<li><strong>Orchestration:</strong> Local LLM (Qwen 3B) running on my machine — no API costs, no latency</li>
+<li><strong>Brain:</strong> Purchase frequency analysis — tracks how often I buy each item, calculates when I'm likely to run out, triggers a reorder before I even think about it</li>
+<li><strong>Scheduler:</strong> Cron jobs that run overnight or on demand via WhatsApp</li>
+<li><strong>Self-healing:</strong> The cron job detects failures and auto-restarts the LLM server if something goes wrong</li>
+</ul>
+
+<h2>What This Means for AI Strategy</h2>
+
+<p>The strategic point is simple: the people who will define AI strategy in the next 2-3 years are the ones already running agents against real systems — not just evaluating vendors from the outside.</p>
+
+<p>Reading about agentic AI and actually having a cron job that adds milk to your cart because it knows you bought it 12 days ago are completely different things. The gap between the framework conversation and the actual execution is where the real learning happens.</p>
+
+<p>This is why I built it instead of just writing about it.</p>
+
+<h2>If You're in AI Strategy or Agentic Automation</h2>
+
+<p>If you're hiring for AI strategy, AI operations, or agentic automation leadership — or if you're working on this and want to compare notes — I'd love to hear what you're building.</p>
+
+<p>The full technical walkthrough drops soon. But the strategic point stands: get your hands dirty with real systems.</p>
+
+<p><a href="https://www.linkedin.com/in/felipe-postigo/" target="_blank" rel="noopener">Let's connect on LinkedIn</a></p>
+
+<p><a href="https://felipepostigo.com" target="_blank" rel="noopener">felipepostigo.com</a></p>
+
+<div class="faq">
+<h2>FAQ</h2>
+
+<h3>How does the agent decide when to reorder?</h3>
+<p>It tracks purchase frequency for each item. If you bought bananas 12 days ago and you typically buy them every 10 days, it flags bananas as nearly due. When the urgency score crosses a threshold, it adds them to cart automatically — no human prompting needed.</p>
+
+<h3>Does it use the Walmart API?</h3>
+<p>No. It uses Android ADB to control the Walmart app directly on the phone. This means it works with the actual consumer app just like a human would — no API keys, no developer access, no sandbox.</p>
+
+<h3>What happens if something goes wrong?</h3>
+<p>The cron job has self-healing logic. If the LLM server crashes, it restarts automatically. If the ADB command fails, it logs the error and alerts via WhatsApp. It doesn't just silently fail — it tries to fix itself first.</p>
+
+<h3>Is this running all the time?</h3>
+<p>The agent is always running in the sense that the cron jobs are scheduled. The LLM server sits idle until a job fires. It uses WhatsApp as the human-facing interface — I send it a message, it works on the task, and notifies me when it's done.</p>
+
+<h3>What's the actual tech stack?</h3>
+<p>Hernes (agent framework by Nous Research), Qwen 2.5 3B running locally via llama.cpp, Android ADB for mobile execution, purchase frequency analysis in Python, cron for scheduling, WhatsApp bridge for messaging. No cloud AI services, no browser extensions.</p>
+</div>
+
+</article>
+</main>
+<footer class="footer">
+<p>Felipe Postigo Gonzalez · Commercial Strategy | Applied AI · <a href="mailto:fpostigo@umich.edu">fpostigo@umich.edu</a></p>
+</footer>
+</body>
+</html>
