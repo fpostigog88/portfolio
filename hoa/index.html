@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOA Lead Dashboard</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -190,6 +192,18 @@
             width: 100%;
             height: 420px;
             background: #eef3f7;
+        }
+        .marker-cluster-small,
+        .marker-cluster-medium,
+        .marker-cluster-large {
+            background: rgba(26, 58, 92, 0.18);
+        }
+        .marker-cluster-small div,
+        .marker-cluster-medium div,
+        .marker-cluster-large div {
+            background: #1a3a5c;
+            color: white;
+            font-weight: 700;
         }
         .popup-actions {
             margin-top: 10px;
@@ -710,6 +724,7 @@
     </div>
     
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <script>
         // ============ AUTHENTICATION ============
         const DEFAULT_USERS = [
@@ -736,6 +751,7 @@
         let currentUser = null;
         let hoaMap = null;
         let markerLayer = null;
+        let mapHasAutoFit = false;
         
         function initUsers() {
             let users = JSON.parse(localStorage.getItem(STORAGE_KEY_USERS) || 'null');
@@ -1066,7 +1082,13 @@
                 maxZoom: 18,
                 attribution: '&copy; OpenStreetMap contributors'
             }).addTo(hoaMap);
-            markerLayer = L.layerGroup().addTo(hoaMap);
+            markerLayer = L.markerClusterGroup({
+                showCoverageOnHover: false,
+                spiderfyOnMaxZoom: true,
+                disableClusteringAtZoom: 14,
+                maxClusterRadius: 45
+            });
+            hoaMap.addLayer(markerLayer);
         }
 
         function fitMapToMarkers() {
@@ -1085,11 +1107,11 @@
 
             mapped.forEach(h => {
                 const marker = L.circleMarker([h.lat, h.lon], {
-                    radius: 6,
-                    weight: 1,
-                    color: '#1a3a5c',
+                    radius: 10,
+                    weight: 2,
+                    color: '#ffffff',
                     fillColor: h.contact_score >= 80 ? '#4CAF50' : h.contact_score >= 50 ? '#FF9800' : '#f44336',
-                    fillOpacity: 0.8,
+                    fillOpacity: 0.95,
                 });
                 const popup = `
                     <div>
@@ -1105,11 +1127,13 @@
                         </div>
                     </div>`;
                 marker.bindPopup(popup);
+                marker.bindTooltip(escapeHtml(h.name || 'HOA'), { direction: 'top', offset: [0, -10] });
                 markerLayer.addLayer(marker);
             });
 
-            if (mapped.length) {
+            if (mapped.length && !mapHasAutoFit) {
                 fitMapToMarkers();
+                mapHasAutoFit = true;
             }
         }
 
