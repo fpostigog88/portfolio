@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #fff; font-family: Inter, system-ui, sans-serif; padding: 40px; }
+  .container { max-width: 760px; margin: 0 auto; }
+  h1 { font-size: 26px; color: #1a1a2e; text-align: center; margin-bottom: 8px; font-weight: 700; }
+  .subtitle { text-align: center; color: #6b7280; font-size: 13px; margin-bottom: 32px; }
+  .flow { display: flex; flex-direction: column; gap: 0; align-items: center; }
+  .row { display: flex; align-items: center; gap: 0; justify-content: center; }
+  .box {
+    border-radius: 10px;
+    padding: 14px 18px;
+    width: 170px;
+    text-align: center;
+    border: 2.5px solid;
+    font-size: 12.5px;
+    line-height: 1.45;
+    font-weight: 500;
+  }
+  .box-gray { background: #f3f4f6; border-color: #9ca3af; color: #374151; }
+  .box-blue { background: #eff6ff; border-color: #3b82f6; color: #1e3a5f; }
+  .box-purple { background: #f5f3ff; border-color: #8b5cf6; color: #4c1d95; }
+  .box-green { background: #ecfdf5; border-color: #10b981; color: #064e3b; }
+  .box-dark { background: #1a1a2e; border-color: #1a1a2e; color: #fff; }
+  .arrow-h { color: #9ca3af; font-size: 20px; font-weight: 300; }
+  .connector { display: flex; align-items: center; justify-content: center; color: #d1d5db; font-size: 18px; min-height: 24px; }
+  .connector-h { min-width: 32px; }
+  .footer { text-align: center; margin-top: 28px; color: #9ca3af; font-size: 13px; }
+  .vs-box { background: #fef2f2; border: 2.5px solid #ef4444; border-radius: 10px; padding: 8px 16px; color: #991b1b; font-weight: 700; font-size: 14px; }
+  .task-list { display: flex; flex-direction: column; gap: 4px; margin-top: 8px; }
+  .task { background: #ecfdf5; border: 1.5px solid #10b981; border-radius: 6px; padding: 5px 10px; font-size: 11.5px; color: #065f46; text-align: center; }
+  .label-top { font-size: 11px; color: #6b7280; text-align: center; margin-bottom: 4px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Your Laptop Is Enough for AI Agents</h1>
+  <p class="subtitle">felipepostigo.com/articles/you-dont-need-powerful-computer-for-agents</p>
+
+  <!-- Row 1: Old Laptop -> Hermes (body) -> Cloud LLM (brain) -->
+  <div class="row" style="margin-bottom:4px">
+    <div class="box box-gray">Your Old Laptop<br><span style="font-size:11px;color:#6b7280">(Day-to-day, busted GPU)</span></div>
+    <div class="connector connector-h">→</div>
+    <div class="box box-blue">Hermes<br><span style="font-size:11px;color:#1e40af">(The Robot Body)</span></div>
+    <div class="connector connector-h">→</div>
+    <div class="box box-purple">ChatGPT / Claude<br><span style="font-size:11px;color:#5b21b6">(The Boosted Brain)</span></div>
+  </div>
+
+  <!-- Down arrows -->
+  <div class="connector" style="margin:-2px 0">↓</div>
+
+  <!-- VS box -->
+  <div style="text-align:center; margin: 4px 0;">
+    <span class="vs-box">NOT</span>
+  </div>
+
+  <!-- Down arrow -->
+  <div class="connector" style="margin:-2px 0">↓</div>
+
+  <!-- Row 2: Powerful GPU / Coder machine -->
+  <div class="row" style="margin-bottom:8px">
+    <div class="box box-gray" style="border-color:#ef4444; color:#991b1b; background:#fef2f2;">Expensive GPU<br><span style="font-size:11px;color:#b91c1c">(Coder machine)</span></div>
+  </div>
+
+  <!-- Divider -->
+  <div style="border-top: 1.5px dashed #e5e7eb; margin: 16px 0;"></div>
+
+  <!-- Label: What the agent does -->
+  <div class="label-top">What your agent can do with that boosted brain</div>
+
+  <div style="display: flex; gap: 10px; justify-content: center; margin-top: 10px; flex-wrap: wrap;">
+    <div class="task">Write and send emails</div>
+    <div class="task">Create dashboards</div>
+    <div class="task">Book travel + schedule</div>
+    <div class="task">Build presentations</div>
+    <div class="task">Research anything</div>
+    <div class="task">Automate groceries</div>
+  </div>
+
+  <p class="footer">No GPU needed. No coding machine required. Your setup is already enough.</p>
+</div>
+</body>
+</html>
