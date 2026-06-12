@@ -1,5 +1,5 @@
 {
   "version": 1,
-  "include": ["/hoa/*"],
+  "include": ["/hoa/*", "/lazio/*"],
   "exclude": []
 }
