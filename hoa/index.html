@@ -18,15 +18,15 @@
         
         /* Login Screen */
         .login-screen {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: #1a3a5c;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-        }
+                    position: fixed;
+                    top: 0; left: 0;
+                    width: 100%; height: 100%;
+                    background: #1a3a5c;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 4000;
+                }
         .login-box {
             background: white;
             padding: 40px;
@@ -195,6 +195,12 @@
                     z-index: 1;
                     position: relative;
                 }
+                .leaflet-top,
+                .leaflet-bottom,
+                .leaflet-pane,
+                .leaflet-control {
+                    z-index: 10 !important;
+                }
         .marker-cluster-small,
         .marker-cluster-medium,
         .marker-cluster-large {
@@ -241,6 +247,20 @@
             font-weight: 600;
             color: #1a3a5c;
             margin-bottom: 4px;
+        }
+        .hoa-link {
+            background: none;
+            border: none;
+            padding: 0;
+            color: #1a3a5c;
+            font: inherit;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: left;
+            text-decoration: underline;
+        }
+        .hoa-link:hover {
+            color: #0f2740;
         }
         .cluster-list-item .meta {
             font-size: 12px;
@@ -349,15 +369,15 @@
         
         /* Modal */
         .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 100;
-            align-items: center;
-            justify-content: center;
-        }
+                    display: none;
+                    position: fixed;
+                    top: 0; left: 0;
+                    width: 100%; height: 100%;
+                    background: rgba(0,0,0,0.5);
+                    z-index: 3000;
+                    align-items: center;
+                    justify-content: center;
+                }
         .modal {
             background: white;
             border-radius: 12px;
@@ -412,6 +432,9 @@
             font-size: 16px;
             color: #1a3a5c;
             margin-bottom: 8px;
+        }
+        .mobile-card h3 .hoa-link {
+            font-size: inherit;
         }
         .mobile-card .meta {
             font-size: 13px;
@@ -475,15 +498,15 @@
         
         /* User management */
         .user-panel {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 200;
-            align-items: center;
-            justify-content: center;
-        }
+                    display: none;
+                    position: fixed;
+                    top: 0; left: 0;
+                    width: 100%; height: 100%;
+                    background: rgba(0,0,0,0.5);
+                    z-index: 3000;
+                    align-items: center;
+                    justify-content: center;
+                }
         .user-panel.active { display: flex; }
         .user-panel .modal { max-width: 400px; }
         .user-list {
@@ -501,14 +524,14 @@
         
         /* Toast notifications */
         .toast-container {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1001;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    z-index: 5000;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                }
         .toast {
             padding: 12px 20px;
             border-radius: 8px;
@@ -777,6 +800,7 @@
         let currentUser = null;
         let hoaMap = null;
         let markerLayer = null;
+        let markerByHoaId = {};
         let mapHasAutoFit = false;
         
         function initUsers() {
@@ -1051,7 +1075,7 @@
                 if (h.management) contacts.push(`🏢 ${h.management}`);
                 
                 return `<tr>
-                    <td><strong>${h.name || 'N/A'}</strong><br><small style="color:#666;">${h.address || ''}</small></td>
+                    <td><button class="hoa-link" onclick="openHoaDetails(${h.id})">${escapeHtml(h.name || 'N/A')}</button><br><small style="color:#666;">${escapeHtml(h.address || '')}</small></td>
                     <td>${h.city || ''}</td>
                     <td>${h.county || ''}</td>
                     <td>${contacts.join('<br>') || '<span style="color:#999;">No contact info</span>'}</td>
@@ -1086,9 +1110,9 @@
                 if (h.email) contacts.push(`✉️ <a href="mailto:${h.email}">${h.email}</a>`);
                 
                 return `<div class="mobile-card">
-                    <h3>${h.name || 'N/A'}</h3>
-                    <div class="meta">${h.city || ''}, ${h.county || ''} ${h.address || ''}</div>
-                    <div class="meta">${h.units ? h.units + ' units' : ''} ${h.management ? '· ' + h.management : ''}</div>
+                    <h3><button class="hoa-link" onclick="openHoaDetails(${h.id})">${escapeHtml(h.name || 'N/A')}</button></h3>
+                    <div class="meta">${escapeHtml(h.city || '')}, ${escapeHtml(h.county || '')} ${escapeHtml(h.address || '')}</div>
+                    <div class="meta">${h.units ? escapeHtml(h.units + ' units') : ''} ${h.management ? '· ' + escapeHtml(h.management) : ''}</div>
                     <div class="meta">${contacts.join('<br>') || 'No contact info'}</div>
                     <div class="meta">Score: ${h.contact_score || 0}% | Assigned: ${h.assigned_to || 'Unassigned'}</div>
                     <div class="actions">
@@ -1103,7 +1127,7 @@
         // ============ MAP ============
         function initMap() {
             if (hoaMap) return;
-            hoaMap = L.map('hoaMap', { scrollWheelZoom: false }).setView([38.5816, -121.4944], 8);
+            hoaMap = L.map('hoaMap', { scrollWheelZoom: true }).setView([38.5816, -121.4944], 8);
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 18,
                 attribution: '&copy; OpenStreetMap contributors'
@@ -1129,6 +1153,7 @@
         function refreshMap() {
             if (!hoaMap || !markerLayer) return;
             markerLayer.clearLayers();
+            markerByHoaId = {};
             const mapped = filteredData.filter(h => Number.isFinite(h.lat) && Number.isFinite(h.lon));
             document.getElementById('mapSummary').textContent = `${mapped.length} of ${filteredData.length} filtered HOAs shown on map`;
 
@@ -1154,6 +1179,7 @@
                         </div>
                     </div>`;
                 marker.hoaRecord = h;
+                markerByHoaId[h.id] = marker;
                 marker.bindPopup(popup);
                 marker.bindTooltip(escapeHtml(h.name || 'HOA'), { direction: 'top', offset: [0, -10] });
                 markerLayer.addLayer(marker);
@@ -1186,6 +1212,44 @@
             cluster.zoomToBounds();
         }
 
+        function openHoaDetails(id) {
+            const h = hoaData.find(x => x.id === id);
+            if (!h) return;
+
+            const marker = markerByHoaId[id];
+            if (marker && hoaMap) {
+                hoaMap.closePopup();
+                hoaMap.setView(marker.getLatLng(), Math.max(hoaMap.getZoom(), 15), { animate: true });
+                marker.openPopup();
+                return;
+            }
+
+            const detailHtml = `
+                <div>
+                    <strong>${escapeHtml(h.name || 'HOA')}</strong><br>
+                    ${escapeHtml(h.city || '')}${h.county ? `, ${escapeHtml(h.county)}` : ''}<br>
+                    ${h.address ? `${escapeHtml(h.address)}<br>` : ''}
+                    ${h.email ? `✉️ ${escapeHtml(h.email)}<br>` : ''}
+                    ${h.phone ? `📞 ${escapeHtml(h.phone)}<br>` : ''}
+                    ${h.management ? `🏢 ${escapeHtml(h.management)}<br>` : ''}
+                    ${h.units ? `🏠 ${escapeHtml(String(h.units))} units<br>` : ''}
+                    ${h.status ? `Status: ${escapeHtml(h.status)}<br>` : ''}
+                    ${h.assigned_to ? `Assigned: ${escapeHtml(h.assigned_to)}<br>` : ''}
+                    <div class="popup-actions">
+                        ${h.email ? `<button class="btn-email" onclick="composeEmail(${h.id})">Email</button>` : ''}
+                        <button class="btn-edit" onclick="showEditModal(${h.id})">Edit</button>
+                    </div>
+                </div>`;
+
+            if (hoaMap && Number.isFinite(h.lat) && Number.isFinite(h.lon)) {
+                hoaMap.closePopup();
+                L.popup({ maxWidth: 420 })
+                    .setLatLng([h.lat, h.lon])
+                    .setContent(detailHtml)
+                    .openOn(hoaMap);
+            }
+        }
+
         function buildClusterPopup(children) {
             const items = children
                 .map(marker => marker.hoaRecord)
@@ -1193,7 +1257,7 @@
                 .sort((a, b) => (a.name || '').localeCompare(b.name || ''))
                 .map(h => `
                     <div class="cluster-list-item">
-                        <div class="name">${escapeHtml(h.name || 'HOA')}</div>
+                        <div class="name"><button class="hoa-link" onclick="openHoaDetails(${h.id})">${escapeHtml(h.name || 'HOA')}</button></div>
                         <div class="meta">${escapeHtml(h.city || '')}${h.county ? `, ${escapeHtml(h.county)}` : ''}${h.address ? ` - ${escapeHtml(h.address)}` : ''}</div>
                         <div class="popup-actions">
                             ${h.email ? `<button class="btn-email" onclick="composeEmail(${h.id})">Email</button>` : ''}
