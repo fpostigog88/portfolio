@@ -39,44 +39,47 @@
         }
         .signin-btn:hover { background: #2a4f68; }
         .error-msg { color: #c0392b; font-size: 13px; margin-top: 10px; display: none; }
-        .loading { display: none; font-size: 13px; color: #666; margin-top: 12px; text-align: center; }
+        .loading { font-size: 13px; color: #666; margin-top: 12px; text-align: center; }
     </style>
 </head>
 <body>
     <div class="login-card">
         <div class="login-title">RecruiterOS</div>
         <div class="login-sub">Internal recruiter intelligence cockpit</div>
-        <form id="loginForm" onsubmit="handleLogin(event)">
+        <form id="loginForm">
             <div class="form-group">
                 <label for="password">Access password</label>
                 <input type="password" id="password" placeholder="Enter password" autocomplete="current-password">
             </div>
-            <button type="submit" class="signin-btn" id="submitBtn">Sign in</button>
+            <button type="button" class="signin-btn" id="submitBtn" onclick="handleLogin()">Sign in</button>
             <div class="error-msg" id="errorMsg">Incorrect password. Try again.</div>
             <div class="loading" id="loadingMsg">Signing in...</div>
         </form>
     </div>
     <script>
-        const DEMO_PASS = "recruiterosdemo";
-        function handleLogin(e) {
-            e.preventDefault();
+        var DEMO_PASS = "recruiterosdemo";
+        function handleLogin() {
             var pw = document.getElementById("password").value;
             if (pw === DEMO_PASS) {
-                // Disable button to prevent double-submit
                 document.getElementById("submitBtn").disabled = true;
                 document.getElementById("loadingMsg").style.display = "block";
-                // Store auth token
+                // Use BOTH localStorage AND a cookie for redundancy
                 localStorage.setItem("ros_auth", DEMO_PASS);
-                // Small delay then full navigation (ensures localStorage is committed)
+                document.cookie = "ros_auth=" + DEMO_PASS + "; path=/; SameSite=Lax";
+                // Give browser 800ms to commit storage before navigating
                 setTimeout(function() {
                     window.location.href = "/lazio/jobs";
-                }, 100);
+                }, 800);
             } else {
                 document.getElementById("errorMsg").style.display = "block";
                 document.getElementById("password").value = "";
                 document.getElementById("password").focus();
             }
         }
+        // Also allow Enter key to submit
+        document.getElementById("password").addEventListener("keyup", function(e) {
+            if (e.key === "Enter") handleLogin();
+        });
     </script>
 </body>
 </html>
