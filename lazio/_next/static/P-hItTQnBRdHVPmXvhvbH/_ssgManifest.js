@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002Fclient-portal\u002F[clientId]","\u002Fcrm\u002Fcandidates\u002F[id]","\u002Fjobs\u002F[jobId]","\u002Fjobs\u002F[jobId]\u002Finterview","\u002Fjobs\u002F[jobId]\u002Freferences","\u002Fjobs\u002F[jobId]\u002Fschedule","\u002Freference-check\u002F[token]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
