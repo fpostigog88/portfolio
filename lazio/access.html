@@ -23,56 +23,23 @@
             width: 360px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
-        .login-title {
-            font-size: 22px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        .login-sub {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 28px;
-        }
-        .form-group {
-            margin-bottom: 16px;
-        }
-        label {
-            display: block;
-            font-size: 13px;
-            font-weight: 500;
-            margin-bottom: 6px;
-            color: #1e3a4c;
-        }
+        .login-title { font-size: 22px; font-weight: 600; margin-bottom: 8px; }
+        .login-sub { font-size: 14px; color: #666; margin-bottom: 28px; }
+        .form-group { margin-bottom: 16px; }
+        label { display: block; font-size: 13px; font-weight: 500; margin-bottom: 6px; color: #1e3a4c; }
         input[type="password"] {
-            width: 100%;
-            padding: 10px 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 14px;
-            outline: none;
+            width: 100%; padding: 10px 12px; border: 1px solid #ccc;
+            border-radius: 4px; font-size: 14px; outline: none;
         }
-        input[type="password"]:focus {
-            border-color: #1e3a4c;
-        }
+        input[type="password"]:focus { border-color: #1e3a4c; }
         .signin-btn {
-            width: 100%;
-            padding: 11px;
-            background: #1e3a4c;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            font-size: 15px;
-            font-weight: 500;
-            cursor: pointer;
-            margin-top: 8px;
+            width: 100%; padding: 11px; background: #1e3a4c; color: #fff;
+            border: none; border-radius: 4px; font-size: 15px;
+            font-weight: 500; cursor: pointer; margin-top: 8px;
         }
         .signin-btn:hover { background: #2a4f68; }
-        .error-msg {
-            color: #c0392b;
-            font-size: 13px;
-            margin-top: 10px;
-            display: none;
-        }
+        .error-msg { color: #c0392b; font-size: 13px; margin-top: 10px; display: none; }
+        .loading { display: none; font-size: 13px; color: #666; margin-top: 12px; text-align: center; }
     </style>
 </head>
 <body>
@@ -84,21 +51,30 @@
                 <label for="password">Access password</label>
                 <input type="password" id="password" placeholder="Enter password" autocomplete="current-password">
             </div>
-            <button type="submit" class="signin-btn">Sign in</button>
+            <button type="submit" class="signin-btn" id="submitBtn">Sign in</button>
             <div class="error-msg" id="errorMsg">Incorrect password. Try again.</div>
+            <div class="loading" id="loadingMsg">Signing in...</div>
         </form>
     </div>
     <script>
         const DEMO_PASS = "recruiterosdemo";
         function handleLogin(e) {
             e.preventDefault();
-            const pw = document.getElementById("password").value;
+            var pw = document.getElementById("password").value;
             if (pw === DEMO_PASS) {
+                // Disable button to prevent double-submit
+                document.getElementById("submitBtn").disabled = true;
+                document.getElementById("loadingMsg").style.display = "block";
+                // Store auth token
                 localStorage.setItem("ros_auth", DEMO_PASS);
-                window.location.replace("/lazio/jobs");
+                // Small delay then full navigation (ensures localStorage is committed)
+                setTimeout(function() {
+                    window.location.href = "/lazio/jobs";
+                }, 100);
             } else {
                 document.getElementById("errorMsg").style.display = "block";
                 document.getElementById("password").value = "";
+                document.getElementById("password").focus();
             }
         }
     </script>
