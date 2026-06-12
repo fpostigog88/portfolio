@@ -195,12 +195,34 @@
                     z-index: 1;
                     position: relative;
                 }
-                .leaflet-top,
-                .leaflet-bottom,
-                .leaflet-pane,
-                .leaflet-control {
-                    z-index: 10 !important;
+                .map-popup {
+                    position: absolute;
+                    top: 70px;
+                    right: 20px;
+                    width: 300px;
+                    max-height: calc(100% - 90px);
+                    background: white;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+                    z-index: 100;
+                    overflow-y: auto;
+                    padding: 16px;
+                    font-size: 13px;
+                    line-height: 1.5;
                 }
+                .map-popup .close-btn {
+                    float: right;
+                    background: none;
+                    border: none;
+                    font-size: 18px;
+                    cursor: pointer;
+                    color: #999;
+                    padding: 0;
+                    line-height: 1;
+                }
+                .map-popup .close-btn:hover { color: #333; }
+                .map-popup strong { font-size: 14px; color: #1a3a5c; display: block; margin-bottom: 6px; }
+                .map-popup .popup-actions { margin-top: 10px; display: flex; gap: 6px; flex-wrap: wrap; }
         .marker-cluster-small,
         .marker-cluster-medium,
         .marker-cluster-large {
@@ -661,6 +683,7 @@
         </div>
 
         <div class="map-panel">
+            <div id="mapHoaPopup" class="map-popup" style="display:none;"></div>
             <div class="map-header">
                 <h2>🗺️ HOA Map</h2>
                 <div class="map-meta">
@@ -1218,36 +1241,31 @@
 
             const marker = markerByHoaId[id];
             if (marker && hoaMap) {
-                hoaMap.closePopup();
                 hoaMap.setView(marker.getLatLng(), Math.max(hoaMap.getZoom(), 15), { animate: true });
-                marker.openPopup();
-                return;
             }
 
-            const detailHtml = `
-                <div>
-                    <strong>${escapeHtml(h.name || 'HOA')}</strong><br>
-                    ${escapeHtml(h.city || '')}${h.county ? `, ${escapeHtml(h.county)}` : ''}<br>
-                    ${h.address ? `${escapeHtml(h.address)}<br>` : ''}
-                    ${h.email ? `✉️ ${escapeHtml(h.email)}<br>` : ''}
-                    ${h.phone ? `📞 ${escapeHtml(h.phone)}<br>` : ''}
-                    ${h.management ? `🏢 ${escapeHtml(h.management)}<br>` : ''}
-                    ${h.units ? `🏠 ${escapeHtml(String(h.units))} units<br>` : ''}
-                    ${h.status ? `Status: ${escapeHtml(h.status)}<br>` : ''}
-                    ${h.assigned_to ? `Assigned: ${escapeHtml(h.assigned_to)}<br>` : ''}
-                    <div class="popup-actions">
-                        ${h.email ? `<button class="btn-email" onclick="composeEmail(${h.id})">Email</button>` : ''}
-                        <button class="btn-edit" onclick="showEditModal(${h.id})">Edit</button>
-                    </div>
+            const popup = document.getElementById('mapHoaPopup');
+            popup.innerHTML = `
+                <button class="close-btn" onclick="closeHoaPopup()">&times;</button>
+                <strong>${escapeHtml(h.name || 'HOA')}</strong>
+                ${escapeHtml(h.city || '')}${h.county ? `, ${escapeHtml(h.county)}` : ''}<br>
+                ${h.address ? `${escapeHtml(h.address)}<br>` : ''}
+                ${h.email ? `&#9993; ${escapeHtml(h.email)}<br>` : ''}
+                ${h.phone ? `&#128222; ${escapeHtml(h.phone)}<br>` : ''}
+                ${h.management ? `&#128720; ${escapeHtml(h.management)}<br>` : ''}
+                ${h.units ? `&#127968; ${escapeHtml(String(h.units))} units<br>` : ''}
+                ${h.status ? `Status: ${escapeHtml(h.status)}<br>` : ''}
+                ${h.assigned_to ? `Assigned: ${escapeHtml(h.assigned_to)}<br>` : ''}
+                <div class="popup-actions">
+                    ${h.email ? `<button class="btn-email" onclick="composeEmail(${h.id})">Email</button>` : ''}
+                    <button class="btn-edit" onclick="showEditModal(${h.id}); closeHoaPopup();">Edit</button>
                 </div>`;
+            popup.style.display = 'block';
+        }
 
-            if (hoaMap && Number.isFinite(h.lat) && Number.isFinite(h.lon)) {
-                hoaMap.closePopup();
-                L.popup({ maxWidth: 420 })
-                    .setLatLng([h.lat, h.lon])
-                    .setContent(detailHtml)
-                    .openOn(hoaMap);
-            }
+        function closeHoaPopup() {
+            const popup = document.getElementById('mapHoaPopup');
+            if (popup) popup.style.display = 'none';
         }
 
         function buildClusterPopup(children) {
