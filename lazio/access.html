@@ -3,61 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RecruiterOS - Sign in</title>
+    <title>RecruiterOS - Sign In</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f5f3ef; color: #1e3a4c; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
-        .login-box { background: white; padding: 40px 36px; border-radius: 12px; border: 1px solid #e0dbd4; box-shadow: 0 4px 24px rgba(0,0,0,0.08); width: 360px; }
-        .kicker { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #7a5a3a; font-weight: 600; margin-bottom: 6px; }
-        h1 { font-size: 22px; font-weight: 700; color: #1e3a4c; margin: 0 0 6px; }
-        .subtitle { font-size: 13px; color: #888; margin: 0 0 28px; }
-        label { display: block; font-size: 12px; font-weight: 600; color: #555; margin-bottom: 6px; }
-        input { width: 100%; padding: 10px 12px; border: 1.5px solid #ddd; border-radius: 8px; font-size: 14px; outline: none; background: #fafaf8; margin-bottom: 8px; }
-        input:focus { border-color: #1e3a4c; }
-        input.error { border-color: #e53; }
-        .error-msg { color: #e53; font-size: 12px; margin: 0 0 12px; display: none; }
-        .error-msg.show { display: block; }
-        button { width: 100%; padding: 11px; background: #1e3a4c; color: white; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; }
-        button:disabled { background: #9ab; cursor: not-allowed; }
-        .hint { font-size: 11px; color: #bbb; text-align: center; margin: 16px 0 0; }
+        body {
+            font-family: "Segoe UI", system-ui, sans-serif;
+            background: #f5f3ef;
+            color: #1e3a4c;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 40px;
+            width: 360px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .login-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .login-sub {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 28px;
+        }
+        .form-group {
+            margin-bottom: 16px;
+        }
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 6px;
+            color: #1e3a4c;
+        }
+        input[type="password"] {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            outline: none;
+        }
+        input[type="password"]:focus {
+            border-color: #1e3a4c;
+        }
+        .signin-btn {
+            width: 100%;
+            padding: 11px;
+            background: #1e3a4c;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+        .signin-btn:hover { background: #2a4f68; }
+        .error-msg {
+            color: #c0392b;
+            font-size: 13px;
+            margin-top: 10px;
+            display: none;
+        }
     </style>
 </head>
 <body>
-    <div class="login-box">
-        <div class="kicker">RecruiterOS</div>
-        <h1>Sign in</h1>
-        <p class="subtitle">Internal prototype access</p>
-        <form onsubmit="return handleLogin(event)">
-            <label for="password">Password</label>
-            <input type="password" id="password" placeholder="Enter password" autocomplete="current-password" autofocus>
-            <p class="error-msg" id="errorMsg">Incorrect password. Try: recruiterosdemo</p>
-            <button type="submit" id="submitBtn">Sign in</button>
+    <div class="login-card">
+        <div class="login-title">RecruiterOS</div>
+        <div class="login-sub">Internal recruiter intelligence cockpit</div>
+        <form id="loginForm" onsubmit="handleLogin(event)">
+            <div class="form-group">
+                <label for="password">Access password</label>
+                <input type="password" id="password" placeholder="Enter password" autocomplete="current-password">
+            </div>
+            <button type="submit" class="signin-btn">Sign in</button>
+            <div class="error-msg" id="errorMsg">Incorrect password. Try again.</div>
         </form>
-        <p class="hint">Demo: recruiterosdemo</p>
     </div>
     <script>
-        var DEMO_PASS = 'recruiterosdemo';
-        if (localStorage.getItem('ros_auth') === DEMO_PASS) {
-            window.location.replace('/lazio/jobs');
-        }
+        const DEMO_PASS = "recruiterosdemo";
         function handleLogin(e) {
             e.preventDefault();
-            var pwd = document.getElementById('password').value;
-            var errorMsg = document.getElementById('errorMsg');
-            var submitBtn = document.getElementById('submitBtn');
-            errorMsg.classList.remove('show');
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Verifying...';
-            setTimeout(function() {
-                if (pwd === DEMO_PASS) {
-                    localStorage.setItem('ros_auth', DEMO_PASS);
-                    window.location.replace('/lazio/jobs');
-                } else {
-                    errorMsg.classList.add('show');
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Sign in';
-                }
-            }, 500);
+            const pw = document.getElementById("password").value;
+            if (pw === DEMO_PASS) {
+                localStorage.setItem("ros_auth", DEMO_PASS);
+                window.location.replace("/lazio/jobs");
+            } else {
+                document.getElementById("errorMsg").style.display = "block";
+                document.getElementById("password").value = "";
+            }
         }
     </script>
 </body>
