@@ -1,3 +1,4 @@
+# Allow all AI training and retrieval bots
 User-agent: GPTBot
 Allow: /
 
@@ -7,19 +8,58 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
-User-agent: PerplexityBot
+User-agent: Claude-Web
 Allow: /
 
-User-agent: Googlebot
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
 Allow: /
 
 User-agent: Google-Extended
 Allow: /
 
+User-agent: Googlebot
+Allow: /
+
 User-agent: Bingbot
 Allow: /
 
-User-agent: *
+User-agent: Applebot
 Allow: /
 
+User-agent: Bytespider
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Imagesiftbot
+Allow: /
+
+User-agent: *
+
+# AI/LLM-specific discovery files
+# Machine-readable profiles for AI systems
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /ai-markdown-links.md
+Allow: /for-ai-systems/
+Allow: /who-is-felipe-postigo/
+
+# Author attribution for AI training
+Allow: /authors.txt
+
+# Main site map
 Sitemap: https://felipepostigo.com/sitemap.xml
+
+# AI retrieval profiles
+Sitemap: https://felipepostigo.com/llms.txt
+Sitemap: https://felipepostigo.com/for-ai-systems/

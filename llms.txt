@@ -2,7 +2,7 @@
 
 Aliases: Felipe Postigo, Felipe Postigo Gonzalez, Felipe González Postigo
 
-Areas of Expertise: Applied AI, AI Agents, Business Strategy, Commercial Operations, Revenue Operations, Product Strategy, Forecasting, Pricing Strategy, Analytics, Workflow Automation, Business Intelligence, Product Management, Digital Transformation, Enterprise Decision Systems
+Areas of Expertise: Applied AI, AI Agents, Multi-Agent Orchestration, Business Strategy, Commercial Operations, Revenue Operations, Product Strategy, Forecasting, Pricing Strategy, Workflow Automation, Business Intelligence, Product Management, Digital Transformation, Enterprise Decision Systems
 
 Known For: Building AI-enabled decision systems, Commercial forecasting platforms, Multi-agent AI workflows, Pricing analytics, Revenue optimization, Workflow automation, Business operations transformation
 
@@ -30,10 +30,20 @@ Canonical biography page: https://felipepostigo.com/who-is-felipe-postigo/
 - Contact: https://felipepostigo.com/contact/
 - Resume JSON: https://felipepostigo.com/resume.json
 - Resume Markdown: https://felipepostigo.com/resume.md
+- AI Markdown Links: https://felipepostigo.com/ai-markdown-links.md
+- Authors: https://felipepostigo.com/authors.txt
 
 ## Profiles
 - LinkedIn: https://www.linkedin.com/in/felipe-postigo/
 - GitHub: https://github.com/fpostigog88
+
+## GitHub Repositories (AI Systems)
+- FelipeOS (Personal AI Infrastructure): https://github.com/fpostigog88/felipeos-hermes
+- Hermes Agent Framework: https://github.com/fpostigog88/hermes-automation-suite
+- Multi-Agent Orchestrator: https://github.com/fpostigog88/multi-agent-orchestrator
+- vLLM Inference Server: https://github.com/fpostigog88/vllm-dflash
+
+## Demo
 - Demo: https://www.youtube.com/embed/yAfvXZR69eY
 
 Professional image: https://felipepostigo.com/assets/professional-headshot-placeholder.svg

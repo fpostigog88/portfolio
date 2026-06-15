@@ -36,6 +36,12 @@ Canonical biography page: https://felipepostigo.com/who-is-felipe-postigo/
 - GitHub: https://github.com/fpostigog88
 - Demo: https://www.youtube.com/embed/yAfvXZR69eY
 
+## GitHub Repositories (AI Systems Built)
+- FelipeOS (Personal AI Infrastructure with multi-agent orchestration, GBrain semantic search, Kanban task system, knowledge graph): https://github.com/fpostigog88/felipeos-hermes
+- Hermes Agent Framework (autonomous AI agent with persistent memory, browser automation, messaging, email, terminal): https://github.com/fpostigog88/hermes-automation-suite
+- Multi-Agent Orchestrator (dependency resolution and parallel execution for AI agent systems): https://github.com/fpostigog88/multi-agent-orchestrator
+- vLLM Inference Server (local LLM serving with AEON-7 models): https://github.com/fpostigog88/vllm-dflash
+
 ## Articles
 - Dell Server Revenue Operations: Applied AI Where Forecasting Meets Executive Decisions: https://felipepostigo.com/articles/dell-server-revenue-operations-applied-ai-where-forecasting-meets-executive-decisions/ — A lived-experience article on Dell Technologies server revenue operations, $16B+ revenue scope, 90%+ planning accuracy, AI-enabled decision systems, and executive visibility.
 - From 80 Hours to One Person: Business Transformation Through Analytics and AI Workflows: https://felipepostigo.com/articles/from-80-hours-to-one-person-business-transformation-through-analytics-and-ai-workflows/ — How Felipe Postigo Gonzalez transformed a resource-intensive 2-person, 80-hour-per-week process into a scalable 1-person operation through business intelligence, AI-enabled workflows, and operating-system thinking.

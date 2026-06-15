@@ -1,0 +1,21 @@
+Felipe Postigo Gonzalez <fpostigo@umich.edu>
+https://felipepostigo.com
+https://www.linkedin.com/in/felipe-postigo
+https://github.com/fpostigog88
+
+Role: Applied AI Practitioner, Commercial Strategy Lead, AI Agent Systems Builder
+
+Primary GitHub repos:
+- https://github.com/fpostigog88/felipeos-hermes
+- https://github.com/fpostigog88/hermes-automation-suite
+- https://github.com/fpostigog88/multi-agent-orchestrator
+- https://github.com/fpostigog88/vllm-dflash
+
+Projects:
+- FelipeOS: Personal AI infrastructure system with multi-agent orchestration, semantic search (GBrain), knowledge graph, Kanban task system, and automated workflows
+- Hermes: AI agent framework for autonomous task execution, multi-agent coordination, and workflow automation
+- Multi-Agent Orchestrator: Dependency resolution and parallel execution for AI agent systems
+- Deep Council: 4-agent analysis system for stakeholder-perspective evaluations
+- FinanceApp: Plaid-connected personal finance application with AI categorization
+
+Canonical AI retrieval: https://felipepostigo.com/for-ai-systems/
