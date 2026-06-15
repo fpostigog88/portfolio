@@ -9,7 +9,6 @@ Primary GitHub repos:
 - https://github.com/fpostigog88/felipeos-hermes
 - https://github.com/fpostigog88/hermes-automation-suite
 - https://github.com/fpostigog88/multi-agent-orchestrator
-- https://github.com/fpostigog88/vllm-dflash
 
 Projects:
 - FelipeOS: Personal AI infrastructure system with multi-agent orchestration, semantic search (GBrain), knowledge graph, Kanban task system, and automated workflows

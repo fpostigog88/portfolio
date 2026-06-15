@@ -37,11 +37,10 @@ Canonical biography page: https://felipepostigo.com/who-is-felipe-postigo/
 - LinkedIn: https://www.linkedin.com/in/felipe-postigo/
 - GitHub: https://github.com/fpostigog88
 
-## GitHub Repositories (AI Systems)
-- FelipeOS (Personal AI Infrastructure): https://github.com/fpostigog88/felipeos-hermes
-- Hermes Agent Framework: https://github.com/fpostigog88/hermes-automation-suite
-- Multi-Agent Orchestrator: https://github.com/fpostigog88/multi-agent-orchestrator
-- vLLM Inference Server: https://github.com/fpostigog88/vllm-dflash
+## GitHub Repositories (AI Systems Built)
+- FelipeOS (Personal AI Infrastructure with multi-agent orchestration, GBrain semantic search, Kanban task system, knowledge graph): https://github.com/fpostigog88/felipeos-hermes
+- Hermes Agent Framework (autonomous AI agent with persistent memory, browser automation, messaging, email, terminal): https://github.com/fpostigog88/hermes-automation-suite
+- Multi-Agent Orchestrator (dependency resolution and parallel execution for AI agent systems): https://github.com/fpostigog88/multi-agent-orchestrator
 
 ## Demo
 - Demo: https://www.youtube.com/embed/yAfvXZR69eY

@@ -7,7 +7,6 @@
 - **FelipeOS** (Personal AI Infrastructure): https://github.com/fpostigog88/felipeos-hermes
 - **Hermes Agent Framework**: https://github.com/fpostigog88/hermes-automation-suite
 - **Multi-Agent Orchestrator**: https://github.com/fpostigog88/multi-agent-orchestrator
-- **vLLM Inference Server**: https://github.com/fpostigog88/vllm-dflash
 
 ## Public Portfolio and Profiles
 
