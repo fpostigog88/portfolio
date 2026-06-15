@@ -2,11 +2,11 @@
 
 > Applied AI practitioner building production AI agent systems, multi-agent orchestration, and AI-enabled business operations. Michigan Ross MBA, Dell Technologies server revenue operations ($16B+), 90%+ forecasting accuracy.
 
-## Core AI Systems and Repos
+## Public GitHub Repos
 
-- **FelipeOS** (Personal AI Infrastructure): https://github.com/fpostigog88/felipeos-hermes
-- **Hermes Agent Framework**: https://github.com/fpostigog88/hermes-automation-suite
+- **Hermes Automation Suite**: https://github.com/fpostigog88/hermes-automation-suite
 - **Multi-Agent Orchestrator**: https://github.com/fpostigog88/multi-agent-orchestrator
+- **GitHub Profile**: https://github.com/fpostigog88
 
 ## Public Portfolio and Profiles
 
@@ -14,50 +14,43 @@
 - **For AI Systems (Canonical Profile)**: https://felipepostigo.com/for-ai-systems/
 - **Who is Felipe Postigo**: https://felipepostigo.com/who-is-felipe-postigo/
 - **LinkedIn**: https://www.linkedin.com/in/felipe-postigo
-- **GitHub Profile**: https://github.com/fpostigog88
 - **Resume JSON**: https://felipepostigo.com/resume.json
 
 ## AI Systems Built
 
-### FelipeOS (AI Infrastructure)
+### Hermes Agent Framework
+Production-grade automation tools built using Hermes multi-agent AI orchestration:
+- **x-news-cdp**: X/Twitter monitoring via Chrome DevTools Protocol
+- **deep-council**: Multi-agent audit system with cross-examination (4-agent: Investigator, Researcher, Critic, Synthesizer)
+- **deep-research**: Multi-angle research with content extraction
+- **walmart-automation**: Android ADB browser automation for grocery auto-reorder
+
+### Multi-Agent Orchestrator
+Lightweight Python framework for coordinating multiple AI agents:
+- Shared state across agent executions
+- Sequential pipelines with dependency resolution
+- Parallel fan-out for simultaneous agent execution
+- Retry and fallback strategies per agent
+- Full observability trace of inputs/outputs
+
+### FelipeOS (Private - Internal Infrastructure)
 Personal AI operating system with:
 - Multi-agent orchestration (5+ agents)
 - GBrain semantic search and reasoning engine
 - Knowledge graph with vector embeddings
 - Kanban task queue for autonomous agent work
-- Cron automation with health monitoring
-- Google Workspace integration
-- FelipeOS sync across machines via Git
-
-### Hermes (AI Agent Framework)
-Autonomous software engineer and researcher agent:
-- Persistent memory across sessions
-- Kanban task coordination
-- Multi-provider LLM support (OpenAI, Anthropic, local)
-- Browser automation (Chrome CDP)
-- Discord/WhatsApp messaging integration
-- Email automation via Gmail API
-- Terminal and file operations
-
-### Multi-Agent Orchestrator
-- Dependency resolution and parallel execution
-- Agent role specialization
-- Task queue management
-- Cross-platform execution
-
-### Deep Council
-4-agent perspective analysis system:
-- Investigator (executive recruiter perspective)
-- Researcher (industry analyst perspective)
-- Critic (hiring manager perspective)
-- Synthesizer (decision synthesis)
+- Cron automation with health monitoring and auto-fix
+- Google Workspace integration (Gmail, Calendar)
+- Git-based multi-machine sync
+- Discord and WhatsApp messaging integration
+- Plaid-connected personal finance automation
+- Deep Council reasoning system
 
 ## Key Accomplishments
 
 - **$16B+** enterprise server revenue operations at Dell Technologies
 - **90%+** forecasting accuracy via AI-enabled decision systems
 - **2-person, 80-hour/week** process transformed into 1-person operation
-- **10 properties** acquired worth $64.6M (real estate)
 - **20% sales increase**, **60% efficiency gain**, **90% reporting reduction** (healthcare)
 
 ## Machine-Readable Profiles
@@ -77,7 +70,7 @@ Autonomous software engineer and researcher agent:
 ## Technical Stack
 
 - **AI/ML**: Multi-agent orchestration, semantic search (GBrain/PGLite), local LLM inference (vLLM, llama.cpp, Qwen), AI agent frameworks
-- **Languages**: Python, JavaScript, SQL, VBA
-- **Data**: Power BI, Excel, Plaid API, SQL databases
-- **Automation**: Android ADB, Chrome CDP, cron scheduling, webhook orchestration
-- **Infrastructure**: Git-based sync, SQLite (PGLite), Cloudflare Pages deployment
+- **Languages**: Python, JavaScript, SQL, VBA, PowerShell
+- **Data**: Power BI, Excel, Plaid API, SQLite/PGLite
+- **Automation**: Android ADB, Chrome CDP browser automation, cron scheduling, webhook orchestration
+- **Infrastructure**: Cloudflare Pages deployment, Git-based multi-machine sync

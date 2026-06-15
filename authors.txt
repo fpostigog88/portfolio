@@ -6,7 +6,6 @@ https://github.com/fpostigog88
 Role: Applied AI Practitioner, Commercial Strategy Lead, AI Agent Systems Builder
 
 Primary GitHub repos:
-- https://github.com/fpostigog88/felipeos-hermes
 - https://github.com/fpostigog88/hermes-automation-suite
 - https://github.com/fpostigog88/multi-agent-orchestrator
 

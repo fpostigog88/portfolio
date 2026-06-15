@@ -1,0 +1,451 @@
+source_name,matched_name,employees,revenue,revenue_raw,city,state,country,hoovers_id
+GOOGLE LLC,Google LLC,47763,$2.51B,2512486800,Mountain View,California,United States,0c4ee7a9-8fda-3fc2-9664-8327a50de4db
+APPLE INC,Apple Inc.,166000,$416.16B,416161000000,Cupertino,California,United States,fde555fc-5c4c-3c93-ae8e-e8fa828cb81d
+META PLATFORMS INC,"Meta Platforms, Inc.",78865,$200.97B,200966000000,Menlo Park,California,United States,b0a3bf30-2694-3b49-90ea-db88143db46f
+HCL AMERICA INC,HCL America Inc.,18510,$4.13B,4134000000,Santa Clara,California,United States,a271caf4-1dfb-3f9c-8635-3aa1d24abac1
+CISCO SYSTEMS INC,"Cisco Systems, Inc.",86200,$56.65B,56654000000,San Jose,California,United States,ab7babf8-ab5d-3306-a32a-c7537c9a8080
+QUALCOMM TECHNOLOGIES INC,"Qualcomm Technologies, Inc.",37016,$1.88B,1878588900,San Diego,California,United States,6a2e9033-440f-3249-8319-35f86fe2b449
+SALESFORCE INC,"Salesforce, Inc.",83339,$41.52B,41524996000,San Francisco,California,United States,0c41343a-63e7-31d7-b673-4e009d75455f
+NVIDIA CORPORATION,NVIDIA Corporation,42000,$215.94B,215938000000,Santa Clara,California,United States,5003c9e7-5ca3-39b7-8fa9-138bde7f3347
+PAYPAL INC,"PayPal, Inc.",10001,$527.99M,527988889.99999994,San Jose,California,United States,2069907a-7de2-3238-a4a3-e211cdcd6f3e
+EBAY INC,eBay Inc.,12300,$11.10B,11100000000,San Jose,California,United States,bab53149-c704-3a7d-b948-58673a722969
+UST GLOBAL INC,UST Global Inc,8700,$565.19M,565187560,Aliso Viejo,California,United States,20fbb397-24d7-3d23-904a-b2d4b635cf94
+VMWARE INC,VMWARE INC.,450,"$697,995",697995.13,Minato-Ku,Tokyo,Japan,fc4ff30b-dce4-31f9-b7e4-d2dad3d5625c
+INTUIT INC,Intuit Inc.,18204,$18.83B,18831000000,Mountain View,California,United States,722c9fc0-994f-367b-bcaf-949587f16f28
+THE LELAND STANFORD JR UNIVERSITY,,,,,,,,
+LINKEDIN CORPORATION,Linkedin Corporation,9906,$1.14B,1144711900,Sunnyvale,California,United States,7bbd4fff-664b-3805-9caa-2a2b1c381a82
+VISA TECHNOLOGY & OPERATIONS LLC,Visa Technology & Operations LLC,5,$46.58M,46580074,Foster City,California,United States,4c19cef6-9d52-384a-803c-8c186774dee8
+ADOBE INC,Adobe Inc.,31360,$21.50B,21505000000,San Jose,California,United States,24696646-c459-338f-8e17-8c53be54612b
+UBER TECHNOLOGIES INC,"Uber Technologies, Inc.",34000,$52.02B,52017000000,San Francisco,California,United States,dbd60a92-9c23-3846-8e5a-de0ba39bb264
+BYTEDANCE INC,Bytedance Inc.,75,$52.14M,52140038,Culver City,California,United States,76c31239-f629-3190-95b0-e06a071ce54e
+SERVICENOW INC,"ServiceNow, Inc.",29187,$13.28B,13278000000,Santa Clara,California,United States,0212dd58-f7ff-3005-a6b7-fc6f7e93a292
+PALO ALTO NETWORKS INC,"Palo Alto Networks, Inc.",16248,$9.22B,9221500000,Santa Clara,California,United States,f129b3d5-827e-344b-b1db-cefeb339e99f
+RIVIAN AUTOMOTIVE LLC,"Rivian Automotive, LLC",482,$703.77M,703770200,Irvine,California,United States,8b7a3c5c-a0b5-3be5-ad5f-9809e5d18915
+ADVANCED MICRO DEVICES INC,"Advanced Micro Devices, Inc.",31000,$34.64B,34639000000,Santa Clara,California,United States,54cb523c-ee78-3d4d-a355-8027f933b62b
+PERSISTENT SYSTEMS INC,Persistent Systems Inc.,930,$172.06M,172062000,Santa Clara,California,United States,f821a059-4b52-3c75-ba57-abeb1a1cb690
+UNIV OF CALIFORNIA SAN FRANCISCO,,,,,,,,
+TIKTOK INC,Tiktok Inc.,150,$153.00M,153003220,Culver City,California,United States,3039fe8e-1ab4-3f89-9a65-5f8ebab102cb
+DOORDASH INC,"DoorDash, Inc.",31400,$13.72M,13717000,San Francisco,California,United States,689ecc0c-88ef-358e-919d-3e3d38fd6b4b
+AMGEN INC,Amgen Inc.,31500,$36.75B,36751000000,Thousand Oaks,California,United States,e98f18b5-5059-30e5-9e14-1c4cfc5f0f8c
+TIKTOK US DATA SECURITY INC,,,,,,,,
+APPLIED MATERIALS INC,"Applied Materials, Inc.",36500,$28.37B,28367998000,Santa Clara,California,United States,cde9f546-1122-3ac5-974a-6258a0b24d58
+VISA U S A INC,Visa U.S.A. Inc.,244,$98.11M,98113228,Foster City,California,United States,78dd94fe-ac27-32fb-8a91-cf77ee5ceecd
+SYNOPSYS INC,"Synopsys, Inc.",28000,$7.05B,7054177700,Sunnyvale,California,United States,f83310ff-78e5-363b-b128-f97e617406f7
+BLOCK INC,"Block, Inc.",10205,$24.19B,24193684000,Oakland,California,United States,b9eba475-5f6d-3953-88e4-20d3062856ac
+ATLASSIAN US INC,"Atlassian US, Inc.",101,$5.04M,5039095.9,San Francisco,California,United States,fe5d5e61-3e46-3b93-9578-862dff50e875
+LUCID USA INC,"Lucid USA, Inc.",660,$314.67M,314666320,Newark,California,United States,5b980cef-e30a-3644-9b1c-02035188ad7c
+AUTODESK INC,"Autodesk, Inc.",14300,$7.21B,7206000000,San Francisco,California,United States,87d919eb-42af-3b34-b1d6-539ae8b89217
+LYFT INC,"Lyft, Inc.",3913,$6.32B,6316260700,San Francisco,California,United States,94afdf84-a28a-3163-8c00-63f761ab4a50
+JUNIPER NETWORKS INC,"Juniper Networks, Inc.",11271,$5.07B,5073600100,Sunnyvale,California,United States,f619241c-4e5d-3b55-b635-cb17e944ae8c
+SNOWFLAKE INC,Snowflake Inc.,9060,$4.68B,4683945800,Menlo Park,California,United States,47f1ee50-e624-346f-8336-bdf7e4b3ac47
+WORKDAY INC,"Workday, Inc.",21000,$6.22M,6215817.9,Pleasanton,California,United States,7bd5b32f-730a-313a-b80d-cbde241539a3
+NAGARRO INC,Nagarro Inc.,15000,$260.52M,260521880,San Jose,California,United States,69e8cdcf-64de-3a21-98ba-ddbc458e7420
+TATA ELXSI LIMITED,TATA ELXSI LIMITED,11973,$427.80M,427796420,London,,United Kingdom,46a298a5-ae8b-3074-9622-cfe92b059941
+KLA CORPORATION,KLA Corporation,15200,$12.16B,12156162000,Milpitas,California,United States,750e7e02-2518-340f-b123-ea541b4585ea
+CRUISE LLC,Cruise LLC,194,$98.75M,98752457,San Francisco,California,United States,f9668227-84bf-32c3-be29-7aca3d970c03
+CALIFORNIA INSTITUTE OF TECHNOLOGY,California Institute of Technology,6553,$3.24B,3240729000,Pasadena,California,United States,31e18750-aaa8-33b3-ba72-538fa787d47b
+SNAP INC,Snap Inc.,5261,$5.93B,5931446800,Santa Monica,California,United States,98ff96a6-f044-399c-b716-d1a1fd8cea7c
+UNIVERSITY OF CALIFORNIA LOS ANGELES,"University Of California, Los Angeles",3326,$4.23B,4229576200.0000005,Los Angeles,California,United States,f9577020-b5ed-30b8-883d-b07e443e4931
+ZOOX INC,"Zoox, Inc.",900,$251.00M,250995320,Foster City,California,United States,47740ffc-1906-3b18-ab35-27faf2f69a3e
+SAFEWAY INC,Safeway Inc.,138000,$36.95B,36950547000,Pleasanton,California,United States,7b413ddf-500d-35bc-bfa4-e2d3b3cea99f
+WAYMO LLC,Waymo LLC,9,$194.34M,194342790,Mountain View,California,United States,1c456c93-f313-3099-985b-2639f4391e9f
+INTUITIVE SURGICAL OPERATIONS INC,"Intuitive Surgical Operations, Inc.",7330,$50.82M,50819942,Sunnyvale,California,United States,c7709fc2-315d-3550-a8ba-809b1142a896
+NETFLIX INC,,,,,,,,
+DATABRICKS INC,,,,,,,,
+LAWRENCE BERKELEY NATIONAL LAB,,,,,,,,
+OATH HOLDINGS INC,,,,,,,,
+CADENCE DESIGN SYSTEMS INC,,,,,,,,
+GILEAD SCIENCES INC,"Gilead Sciences, Inc.",17000,$29.44B,29443000000,Foster City,California,United States,6e6d5775-e529-33a8-a87d-b456e53b3c23
+GLOBALLOGIC INC,GlobalLogic Inc.,30000,$406.51M,406513520,Santa Clara,California,United States,35da9b9d-4b14-3bfa-8d9e-1961d4368b6f
+DOCUSIGN INC,"Docusign, Inc.",7044,$3.22B,3219500000,San Francisco,California,United States,6223fd1d-4851-3116-863e-b6305c3cdf39
+HITACHI VANTARA LLC,Hitachi Vantara LLC,621,$178.81M,178808870,Santa Clara,California,United States,27eba0fe-ccad-304c-967f-c0fced58d3da
+AIRBNB INC,,,,,,,,
+VASTEK INC,,,,,,,,
+UNIVERSITY OF CALIFORNIA SAN DIEGO,TIBCO SOFTWARE INC.,3,$4.69M,4686719.9,North Sydney,New South Wales,Australia,efa1b645-0bdb-3326-8ef0-4f17e1a209c3
+UNIVERSITY OF SOUTHERN CALIFORNIA,Veeva Systems Inc.,7928,$3.20B,3195311000,Pleasanton,California,United States,c42ec4ae-59ef-3c22-86da-b7230b579b22
+FORTINET INC,"Viasat, Inc.",7000,$4.64B,4640280300,Carlsbad,California,United States,9d8a5077-8159-398b-87d5-2529611f1187
+PURE STORAGE INC,Akshaya Inc.,130,$1.72M,1722356,Pleasanton,California,United States,0d0b7908-da22-3b7f-87e9-998f169fb495
+TWILIO INC,"Box, Inc.",2912,$1.18B,1177253100,Redwood City,California,United States,2b65d12a-2474-3ddb-a230-a635a20b3925
+STRIPE INC,,,,,,,,
+NUTANIX INC,,,,,,,,
+TWITTER INC,The Devereux Foundation,6000,$587.41M,587411990,Villanova,Pennsylvania,United States,f00a77c5-89d2-3b8e-875e-d6e9c8257b49
+UNIVERSITY OF CALIFORNIA DAVIS,"Upstart Network, Inc.",1009,$51.26M,51255886,San Mateo,California,United States,d29b7210-d08c-3346-88ed-e8b831b6dd5c
+THE SPHERE INSTITUTE,"Afterpay US, Inc.",2,$4.35M,4347290,Oakland,California,United States,07f7e8e3-90f3-3f11-bde8-83ba5b04b8bf
+BROADCOM CORPORATION,,,,,,,,
+CA INC,"CA, Inc.",11300,$1.32B,1324546900,Palo Alto,California,United States,97062802-d872-355a-93a5-973f1454d687
+CREDIT KARMA LLC,"Credit Karma, LLC",750,$85.51M,85509956,Oakland,California,United States,1387dc6c-9f71-3908-8e78-8a63ca0c9522
+UNIVERSITY OF CALIFORNIA BERKELEY,"University of California, Berkeley",30000,$1.43B,1426770900,Berkeley,California,United States,5dee3a44-84f1-33b5-b638-e34a96af261a
+MARVELL SEMICONDUCTOR INC,"Marvell Semiconductor, Inc.",4490,$678.65M,678650450,Santa Clara,California,United States,181eaafe-9273-372e-b9b4-c2b52de66aa6
+NISUM TECHNOLOGIES INC,"Nisum Technologies, Inc.",1279,$1.48M,1484244,Brea,California,United States,51529dc1-534d-3be5-a4dd-894d93c2a154
+SPLUNK INC,Splunk Inc,0,,0,Unknown,,Belgium,070565f9-1289-3351-9790-16effb988355
+WESTERN DIGITAL TECHNOLOGIES INC,"Western Digital Technologies, Inc.",15050,$2.38B,2375461900,San Jose,California,United States,20c24474-96a9-3364-8ba4-708aee800788
+ENVIRONMENTAL SYSTEMS RESEARCH INSTITUTE INC ESRI,,,,,,,,
+QUALCOMM ATHEROS INC,"Qualcomm Atheros, Inc.",1778,$44.79M,44785732,San Jose,California,United States,0d443f18-88e0-3e2c-af87-d14751a93325
+TAVANT TECHNOLOGIES INC,"Tavant Technologies, Inc.",2300,$22.90M,22900524,Santa Clara,California,United States,269a493a-9d0a-350b-bb83-c153ce96d4df
+ILLUMINA INC,"Illumina, Inc.",8600,$4.34B,4343000000,San Diego,California,United States,115321d5-8096-36d7-9970-dfbc4721d760
+SAMSUNG SEMICONDUCTOR INC,"Samsung Semiconductor, Inc.",5544,$715.31M,715305730,San Jose,California,United States,0fc3b20c-0cf2-346c-9959-17bb487d9e6f
+CYBERSOURCE CORPORATION,Cybersource Corporation,221,$24.66M,24662182,Foster City,California,United States,0d546138-787f-326a-bc4c-aa68b99ec270
+DENKEN SOLUTIONS INC,"Denken Solutions, Inc.",250,$5.21M,5205952.199999999,Irvine,California,United States,7fb617f0-cc43-3ca4-8680-77f996a84c98
+NETAPP INC,"NetApp, Inc.",11700,$6.92B,6925000000,San Jose,California,United States,3527a099-8091-38c0-bd39-4b753793e9da
+PINTEREST INC,"Pinterest, Inc.",5265,$4.22B,4221767100,San Francisco,California,United States,a61b342b-8961-3943-b75e-8aaa8b5d4c90
+OKTA INC,"Okta, Inc.",6366,$2.92B,2919000000,San Francisco,California,United States,fd02c51f-fe89-320e-90f7-9e62f19565c9
+INFOSTRETCH CORPORATION,Infostretch Corporation,135,$44.14M,44138573,Santa Clara,California,United States,e675c15f-73e7-39b6-9e1f-152c810be964
+SONY INTERACTIVE ENTERTAINMENT LLC,Sony Interactive Entertainment LLC,1849,$670.67M,670669190,San Mateo,California,United States,e2335144-05b4-3f25-99a0-7da87c10a82c
+XILINX INC,"Xilinx, Inc.",4430,$333.78M,333783260,San Jose,California,United States,cb084905-c070-347b-8a22-94bba3293d5b
+FIRST REPUBLIC BANK,"PRB, PAO",21,,0,Moscow,,Russian Federation,61a7684d-a419-3ff8-9ac0-dd6895da6010
+BILL COM,"BILL Holdings, Inc.",2364,$1.46B,1462569900,San Jose,California,United States,a8d914f0-e9a6-354e-92fd-36105b28cf5b
+EQUINIX INC,"Equinix, Inc.",13716,$9.22B,9217000000,Redwood City,California,United States,01371612-3f45-37d3-a900-9284ebe01abb
+FARMERS GROUP INC,"Farmers Group, Inc.",29877,$4.96B,4958407200,Woodland Hills,California,United States,04db1aee-c4c5-3916-97e6-c3a01e339380
+LAM RESEARCH CORPORATION,Lam Research Corporation,19000,$18.44B,18435590000,Fremont,California,United States,b0992b67-5933-3284-a279-5501deba774f
+MOBILE PROGRAMMING LLC,Mobile Programming LLC,51,$4.75M,4749516,Agoura Hills,California,United States,f973d5e8-7c0e-3eb7-9fb1-e16c1fbeb2ef
+SOCIAL FINANCE INC,SOCIAL FINANCE INC,90,$2.17M,2170324.1,Boston,Massachusetts,United States,48effadc-ca9b-3487-86f1-ad1da9602d62
+TREDENCE INC,Tredence Inc.,250,$25.03M,25033424,San Jose,California,United States,b9f81ec6-3020-39da-a0b6-884b39631e2d
+ZOOM VIDEO COMMUNICATIONS INC,,,,,,,,
+CONFLUENT INC,"Confluent, Inc.",3241,$1.17B,1166748000,Mountain View,California,United States,d9aacdca-0bc6-3c04-bc2d-3256be60b69a
+NIAGARA BOTTLING LLC,"Niagara Bottling, LLC",35,$71.32M,71321892,Diamond Bar,California,United States,26398d6d-e288-38f0-8abd-b20422e12fa7
+ROBLOX CORPORATION,Roblox Corporation,3065,$4.89B,4890550800,San Mateo,California,United States,576ffae3-7ca8-3e60-8b47-9f5f2b1b6238
+GENENTECH INC,"Genentech, Inc.",35082,$1.20B,1200384900,South San Francisco,California,United States,1532aec3-b23f-351b-853c-73b766943404
+COINBASE INC,"Coinbase, Inc.",500,$433.56M,433555850,Oakland,California,United States,edf9fa3a-8cac-35b6-be3b-0abfce124214
+HCL AMERICA SOLUTIONS INC,Hcl America Solutions Inc.,1038,$261.98M,261976990,Santa Clara,California,United States,fb936bc3-006f-3a52-9f9c-b97da6301b54
+INFOGAIN CORPORATION,,,,,,,,
+GUIDEWIRE SOFTWARE INC,"Guidewire Software, Inc.",3772,$1.20B,1202459000,San Mateo,California,United States,203e6a51-0cee-3623-88d0-0c2b7df9d973
+MAPLEBEAR INC D/B/A INSTACART,,,,,,,,
+PACIFIC INVESTMENT MANAGEMENT COMPANY LLC DBA PIMCO,,,,,,,,
+BRILLIO LLC,"Brillio, LLC",6000,$32.43M,32429962.000000004,Edison,New Jersey,United States,9c695b2d-da8f-3f08-80ad-ef52afec22e6
+TIGER ANALYTICS INC,"Tiger Analytics, Inc.",60,$285.03M,285034640,Santa Clara,California,United States,3f9edca5-e3bf-3ba8-9f69-b9395a3f5946
+AFFIRM INC,"Affirm, Inc.",2206,"$138,662",138662,San Francisco,California,United States,c6bf2d9f-fd02-3841-a938-b70427ad8629
+FLEXPORT INC,"Flexport, Inc.",1600,$443.23M,443233120,San Francisco,California,United States,64ba934d-adcf-3d0a-a24a-6f2f55ffa48c
+ROBINHOOD MARKETS INC,"Robinhood Markets, Inc.",2958,$2.63B,2628000000,Menlo Park,California,United States,3c738e1e-79ae-3f8f-9bc3-934db62e5a71
+XORIANT CORPORATION,Xoriant Corporation,3950,$292.10M,292095550,Sunnyvale,California,United States,c2981532-1215-36f0-8112-3c123778ad24
+CITY NATIONAL BANK,City National Bank,7830,$5.36B,5364451200,Los Angeles,California,United States,e0299be2-c4f2-3e9d-a88d-20681559af70
+REDDIT INC,"Reddit, Inc.",2555,$2.20B,2202506100,San Francisco,California,United States,5e1fcb30-c614-307e-883b-953f2ec63400
+CSAA INSURANCE SERVICES INC,"CSAA Insurance Services, Inc.",3359,$24.43M,24428621,Walnut Creek,California,United States,90359210-ff70-30f4-ae7e-7f75b00023fa
+LPL FINANCIAL LLC,LPL Financial LLC,4373,$159.42M,159423370,Fort Mill,South Carolina,United States,51387dae-e59e-3aaa-a2cc-606d3d4fe21a
+WEST CONTRA COSTA UNIFIED SCHOOL DISTRICT,West Contra Costa Unified School District,3800,$706.19M,706190250,Richmond,California,United States,3ce70de0-e012-3da5-988f-5e72d1dddc0e
+STANFORD HEALTH CARE,Stanford Health Care,14100,$8.05B,8049045900,Stanford,California,United States,d39a30e2-f348-3fa4-838d-30f1513553ea
+UNIVERSITY OF CALIFORNIA IRVINE,"University Of California, Irvine Foundation",20000,$2.49B,2487235100,Irvine,California,United States,5342865b-94a1-3df4-b431-9040620ab477
+ELECTRONIC ARTS INC,Electronic Arts Inc.,14500,$7.53B,7531000000,Redwood City,California,United States,d98b38e8-d1d5-3e0a-90e4-046531c3c51c
+SAAMA TECHNOLOGIES LLC,"Saama Technologies, LLC",5,"$534,466",534466.03,Campbell,California,United States,041ff19a-4dc5-3ff6-8583-90857be4ac18
+JUNIPER NETWORKS US INC,"Juniper Networks (US), Inc.",150,$24.36M,24362814,Sunnyvale,California,United States,2b1bc43f-eaf2-3d5d-863d-de761ef5b043
+LAWRENCE LIVERMORE NATIONAL SECURITY LLC,"Lawrence Livermore National Security, LLC",271,$38.26M,38255718,Livermore,California,United States,75cfdbac-73d8-3728-a4ab-47e3677f7cf6
+R SYSTEMS INC,"R Systems, Inc.",120,$22.23M,22229923,El Dorado Hills,California,United States,7051718e-86dc-3af5-9b7a-7593725e0654
+SVB FINANCIAL GROUP,SVB Financial Group,8553,$7.40B,7401000000,Santa Clara,California,United States,2a633804-9799-39d2-bedf-06bd89925b35
+ZSCALER INC,"Zscaler, Inc.",7923,$2.67B,2673115000,San Jose,California,United States,f2db1977-4e92-39d4-b43d-10e2c7f20197
+BANK OF THE WEST,Texas First Bank,271,$118.77M,118766000,Texas City,Texas,United States,534f8ce0-aede-36f5-b139-1e543597c486
+EXPERIAN INFORMATION SOLUTIONS INC,"Experian Information Solutions, Inc.",6765,$973.87M,973865050,Costa Mesa,California,United States,1c20382a-3720-35f6-b09a-a6ab4380cb62
+INFORMATICA LLC,Informatica LLC,2582,$1.51B,1505118000,Redwood City,California,United States,a25c0b69-e590-34d8-8fb0-c7b081a9ea16
+RIOT GAMES INC,"Riot Games, Inc.",5884,$445.98M,445978450,Los Angeles,California,United States,385efafd-8d30-318a-850f-87992b8970fc
+UC SANTA BARBARA,UC SANTA BARBARA EAOP,5,$1.64M,1639622,Davis,California,United States,d64bacfa-f573-3e47-a443-91292950de6c
+ARM INC,"ARM, Inc.",4200,$448.82M,448820160,San Jose,California,United States,c6e51a7c-587a-394e-8d11-daec608bfbac
+ASANA INC,"Asana, Inc.",1767,$790.81M,790806030,San Francisco,California,United States,54902317-8beb-3885-bbbd-bdfc75c0ce37
+CHERISH TECHNOLOGIES INC,"Cherish Technologies, Inc.",20,"$910,330",910330,Fremont,California,United States,ca4bc3d1-d47e-3666-b557-ea3d0534dd54
+DROPBOX INC,"Dropbox, Inc.",2113,$2.52B,2521000000,San Francisco,California,United States,3d295342-fb6d-35b6-b788-c71b63db840f
+GSPANN TECHNOLOGIES INC,"GSPANN Technologies, Inc.",17,$4.98M,4981164,Milpitas,California,United States,e133a5ed-34b3-367b-8c0e-8b6ef2e3ef57
+COUPANG GLOBAL LLC,Coupang Global LLC,130,$44.19M,44192860,Mountain View,California,United States,c42fb183-60db-32bd-87ae-1d43f3d2d42e
+EDVENSWA TECH INC,Edvenswa Tech Inc.,50,$4.39M,4391998.8,Roswell,Georgia,United States,1a90b991-1245-39d7-8323-faf8bd43c541
+QUALCOMM INNOVATION CENTER INC,"Qualcomm Innovation Center, Inc.",21,$4.48M,4479388.2,San Diego,California,United States,3df65b52-915e-346c-917f-245ba6916389
+ARISTA NETWORKS INC,"Arista Networks, Inc.",5115,$9.01B,9005700200,Santa Clara,California,United States,f805887f-6475-3799-9174-71144f670613
+CLOUDFLARE INC,"Cloudflare, Inc.",5158,$2.17B,2167937000,San Francisco,California,United States,b5b0d235-cf5b-3d2c-ae4b-ecc3d126a82a
+CROWDSTRIKE INC,"CrowdStrike, Inc.",5624,$462.49M,462485050,Sunnyvale,California,United States,6051d01c-8912-3c86-963d-7fdc806ae4d5
+CALIFORNIA CREATIVE SOLUTIONS INC,"California Creative Solutions, Inc.",280,$24.83M,24828619,Poway,California,United States,bb17599c-cd8b-38d2-ba3c-5b9158975353
+CEDARS SINAI MEDICAL CENTER,Cedars-Sinai Medical Center,8000,$4.40B,4400597200,Los Angeles,California,United States,554aa82f-a1ae-3660-85e5-3b3bc10c6731
+WINSAI LLC,WINSAI LLC,3,"$530,085",530085.0299999999,Sunnyvale,California,United States,465cafb3-ad1d-3adf-9e68-f9fb4c194361
+ICE MORTGAGE TECHNOLOGY INC,"ICE Mortgage Technology, Inc.",1480,$60.24M,60242638,Pleasanton,California,United States,b290cf3f-7026-36e9-b727-20b36e6bc542
+ROKU INC,"Roku, Inc.",3600,$4.74B,4737251000,San Jose,California,United States,de9bbfb3-0757-3a14-b6ae-317a28fc2cdd
+TRINET USA INC,"Trinet Usa, Inc",92,$26.43M,26426081,Dublin,California,United States,0337cd63-667b-385e-a817-8bcfc64bb8a7
+ACTIVISION PUBLISHING INC,"Activision Publishing, Inc.",1306,$82.88M,82878036,Santa Monica,California,United States,186b088c-89ea-3ac2-b8bd-0ebcbcf2dd32
+SEPHORA USA INC,"Sephora USA, Inc.",24296,$1.69B,1691986200,San Francisco,California,United States,d671c355-d3ba-32dd-9aa9-6fd7562c3aae
+THE GAP INC,"The Gap, Inc.",79000,$15.37B,15366000000,San Francisco,California,United States,f9b68d7f-a960-323d-8211-126b46f92fd1
+CALIFORNIA DEPT OF TRANSPORTATION,CALIFORNIA DEPT. OF TRANSPORTATION-HDQTR,2,"$64,228",64227.99799999999,Sacramento,California,United States,765df592-7449-394a-b7ad-77b39f5d1e6c
+HAPPIEST MINDS TECHNOLOGIES LTD,HAPPIEST MINDS TECHNOLOGIES PVT LTD,8,"$50,780",50779.998,Plano,Texas,United States,aef87934-89f7-3de7-b87c-dc977775e8c9
+KEYSIGHT TECHNOLOGIES INC,"Keysight Technologies, Inc.",16800,$5.38B,5375000000,Santa Rosa,California,United States,ee817472-c514-3298-9e6b-bbfb7de9b550
+RJT COMPUQUEST DBA APOLIS,"DexCom, Inc.",11100,$4.66B,4662000000,San Diego,California,United States,d4bd1c6e-b87a-391d-bc61-7cbb7df04214
+RUBRIK INC,DGN Technologies Inc.,235,$2.57M,2571605.9,Fremont,California,United States,5152658c-0a70-32a7-97e0-313c5a6c18b4
+TERADATA OPERATIONS INC,"Teradata Operations, INC.",1815,$145.59M,145592470,San Diego,California,United States,b5d0eb9c-409a-3626-9301-61af32fd4b77
+WIPRO VLSI DESIGN SERVICES LLC,"Wipro VLSI Design Services, LLC",247,$5.03M,5034437.2,Mountain View,California,United States,217f869d-c897-3021-ac1e-5d6735ef8d4d
+ALPHONSO INC,Local Initiative Health Authority For Los Angeles County,900,$332.56M,332559080,Los Angeles,California,United States,f5651204-14bb-3295-9e2a-ccab1e554aa6
+BECKMAN RESEARCH INSTITUTE OF THE CITY OF HOPE,Beckman Research Institute Of The City Of Hope,250,$285.32M,285315310,Duarte,California,United States,6861a93b-d34c-3987-bf5e-055ff8165420
+COUPA SOFTWARE INC,TIBCO SOFTWARE INC.,3,$4.69M,4686719.9,North Sydney,New South Wales,Australia,efa1b645-0bdb-3326-8ef0-4f17e1a209c3
+PRIME HEALTHCARE MANAGEMENT INC,Veeva Systems Inc.,7928,$3.20B,3195311000,Pleasanton,California,United States,c42ec4ae-59ef-3c22-86da-b7230b579b22
+SRS CONSULTING INC,"Viasat, Inc.",7000,$4.64B,4640280300,Carlsbad,California,United States,9d8a5077-8159-398b-87d5-2529611f1187
+CONTEXTLOGIC INC DBA WISH,Akshaya Inc.,130,$1.72M,1722356,Pleasanton,California,United States,0d0b7908-da22-3b7f-87e9-998f169fb495
+DPR CONSTRUCTION,"Box, Inc.",2912,$1.18B,1177253100,Redwood City,California,United States,2b65d12a-2474-3ddb-a230-a635a20b3925
+PEOPLE CENTER INC D B A RIPPLING,,,,,,,,
+SONATA SOFTWARE NORTH AMERICA INC,"Sonata Software North America, Inc.",318,$21.90M,21903713,Newark,California,United States,9c0b898e-cd5e-3569-84f3-8e31cb5336a9
+SUREPREP LLC,"SUREPREP, LLC.",50,$9.88M,9882974.600000001,Ann Arbor,Michigan,United States,f5b40ab7-c858-3b83-9da4-f2112300b696
+TRIESTEN TECHNOLOGIES LLC,"Upstart Network, Inc.",1009,$51.26M,51255886,San Mateo,California,United States,d29b7210-d08c-3346-88ed-e8b831b6dd5c
+UNIVERSITY OF CALIFORNIA RIVERSIDE,"Afterpay US, Inc.",2,$4.35M,4347290,Oakland,California,United States,07f7e8e3-90f3-3f11-bde8-83ba5b04b8bf
+BLIZZARD ENTERTAINMENT INC,"Blizzard Entertainment, Inc.",125,$95.88M,95881187,Irvine,California,United States,e68ec48d-cf3f-386a-b805-dc6ae4302f5b
+CAPITAL GROUP COMPANIES GLOBAL,CAPITAL GROUP COMPANIES GLOBAL,5,$1.65B,1654142000,London,,United Kingdom,b9e98357-82ab-37c8-b6e7-8fcfd85cc1f1
+CORNERSTONE ONDEMAND INC,"Cornerstone OnDemand, Inc.",3000,$635.93M,635927490,Santa Monica,California,United States,f6f96b97-ed27-34c1-8b5b-185ca2cbbc56
+DEXCOM INC,"DexCom, Inc.",11100,$4.66B,4662000000,San Diego,California,United States,d4bd1c6e-b87a-391d-bc61-7cbb7df04214
+DGN TECHNOLOGIES INC,DGN Technologies Inc.,235,$2.57M,2571605.9,Fremont,California,United States,5152658c-0a70-32a7-97e0-313c5a6c18b4
+ETOUCH SYSTEMS CORPORATION,,,,,,,,
+INFOSHARE SYSTEMS INC,"INFOSHARE SYSTEMS, INC.",74,$1.50M,1495780,Mission Viejo,California,United States,bf0daf04-98e1-34a9-8d0e-b3601463283c
+L A CARE HEALTH PLAN,Local Initiative Health Authority For Los Angeles County,900,$332.56M,332559080,Los Angeles,California,United States,f5651204-14bb-3295-9e2a-ccab1e554aa6
+MAXIM INTEGRATED PRODUCTS INC,"MAXIM INTEGRATED PRODUCTS, INC.",6,"$803,807",803807.02,Phoenix,Arizona,United States,75a2ed3c-48a2-387e-9384-bb6220c4fe3a
+TIBCO SOFTWARE INC,TIBCO SOFTWARE INC.,3,$4.69M,4686719.9,North Sydney,New South Wales,Australia,efa1b645-0bdb-3326-8ef0-4f17e1a209c3
+VEEVA SYSTEMS INC,Veeva Systems Inc.,7928,$3.20B,3195311000,Pleasanton,California,United States,c42ec4ae-59ef-3c22-86da-b7230b579b22
+VIASAT INC,"Viasat, Inc.",7000,$4.64B,4640280300,Carlsbad,California,United States,9d8a5077-8159-398b-87d5-2529611f1187
+AKSHAYA INC,Akshaya Inc.,130,$1.72M,1722356,Pleasanton,California,United States,0d0b7908-da22-3b7f-87e9-998f169fb495
+BOX INC,"Box, Inc.",2912,$1.18B,1177253100,Redwood City,California,United States,2b65d12a-2474-3ddb-a230-a635a20b3925
+CZ BIOHUB SF LLC,"CZ BIOHUB SF, LLC",216,"$588,445",588445.01,San Francisco,California,United States,74b31299-d5f2-37fa-b51b-6318068b3d14
+PROOFPOINT INC,"Proofpoint, Inc.",3375,$424.70M,424701600,Sunnyvale,California,United States,fe4a6e0c-e5d5-3246-ae97-54274dd0697b
+THE DEVEREUX FOUNDATION,The Devereux Foundation,6000,$587.41M,587411990,Villanova,Pennsylvania,United States,f00a77c5-89d2-3b8e-875e-d6e9c8257b49
+UPSTART NETWORK INC,"Upstart Network, Inc.",1009,$51.26M,51255886,San Mateo,California,United States,d29b7210-d08c-3346-88ed-e8b831b6dd5c
+AFTERPAY US INC,"Afterpay US, Inc.",2,$4.35M,4347290,Oakland,California,United States,07f7e8e3-90f3-3f11-bde8-83ba5b04b8bf
+ALPHA NET CONSULTING LLC,Alpha Net Consulting LLC.,145,$41.01M,41010113,Santa Clara,California,United States,0ace0e4d-e288-3da1-b498-eda764bc2fe4
+BIO RAD LABORATORIES INC,"Bio-Rad Laboratories, Inc.",7450,$2.58B,2583200000,Hercules,California,United States,c5c345d9-57f9-38d0-ad69-59d911ac180d
+BLACKHAWK NETWORK INC,"Blackhawk Network, Inc.",1942,$462.88M,462875240,Pleasanton,California,United States,e00b4716-c6ff-3378-8a07-958886bfcd17
+BRANTA GROUP INC,Branta Group Inc,14,"$575,558",575558.01,Pleasanton,California,United States,f4557d2a-d55d-362d-9525-8b4222a48e72
+CALSOFT LABS INC,"Calsoft Labs, Inc.",195,$80.93M,80934891,San Jose,California,United States,88f0e235-87f2-344d-a3c0-6c76af4a07d8
+CEPHEID,Cepheid,1700,$451.75M,451748960,Sunnyvale,California,United States,9934c94e-f1d0-3e24-9d45-47535d45b3af
+CHIME FINANCIAL INC,"Chime Financial, Inc.",1519,$2.19B,2186770000,San Francisco,California,United States,e2a6094b-0ec6-3296-bc6c-d8ac450517ce
+COHESITY INC,"Cohesity, Inc.",1000,$506.61M,506608580,Santa Clara,California,United States,487df137-4563-3687-9c71-6d1cfe3d5d52
+HERBALIFE INTERNATIONAL OF AMERICA INC,"Herbalife International Of America, Inc.",1943,$402.88M,402880430,Los Angeles,California,United States,ab5fb00f-9102-3566-ae19-34f5cfcd89d8
+LENDINGCLUB BANK NATIONAL ASSOCIATION,"LendingClub Bank, National Association",1025,$1.13B,1133210000,Lehi,Utah,United States,7e6b2ff1-3ddf-3cbf-b7b0-1b041d193223
+LITMUS7 SYSTEMS CONSULTING INC,Litmus7 Systems Consulting Inc.,89,$18.21M,18206144,San Francisco,California,United States,ba476ca3-cbc8-34ff-be02-ecc8e633f2fb
+LOGITECH INC,Logitech Inc.,5000,$307.12M,307123470,San Jose,California,United States,313a8428-6620-3781-bd7e-1de570e4c58b
+MICROLAND LIMITED,MICROLAND LIMITED,3670,$174.10M,174104800,Bengaluru,Karnataka,India,227a4c75-4900-3477-8909-55d90b89220d
+QUALCOMM INCORPORATED,QUALCOMM Incorporated,52000,$44.28B,44284000000,San Diego,California,United States,dc02bd3e-02ba-374e-8fee-44cb77e4af4c
+SAMSARA INC,Samsara Inc.,4100,$1.62B,1618635000,San Francisco,California,United States,fd037b40-fb45-33e4-b953-dd4284c8583f
+SK HYNIX NAND PRODUCT SOLUTIONS CORP DBA SOLIDIGM,,,,,,,,
+ADVANTIS GLOBAL INC,"Advantis Global, Inc.",3,"$178,983",178983,Fort Lauderdale,Florida,United States,96e182d6-a7c7-3165-beab-f619177ca29e
+ANAPLAN INC,"Anaplan, Inc.",2200,$592.18M,592176030,Miami,Florida,United States,7dcffc1a-55f0-3f16-af76-eed4bb6242ce
+EDWARDS LIFESCIENCES LLC,Edwards Lifesciences LLC,5000,$181.96M,181962130,Irvine,California,United States,974bfe16-fd1a-3223-b018-d9f9beaf340f
+FLEXTRONICS INTERNATIONAL USA INC,"FLEXTRONICS INTERNATIONAL USA, INC.",200000,$2.17B,2167087400,Austin,Texas,United States,4cd3da09-07c0-39bc-b3c6-38c2ef5f21ad
+INNOMINDS SOFTWARE INC,Innominds Software Inc.,45,$8.67M,8666701.299999999,San Jose,California,United States,22e04ee7-98c8-3968-892a-a63e0c27375d
+ISPACE INC,"ISPACE, INC.",317,$21.15M,21152161,Chuo-Ku,Tokyo,Japan,e82849e0-9d08-3c47-abb8-5a8ae707e448
+MEDIATEK USA INC,MediaTek USA Inc.,465,$45.30M,45296658,San Jose,California,United States,3328b1b2-11d4-3c44-804e-f562e4d1c921
+MOLINA HEALTHCARE INC,"Molina Healthcare, Inc.",19000,$45.43B,45426000000,Long Beach,California,United States,9b016c3a-094f-3e3b-8c15-9135fa4eec02
+PRISTINE REHAB CARE LLC,PRISTINE REHAB CARE LLC,38,$1.45M,1453522,Diamond Bar,California,United States,e5557089-d9ab-3039-8427-197f67379514
+SERVICETITAN INC,"ServiceTitan, Inc.",3414,$960.97M,960965030,Glendale,California,United States,37678247-e93b-3416-80c0-4a390b79f38b
+SHUTTERFLY LLC,"Shutterfly, LLC",7094,$2.37B,2370613500,San Jose,California,United States,8324b1c6-fcda-3ece-bb02-89404c945aa0
+SKYWORKS SOLUTIONS INC,"Skyworks Solutions, Inc.",10000,$4.09B,4086899900,Irvine,California,United States,d2c7c899-c9b6-3ecd-8fed-aaa82a56787e
+TUSIMPLE INC,,,,,,,,
+ZENDESK INC,"Zendesk, Inc.",5860,$3.47M,3471782,San Francisco,California,United States,22ad810f-d6ea-3a23-952c-8b8fbebd19b5
+AMICUS GLOBAL IT INCORPORATED,"AMICUS GLOBAL IT, INCORPORATED",5,"$311,011",311010.99,Laguna Hills,California,United States,c55d4d73-b2d7-307d-a23c-6ca847038537
+BLACKLINE SYSTEMS INC,"Blackline Systems, Inc.",108,$57.68M,57684753,Woodland Hills,California,United States,664634e6-413d-39db-a861-50342d226495
+COCO SOFT INC DBA TERA CLOUDX INC,,,,,,,,
+CYPRESS SEMICONDUCTOR CORPORATION,Cypress Semiconductor Corporation,5871,$1.78B,1779549200,San Jose,California,United States,40a9136c-520a-32b0-84cc-a9204616bb33
+INTELLISWIFT SOFTWARE INC,"Intelliswift Software, Inc.",625,$23.61M,23607088,Newark,California,United States,aebc1146-0c91-3054-afb3-688803af5988
+ORANGE DATA CLOUD LLC,ORANGE DATA CLOUD LLC,2,"$104,778",104778,Los Angeles,California,United States,0400fcc4-358a-3487-b03f-5bdca189199b
+PRO TEK CONSULTING,Pro-Tek Consulting,125,$1.66M,1663409.9,Valencia,California,United States,abe61bbb-b239-30aa-b9fa-4df81d2a8773
+QUALYS INC,"Qualys, Inc.",2625,$669.12M,669125000,Foster City,California,United States,e884e4dd-f5a7-3c27-acb6-f7af8c84204a
+RENESAS ELECTRONICS AMERICA INC,Renesas Electronics America Inc.,1774,$406.21M,406213320,San Jose,California,United States,04398e15-370d-3744-bb0a-b2448c1330b1
+RISK MANAGEMENT SOLUTIONS INC,"Risk Management Solutions, Inc.",500,$51.88M,51880501,Newark,California,United States,43fe0f76-e5aa-3a5b-ab5f-5f8ac3cd51ce
+SAN JOSE UNIFIED SCHOOL DISTRICT,San Jose Unified School District,4500,$577.45M,577453920,San Jose,California,United States,503642a2-6e62-36cb-9a61-bd273d752338
+SONOS INC,"Sonos, Inc.",1404,$1.44B,1443276000,Santa Barbara,California,United States,cc73c412-33cb-3833-88c0-f38fe55bd5d3
+ANCILE INC,Ancile Inc,1,"$576,327",576327.0299999999,Morgan Hill,California,United States,ab730d8d-a160-3694-a163-a4d71f6e693c
+CALIX INC,"Calix, Inc.",1921,$1.00B,1000010000,San Jose,California,United States,035819e6-8525-34ac-a06d-d38df441c996
+CBS INTERACTIVE INC DBA PARAMOUNT,,,,,,,,
+CHEGG INC,"Chegg, Inc.",595,$376.91M,376907990,San Francisco,California,United States,44d98c31-6a27-3e12-9146-57996da132de
+NITYA SOFTWARE SOLUTIONS INC,"Skyworks Solutions, Inc.",10000,$4.09B,4086899900,Irvine,California,United States,d2c7c899-c9b6-3ecd-8fed-aaa82a56787e
+PANASONIC AVIONICS CORPORATION,Panasonic Avionics Corporation,2725,$392.39M,392386410,Irvine,California,United States,01c65233-d1e7-3550-8718-a39f83b8b215
+RIPPLE LABS INC,Ripple Labs Inc.,123,$107.59M,107586910,San Francisco,California,United States,a2a4ce92-de77-31f1-84b9-8570eaf56b96
+SAMSUNG RESEARCH AMERICA INC,"AMICUS GLOBAL IT, INCORPORATED",5,"$311,011",311010.99,Laguna Hills,California,United States,c55d4d73-b2d7-307d-a23c-6ca847038537
+TECH MAHINDRA CERIUM SYSTEMS INC,TECH MAHINDRA CERIUM SYSTEMS INC,79,$5.46M,5459693.9,San Jose,California,United States,8302964a-b233-39d6-92e2-997aaf525120
+TEK YANTRA INC,,,,,,,,
+THE SCRIPPS RESEARCH INSTITUTE,The Scripps Research Institute,209,$722.10M,722099000,La Jolla,California,United States,5992d337-6371-36c5-b2d8-6d60d8383c7a
+URPAN TECHNOLOGIES INC,"Intelliswift Software, Inc.",625,$23.61M,23607088,Newark,California,United States,aebc1146-0c91-3054-afb3-688803af5988
+VERITAS TECHNOLOGIES LLC,Veritas Technologies LLC,400,$191.90M,191902950,Santa Clara,California,United States,03df6547-12f7-301c-91d7-4be4b2372da6
+VERKADA INC,Verkada Inc.,2100,$104.20M,104197040,San Mateo,California,United States,9e5ce450-caa0-3993-91a8-b0e9e0760904
+3K TECHNOLOGIES LLC,"3K Technologies, LLC",105,$4.38M,4381854.1,Milpitas,California,United States,8a85e081-fef7-34d9-bc38-185aa6ff902a
+AAA TEXAS LLC,"AAA Texas, LLC",400,$40.07M,40074123,Coppell,Texas,United States,9367db71-f54d-365c-9765-24f3cd236d32
+AGILENT TECHNOLOGIES INC,"Agilent Technologies, Inc.",18100,$6.95B,6947999500,Santa Clara,California,United States,23dd616b-d6f7-3c13-8625-aa1c878dfd8d
+DELTA DENTAL OF CALIFORNIA,Delta Dental of California,2925,$6.14B,6137780300,San Francisco,California,United States,d2c9b7d2-5cfc-38cf-964f-94aa51b1d9aa
+ELECTRIC POWER RESEARCH INSTITUTE INC EPRI,,,,,,,,
+HIRETEAMMATE INC DBA HIREEZ,,,,,,,,
+JOBY AERO INC,"Joby Aero, Inc.",701,$14.63M,14634984,Santa Cruz,California,United States,237608e9-4b9e-31c7-97c1-aab393ca15bb
+P2P SOFTTEK LLC,P2P SOFTTEK LLC,20,"$698,303",698302.98,Pleasanton,California,United States,6d2ddf02-c6b0-35e6-a6fb-37a16d6c510c
+PARSONS TRANSPORTATION GROUP INC,Parsons Transportation Group Inc.,2500,$106.36M,106363630,Washington,District of Columbia,United States,7df39d57-487b-34ee-b6d9-3c9fa3e09034
+PRELUDE SYSTEMS INC,"Prelude Systems, Inc.",84,$27.72M,27718513,Mechanicsburg,Pennsylvania,United States,d47d3ed0-a663-3e00-9572-879ebd9e34fd
+SAVIYNT INC,"Saviynt, Inc.",1183,$114.37M,114366770,El Segundo,California,United States,b335302d-cd89-3c46-9127-2d6b64ce3453
+SYDATA INC,Sydata Inc.,125,$2.07M,2071521.9999999998,San Diego,California,United States,8e6bbd31-e66e-3d42-9bf2-eb863c4789fc
+TRIPACTIONS INC,,,,,,,,
+UNIVERSITY OF CALIFORNIA SANTA CRUZ,"University of California, Santa Cruz",3920,$403.61M,403607480,Santa Cruz,California,United States,534ff4a3-3b86-3207-9362-12875b5c3aae
+ADISOLS LLC,Adisols LLC,15,"$243,174",243174,Fresno,California,United States,2477df68-171c-3bfd-ad5f-14233b3a8951
+AGREEYA SOLUTIONS INC,"AgreeYa Solutions, Inc.",200,$12.39M,12387880,Folsom,California,United States,1a97f6b9-c98c-3334-9fa6-d00a2c0fba80
+CLOUDERA INC,"Cloudera, Inc.",2745,$496.12M,496116090,San Jose,California,United States,1db9e2c2-a64e-3026-a554-78be191e38b2
+CSS PAYROLL CO L P,"CSS Payroll Co, L.P.",9,"$415,359",415358.99,Los Angeles,California,United States,7cd69c5c-a409-3eed-8646-0345698b4e16
+DIGNITY HEALTH,Dignity Health,55494,$10.10B,10101969000,San Francisco,California,United States,165ec558-e691-37b0-b6fd-0312f5ee7584
+EAST WEST BANK,East West Bank,3098,$4.52B,4519085900,Pasadena,California,United States,94c519be-216c-3014-a247-836ee813b602
+HULU LLC INDIRECT SUBSIDIARY OF THE WALT DISNEY COMPANY,,,,,,,,
+LACEWORK INC,"Lacework, Inc.",115,$17.89M,17893658,Mountain View,California,United States,253b7250-a351-316a-904f-8dcde5d0184d
+LEVI STRAUSS & CO,Levi Strauss & Co.,19000,$6.36B,6355299800,San Francisco,California,United States,36b26826-2e36-3fb8-8bc3-b68599e39db4
+MOMENTIVE INC,Momentive,6,"$520,974",520973.9799999999,Incheon,Incheon,"Korea, Republic of",f2ca672a-73ad-34dd-a7a6-54889acdaf41
+NURO INC,,,,,,,,
+OPORTUN INC,,,,,,,,
+PROPHECY CONSULTING INC,,,,,,,,
+UNITY TECHNOLOGIES SF,,,,,,,,
+VARIAN MEDICAL SYSTEMS INC,,,,,,,,
+XPRESS GLOBAL IT SOLUTIONS LLC,,,,,,,,
+ZUORA INC,,,,,,,,
+COUGAR TECH INC,,,,,,,,
+DELART TECHNOLOGY SERVICES LLC,,,,,,,,
+ENQUERO INC,,,,,,,,
+HERMES MICROVISION INC,,,,,,,,
+NEXTDOOR INC,,,,,,,,
+NIANTIC INC,,,,,,,,
+PUBMATIC INC,,,,,,,,
+TIVO PLATFORM TECHNOLOGIES LLC,,,,,,,,
+VARO BANK N A,,,,,,,,
+ZENFAIR SOLUTIONS INC,,,,,,,,
+ADVANTEST AMERICA INC,,,,,,,,
+AMPERE COMPUTING LLC,,,,,,,,
+ASCEND TECHNOLOGY INC,,,,,,,,
+FISKER GROUP INC,,,,,,,,
+FOCALONE SOFT INC,,,,,,,,
+FOX CABLE NETWORK SERVICES LLC,,,,,,,,
+GREAT SOFTWARE LABORATORY INC,,,,,,,,
+ILLUMIO INC,,,,,,,,
+INGRAM MICRO INC,,,,,,,,
+KEYPHASE INC,,,,,,,,
+MARQETA INC,,,,,,,,
+RINGCENTRAL INC,,,,,,,,
+ROBERT HALF INTERNATIONAL INC,,,,,,,,
+RYZLINK CORP DBA CHUWA AMERICA,,,,,,,,
+SKYDIO INC,,,,,,,,
+TELECOM TECHNOLOGY SERVICES INC,,,,,,,,
+THE SALK INSTITUTE FOR BIOLOGICAL STUDIES,,,,,,,,
+VERILY LIFE SCIENCES LLC,,,,,,,,
+VERSA NETWORKS INC,,,,,,,,
+WEEE INC,,,,,,,,
+WOVEN PLANET NORTH AMERICA INC,,,,,,,,
+ATMECS GLOBAL INC,,,,,,,,
+BECKMAN COULTER INC,,,,,,,,
+BLOOM ENERGY CORPORATION,,,,,,,,
+BRILLIUS TECHNOLOGIES INC,,,,,,,,
+BRISTLECONE INC,,,,,,,,
+CASTLIGHT HEALTH INC,,,,,,,,
+CLIMATE LLC,,,,,,,,
+CLOUDWICK TECHNOLOGIES INC,,,,,,,,
+COVETIT INC,,,,,,,,
+ESHARES INC DBA CARTA INC,,,,,,,,
+HASHICORP INC,,,,,,,,
+HITACHI SOLUTIONS AMERICA LTD HSAL,,,,,,,,
+KITE PHARMA INC,,,,,,,,
+M ARTHUR GENSLER JR & ASSOCIATES INC,,,,,,,,
+MOJO SOLUTIONS AND SERVICES MSS LLC,,,,,,,,
+MOVE INC,,,,,,,,
+NATERA INC,,,,,,,,
+PETCO ANIMAL SUPPLIES STORES INC,,,,,,,,
+PLUTO TV,,,,,,,,
+PROCEPT BIOROBOTICS CORPORATION,,,,,,,,
+PSEMI CORPORATION,,,,,,,,
+SIGMA COMPUTING INC,,,,,,,,
+THE TRADE DESK INC,,,,,,,,
+UPGRADE INC,,,,,,,,
+V SOFT SOLUTIONS INC,,,,,,,,
+WEST ADVANCED TECHNOLOGIES INC,,,,,,,,
+ACTIVEHOURS INC DBA EARNIN,,,,,,,,
+AMOBEE INC,,,,,,,,
+APPLOVIN CORPORATION,AppLovin Corporation,898,$5.48B,5480716800,Palo Alto,California,United States,694f860f-74cf-3a9c-82d1-7dd035ec1b48
+AUTOMATION ANYWHERE INC,"Automation Anywhere, Inc.",2449,$201.74M,201739380,San Jose,California,United States,8a66e291-43eb-375a-88cb-4941caca7c2a
+AVAGO TECHNOLOGIES US INC,AVAGO TECHNOLOGIES US INC,9,$2.95M,2949428.1,Allentown,Pennsylvania,United States,740f3fc3-dd14-3c31-95a6-0023be6f716b
+BLACKBERRY CORPORATION,Blackberry Corporation,4164,$121.39M,121385110,Plano,Texas,United States,99da85b8-68e1-3de9-9572-59db26f4922b
+CAL STATE UNIVERSITY SACRAMENTO,,,,,,,,
+CALIFORNIA PHYSICIANS SERVICE DBA BLUE SHIELD OF CALIFORNIA,,,,,,,,
+CANOO TECHNOLOGIES INC,,,,,,,,
+CHARGEPOINT INC,"Chargepoint, Inc.",676,$143.76M,143755920,Campbell,California,United States,19be44de-11a0-3296-8ac5-6b1dceaf3642
+CITY OF HOPE NATIONAL MEDICAL CENTER,City of Hope National Medical Center,1900,$2.95B,2947217000,Duarte,California,United States,ee3bd5af-3265-3777-aa7b-67d0327f47bc
+CUBEDIGICO INC,CubeDigico Incorporated,12,"$150,683",150683,Cerritos,California,United States,2c98f84c-b385-35df-9833-07afbd7e52a2
+DELISIS INC,DELISIS INC,20,$1.73M,1734056.9,San Jose,California,United States,5fcabd15-963b-3b12-86d1-9514a94b02e5
+DELTA COMPUTER CONSULTING INC,,,,,,,,
+DIRECTV LLC,"DirecTV, LLC",100,$465.16M,465160680,El Segundo,California,United States,276d4abc-6f69-367e-9a0f-425f9d6ee5cc
+DLIFLC,United States Department of the Army,5,,0,Monterey,California,United States,320e487c-3e77-3b92-ac73-65d13a401922
+EXELIXIS INC,"Exelixis, Inc.",1077,,0,Alameda,California,United States,eb5c2ccc-7260-31ba-a7cb-84f2568750ff
+FORMFACTOR INC,"FormFactor, Inc.",2153,$784.99M,784993040,Livermore,California,United States,a6cb249e-03e0-3525-8a61-937a71a9b842
+HIPPO EMPLOYEE SERVICES INC DBA HIPPO INSURANCE,,,,,,,,
+JADE GLOBAL INC,"Jade Global, Inc.",1650,$97.08M,97079567,San Jose,California,United States,c3bf15b5-5edd-3496-bcf2-95f6d2b7c825
+MAANTIC INC,Maantic Inc,400,$17.78M,17780001,Sunnyvale,California,United States,5e75a43c-a217-3ef8-b5fd-e115e204e0b6
+MATTEL HQ INC,,,,,,,,
+MOLOCO INC,"Moloco, Inc.",580,$39.40M,39399796,Menlo Park,California,United States,e591c436-8a9f-3b76-ae5f-6205435a5b11
+NEUDESIC LLC,"Neudesic, LLC",300,$836,836.00002,Irvine,California,United States,699500d9-7a9c-374e-a32b-9063f7a29f74
+OMNICELL INC,"Omnicell, Inc.",3580,$1.18B,1184845100,Fort Worth,Texas,United States,358522c5-1119-3c6f-825e-fdb1f4b81b70
+OSO VENTURES INC,OSO Ventures Inc.,11,"$809,411",809410.9900000001,Newark,California,United States,2429e26e-ea33-3cf1-92ec-e3034b31d681
+PROCORE TECHNOLOGIES INC,"Procore Technologies, Inc.",4421,$1.32B,1322509000,Carpinteria,California,United States,6e94ff8d-deba-3b87-b2e2-0495cb189800
+PROPHECY TECHNOLOGIES CORPORATION,,,,,,,,
+RESMED DIGITAL HEALTH INC,,,,,,,,
+ROCHE MOLECULAR SYSTEMS INC,"Roche Molecular Systems, Inc.",1000,$128.91M,128910930.00000001,Pleasanton,California,United States,15dc82c8-9fcd-348a-87fc-f650b5801a6b
+SUNPOWER CORPORATION SYSTEMS,"Sunpower Corporation, Systems",164,$19.27M,19267462,Richmond,California,United States,41f97960-bea0-3c6e-adfb-7873445b3f28
+SYNAPSE DESIGN AUTOMATION INC,"Synapse Design Automation, Inc.",70,$12.80M,12804695,Santa Clara,California,United States,2f544be5-99b7-39cd-89df-a2dd1ef32a55
+TAILORED SHARED SERVICES LLC,"Tailored Shared Services, LLC",103,$51.45M,51454910,Houston,Texas,United States,585b97e9-f6a0-3f3a-bfe2-5498164ca906
+ASTERA LABS INC,"Astera Labs, Inc.",756,$852.52M,852524960,San Jose,California,United States,2df4755c-f2d4-3e93-a490-73f1e92ec53e
+ASTUTE SOLUTIONS LLC,Astute Solutions LLC,48,$1.29M,1289606,Folsom,California,United States,cbbbc7ae-1fbd-3e61-b281-74aaf5d12557
+C3 AI INC,"C3.AI, Inc.",1181,$389.06M,389056000,Redwood City,California,United States,4c691dd2-9023-362a-b5a6-1d368b306b24
+CONSUMERINFO COM INC,"Consumerinfo.com, Inc.",10,$2.66M,2656348.9,Costa Mesa,California,United States,280a1b91-3ad6-3658-ac07-b4adee2618fc
+COUCHBASE INC,"Couchbase, Inc.",792,$209.47M,209466000,San Jose,California,United States,d5a4cbc3-a240-332a-80c0-89ee00c9114e
+DIDI RESEARCH AMERICA LLC,"Didi Research America, LLC",9,$1.75M,1749588,San Jose,California,United States,1de76784-6729-3af9-bbf6-09b2642ea1cd
+ENPHASE ENERGY INC,"Enphase Energy, Inc.",2872,$1.47B,1472985000,Fremont,California,United States,47c635d0-e5a3-30b4-9158-fedd02b55c00
+ENTERPRISE MOBILITY INC,Enterprise Mobility Inc.,1,"$529,333",529333,Newark,California,United States,79b10042-4587-36e7-94ce-fe7ff2f44ef7
+FAMILY HEALTHCARE NETWORK,Family Healthcare Network,900,$282.61M,282613800,Visalia,California,United States,e64ae221-76a1-35d6-9adf-94195c034e59
+FIGMA INC,"Figma, Inc.",1888,$1.06B,1055788100,San Francisco,California,United States,04e3295f-4c34-3cb3-9f11-e459af415f5e
+FORMAGRID INC DBA AIRTABLE,,,,,,,,
+GENENTECH USA INC,"Genentech USA, Inc.",83,$25.04M,25041340,South San Francisco,California,United States,75b23588-75c8-35be-bd70-02f48c54caab
+HOULIHAN LOKEY INC,"Houlihan Lokey, Inc.",2702,$2.62B,2617516100,Los Angeles,California,United States,6a92d2ed-ba6f-33b3-9dba-91677b88a3e0
+IDEAON,IDEAON SP Z O O,9,$5.65M,5649478,Kielce,Swietokrzyskie,Poland,c41e7d33-ce9f-3f90-8832-7dbe647dc01a
+JAZZ PHARMACEUTICALS INC,"Jazz Pharmaceuticals, Inc.",626,$269.17M,269167240,Palo Alto,California,United States,c6a7dc9e-7dbb-37cf-9f69-db771ee521ae
+LEGALZOOM COM INC,"LegalZoom.com, Inc.",1196,$756.04M,756043030,Mountain View,California,United States,493ba38e-fd0e-3c5a-af3a-0513357bad59
+LIVE NATION WORLDWIDE INC,"Live Nation Worldwide, Inc.",3000,$69.57M,69570557,New York,New York,United States,68667945-165a-34a3-a1ed-40beac589e1b
+LOS ANGELES UNIFIED SCHOOL DISTRICT,Los Angeles Unified School District,83307,$12.39B,12394768000,Los Angeles,California,United States,a23f8329-3d83-33aa-a5a7-a0eb6aea4cda
+MACIAS GINI & O CONNELL LLP,Macias Gini & O'Connell LLP,700,$12.03M,12034189,Sacramento,California,United States,c76497e6-835d-3204-a448-d3a9e71a0585
+MANUFACTURERS BANK,Manufacturers Bank & Trust Company,110,$41.04M,41042999,Forest City,Iowa,United States,e3cb6023-fcd6-3a03-a826-f37d979d7d65
+MEDALLIA INC,"Medallia, Inc.",1900,$415.78M,415778960,Pleasanton,California,United States,e3508959-8757-3e27-86d7-6db635726793
+MERCEDES BENZ RESEARCH & DEVELOPMENT NORTH AMERICA INC,"Mercedes-Benz Research & Development North America, Inc.",89,$48.77M,48766148,San Jose,California,United States,d3870c1c-cfcc-3345-abe6-1b53dde5748b
+MODEL N INC,"Model N, Inc.",1089,$249.46M,249463000,Redwood City,California,United States,7dd4430f-f5f5-3468-b783-6ef769019eaf
+MSRCOSMOS LLC,"MSRCosmos, LLC",45,$11.34M,11341067,Wilmington,Delaware,United States,048bf9f5-c8b3-31b9-8da7-71f041c76844
+NEUTRON HOLDINGS INC DBA LIME BIKE,,,,,,,,
+OJAS INNOVATIVE TECHNOLOGIES INC,Ojas Innovative Technologies Inc,2,"$444,071",444070.99,Santa Clara,California,United States,dfdcfc8c-c080-3b78-8819-e28e856a2ff1
+OKG USA TECHNOLOGY INC,OKG USA TECHNOLOGY INC.,3,"$337,823",337823,San Jose,California,United States,dcacbade-2782-3755-a44f-70946b640369
+PLAID INC,"PLAID,INC.",531,$90.90M,90895073,Chuo-Ku,Tokyo,Japan,bb052d7f-86eb-332e-b7ed-1528714be7d9
+RIVOS INC,Rivos Inc.,27,$17.90M,17904184,Santa Clara,California,United States,2decdb70-7997-3fa2-90b5-9b11548310e7
+SK HYNIX MEMORY SOLUTIONS AMERICA INC,SK Hynix Memory Solutions America Inc.,270,$28.28M,28277945,San Jose,California,United States,0ecfbe39-5a08-32bf-939f-8526b6e11f07
+SNAPLOGIC INC,"SnapLogic, Inc.",140,$20.06M,20058008,San Mateo,California,United States,be098988-8d9e-38eb-aab2-563472c7f3df
+SUPER MICRO COMPUTER INC,"Super Micro Computer, Inc.",6238,$21.97B,21972041000,San Jose,California,United States,e75eebda-fd0f-3ffd-b5fe-f5db3150e9ea
+TRINAMIX,trinamiX GmbH,240,$36.33M,36330124,Ludwigshafen am Rhein,Rheinland-Pfalz,Germany,bac922b7-5301-32af-929b-622a0bca8195
+TURO INC,Turo Inc.,241,$31.67M,31671320,San Francisco,California,United States,644b5e1c-e88c-3235-97dd-6e6abbac4f38
+UP2DATE TECHNOLOGY SOLUTIONS LLC,"UP2DATE TECHNOLOGY SOLUTIONS, LLC",4,"$483,908",483908,Sheridan,Wyoming,United States,83155d5f-2cf5-3262-a15d-25108715a15a
+UPTREND TECHNOLOGIES LLC,UPTREND TECHNOLOGIES LLC,1,"$347,821",347821,Irving,Texas,United States,491d7d84-e35a-3016-bccb-c2f034150118
+WILLIAMS SONOMA INC,"Williams-Sonoma, Inc.",19800,$7.81B,7806816400,San Francisco,California,United States,0e74e6a2-9558-3818-bd56-d08c67744ee4
+ACNOVATE CORPORATION,,,,,,,,
+AEVA INC,"Aeva, Inc.",5,$8.72M,8724237.4,Mountain View,California,United States,555af917-c488-32bb-a6c3-988f9c57eca6
+AMISEQ INC,AMISEQ INC.,98,$24.43M,24434782,Milpitas,California,United States,e1d9ebfb-2d99-3db7-acc7-e8a94c9a689c
+APPLIED INTUITION INC,"Applied Intuition, Inc.",78,$51.00M,51003410,Sunnyvale,California,United States,416d22e5-9492-3a66-94d9-09437e69d840
+APTAMITRA USA CONSULTING LLC,Aptamitra USA Consulting LLC,11,"$377,481",377481.01,Folsom,California,United States,afc63f1c-c98e-3410-878a-7d0bbf9d2ac2
+AUCTANE INC FKA STAMPS COM INC,,,,,,,,
+BIOMARIN PHARMACEUTICAL INC,BioMarin Pharmaceutical Inc.,3221,$3.22B,3221253200,San Rafael,California,United States,61c25b66-922f-37fe-8747-72078808cad1
+BMR INFOTEK INC,"BMR INFOTEK, INC.",9,"$593,164",593164.0299999999,Dublin,California,United States,fb6b5f6b-9a47-3e94-b2ed-f1839596f417
+CUMMING MANAGEMENT GROUP INC DBA CUMMING CORPORATION,,,,,,,,
+DECKERS OUTDOOR CORPORATION,,,,,,,,
+FACULTY PHYSICIANS & SURGEONS OF LLUSM D/B/A LOMA LINDA UNIV FACULTY MEDICAL GROUP,,,,,,,,
+GE DIGITAL HOLDINGS LLC,GE DIGITAL HOLDINGS LLC,3,"$826,073",826072.99,Schenectady,New York,United States,e669eec1-a14a-3dbe-8475-21ad815d9617
+GENESYS CLOUD SERVICES INC,"Genesys Cloud Services, Inc.",6000,$494.77M,494773770,Menlo Park,California,United States,e049b0bf-380b-3c3d-a7d7-967961f4655d
+GLASSDOOR INC,,,,,,,,
+HANA E SOLUTIONS INC,,,,,,,,
+HS SOLUTIONS INC,"HS Solutions, Inc.",24,$1.20M,1203795,San Ramon,California,United States,c8b681ce-1df1-3168-96d6-9d0ff2023864
+ICU MEDICAL INC,"ICU Medical, Inc.",13000,$2.23B,2231262000,San Clemente,California,United States,303334f4-85d5-3667-bbf1-9531f406f421
+IMPOSSIBLE FOODS INC,Impossible Foods Inc.,356,$97.03M,97026649,Redwood City,California,United States,08b326d3-782f-347f-b435-c1516e416e4f
+INFINEON TECHNOLOGIES AMERICAS CORP,,,,,,,,
+INTELLI INFOTECH INC,Intelli Infotech Inc,3,"$200,008",200008,San Ramon,California,United States,77a4e4b3-36f6-3350-9424-da35e9e4ab69
+LOMA LINDA INLAND EMPIRE CONSORTIUM FOR HEALTHCARE EDUCATION D B A LOMA LINDA UNIV HEALTHCARE EDUCATION CONSORTIUM,,,,,,,,
+LSI CORPORATION,LSI Corporation,5272,$1.71B,1705812100,San Jose,California,United States,7b81e2b3-cd50-3198-87b3-6989d90e84ee
+MITCHELL INTERNATIONAL INC,"Mitchell International, Inc.",5131,$801.16M,801163820,San Diego,California,United States,b8e029bd-69c7-328a-b3b7-ba8b15cd6a07
+MOTIVE TECHNOLOGIES INC,"Motive Technologies, Inc.",726,$80.29M,80288429,San Francisco,California,United States,23b54c1b-da1d-363b-aab4-8b4005d2f5c2
+NETSKOPE INC,"Netskope, Inc.",3281,$709.00M,708997010,Santa Clara,California,United States,cec03606-f10d-3a04-9eeb-bf272d66e6ce
+NEW RELIC INC,,,,,,,,
+NUMENTICA LLC,NUMENTICA LLC,5,"$513,807",513807,Torrance,California,United States,1e3b6b98-8dfa-35f8-9030-6dec48a06168
+PRIVATE NATIONAL MORTGAGE ACCEPTANCE COMPANY LLC,"Private National Mortgage Acceptance Company, LLC",875,$468.98M,468982760,Westlake Village,California,United States,5bd34337-dfaa-3a12-82b8-f817ec6cd48c
+PROTERRA INC,Proterra Inc,31,$2.04M,2038749.9,Wickliffe,Ohio,United States,0ba3284d-eec7-3c42-a60d-3447f3fb8bdf
+RAY TECHNO SOLUTIONS INC,Ray Techno Solutions Inc.,3,"$69,825",69825.001,San Ramon,California,United States,ae10f05a-9fc9-3f66-ba41-1edd350123e4
+SAR TECH LLC,SAR TECH LLC,8,"$213,217",213217.01,Fremont,California,United States,869ed0d8-f0ad-30f6-b85f-2d6108023111
+SIRI LEARNING INC,Siri Learning Inc,2,"$70,442",70441.99900000001,La Palma,California,United States,a0718c26-c083-3170-a52c-9a8ad4b37527
+SUNRUN INC,Sunrun Inc.,9059,$2.96B,2956997100,San Francisco,California,United States,46524eed-03e0-3e34-a20d-bb55e2d0ad31
+SYNAPTICS INCORPORATED,Synaptics Incorporated,1700,$1.07B,1074300000,San Jose,California,United States,ded519f9-73db-3fa1-a530-983fb5818e4b
+TALEND INC,"Talend, Inc.",400,$29.22M,29220018,King OF Prussia,Pennsylvania,United States,386615cd-011e-3cec-a805-99a71af40ac9
+TARANA WIRELESS INC,"Tarana Wireless, Inc.",422,$52.26M,52264648,Milpitas,California,United States,32d5d8a8-885a-364c-86aa-f527fed26d2e
+TENCENT AMERICA LLC,Tencent America LLC,1,$24.60M,24600447,Palo Alto,California,United States,421a7e4d-d9c6-3cb0-8739-25eae3c01d3a
+THUMBTACK INC,"Thumbtack, Inc.",99,$18.71M,18712538,San Francisco,California,United States,00ee77c8-aced-318b-b7d2-b89322294a19
+TRIANZ DIGITAL CONSULTING INC,Trianz Digital Consulting Inc.,31,$3.34M,3336468.9,Herndon,Virginia,United States,b62944c3-8551-392d-83f6-9066f9098697
+TWIST BIOSCIENCE CORPORATION,Twist Bioscience Corporation,979,$376.57M,376571990,South San Francisco,California,United States,60f976f0-2b11-352c-843c-d40e8cc3c2de
+UNIV CORP FOR ATMOSPHERIC RESEARCH,,,,,,,,
