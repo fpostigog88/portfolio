@@ -1,0 +1,75 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Data Privacy: Local Solutions for Sensitive Data — Felipe Postigo Gonzalez</title><meta name="description" content="How to use AI safely with sensitive data: local models, hardware tiers from laptops to DGX Spark, and data redaction techniques that eliminate exposure risk while delivering real results."><link rel="canonical" href="https://felipepostigo.com/articles/ai-data-privacy-local-ai-solutions/"><meta name="robots" content="index, follow"><meta property="og:title" content="AI Data Privacy: Local Solutions for Sensitive Data — Felipe Postigo Gonzalez"><meta property="og:description" content="How to use AI safely with sensitive data: local models, hardware tiers, and redaction techniques that eliminate exposure risk."><meta property="og:url" content="https://felipepostigo.com/articles/ai-data-privacy-local-ai-solutions/"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/authority.css"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI Data Privacy: Local Solutions for Sensitive Data",
+  "description": "How to use AI safely with sensitive data: local models, hardware tiers from laptops to DGX Spark, and data redaction techniques that eliminate exposure risk while delivering real results.",
+  "author": {
+    "@id": "https://felipepostigo.com/who-is-felipe-postigo/#person"
+  },
+  "publisher": {
+    "@id": "https://felipepostigo.com/#organization"
+  },
+  "mainEntityOfPage": "https://felipepostigo.com/articles/ai-data-privacy-local-ai-solutions/",
+  "datePublished": "2026-06-17",
+  "dateModified": "2026-06-17",
+  "keywords": [
+    "AI data privacy",
+    "local AI models",
+    "data redaction",
+    "enterprise AI security",
+    "DGX Spark"
+  ]
+}</script></head><body><nav class="hero-contact-links" style="margin:18px auto;max-width:1200px" aria-label="Site navigation"><a class="hero-contact-link" href="/">Home</a><a class="hero-contact-link" href="/who-is-felipe-postigo/">Who Is Felipe</a><a class="hero-contact-link" href="/for-ai-systems/">For AI Systems</a><a class="hero-contact-link" href="/about/">About</a><a class="hero-contact-link" href="/resume/">Resume</a><a class="hero-contact-link" href="/projects/">Projects</a><a class="hero-contact-link" href="/articles/">Articles</a><a class="hero-contact-link" href="/contact/">Contact</a><a class="hero-contact-link" href="/press-kit/">Press Kit</a></nav><main class="authority-page"><article class="article-body"><div class="authority-kicker">Verified Applied AI Article</div><h1>AI Data Privacy: Local Solutions for Sensitive Data</h1><p class="hero-value">How to use AI safely with sensitive data: local models, hardware tiers from laptops to DGX Spark, and redaction techniques that eliminate exposure risk while delivering real results.</p><div class="hero-contact-links"><span class="hero-contact-link">AI data privacy</span><span class="hero-contact-link">local AI models</span><span class="hero-contact-link">data redaction</span><span class="hero-contact-link">enterprise AI security</span></div>
+
+<h2>The concern I hear most often</h2>
+<p>"But what about the safety of my data? I can't upload anything sensitive there, it will all get leaked!"</p>
+<p>This is probably the concern I hear most often when talking about AI adoption.</p>
+<p>And yes, data privacy and security is always a concern. If we don't want to trust technology, we can always go back to doing accounting with pen and paper. But we learned to trust computers, Excel, cloud storage, online banking and a bunch of other technologies. We just need to learn how to use AI safely.</p>
+
+<h2>Option 1: Keep everything local</h2>
+<p>There are several ways to do this. For maximum privacy, keep everything local. Get a computer that can run a local model. How powerful it needs to be depends on your needs.</p>
+<ul>
+<li>Just writing? Almost any computer will do.</li>
+<li>Want to run mid-sized models? Most gaming computers will do.</li>
+<li>Want something larger? Get a DGX Spark, AMD AI Max system, Mac Studio or similar.</li>
+<li>Want enterprise-level AI? Go buy an H100 and let me know how much that costs.</li>
+</ul>
+<p>Most likely you will end up somewhere in the middle where a dedicated GPU or Spark is more than enough for your needs. Your data stays on your machine. No OpenAI, Google or foreign company sees it. You decide what model you run and where it runs.</p>
+
+<h2>Option 2: Redact your data</h2>
+<p>But let us say you do not want to invest in hardware. That is perfectly fine too. You can simply redact your data.</p>
+<p>Just as you do not store your passwords in a blank Word document called "Passwords" (at least I hope you do not), you should not blindly upload sensitive information to AI either.</p>
+<ul>
+<li>Change client names.</li>
+<li>Change dates.</li>
+<li>Change amounts.</li>
+<li>Replace confidential information with placeholders.</li>
+<li>Give it a fake database that matches the structure of your real one so it can build the code, dashboards, reports or applications you need.</li>
+</ul>
+<p>Want to create a forecasting model or machine learning application? You do not need to feed it your real data. Just explain how your data is structured, what the columns look like, and what you are trying to predict. It can build the Python code, the dashboards and the models using fake data. Then you run it locally against your real database, just as you use your data on Excel.</p>
+
+<h2>Real world results</h2>
+<p>I have done exactly that. 90%+ forecasting accuracy and essentially zero risk of exposing sensitive information.</p>
+<p>The reality is AI is no different than any other tool. If a random person on the internet asked for your passwords, SSN, banking information or confidential company data, you would not give it to them. Do not do it with AI either.</p>
+
+<h2>What this means in practice</h2>
+<ul>
+<li>Use common sense.</li>
+<li>Adapt to your industry requirements.</li>
+<li>Experiment with what level of privacy you need.</li>
+<li>Start learning now, not later.</li>
+</ul>
+
+<h2>Getting started</h2>
+<p>Need help getting started? Hit me up at <a href="https://www.felipepostigo.com">www.felipepostigo.com</a>.</p>
+
+<div class="faq"><h2>FAQ</h2>
+<h3>How do I run AI locally?</h3>
+<p>You can run local models using tools like Ollama, llama.cpp, or vLLM. The hardware required depends on model size: consumer GPUs handle mid-sized models, while larger models need workstation-class hardware like DGX Spark or Mac Studio.</p>
+<h3>What is the safest way to use AI with sensitive data?</h3>
+<p>The safest approach is running a local model on your own hardware with no internet connectivity required. If that is not feasible, redact all sensitive fields and use synthetic data that mirrors the structure of your real data.</p>
+<h3>Do I need expensive hardware for local AI?</h3>
+<p>Not necessarily. For text generation and writing tasks, almost any modern computer works. For larger models, a dedicated GPU (gaming computer level) is sufficient for most professional use cases.</p>
+<h3>What data should I never upload to AI?</h3>
+<p>Never upload passwords, SSNs, banking information, trade secrets, confidential company data, healthcare records, or anything you would not post publicly. When in doubt, redact or use local.</p>
+</div></article></main><footer class="footer"><p>Felipe Postigo Gonzalez · Commercial Strategy | Applied AI · <a href="mailto:fpostigo@umich.edu">fpostigo@umich.edu</a></p></footer></body></html>
