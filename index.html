@@ -125,10 +125,10 @@ body {
   position: relative;
 }
 .hero-name-wrapper {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0;
 }
 .hero-headshot-inline {
   width: 116px;
@@ -139,7 +139,12 @@ body {
   border: 3px solid #fff;
   box-shadow: 0 12px 36px rgba(26,26,46,.16);
   flex-shrink: 0;
-  margin-right: 24px;
+}
+.hero-name-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .hero-name-centered {
   font-family: 'Space Grotesk', sans-serif;
@@ -149,26 +154,19 @@ body {
   line-height: 1.1;
   color: var(--text);
   text-align: center;
-  position: fixed;
-  left: 50%;
-  top: 40px;
-  transform: translateX(-50%);
-  z-index: 10;
   white-space: nowrap;
-  pointer-events: none;
+  margin: 0;
 }
 .hero-subtitle-inline {
   font-size: 1.15rem;
   color: var(--text-secondary);
   font-weight: 500;
   text-align: center;
-  position: fixed;
-  left: 50%;
-  top: calc(40px + 2.8rem + 10px);
-  transform: translateX(-50%);
-  z-index: 10;
   white-space: nowrap;
-  pointer-events: none;
+}
+.hero-headshot-spacer {
+  width: 116px;
+  flex-shrink: 0;
 }
 
 
@@ -918,8 +916,11 @@ body {
     <div class="hero-header">
       <div class="hero-name-wrapper">
         <img class="hero-headshot-inline" src="assets/felipe-postigo-gonzalez-headshot-hero-sharp.jpg" alt="Felipe Postigo Gonzalez professional headshot" width="116" height="116">
-        <h1 class="hero-name-centered">Felipe Postigo Gonzalez</h1>
-        <div class="hero-subtitle-inline">Commercial Strategy | Applied AI</div>
+        <div class="hero-name-col">
+          <h1 class="hero-name-centered">Felipe Postigo Gonzalez</h1>
+          <div class="hero-subtitle-inline">Commercial Strategy | Applied AI</div>
+        </div>
+        <div class="hero-headshot-spacer"></div>
       </div>
       <div class="lang-toggle">
         <a href="/" class="active" data-lang-choice="en">EN</a>
