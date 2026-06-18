@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Felipe Postigo Gonzalez — Applied AI, Commercial Strategy, Forecasting</title>
+<title>Felipe Postigo Gonzalez</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QNWVGSNNHS"></script>
@@ -17,7 +17,7 @@
 <meta name="description" content="Felipe Postigo Gonzalez is a Michigan Ross MBA and applied AI, commercial strategy, forecasting, pricing analytics, automation, and business operations professional with Dell Technologies experience.">
 <link rel="canonical" href="https://felipepostigo.com/">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<meta property="og:title" content="Felipe Postigo Gonzalez — Commercial Strategy | Applied AI">
+<meta property="og:title" content="Felipe Postigo Gonzalez">
 <meta property="og:description" content="Michigan Ross MBA focused on applied AI, pricing, forecasting, automation, server revenue operations, and business systems.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://felipepostigo.com/">
@@ -119,30 +119,60 @@ body {
   grid-column: 1 / -1;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
+  min-height: 140px;
   position: relative;
-  text-align: center;
 }
-.hero-header-text {
-  flex: 0 1 auto;
+.hero-name-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.hero h1 {
+.hero-headshot-inline {
+  width: 116px;
+  height: 116px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 18%;
+  border: 3px solid #fff;
+  box-shadow: 0 12px 36px rgba(26,26,46,.16);
+  flex-shrink: 0;
+  margin-right: 24px;
+}
+.hero-name-centered {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 2.8rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.1;
-  margin-bottom: 8px;
   color: var(--text);
+  text-align: center;
+  position: fixed;
+  left: 50%;
+  top: 40px;
+  transform: translateX(-50%);
+  z-index: 10;
+  white-space: nowrap;
+  pointer-events: none;
 }
-.hero h1 .highlight { color: var(--accent-dark); }
-.hero-subtitle {
+.hero-subtitle-inline {
   font-size: 1.15rem;
   color: var(--text-secondary);
-  margin-bottom: 8px;
   font-weight: 500;
+  text-align: center;
+  position: fixed;
+  left: 50%;
+  top: calc(40px + 2.8rem + 10px);
+  transform: translateX(-50%);
+  z-index: 10;
+  white-space: nowrap;
+  pointer-events: none;
 }
+
+
+
 .hero-value {
   font-size: 0.95rem;
   color: var(--text-muted);
@@ -886,9 +916,10 @@ body {
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-header">
-      <div class="hero-header-text">
-        <h1>Felipe Postigo</h1>
-        <div class="hero-subtitle">Commercial Strategy | Applied AI</div>
+      <div class="hero-name-wrapper">
+        <img class="hero-headshot-inline" src="assets/felipe-postigo-gonzalez-headshot-hero-sharp.jpg" alt="Felipe Postigo Gonzalez professional headshot" width="116" height="116">
+        <h1 class="hero-name-centered">Felipe Postigo Gonzalez</h1>
+        <div class="hero-subtitle-inline">Commercial Strategy | Applied AI</div>
       </div>
       <div class="lang-toggle">
         <a href="/" class="active" data-lang-choice="en">EN</a>
@@ -1079,6 +1110,15 @@ body {
 
   <!-- CENTER COLUMN -->
   <section class="center-col">
+    <div class="video-demo">
+      <div class="video-demo-header">
+        <div class="video-demo-title">Watch workflow automation in action</div>
+        <div class="video-demo-badge">PRODUCTION</div>
+      </div>
+      <div class="video-demo-player">
+        <iframe src="https://www.youtube.com/embed/yAfvXZR69eY?rel=0&modestbranding=1&playsinline=1" title="Autonomous Workflow Engine Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
     <div class="project-card">
       <div class="project-header">
         <div class="project-title">ML Forecasting and Margin Risk Detection</div>
@@ -1099,15 +1139,6 @@ body {
         <span class="project-badge badge-green">Production</span>
       </div>
       <div class="project-desc">Local decision-support system for transaction classification, anomaly detection, and spending visibility — a practical prototype for AI-assisted FP&A and commercial planning workflows.</div>
-    </div>
-    <div class="video-demo">
-      <div class="video-demo-header">
-        <div class="video-demo-title">Watch workflow automation in action</div>
-        <div class="video-demo-badge">PRODUCTION</div>
-      </div>
-      <div class="video-demo-player">
-        <iframe src="https://www.youtube.com/embed/yAfvXZR69eY?rel=0&modestbranding=1&playsinline=1" title="Autonomous Workflow Engine Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
     </div>
   </section>
 
