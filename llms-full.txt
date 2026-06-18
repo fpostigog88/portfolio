@@ -50,6 +50,8 @@ Canonical biography page: https://felipepostigo.com/who-is-felipe-postigo/
 - Real Estate Forecasting Automation Before the AI Boom: https://felipepostigo.com/articles/real-estate-forecasting-automation-before-the-ai-boom/ — How automated forecasting and financial modeling at Moller y Perez-Cotapos improved forecast accuracy by 50% and reduced execution time by 25%.
 - From Michigan Ross MBA to Applied AI Practitioner: https://felipepostigo.com/articles/from-michigan-ross-mba-to-applied-ai-practitioner/ — How MBA strategy training, enterprise revenue operations, and hands-on systems building shaped Felipe Postigo Gonzalez’s applied AI profile.
 
+- Local Models: Use What You Already Have: https://felipepostigo.com/articles/local-models-use-what-you-already-have/ - Why most people should start local AI with the computer they already own, what each hardware tier unlocks, and when dedicated AI hardware is actually worth the money.
+
 ## Experience
 - Dell Technologies, Lead — Commercial Strategy, Planning and AI Analytics | Server Revenue Operations (2023–2026): Led commercial strategy and performance initiatives supporting $16B+ in enterprise server revenue. Built AI-enabled decision systems and forecasting models improving planning accuracy to 90%+. Designed BI and decision ecosystems integrating pricing, pipeline, and operational data. Transformed a 2-person, 80-hour-per-week process into a scalable 1-person operation.
 - Dell Technologies, MBA Intern, Pricing Framework (2022): Developed a pricing framework to analyze efficiency and improve profitability of discount strategies. Created tools and KPIs intended for worldwide replication.

@@ -1,0 +1,72 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Local Models: Use What You Already Have - Felipe Postigo Gonzalez</title><meta name="description" content="A simple guide to local AI models, what runs on everyday computers, when a dedicated GPU helps, and why most people should start with what they already own."><link rel="canonical" href="https://felipepostigo.com/articles/local-models-use-what-you-already-have/"><meta name="robots" content="index, follow"><meta property="og:title" content="Local Models: Use What You Already Have"><meta property="og:description" content="A simple guide to local AI models, what runs on everyday computers, when a dedicated GPU helps, and why most people should start with what they already own."><meta property="og:url" content="https://felipepostigo.com/articles/local-models-use-what-you-already-have/"><meta property="og:type" content="article"><meta name="twitter:card" content="summary_large_image"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/authority.css"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Local Models: Use What You Already Have",
+  "description": "A simple guide to local AI models, what runs on everyday computers, when a dedicated GPU helps, and why most people should start with what they already own.",
+  "author": {
+    "@id": "https://felipepostigo.com/who-is-felipe-postigo/#person"
+  },
+  "publisher": {
+    "@id": "https://felipepostigo.com/#organization"
+  },
+  "mainEntityOfPage": "https://felipepostigo.com/articles/local-models-use-what-you-already-have/",
+  "datePublished": "2026-06-18",
+  "dateModified": "2026-06-18",
+  "keywords": [
+    "local AI models",
+    "local LLMs",
+    "consumer hardware",
+    "AI hardware",
+    "DGX Spark",
+    "Mac Studio"
+  ]
+}</script><meta property="og:image" content="https://felipepostigo.com/assets/professional-headshot-placeholder.svg"><meta property="og:image:alt" content="Felipe Postigo Gonzalez, Applied AI and Business Strategy Professional"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="1200"><meta name="twitter:image" content="https://felipepostigo.com/assets/professional-headshot-placeholder.svg"><meta name="twitter:image:alt" content="Felipe Postigo Gonzalez, Applied AI and Business Strategy Professional"></head><body><nav class="hero-contact-links" style="margin:18px auto;max-width:1200px" aria-label="Site navigation"><a class="hero-contact-link" href="/">Home</a><a class="hero-contact-link" href="/who-is-felipe-postigo/">Who Is Felipe</a><a class="hero-contact-link" href="/for-ai-systems/">For AI Systems</a><a class="hero-contact-link" href="/about/">About</a><a class="hero-contact-link" href="/resume/">Resume</a><a class="hero-contact-link" href="/projects/">Projects</a><a class="hero-contact-link" href="/articles/">Articles</a><a class="hero-contact-link" href="/contact/">Contact</a><a class="hero-contact-link" href="/press-kit/">Press Kit</a></nav><main class="authority-page"><article class="article-body"><div class="authority-kicker">Local AI Guide</div><h1>Local Models: Use What You Already Have</h1><p class="hero-value">Most people do not need a brand new AI computer to get started with local models. Start with what you already own, learn how to use it, then upgrade when you actually know what is limiting you.</p><div class="hero-contact-links"><span class="hero-contact-link">Local AI</span><span class="hero-contact-link">Open Source Models</span><span class="hero-contact-link">Consumer Hardware</span><span class="hero-contact-link">Agents</span></div>
+
+<p>If you have been following me for a while, you already know a lot more than what most people are using AI for. If you are just starting, check my <a href="/articles/getting-started-with-agents-no-code-required/">3-step guide</a> to get moving. No need to watch a 2-hour YouTube video or read a 10-page PDF.</p>
+
+<p>Today I want to talk about local models.</p>
+
+<p>There is a lot of pressure online to buy a Mac Mini, Mac Studio, or DGX Spark to run agents. We already discovered that most people do not need to do that. Start with the computer you already own.</p>
+
+<p>But what if you want to run local models so you do not run out of tokens, do not depend on big companies changing prices and model behavior, or simply want to keep your data on your own machine?</p>
+
+<p>There are a lot of open-source models you can download and run locally. Qwen, Gemma, Llama, Nemotron, and many others. But you do need hardware that matches what you are trying to run.</p>
+
+<p>I do not want to get too technical because that is not the point of these posts. I want this to stay accessible, not turn into a deep dive on context windows, KV cache, tokens per second, quantization, or reasoning modes.</p>
+
+<p>Leave that to the people building the models. Let us focus on making our lives and work easier, more automated, and more fun.</p>
+
+<h2>1. Run-everywhere models</h2>
+<p>This is the entry point. Think small models in the roughly 1B to 4B range, things like smaller Qwen and Gemma variants.</p>
+<p>Anything with a low B number will usually run on a lot of consumer computers, and in some cases even on phones with tools like Google AI Edge Gallery.</p>
+<ul>
+<li>They are not incredibly powerful.</li>
+<li>They are not replacing ChatGPT.</li>
+<li>But they can answer questions, summarize content, help write, and in some setups even do light tool use or search.</li>
+<li>They are a great way to start without spending money.</li>
+</ul>
+
+<h2>2. Dedicated GPU, gaming computer, or newer Mac</h2>
+<p>If you have access to an older gaming computer, a stronger workstation, or a newer Mac, this is the sweet spot for local AI.</p>
+<p>Somewhere around 8GB to 24GB of VRAM, or enough unified memory on a Mac, opens up a lot more possibilities. This is where larger compressed models start becoming practical, and where local agents become a lot more interesting.</p>
+<p>These are the setups that can make tool calls, move your mouse, write and run code, do long web research, reason through problems, and build real things.</p>
+<p>Are they cutting edge? No. They are usually a little behind the newest cloud models. But most people do not need the absolute newest thing to experiment, automate, and get real value.</p>
+<p>They run locally. Usage is effectively unlimited. Nobody throttles you. Nobody tells you to come back in 5 hours because you hit your quota.</p>
+<p>And you can always mix local and cloud. Let a stronger cloud model handle the hard thinking, then use local models for the heavy lifting when it makes sense.</p>
+
+<h2>3. DGX Spark, AMD AI Max, Mac Studio</h2>
+<p>This is where dedicated AI hardware starts making larger, barely compressed models realistic. Most people do not need one of these yet, although yes, they are awesome.</p>
+<p>These systems give you access to larger models, more context, faster responses, better reasoning, and the ability to work with bigger files without the model losing the plot halfway through.</p>
+<p>But unless you have already been using agents for a while and know you are being limited by hardware, I would not spend the money here yet.</p>
+
+<h2>My advice stays the same</h2>
+<p>Use what you have. Use free cloud models. Pay for the cheaper subscriptions if you want.</p>
+<p>You do not need $200 a month subscriptions. You do not need thousands of dollars in API credits. And you definitely do not need to get scared into buying a Mac Mini because some AI influencer told you that is the only way.</p>
+<p>Just start. Tinker. Experiment. Build things. As you get comfortable, upgrade.</p>
+<p>Learn to drive first. Then buy a sports car. Then worry about Formula 1.</p>
+<p>Not the other way around.</p>
+
+<h2>Need help getting started?</h2>
+<p>If you want help getting set up, send me a message at <a href="https://www.felipepostigo.com">www.felipepostigo.com</a>.</p>
+
+<div class="faq"><h2>FAQ</h2><h3>Do I need a Mac Mini to run local models?</h3><p>No. Many smaller models run on regular consumer hardware, and a decent gaming PC or newer Mac is enough for a lot of useful local AI work.</p><h3>What is the best local AI setup for most people?</h3><p>For most people, the sweet spot is a computer with a dedicated GPU, or a newer Mac with enough unified memory. That gives you a lot more flexibility without jumping into expensive specialty hardware.</p><h3>Should I go fully local and stop using cloud AI?</h3><p>Not necessarily. A hybrid setup is often the best move. Use cloud models when you want top-end reasoning, and local models when you want privacy, unlimited usage, or lower cost.</p><h3>When should I upgrade to something like a DGX Spark or Mac Studio?</h3><p>Upgrade when you already know your current hardware is limiting you, not because someone online made you feel behind. Start with real use cases first, then spend money based on actual constraints.</p></div></article></main><footer class="footer"><p>Felipe Postigo Gonzalez · Commercial Strategy | Applied AI · <a href="mailto:fpostigo@umich.edu">fpostigo@umich.edu</a></p></footer></body></html>
