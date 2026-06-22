@@ -63,3 +63,6 @@ Sitemap: https://felipepostigo.com/sitemap.xml
 # AI retrieval profiles
 Sitemap: https://felipepostigo.com/llms.txt
 Sitemap: https://felipepostigo.com/for-ai-systems/
+
+# OKF v0.1 knowledge bundle — Open Knowledge Format
+Allow: /okf/
