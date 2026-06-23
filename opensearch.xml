@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>Felipe Postigo Gonzalez</ShortName>
+  <Description>Search felipepostigo.com — Applied AI, Commercial Strategy, Forecasting, Pricing Analytics, and Business Operations by Felipe Postigo Gonzalez.</Description>
+  <Url type="text/html" template="https://felipepostigo.com/articles/?q={searchTerms}" />
+  <Contact>fpostigo@umich.edu</Contact>
+  <Image height="16" width="16" type="image/svg+xml">https://felipepostigo.com/favicon.ico</Image>
+</OpenSearchDescription>

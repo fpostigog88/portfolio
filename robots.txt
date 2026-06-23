@@ -64,5 +64,8 @@ Sitemap: https://felipepostigo.com/sitemap.xml
 Sitemap: https://felipepostigo.com/llms.txt
 Sitemap: https://felipepostigo.com/for-ai-systems/
 
+# OpenSearch (enables browser search bar integration)
+Allow: /opensearch.xml
+
 # OKF v0.1 knowledge bundle — Open Knowledge Format
 Allow: /okf/
