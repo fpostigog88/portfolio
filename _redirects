@@ -1,3 +1,6 @@
+http://www.felipepostigo.com/* https://felipepostigo.com/:splat 301
+https://www.felipepostigo.com/* https://felipepostigo.com/:splat 301
+http://felipepostigo.com/* https://felipepostigo.com/:splat 301
 /hoa /hoa/index.html 200
 /hoa/ /hoa/index.html 200
 /lazio /lazio/index.html 200
