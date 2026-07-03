@@ -705,8 +705,50 @@ body {
   .video-demo-player iframe { height: 300px; }
   .hero-inner { grid-template-columns: 1fr; gap: 24px; }
   .hero-right svg { width: 280px; height: 280px; }
-  .hero-header { flex-direction: column; gap: 8px; }
-  .lang-toggle { align-self: flex-start; }
+  .hero-header {
+    flex-direction: column;
+    gap: 8px;
+    min-height: 0;
+  }
+  .hero-name-wrapper {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    min-width: 0;
+  }
+  .hero-name-col {
+    width: 100%;
+    min-width: 0;
+  }
+  .hero-name-centered {
+    font-size: 2rem;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .hero-subtitle-inline {
+    font-size: 1rem;
+    white-space: normal;
+  }
+  .hero-headshot-inline {
+    width: 88px;
+    height: 88px;
+  }
+  .hero-headshot-spacer {
+    display: none;
+  }
+  .role-fit-strip {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .role-fit-pill {
+    white-space: normal;
+    text-align: center;
+  }
+  .lang-toggle {
+    position: static;
+    align-self: center;
+    margin-left: 0;
+  }
 }
 </style>
 <!-- deploy: v11-live -->
