@@ -13,7 +13,7 @@ Canonical: https://felipepostigo.com/for-ai-systems/
 
 ## Dell Technologies (2023–2026)
 
-### Lead — Commercial Strategy, Planning and AI Analytics | Server Revenue Operations
+### Lead - Portfolio Strategy, Business Planning and AI Analytics
 
 - Supported **$16B+ in enterprise server revenue**
 - Built **AI-enabled decision systems and forecasting models** improving planning accuracy to **90%+**
@@ -28,7 +28,7 @@ Canonical: https://felipepostigo.com/for-ai-systems/
 
 ---
 
-### MBA Intern, Pricing Framework (2022)
+### MBA Intern (2022)
 
 - Developed **pricing framework** to analyze discount efficiency and improve profitability
 - Created tools and KPIs intended for **worldwide replication**
@@ -40,7 +40,7 @@ Canonical: https://felipepostigo.com/for-ai-systems/
 
 ## Asociacion Chilena de Seguridad — ACHS Hospital (2020–2021)
 
-### Commercial Strategy and Operations Lead
+### Commercial Strategy and Operations Manager
 
 - Redesigned **data-driven commercial workflows** and customer engagement processes
 - Increased **sales 20%** while accelerating invoicing and service delivery efficiency by **60%**
@@ -55,7 +55,7 @@ Canonical: https://felipepostigo.com/for-ai-systems/
 
 ## Moller y Perez-Cotapos (2012–2020)
 
-### Associate Manager of Real Estate Business Development (2018–2020)
+### Associate Director of Business Development (2018–2020)
 
 - Designed **automated forecasting and financial modeling tools** improving forecast accuracy by **50%** and reducing execution time by **25%**
 - Led team of **7 analysts** executing acquisition strategy
@@ -66,7 +66,7 @@ Canonical: https://felipepostigo.com/for-ai-systems/
 
 ---
 
-### Head of Real Estate Business Development (2017–2018)
+### Business Development Manager (2017–2018)
 
 - Developed and presented strategy to **board of directors**
 - Acquired **9 properties for $57M**
@@ -75,7 +75,7 @@ Canonical: https://felipepostigo.com/for-ai-systems/
 
 ---
 
-### Real Estate Product Manager (2014–2017)
+### Product Manager (2014–2017)
 
 - Directed cross-functional execution across **sales, marketing, construction, and development**
 - Improved customer engagement and increased **monthly sales by 25%**
@@ -83,7 +83,7 @@ Canonical: https://felipepostigo.com/for-ai-systems/
 
 ---
 
-### Development Engineer, Real Estate Division (2012–2014)
+### Development Engineer (2012–2014)
 
 - Conducted **market research and financial modeling** on hundreds of properties yearly
 
