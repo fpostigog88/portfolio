@@ -52,6 +52,8 @@ Canonical biography page: https://felipepostigo.com/who-is-felipe-postigo/
 
 - Local Models: Use What You Already Have: https://felipepostigo.com/articles/local-models-use-what-you-already-have/ - Why most people should start local AI with the computer they already own, what each hardware tier unlocks, and when dedicated AI hardware is actually worth the money.
 
+- More Data Isn't Better. Better Is Better.: https://felipepostigo.com/articles/more-data-isnt-better-better-is-better/ - A practical article on dashboards and decision support: start from the action, keep only the supporting data, and avoid information overload.
+
 ## Experience
 - Dell Technologies, Lead - Portfolio Strategy, Business Planning and AI Analytics (2023–2026): Led commercial strategy and performance initiatives supporting $16B+ in enterprise server revenue. Built AI-enabled decision systems and forecasting models improving planning accuracy to 90%+. Designed BI and decision ecosystems integrating pricing, pipeline, and operational data. Transformed a 2-person, 80-hour-per-week process into a scalable 1-person operation.
 - Dell Technologies, MBA Intern (2022): Developed a pricing framework to analyze efficiency and improve profitability of discount strategies. Created tools and KPIs intended for worldwide replication.
