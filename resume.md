@@ -1,49 +1,36 @@
 # Felipe Postigo Gonzalez
 
-Aliases: Felipe Postigo, Felipe Postigo Gonzalez, Felipe González Postigo
+Strategy and operations leader, 13+ years in FP&A, planning, KPI frameworks and executive decision support
 
-Areas of Expertise: Applied AI, AI Agents, Business Strategy, Commercial Operations, Revenue Operations, Product Strategy, Forecasting, Pricing Strategy, Analytics, Workflow Automation, Business Intelligence, Product Management, Digital Transformation, Enterprise Decision Systems
-
-Known For: Building AI-enabled decision systems, Commercial forecasting platforms, Multi-agent AI workflows, Pricing analytics, Revenue optimization, Workflow automation, Business operations transformation
-
-Canonical AI retrieval page: https://felipepostigo.com/for-ai-systems/
-Canonical biography page: https://felipepostigo.com/who-is-felipe-postigo/
-
-Michigan Ross MBA with 10+ years leading strategy, business transformation, analytics, growth initiatives, executive decision support, commercial strategy, product and operational execution, and AI-enabled workflows and agentic systems.
-
-## Verified metrics
-- $16B+ in enterprise server revenue
-- 90%+ forecast accuracy / planning accuracy
-- 2-person, 80-hour-per-week process transformed into streamlined 1-person operation
-- increased sales 20%
-- accelerated invoicing and service delivery efficiency by 60%
-- reduced reporting effort by 90%
-- acquired 10 properties worth $64.6M
-- 22 projects contributing to 60% business unit profit growth
-- automated forecasting and financial modeling tools improved forecast accuracy by 50% and reduced execution time by 25%
-- acquired 9 properties for $57M; closed 8 deals for $40M and 11% initial ROI; evaluated 1.2K properties worth $4.2B
+Downloadable resume: https://felipepostigo.com/resume.pdf
 
 ## Experience
-- Dell Technologies, Lead - Portfolio Strategy, Business Planning and AI Analytics (2023–2026): Led commercial strategy and performance initiatives supporting $16B+ in enterprise server revenue. Built AI-enabled decision systems and forecasting models improving planning accuracy to 90%+. Designed BI and decision ecosystems integrating pricing, pipeline, and operational data. Transformed a 2-person, 80-hour-per-week process into a scalable 1-person operation.
-- Dell Technologies, MBA Intern (2022): Developed a pricing framework to analyze efficiency and improve profitability of discount strategies. Created tools and KPIs intended for worldwide replication.
-- Asociacion Chilena de Seguridad (Hospital), Commercial Strategy and Operations Manager (2020–2021): Redesigned data-driven commercial workflows and customer engagement processes, increasing sales 20% while accelerating invoicing and service delivery efficiency by 60%. Built dashboards and operational analytics that reduced reporting effort by 90%.
-- Moller y Perez-Cotapos, Associate Director of Business Development (2018–2020): Designed automated forecasting and financial modeling tools improving forecast accuracy by 50% and reducing execution time by 25%. Led 7 analysts; acquired 10 properties worth $64.6M; led strategic partner relationships across 22 projects contributing to 60% business unit profit growth.
-- Moller y Perez-Cotapos, Business Development Manager (2017–2018): Developed and presented strategy to board of directors; acquired 9 properties for $57M; closed 8 deals for $40M at 11% initial ROI; oversaw search, study, and appraisal of 1.2K real estate opportunities worth $4.2B.
-- Moller y Perez-Cotapos, Product Manager (2014–2017): Directed cross-functional execution across sales, marketing, construction, and development functions; improved customer engagement and increased monthly sales by 25%; resolved permitting bottlenecks and negotiated construction contracts.
-- Moller y Perez-Cotapos, Development Engineer (2012–2014): Conducted market research and financial modeling on hundreds of properties yearly.
-
-## Education
-- University of Michigan Stephen M. Ross School of Business, MBA 2023, Dean's Fellowship merit full-tuition scholarship
-- Universidad Catolica de Chile, BBA 2012, Honors Scholarship, graduated top 11%
-
-## Projects
-- AI-enabled commercial decision systems: At Dell, developed AI-enabled decision systems and forecasting models that improved planning accuracy to 90%+ and strengthened executive decision making while reducing manual work.
-- Server revenue operations intelligence: Built decision ecosystems integrating pricing, pipeline, and operational data for $16B+ enterprise server revenue scope.
-- Pricing framework and KPI tooling: As Dell MBA intern, developed pricing framework to analyze efficiency, improve profitability of discount strategies, and create KPIs for replication.
-- Hermes / OpenClaw agentic workflows: Built AI and agentic workflow systems using Hermes / OpenClaw to automate coordination, reporting, analytics, and workflow execution across business and personal applications.
-- Plaid-connected finance application: Developed personal finance application connected to Plaid with structured and unstructured data for local decision support.
-- Android ADB automation: Built automation using Android ADB and orchestration tools for scheduled and on-demand execution.
-- Real estate forecasting automation: At Moller y Perez-Cotapos, designed automated forecasting and financial modeling tools improving forecast accuracy by 50% and reducing execution time by 25%.
-Professional image: https://felipepostigo.com/assets/professional-headshot-placeholder.svg
-Press kit: https://felipepostigo.com/press-kit/
-Deployment checklist: https://felipepostigo.com/deployment-checklist/
+- Dell Technologies, Business Planning and AI Analytics Lead (2023–2026, Galt, CA):
+  - Led pricing, margin, forecast and performance analyses for a $16B+ portfolio, supporting operating cadence and executive decisions.
+  - Redesigned planning model and dashboards, improving alignment and saving 1.2K hrs/qtr.
+  - Owned performance data into KPI drivers, surfacing variance risk ahead of quarter start and achieving 90%+ forecast accuracy.
+  - Built financial and operational models to evaluate scenarios, prioritization choices and performance trade-offs.
+  - Decomposed findings into executive narratives, action plans and business insights that improved decisions.
+  - Built AI automation tools surfacing business risks, revenue opportunities and next actions.
+- Dell Technologies, MBA Intern (2022, Galt, CA):
+  - Modeled effectiveness of server portfolio discount strategy, identifying 50% pricing leverage unused by sales.
+- Asociacion Chilena de Seguridad, Manager Commercial Strategy and Operations (2020–2021, Santiago, Chile):
+  - Led change management for redesigned workflows, improving alignment, sales by 20% and service efficiency by 60%.
+- Moller y Perez Cotapos, Associate Director of Business Development (2018–2020, Santiago, Chile):
+  - Led and trained team of 7 analysts executing transactions, closing 10 acquisitions for $65M.
+  - Designed forecasting and evaluation models, improving accuracy by 50% and reducing execution time by 25%.
+  - Led cross-functional finance, legal and investment partner teams to execute 20 transactions, raising $115M, generating $12M in profit and $532M in sales.
+  - Advised Board on pricing, capital structure, due diligence and new investments across 22 developments, contributing to 60% profit growth for the business unit.
+- Moller y Perez Cotapos, Manager Business Development (2017–2018, Santiago, Chile):
+  - Built models integrating competitive research, pricing and scenarios for product and investment decisions.
+  - Evaluated and prioritized 1,200 investment opportunities worth $4.2B, building a 3-year acquisition pipeline.
+  - Developed and presented investment and commercial strategy, secured Board approval, drove 9 acquisitions for $57M.
+  - Closed 11 deals with investment banks, raising $53M and generating $6M in profit, 60% of company’s total profit.
+- Moller y Perez Cotapos, Product Manager PM (2014–2017, Santiago, Chile):
+  - Directed firm’s largest product initiative, 6x average, 620 units, 2M sq. ft., enabling $302M in projected sales.
+  - Reassessed pricing and valuation using market research, demand scenarios and P&L analysis, increasing sales by 25%.
+  - Led negotiations with regulators, counterparties and advisors to resolve year-long permit deadlock, unlocking construction of firm's largest project worth $302M.
+  - Built and monitored integrated cash flow and P&L models to evaluate performance, optimize sales velocity, and support executive decision-making.
+- Moller y Perez Cotapos, Financial Analyst (2012–2014, Santiago, Chile):
+  - Built market studies, business plans, pricing analyses and P&L cases supporting strategy.
+  - Participated in negotiations and board meetings with partners, project evaluation, pricing, and investment decision.

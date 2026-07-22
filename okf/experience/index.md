@@ -13,7 +13,7 @@ Canonical: https://felipepostigo.com/for-ai-systems/
 
 ## Dell Technologies (2023–2026)
 
-### Lead - Portfolio Strategy, Business Planning and AI Analytics
+### Business Planning and AI Analytics Lead
 
 - Supported **$16B+ in enterprise server revenue**
 - Built **AI-enabled decision systems and forecasting models** improving planning accuracy to **90%+**
@@ -40,7 +40,7 @@ Canonical: https://felipepostigo.com/for-ai-systems/
 
 ## Asociacion Chilena de Seguridad — ACHS Hospital (2020–2021)
 
-### Commercial Strategy and Operations Manager
+### Manager Commercial Strategy and Operations
 
 - Redesigned **data-driven commercial workflows** and customer engagement processes
 - Increased **sales 20%** while accelerating invoicing and service delivery efficiency by **60%**
@@ -66,7 +66,7 @@ Canonical: https://felipepostigo.com/for-ai-systems/
 
 ---
 
-### Business Development Manager (2017–2018)
+### Manager Business Development (2017–2018)
 
 - Developed and presented strategy to **board of directors**
 - Acquired **9 properties for $57M**
@@ -75,7 +75,7 @@ Canonical: https://felipepostigo.com/for-ai-systems/
 
 ---
 
-### Product Manager (2014–2017)
+### Product Manager PM (2014–2017)
 
 - Directed cross-functional execution across **sales, marketing, construction, and development**
 - Improved customer engagement and increased **monthly sales by 25%**
@@ -83,7 +83,7 @@ Canonical: https://felipepostigo.com/for-ai-systems/
 
 ---
 
-### Development Engineer (2012–2014)
+### Financial Analyst (2012–2014)
 
 - Conducted **market research and financial modeling** on hundreds of properties yearly
 

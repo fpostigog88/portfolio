@@ -1,15 +1,15 @@
 ---
 type: Work Experience
-title: Asociacion Chilena de Seguridad — Commercial Strategy and Operations Manager
+title: Asociacion Chilena de Seguridad — Manager Commercial Strategy and Operations
 description: Led commercial strategy and operations at ACHS hospital, increasing sales 20%, accelerating service delivery efficiency 60%, and reducing reporting effort 90%.
 resource: https://felipepostigo.com/about/
 tags: [achs, healthcare, commercial-strategy, operations, workflow-automation]
 timestamp: 2026-06-22T00:00:00Z
 ---
 
-# Asociacion Chilena de Seguridad — Commercial Strategy and Operations Manager
+# Asociacion Chilena de Seguridad — Manager Commercial Strategy and Operations
 
-**Role:** Commercial Strategy and Operations Manager  
+**Role:** Manager Commercial Strategy and Operations  
 **Period:** 2020–2021  
 **Organization:** Asociacion Chilena de Seguridad (ACHS) — Hospital  
 **Location:** Chile

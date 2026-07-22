@@ -9,7 +9,7 @@ timestamp: 2026-06-22T00:00:00Z
 
 # Dell Technologies — Lead, Commercial Strategy, Planning and AI Analytics
 
-**Role:** Lead - Portfolio Strategy, Business Planning and AI Analytics  
+**Role:** Business Planning and AI Analytics Lead  
 **Period:** 2023–2026  
 **Revenue scope:** $16B+ enterprise server revenue  
 **Location:** California, USA

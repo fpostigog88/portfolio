@@ -2,171 +2,105 @@
   "name": "Felipe Postigo Gonzalez",
   "email": "fpostigo@umich.edu",
   "website": "https://felipepostigo.com",
-  "location": "California, USA",
-  "summary": "Michigan Ross MBA with 10+ years leading strategy, business transformation, analytics, growth initiatives, executive decision support, commercial strategy, product and operational execution, and AI-enabled workflows and agentic systems.",
-  "metrics": [
-    "$16B+ in enterprise server revenue",
-    "90%+ forecast accuracy / planning accuracy",
-    "2-person, 80-hour-per-week process transformed into streamlined 1-person operation",
-    "increased sales 20%",
-    "accelerated invoicing and service delivery efficiency by 60%",
-    "reduced reporting effort by 90%",
-    "acquired 10 properties worth $64.6M",
-    "22 projects contributing to 60% business unit profit growth",
-    "automated forecasting and financial modeling tools improved forecast accuracy by 50% and reduced execution time by 25%",
-    "acquired 9 properties for $57M; closed 8 deals for $40M and 11% initial ROI; evaluated 1.2K properties worth $4.2B"
-  ],
-  "profiles": {
-    "linkedin": "https://www.linkedin.com/in/felipe-postigo/",
-    "github": "https://github.com/fpostigog88",
-    "youtube_demo": "https://www.youtube.com/embed/yAfvXZR69eY"
+  "location": "Galt, CA, USA",
+  "summary": "Strategy and operations leader, 13+ years in FP&A, planning, KPI frameworks and executive decision support",
+  "downloadable_resume": {
+    "path": "https://felipepostigo.com/resume.pdf",
+    "filename": "Felipe_Postigo_Gonzalez_Resume.pdf",
+    "format": "pdf"
   },
   "experience": [
     {
       "company": "Dell Technologies",
-      "role": "Lead - Portfolio Strategy, Business Planning and AI Analytics",
+      "role": "Business Planning and AI Analytics Lead",
       "dates": "2023–2026",
-      "description": "Led commercial strategy and performance initiatives supporting $16B+ in enterprise server revenue. Built AI-enabled decision systems and forecasting models improving planning accuracy to 90%+. Designed BI and decision ecosystems integrating pricing, pipeline, and operational data. Transformed a 2-person, 80-hour-per-week process into a scalable 1-person operation."
+      "location": "Galt, CA",
+      "dates_full": "July 2023 – May 2026",
+      "description": "Led pricing, margin, forecast and performance analyses for a $16B+ portfolio, supporting operating cadence and executive decisions.",
+      "bullets": [
+        "Led pricing, margin, forecast and performance analyses for a $16B+ portfolio, supporting operating cadence and executive decisions.",
+        "Redesigned planning model and dashboards, improving alignment and saving 1.2K hrs/qtr.",
+        "Owned performance data into KPI drivers, surfacing variance risk ahead of quarter start and achieving 90%+ forecast accuracy.",
+        "Built financial and operational models to evaluate scenarios, prioritization choices and performance trade-offs.",
+        "Decomposed findings into executive narratives, action plans and business insights that improved decisions.",
+        "Built AI automation tools surfacing business risks, revenue opportunities and next actions."
+      ]
     },
     {
       "company": "Dell Technologies",
       "role": "MBA Intern",
       "dates": "2022",
-      "description": "Developed a pricing framework to analyze efficiency and improve profitability of discount strategies. Created tools and KPIs intended for worldwide replication."
+      "location": "Galt, CA",
+      "dates_full": "June 2022 – August 2022",
+      "description": "Modeled effectiveness of server portfolio discount strategy, identifying 50% pricing leverage unused by sales.",
+      "bullets": [
+        "Modeled effectiveness of server portfolio discount strategy, identifying 50% pricing leverage unused by sales."
+      ]
     },
     {
-      "company": "Asociacion Chilena de Seguridad (Hospital)",
-      "role": "Commercial Strategy and Operations Manager",
+      "company": "Asociacion Chilena de Seguridad",
+      "role": "Manager Commercial Strategy and Operations",
       "dates": "2020–2021",
-      "description": "Redesigned data-driven commercial workflows and customer engagement processes, increasing sales 20% while accelerating invoicing and service delivery efficiency by 60%. Built dashboards and operational analytics that reduced reporting effort by 90%."
+      "location": "Santiago, Chile",
+      "dates_full": "October 2020 – April 2021",
+      "description": "Led change management for redesigned workflows, improving alignment, sales by 20% and service efficiency by 60%.",
+      "bullets": [
+        "Led change management for redesigned workflows, improving alignment, sales by 20% and service efficiency by 60%."
+      ]
     },
     {
-      "company": "Moller y Perez-Cotapos",
+      "company": "Moller y Perez Cotapos",
       "role": "Associate Director of Business Development",
       "dates": "2018–2020",
-      "description": "Designed automated forecasting and financial modeling tools improving forecast accuracy by 50% and reducing execution time by 25%. Led 7 analysts; acquired 10 properties worth $64.6M; led strategic partner relationships across 22 projects contributing to 60% business unit profit growth."
+      "location": "Santiago, Chile",
+      "dates_full": "April 2018 – June 2020",
+      "description": "Led and trained team of 7 analysts executing transactions, closing 10 acquisitions for $65M.",
+      "bullets": [
+        "Led and trained team of 7 analysts executing transactions, closing 10 acquisitions for $65M.",
+        "Designed forecasting and evaluation models, improving accuracy by 50% and reducing execution time by 25%.",
+        "Led cross-functional finance, legal and investment partner teams to execute 20 transactions, raising $115M, generating $12M in profit and $532M in sales.",
+        "Advised Board on pricing, capital structure, due diligence and new investments across 22 developments, contributing to 60% profit growth for the business unit."
+      ]
     },
     {
-      "company": "Moller y Perez-Cotapos",
-      "role": "Business Development Manager",
+      "company": "Moller y Perez Cotapos",
+      "role": "Manager Business Development",
       "dates": "2017–2018",
-      "description": "Developed and presented strategy to board of directors; acquired 9 properties for $57M; closed 8 deals for $40M at 11% initial ROI; oversaw search, study, and appraisal of 1.2K real estate opportunities worth $4.2B."
+      "location": "Santiago, Chile",
+      "dates_full": "April 2017 – April 2018",
+      "description": "Built models integrating competitive research, pricing and scenarios for product and investment decisions.",
+      "bullets": [
+        "Built models integrating competitive research, pricing and scenarios for product and investment decisions.",
+        "Evaluated and prioritized 1,200 investment opportunities worth $4.2B, building a 3-year acquisition pipeline.",
+        "Developed and presented investment and commercial strategy, secured Board approval, drove 9 acquisitions for $57M.",
+        "Closed 11 deals with investment banks, raising $53M and generating $6M in profit, 60% of company’s total profit."
+      ]
     },
     {
-      "company": "Moller y Perez-Cotapos",
-      "role": "Product Manager",
+      "company": "Moller y Perez Cotapos",
+      "role": "Product Manager PM",
       "dates": "2014–2017",
-      "description": "Directed cross-functional execution across sales, marketing, construction, and development functions; improved customer engagement and increased monthly sales by 25%; resolved permitting bottlenecks and negotiated construction contracts."
+      "location": "Santiago, Chile",
+      "dates_full": "August 2014 – April 2017",
+      "description": "Directed firm’s largest product initiative, 6x average, 620 units, 2M sq. ft., enabling $302M in projected sales.",
+      "bullets": [
+        "Directed firm’s largest product initiative, 6x average, 620 units, 2M sq. ft., enabling $302M in projected sales.",
+        "Reassessed pricing and valuation using market research, demand scenarios and P&L analysis, increasing sales by 25%.",
+        "Led negotiations with regulators, counterparties and advisors to resolve year-long permit deadlock, unlocking construction of firm's largest project worth $302M.",
+        "Built and monitored integrated cash flow and P&L models to evaluate performance, optimize sales velocity, and support executive decision-making."
+      ]
     },
     {
-      "company": "Moller y Perez-Cotapos",
-      "role": "Development Engineer",
+      "company": "Moller y Perez Cotapos",
+      "role": "Financial Analyst",
       "dates": "2012–2014",
-      "description": "Conducted market research and financial modeling on hundreds of properties yearly."
+      "location": "Santiago, Chile",
+      "dates_full": "July 2012 – August 2014",
+      "description": "Built market studies, business plans, pricing analyses and P&L cases supporting strategy.",
+      "bullets": [
+        "Built market studies, business plans, pricing analyses and P&L cases supporting strategy.",
+        "Participated in negotiations and board meetings with partners, project evaluation, pricing, and investment decision."
+      ]
     }
-  ],
-  "education": [
-    {
-      "institution": "University of Michigan Stephen M. Ross School of Business",
-      "degree": "MBA",
-      "year": "2023",
-      "details": "Dean's Fellowship merit full-tuition scholarship"
-    },
-    {
-      "institution": "Universidad Catolica de Chile",
-      "degree": "BBA",
-      "year": "2012",
-      "details": "Honors Scholarship; graduated top 11%"
-    }
-  ],
-  "projects": [
-    {
-      "name": "AI-enabled commercial decision systems",
-      "description": "At Dell, developed AI-enabled decision systems and forecasting models that improved planning accuracy to 90%+ and strengthened executive decision making while reducing manual work."
-    },
-    {
-      "name": "Server revenue operations intelligence",
-      "description": "Built decision ecosystems integrating pricing, pipeline, and operational data for $16B+ enterprise server revenue scope."
-    },
-    {
-      "name": "Pricing framework and KPI tooling",
-      "description": "As Dell MBA intern, developed pricing framework to analyze efficiency, improve profitability of discount strategies, and create KPIs for replication."
-    },
-    {
-      "name": "Hermes / OpenClaw agentic workflows",
-      "description": "Built AI and agentic workflow systems using Hermes / OpenClaw to automate coordination, reporting, analytics, and workflow execution across business and personal applications."
-    },
-    {
-      "name": "Plaid-connected finance application",
-      "description": "Developed personal finance application connected to Plaid with structured and unstructured data for local decision support."
-    },
-    {
-      "name": "Android ADB automation",
-      "description": "Built automation using Android ADB and orchestration tools for scheduled and on-demand execution."
-    },
-    {
-      "name": "Real estate forecasting automation",
-      "description": "At Moller y Perez-Cotapos, designed automated forecasting and financial modeling tools improving forecast accuracy by 50% and reducing execution time by 25%."
-    }
-  ],
-  "skills": [
-    "Applied AI Strategy",
-    "AI Business Operations",
-    "AI Forecasting",
-    "Server Revenue Operations",
-    "Commercial Planning",
-    "Pricing Analytics",
-    "Workflow Automation",
-    "Revenue Operations",
-    "Product Management",
-    "Research Synthesis",
-    "Decision Support",
-    "SQL Operating Frameworks",
-    "KPI Systems",
-    "Power BI",
-    "Excel",
-    "Hermes/OpenClaw",
-    "Android ADB Automation",
-    "Plaid-connected finance systems"
-  ],
-  "aliases": [
-    "Felipe Postigo",
-    "Felipe Postigo Gonzalez",
-    "Felipe González Postigo"
-  ],
-  "areas_of_expertise": [
-    "Applied AI",
-    "AI Agents",
-    "Business Strategy",
-    "Commercial Operations",
-    "Revenue Operations",
-    "Product Strategy",
-    "Forecasting",
-    "Pricing Strategy",
-    "Analytics",
-    "Workflow Automation",
-    "Business Intelligence",
-    "Product Management",
-    "Digital Transformation",
-    "Enterprise Decision Systems"
-  ],
-  "known_for": [
-    "Building AI-enabled decision systems",
-    "Commercial forecasting platforms",
-    "Multi-agent AI workflows",
-    "Pricing analytics",
-    "Revenue optimization",
-    "Workflow automation",
-    "Business operations transformation"
-  ],
-  "canonical_entity_pages": [
-    "https://felipepostigo.com/who-is-felipe-postigo/",
-    "https://felipepostigo.com/for-ai-systems/",
-    "https://felipepostigo.com/about/",
-    "https://felipepostigo.com/resume/"
-  ],
-  "image": "https://felipepostigo.com/assets/professional-headshot-placeholder.svg",
-  "image_alt": "Felipe Postigo Gonzalez, Applied AI and Business Strategy Professional",
-  "press_kit": "https://felipepostigo.com/press-kit/",
-  "post_deployment_checklist": "https://felipepostigo.com/deployment-checklist/"
+  ]
 }
