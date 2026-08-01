@@ -1,0 +1,12 @@
+/t
+  X-Robots-Tag: noindex, nofollow, noarchive, noimageindex
+  Cache-Control: no-store, no-cache, must-revalidate
+  Referrer-Policy: no-referrer
+
+/t/*
+  X-Robots-Tag: noindex, nofollow, noarchive, noimageindex
+  Cache-Control: no-store, no-cache, must-revalidate
+  Referrer-Policy: no-referrer
+
+/robots.txt
+  Cache-Control: no-store, no-cache, must-revalidate
