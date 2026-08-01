@@ -1,8 +1,1 @@
-http://www.felipepostigo.com/* https://felipepostigo.com/:splat 301
-https://www.felipepostigo.com/* https://felipepostigo.com/:splat 301
-http://felipepostigo.com/* https://felipepostigo.com/:splat 301
-/hoa /hoa/index.html 200
-/hoa/ /hoa/index.html 200
-/lazio https://felipepostigo.com/ 301
-/lazio/ https://felipepostigo.com/ 301
-/lazio/* https://felipepostigo.com/ 301
+/t https://seeds-entering-keywords-announcements.trycloudflare.com 302
