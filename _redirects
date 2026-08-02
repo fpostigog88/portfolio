@@ -1,4 +1,4 @@
-/t https://seeds-entering-keywords-announcements.trycloudflare.com 302
+/t https://stream.felipepostigo.com/ 302
 http://www.felipepostigo.com/* https://felipepostigo.com/:splat 301
 https://www.felipepostigo.com/* https://felipepostigo.com/:splat 301
 http://felipepostigo.com/* https://felipepostigo.com/:splat 301
