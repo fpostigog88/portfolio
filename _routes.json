@@ -1,5 +1,5 @@
 {
   "version": 1,
-  "include": ["/hoa/*", "/NGBC/*", "/api/ngbc/*"],
+  "include": ["/hoa/*", "/NGBC/*", "/api/ngbc/*", "/_assets/ngbc/*"],
   "exclude": []
 }
