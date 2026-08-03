@@ -30,7 +30,6 @@ function isProtectedPath(pathname) {
 
 function isPublicPath(pathname) {
   if (PUBLIC_PATHS.includes(pathname)) return true;
-  if (pathname.startsWith("/_assets/ngbc/")) return true;
   return false;
 }
 
