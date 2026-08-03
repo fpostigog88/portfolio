@@ -1,3 +1,10 @@
+/NGBC
+/NGBC/*
+/api/ngbc/*
+  X-Robots-Tag: noindex, nofollow, noarchive, noimageindex
+  Cache-Control: no-store, no-cache, must-revalidate
+  Referrer-Policy: no-referrer
+
 /t
   X-Robots-Tag: noindex, nofollow, noarchive, noimageindex
   Cache-Control: no-store, no-cache, must-revalidate
