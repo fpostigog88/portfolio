@@ -1,3 +1,9 @@
+# NGBC Capital Readiness - private, not indexed
+Disallow: /NGBC
+Disallow: /NGBC/
+Disallow: /api/capital-readiness
+Disallow: /api/ngbc/
+
 # Allow AI training and retrieval bots on the public portfolio, except the private Tesla route
 User-agent: GPTBot
 User-agent: ChatGPT-User

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NGBC Capital Readiness Agent | Felipe Postigo</title>
+  <meta name="description" content="An AI operating tool for pressure-testing institutional fundraising readiness, investor fit, and closing plans.">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Back to Felipe Postigo home">
+      <span class="brand-mark">FP</span>
+      <span>Felipe Postigo</span>
+    </a>
+    <div class="topbar-actions">
+      <span class="private-badge">Password protected</span>
+      <form id="logout-form" method="POST" action="/NGBC/logout" style="display:inline">
+        <button type="submit" class="logout-btn">Sign out</button>
+      </form>
+      <a class="back-link" href="/">Back to portfolio</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">NGBC institutional fundraising operating system</div>
+      <h1>Pressure-test the raise before investors do.</h1>
+      <p>
+        Turn company evidence into an investment-readiness audit, an investor committee simulation,
+        and a structured closing plan.
+      </p>
+      <div class="hero-proof">
+        <span>Evidence first</span>
+        <span>Investor-specific</span>
+        <span>Execution focused</span>
+      </div>
+    </section>
+
+    <section class="workspace" aria-label="Capital readiness workspace">
+      <aside class="control-panel">
+        <div class="panel-heading">
+          <div>
+            <span class="section-label">1. Select the lens</span>
+            <h2>Fundraising analysis</h2>
+          </div>
+        </div>
+
+        <div class="mode-tabs" role="tablist" aria-label="Analysis type">
+          <button class="mode-tab active" type="button" data-action="audit" role="tab" aria-selected="true">
+            Readiness audit
+          </button>
+          <button class="mode-tab" type="button" data-action="investor" role="tab" aria-selected="false">
+            Investor committee
+          </button>
+          <button class="mode-tab" type="button" data-action="raise" role="tab" aria-selected="false">
+            Raise plan
+          </button>
+        </div>
+
+        <form id="agent-form" novalidate>
+          <div class="form-section">
+            <span class="section-label">2. Define the opportunity</span>
+
+            <label for="company-name">Company or project</label>
+            <input id="company-name" name="company" type="text" maxlength="120" placeholder="Example Impact Mobility Fund">
+
+            <label for="product-summary">Product and business model</label>
+            <textarea id="product-summary" name="product" rows="4" maxlength="1800" placeholder="Describe the product, customer, revenue model, distribution, and why the company exists."></textarea>
+
+            <div class="form-grid">
+              <div>
+                <label for="raise-amount">Target raise</label>
+                <div class="money-input">
+                  <span>$</span>
+                  <input id="raise-amount" name="raiseAmount" type="number" min="0.1" max="1000" step="0.1" value="4">
+                  <span>M</span>
+                </div>
+              </div>
+              <div>
+                <label for="stage">Stage</label>
+                <select id="stage" name="stage">
+                  <option value="Pre-seed">Pre-seed</option>
+                  <option value="Seed" selected>Seed</option>
+                  <option value="Series A">Series A</option>
+                  <option value="Growth">Growth</option>
+                </select>
+              </div>
+            </div>
+
+            <label for="investor-type">Primary investor lens</label>
+            <select id="investor-type" name="investorType">
+              <option value="Impact-first family office">Impact-first family office</option>
+              <option value="Impact venture fund">Impact venture fund</option>
+              <option value="Foundation or program-related investor">Foundation or program-related investor</option>
+              <option value="Strategic financial institution">Strategic financial institution</option>
+              <option value="Conventional venture investor">Conventional venture investor</option>
+            </select>
+          </div>
+
+          <div class="form-section">
+            <div class="section-row">
+              <span class="section-label">3. Add the evidence</span>
+              <button id="load-example" class="text-button" type="button">Load synthetic example</button>
+            </div>
+
+            <label for="evidence">Current evidence and open questions</label>
+            <textarea id="evidence" name="evidence" rows="8" maxlength="12000" placeholder="Include market evidence, customer research, unit economics, regulatory work, partnerships, financial projections, impact metrics, risks, and unresolved assumptions."></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button id="run-agent" class="primary-button" type="submit">
+              <span class="button-label">Run readiness audit</span>
+              <span class="button-arrow" aria-hidden="true">→</span>
+            </button>
+            <button id="preview-sample" class="secondary-button" type="button">View sample output</button>
+          </div>
+        </form>
+      </aside>
+
+      <section class="results-panel" aria-live="polite" aria-busy="false">
+        <div class="results-header">
+          <div>
+            <span class="section-label">Agent output</span>
+            <h2 id="results-title">Investment readiness</h2>
+          </div>
+          <span id="result-status" class="status-pill">Ready</span>
+        </div>
+
+        <div id="results-empty" class="empty-state">
+          <div class="empty-icon" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <h3>Build the case investors can underwrite</h3>
+          <p>
+            Add the company evidence, choose an investor lens, and run the agent. When Workers AI is unavailable, the tool returns a structured evidence-based fallback analysis.
+          </p>
+          <div class="empty-steps">
+            <div><strong>01</strong><span>Find unsupported assumptions</span></div>
+            <div><strong>02</strong><span>Simulate investor objections</span></div>
+            <div><strong>03</strong><span>Turn gaps into a closing plan</span></div>
+          </div>
+        </div>
+
+        <div id="results-content" class="results-content" hidden></div>
+      </section>
+    </section>
+
+    <section class="method-section">
+      <div>
+        <span class="section-label">How it works</span>
+        <h2>Not a pitch-deck generator</h2>
+      </div>
+      <div class="method-grid">
+        <article>
+          <span>01</span>
+          <h3>Underwrite the company</h3>
+          <p>Test the financial, market, regulatory, operating, impact, and governance evidence as an investment committee would.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Match capital to risk</h3>
+          <p>Evaluate the opportunity through the mandate, check size, return profile, and impact requirements of each investor type.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Control the close</h3>
+          <p>Convert objections and diligence requests into owners, milestones, sequencing, and a weekly decision process.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Built by Felipe Postigo</span>
+    <span>The application does not write submitted content to storage.</span>
+  </footer>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
