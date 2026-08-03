@@ -19,6 +19,8 @@ const PROTECTED_EXACT = ["/NGBC"];
 // GET /api/ngbc/capital-readiness is also protected (same as /api/capital-readiness)
 const ADDITIONAL_PROTECTED = ["/api/capital-readiness"];
 
+const PUBLIC_PATHS = ["/NGBC/login", "/NGBC/logout"];
+
 function isProtectedPath(pathname) {
   if (PROTECTED_EXACT.includes(pathname)) return true;
   if (PROTECTED_PREFIXES.some(prefix => pathname.startsWith(prefix))) return true;
@@ -26,12 +28,18 @@ function isProtectedPath(pathname) {
   return false;
 }
 
+function isPublicPath(pathname) {
+  if (PUBLIC_PATHS.includes(pathname)) return true;
+  if (pathname.startsWith("/_assets/ngbc/")) return true;
+  return false;
+}
+
 export async function onRequest(context) {
   const url = new URL(context.request.url);
   const pathname = url.pathname;
 
-  // Allow CORS preflight and login/logout to pass through
-  if (context.request.method === "OPTIONS") {
+  // Allow CORS preflight and public paths (login/logout/assets) to pass through
+  if (context.request.method === "OPTIONS" || isPublicPath(pathname)) {
     return context.next();
   }
 
