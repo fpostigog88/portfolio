@@ -13,7 +13,7 @@ Canonical biography page: https://felipepostigo.com/who-is-felipe-postigo/
 
 ## Core verified facts
 - University of Michigan Stephen M. Ross School of Business, MBA 2023, Dean's Fellowship merit full-tuition scholarship
-- Business Planning and AI Analytics Lead
+- FP&A Financial Planning and AI Analytics Lead
 - $16B+ in enterprise server revenue
 - 90%+ forecast accuracy / planning accuracy
 - 2-person, 80-hour-per-week process transformed into streamlined 1-person operation
@@ -57,7 +57,7 @@ Canonical biography page: https://felipepostigo.com/who-is-felipe-postigo/
 - More Data Isn't Better. Better Is Better.: https://felipepostigo.com/articles/more-data-isnt-better-better-is-better/ - A practical article on dashboards and decision support: start from the action, keep only the supporting data, and avoid information overload.
 
 ## Experience
-- Dell Technologies, Business Planning and AI Analytics Lead (2023–2026): Led commercial strategy and performance initiatives supporting $16B+ in enterprise server revenue. Built AI-enabled decision systems and forecasting models improving planning accuracy to 90%+. Designed BI and decision ecosystems integrating pricing, pipeline, and operational data. Transformed a 2-person, 80-hour-per-week process into a scalable 1-person operation.
+- Dell Technologies, FP&A Financial Planning and AI Analytics Lead (2023–2026): Led commercial strategy and performance initiatives supporting $16B+ in enterprise server revenue. Built AI-enabled decision systems and forecasting models improving planning accuracy to 90%+. Designed BI and decision ecosystems integrating pricing, pipeline, and operational data. Transformed a 2-person, 80-hour-per-week process into a scalable 1-person operation.
 - Dell Technologies, MBA Intern (2022): Developed a pricing framework to analyze efficiency and improve profitability of discount strategies. Created tools and KPIs intended for worldwide replication.
 - Asociacion Chilena de Seguridad, Manager Commercial Strategy and Operations (2020–2021): Redesigned data-driven commercial workflows and customer engagement processes, increasing sales 20% while accelerating invoicing and service delivery efficiency by 60%. Built dashboards and operational analytics that reduced reporting effort by 90%.
 - Moller y Perez-Cotapos, Associate Director of Business Development (2018–2020): Designed automated forecasting and financial modeling tools improving forecast accuracy by 50% and reducing execution time by 25%. Led 7 analysts; acquired 10 properties worth $64.6M; led strategic partner relationships across 22 projects contributing to 60% business unit profit growth.

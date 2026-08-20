@@ -3,27 +3,27 @@
   "email": "fpostigo@umich.edu",
   "website": "https://felipepostigo.com",
   "location": "Galt, CA, USA",
-  "summary": "Strategy and operations leader, 13+ years in FP&A, planning, KPI frameworks and executive decision support",
+  "summary": "FP&A Financial Planning and AI Analytics Lead, 13+ years in forecasting, budgeting, KPI frameworks and decision support",
   "downloadable_resume": {
     "path": "https://felipepostigo.com/resume.pdf",
     "filename": "Felipe_Postigo_Gonzalez_Resume.pdf",
-    "format": "pdf"
+    "format": "pdf",
+    "source_file": "Felipe_Postigo_Gonzalez_-_Michigan_Ross_MBA.pdf"
   },
   "experience": [
     {
       "company": "Dell Technologies",
-      "role": "Business Planning and AI Analytics Lead",
+      "role": "FP&A Financial Planning and AI Analytics Lead",
       "dates": "2023–2026",
       "location": "Galt, CA",
       "dates_full": "July 2023 – May 2026",
-      "description": "Led pricing, margin, forecast and performance analyses for a $16B+ portfolio, supporting operating cadence and executive decisions.",
+      "description": "Led pricing, margin, forecast, KPI and variance analyses for a $16B+ portfolio, supporting planning rhythm and executive decisions saving 1.2K hrs/qtr.",
       "bullets": [
-        "Led pricing, margin, forecast and performance analyses for a $16B+ portfolio, supporting operating cadence and executive decisions.",
-        "Redesigned planning model and dashboards, improving alignment and saving 1.2K hrs/qtr.",
-        "Owned performance data into KPI drivers, surfacing variance risk ahead of quarter start and achieving 90%+ forecast accuracy.",
-        "Built financial and operational models to evaluate scenarios, prioritization choices and performance trade-offs.",
-        "Decomposed findings into executive narratives, action plans and business insights that improved decisions.",
-        "Built AI automation tools surfacing business risks, revenue opportunities and next actions."
+        "Led pricing, margin, forecast, KPI and variance analyses for a $16B+ portfolio, supporting planning rhythm and executive decisions saving 1.2K hrs/qtr.",
+        "Redesigned planning model and dashboards using Excel, PowerBI and Power Query, improving reporting cadence and decision support.",
+        "Owned performance data into KPI and variance drivers, achieving 90%+ forecast accuracy.",
+        "Built and automated financial and operational models to evaluate product scenarios and trade-offs, using Claude, Python and Windsurf.",
+        "Turned findings into executive narratives, action plans and data-driven recommendations."
       ]
     },
     {
@@ -102,5 +102,11 @@
         "Participated in negotiations and board meetings with partners, project evaluation, pricing, and investment decision."
       ]
     }
+  ],
+  "jobTitle": [
+    "FP&A Financial Planning and AI Analytics Lead",
+    "Applied AI Practitioner",
+    "Business Transformation Leader",
+    "Product and Business Manager"
   ]
 }

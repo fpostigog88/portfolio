@@ -1,43 +1,85 @@
 /**
  * NGBC Session-Based Access Middleware
+ * Uses signed HMAC-SHA256 session tokens (stateless, no KV needed).
+ * Password stored as NGBC_ACCESS_PASSWORD in Cloudflare Secrets.
  *
- * Protects /NGBC/* and /api/ngbc/* routes with secure session-cookie auth.
- * The password is stored as NGBC_ACCESS_PASSWORD in Cloudflare Secrets.
- * Sessions are cryptographically random UUIDs stored in Cloudflare KV.
- *
- * Cookie settings:
- *   HttpOnly + Secure + SameSite=Strict + Path=/
- *
+ * Cookie: HttpOnly + Secure + SameSite=Strict + Path=/
  * Session TTL: 8 hours
  */
 
-const SESSION_TTL_SECONDS = 60 * 60 * 8; // 8 hours
+const SESSION_TTL_MS = 60 * 60 * 8 * 1000; // 8 hours
+const COOKIE_NAME = "ngbc_session";
 
-// Path patterns that require authentication
 const PROTECTED_PREFIXES = ["/NGBC/", "/api/ngbc/"];
 const PROTECTED_EXACT = ["/NGBC"];
-// GET /api/ngbc/capital-readiness is also protected (same as /api/capital-readiness)
 const ADDITIONAL_PROTECTED = ["/api/capital-readiness"];
-
 const PUBLIC_PATHS = ["/NGBC/login", "/NGBC/logout"];
 
 function isProtectedPath(pathname) {
   if (PROTECTED_EXACT.includes(pathname)) return true;
-  if (PROTECTED_PREFIXES.some(prefix => pathname.startsWith(prefix))) return true;
+  if (PROTECTED_PREFIXES.some(p => pathname.startsWith(p))) return true;
   if (ADDITIONAL_PROTECTED.includes(pathname)) return true;
   return false;
 }
 
 function isPublicPath(pathname) {
-  if (PUBLIC_PATHS.includes(pathname)) return true;
-  return false;
+  return PUBLIC_PATHS.includes(pathname);
+}
+
+function base64UrlEncode(buffer) {
+  const bytes = buffer instanceof Uint8Array ? buffer : new TextEncoder().encode(buffer);
+  let binary = "";
+  for (const b of bytes) binary += String.fromCharCode(b);
+  return btoa(binary).replace(/\+/g, "-").replace(/\//g, "_").replace(/=/g, "");
+}
+
+function base64UrlDecode(str) {
+  str = str.replace(/-/g, "+").replace(/_/g, "/");
+  while (str.length % 4) str += "=";
+  const binary = atob(str);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+  return bytes;
+}
+
+function createSignature(secret, headerB64, payloadB64) {
+  const data = new TextEncoder().encode(`${headerB64}.${payloadB64}`);
+  const key = crypto.createSecretKey(base64UrlDecode(secret), "raw");
+  return crypto.subtle.sign("HMAC", key, data).then(base64UrlEncode);
+}
+
+async function verifyToken(secret, token) {
+  const parts = token.split(".");
+  if (parts.length !== 3) return null;
+  const [headerB64, payloadB64, sigB64] = parts;
+
+  // Verify signature
+  const key = crypto.createSecretKey(base64UrlDecode(secret), "raw");
+  const data = new TextEncoder().encode(`${headerB64}.${payloadB64}`);
+  const valid = await crypto.subtle.verify("HMAC", key, base64UrlDecode(sigB64), data);
+  if (!valid) return null;
+
+  // Decode payload
+  const payload = JSON.parse(new TextDecoder().decode(base64UrlDecode(payloadB64)));
+  const now = Date.now();
+  if (now - payload.created > SESSION_TTL_MS) return null; // expired
+  return payload;
+}
+
+function parseSessionCookie(cookieHeader) {
+  const match = (cookieHeader || "").match(new RegExp(`(?:^|;\\\\s*)${COOKIE_NAME}=([^;]*)`));
+  return match ? match[1] : null;
+}
+
+function makeSessionCookie(token, maxAge) {
+  const expires = new Date(Date.now() + maxAge).toUTCString();
+  return `${COOKIE_NAME}=${token}; Path=/; HttpOnly; Secure; SameSite=Strict; Expires=${expires}`;
 }
 
 export async function onRequest(context) {
   const url = new URL(context.request.url);
   const pathname = url.pathname;
 
-  // Allow CORS preflight and public paths (login/logout/assets) to pass through
   if (context.request.method === "OPTIONS" || isPublicPath(pathname)) {
     return context.next();
   }
@@ -46,49 +88,22 @@ export async function onRequest(context) {
     return context.next();
   }
 
-  // Validate session from cookie
+  const secret = context.env.NGBC_ACCESS_PASSWORD || "";
   const cookieHeader = context.request.headers.get("Cookie") || "";
-  const sessionToken = parseSessionCookie(cookieHeader);
+  const token = parseSessionCookie(cookieHeader);
 
-  if (!sessionToken) {
+  if (!token) {
     return redirectToLogin(url);
   }
 
-  // Look up session in KV
-  let sessionData = null;
-  try {
-    if (context.env.NGBC_SESSIONS) {
-      const raw = await context.env.NGBC_SESSIONS.get(sessionToken);
-      if (raw) {
-        sessionData = JSON.parse(raw);
-      }
-    }
-  } catch {
-    // KV read failed; treat as no session
+  const payload = await verifyToken(secret, token).catch(() => null);
+  if (!payload) {
+    return redirectToLogin(url, payload === null ? "invalid" : "expired");
   }
 
-  if (!sessionData) {
-    return redirectToLogin(url, "expired");
-  }
-
-  // Verify expiration
-  const now = Date.now();
-  if (now - sessionData.created > SESSION_TTL_SECONDS * 1000) {
-    // Expired: delete and redirect
-    try {
-      if (context.env.NGBC_SESSIONS) {
-        await context.env.NGBC_SESSIONS.delete(sessionToken);
-      }
-    } catch {
-      // Best-effort deletion
-    }
-    return redirectToLogin(url, "expired");
-  }
-
-  // Authenticated — pass through to the requested resource
+  // Authenticated — pass through
   const response = await context.next();
 
-  // Add security headers to the response
   const headers = new Headers(response.headers);
   headers.set("Cache-Control", "private, no-store");
   headers.set("X-Robots-Tag", "noindex, nofollow, noarchive");
@@ -102,16 +117,9 @@ export async function onRequest(context) {
   });
 }
 
-function parseSessionCookie(cookieHeader) {
-  const match = cookieHeader.match(/(?:^|;\s*)ngbc_session=([^;]*)/);
-  return match ? match[1] : null;
-}
-
 function redirectToLogin(currentUrl, reason = "") {
   const loginUrl = new URL("/NGBC/login", currentUrl.origin);
-  if (reason) {
-    loginUrl.searchParams.set("reason", reason);
-  }
+  if (reason) loginUrl.searchParams.set("reason", reason);
   return new Response(null, {
     status: 302,
     headers: {
