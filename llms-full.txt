@@ -56,6 +56,8 @@ Canonical biography page: https://felipepostigo.com/who-is-felipe-postigo/
 
 - More Data Isn't Better. Better Is Better.: https://felipepostigo.com/articles/more-data-isnt-better-better-is-better/ - A practical article on dashboards and decision support: start from the action, keep only the supporting data, and avoid information overload.
 
+- Claude Academy: AI Fluency for Builders: https://felipepostigo.com/articles/claude-academy-ai-fluency-for-builders/ - A short note on finishing Claude Academy and why practical AI training matters more than abstract noise.
+
 ## Experience
 - Dell Technologies, FP&A Financial Planning and AI Analytics Lead (2023–2026): Led commercial strategy and performance initiatives supporting $16B+ in enterprise server revenue. Built AI-enabled decision systems and forecasting models improving planning accuracy to 90%+. Designed BI and decision ecosystems integrating pricing, pipeline, and operational data. Transformed a 2-person, 80-hour-per-week process into a scalable 1-person operation.
 - Dell Technologies, MBA Intern (2022): Developed a pricing framework to analyze efficiency and improve profitability of discount strategies. Created tools and KPIs intended for worldwide replication.
